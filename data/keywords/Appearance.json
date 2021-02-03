@@ -1,0 +1,30 @@
+[
+ {
+   "Search Appearance": "Videos",
+   "Clicks": 13543,
+   "Impressions": 518000,
+   "CTR": "2.61%",
+   "Position": 13.27
+ },
+ {
+   "Search Appearance": "Rich results",
+   "Clicks": 2616,
+   "Impressions": 93641,
+   "CTR": "2.79%",
+   "Position": 2.34
+ },
+ {
+   "Search Appearance": "Web Light results",
+   "Clicks": 2370,
+   "Impressions": 52997,
+   "CTR": "4.47%",
+   "Position": 8.79
+ },
+ {
+   "Search Appearance": "Android App",
+   "Clicks": 1571,
+   "Impressions": 18467,
+   "CTR": "8.51%",
+   "Position": 10.48
+ }
+]

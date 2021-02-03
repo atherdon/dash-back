@@ -1,0 +1,646 @@
+[
+ {
+   "Date": "2021-01-03",
+   "Clicks": 51256,
+   "Impressions": 2278653,
+   "CTR": "2.25%",
+   "Position": 21.56
+ },
+ {
+   "Date": "2021-01-02",
+   "Clicks": 43915,
+   "Impressions": 1786158,
+   "CTR": "2.46%",
+   "Position": 25.63
+ },
+ {
+   "Date": "2021-01-01",
+   "Clicks": 36909,
+   "Impressions": 1501231,
+   "CTR": "2.46%",
+   "Position": 26.27
+ },
+ {
+   "Date": "2020-12-31",
+   "Clicks": 34035,
+   "Impressions": 1460116,
+   "CTR": "2.33%",
+   "Position": 26.2
+ },
+ {
+   "Date": "2020-12-30",
+   "Clicks": 46493,
+   "Impressions": 1803825,
+   "CTR": "2.58%",
+   "Position": 23.86
+ },
+ {
+   "Date": "2020-12-29",
+   "Clicks": 51459,
+   "Impressions": 1976748,
+   "CTR": "2.60%",
+   "Position": 22.9
+ },
+ {
+   "Date": "2020-12-28",
+   "Clicks": 52482,
+   "Impressions": 2036979,
+   "CTR": "2.58%",
+   "Position": 23.53
+ },
+ {
+   "Date": "2020-12-27",
+   "Clicks": 45969,
+   "Impressions": 1760005,
+   "CTR": "2.61%",
+   "Position": 25.02
+ },
+ {
+   "Date": "2020-12-26",
+   "Clicks": 38987,
+   "Impressions": 1681553,
+   "CTR": "2.32%",
+   "Position": 25.13
+ },
+ {
+   "Date": "2020-12-25",
+   "Clicks": 32924,
+   "Impressions": 1483275,
+   "CTR": "2.22%",
+   "Position": 27.14
+ },
+ {
+   "Date": "2020-12-24",
+   "Clicks": 34063,
+   "Impressions": 1611074,
+   "CTR": "2.11%",
+   "Position": 26.79
+ },
+ {
+   "Date": "2020-12-23",
+   "Clicks": 43625,
+   "Impressions": 1964932,
+   "CTR": "2.22%",
+   "Position": 24.01
+ },
+ {
+   "Date": "2020-12-22",
+   "Clicks": 47822,
+   "Impressions": 2009789,
+   "CTR": "2.38%",
+   "Position": 23.79
+ },
+ {
+   "Date": "2020-12-21",
+   "Clicks": 49318,
+   "Impressions": 2026567,
+   "CTR": "2.43%",
+   "Position": 24.04
+ },
+ {
+   "Date": "2020-12-20",
+   "Clicks": 40827,
+   "Impressions": 1757272,
+   "CTR": "2.32%",
+   "Position": 25.6
+ },
+ {
+   "Date": "2020-12-19",
+   "Clicks": 36103,
+   "Impressions": 1654194,
+   "CTR": "2.18%",
+   "Position": 26.4
+ },
+ {
+   "Date": "2020-12-18",
+   "Clicks": 44620,
+   "Impressions": 1923593,
+   "CTR": "2.32%",
+   "Position": 24.42
+ },
+ {
+   "Date": "2020-12-17",
+   "Clicks": 52815,
+   "Impressions": 2155794,
+   "CTR": "2.45%",
+   "Position": 23
+ },
+ {
+   "Date": "2020-12-16",
+   "Clicks": 54210,
+   "Impressions": 2210307,
+   "CTR": "2.45%",
+   "Position": 22.32
+ },
+ {
+   "Date": "2020-12-15",
+   "Clicks": 53248,
+   "Impressions": 2148118,
+   "CTR": "2.48%",
+   "Position": 23.54
+ },
+ {
+   "Date": "2020-12-14",
+   "Clicks": 54753,
+   "Impressions": 2169858,
+   "CTR": "2.52%",
+   "Position": 23.02
+ },
+ {
+   "Date": "2020-12-13",
+   "Clicks": 42742,
+   "Impressions": 1773367,
+   "CTR": "2.41%",
+   "Position": 25.49
+ },
+ {
+   "Date": "2020-12-12",
+   "Clicks": 37581,
+   "Impressions": 1642953,
+   "CTR": "2.29%",
+   "Position": 26.69
+ },
+ {
+   "Date": "2020-12-11",
+   "Clicks": 45650,
+   "Impressions": 1941326,
+   "CTR": "2.35%",
+   "Position": 24.62
+ },
+ {
+   "Date": "2020-12-10",
+   "Clicks": 52263,
+   "Impressions": 2232090,
+   "CTR": "2.34%",
+   "Position": 25.3
+ },
+ {
+   "Date": "2020-12-09",
+   "Clicks": 54273,
+   "Impressions": 2234449,
+   "CTR": "2.43%",
+   "Position": 23.43
+ },
+ {
+   "Date": "2020-12-08",
+   "Clicks": 56216,
+   "Impressions": 2344167,
+   "CTR": "2.40%",
+   "Position": 22.59
+ },
+ {
+   "Date": "2020-12-07",
+   "Clicks": 57690,
+   "Impressions": 2337079,
+   "CTR": "2.47%",
+   "Position": 22.54
+ },
+ {
+   "Date": "2020-12-06",
+   "Clicks": 45605,
+   "Impressions": 1952563,
+   "CTR": "2.34%",
+   "Position": 24.18
+ },
+ {
+   "Date": "2020-12-05",
+   "Clicks": 40809,
+   "Impressions": 1783778,
+   "CTR": "2.29%",
+   "Position": 25.37
+ },
+ {
+   "Date": "2020-12-04",
+   "Clicks": 50344,
+   "Impressions": 2066215,
+   "CTR": "2.44%",
+   "Position": 22.03
+ },
+ {
+   "Date": "2020-12-03",
+   "Clicks": 46984,
+   "Impressions": 1899309,
+   "CTR": "2.47%",
+   "Position": 21.38
+ },
+ {
+   "Date": "2020-12-02",
+   "Clicks": 43097,
+   "Impressions": 1787372,
+   "CTR": "2.41%",
+   "Position": 21.61
+ },
+ {
+   "Date": "2020-12-01",
+   "Clicks": 43604,
+   "Impressions": 1801527,
+   "CTR": "2.42%",
+   "Position": 21.48
+ },
+ {
+   "Date": "2020-11-30",
+   "Clicks": 43642,
+   "Impressions": 1785027,
+   "CTR": "2.44%",
+   "Position": 21.64
+ },
+ {
+   "Date": "2020-11-29",
+   "Clicks": 33991,
+   "Impressions": 1458667,
+   "CTR": "2.33%",
+   "Position": 24.47
+ },
+ {
+   "Date": "2020-11-28",
+   "Clicks": 29200,
+   "Impressions": 1317624,
+   "CTR": "2.22%",
+   "Position": 25.24
+ },
+ {
+   "Date": "2020-11-27",
+   "Clicks": 34383,
+   "Impressions": 1492321,
+   "CTR": "2.30%",
+   "Position": 23.19
+ },
+ {
+   "Date": "2020-11-26",
+   "Clicks": 38534,
+   "Impressions": 1639842,
+   "CTR": "2.35%",
+   "Position": 22.54
+ },
+ {
+   "Date": "2020-11-25",
+   "Clicks": 42150,
+   "Impressions": 1814840,
+   "CTR": "2.32%",
+   "Position": 22.41
+ },
+ {
+   "Date": "2020-11-24",
+   "Clicks": 45262,
+   "Impressions": 1923967,
+   "CTR": "2.35%",
+   "Position": 22.06
+ },
+ {
+   "Date": "2020-11-23",
+   "Clicks": 46299,
+   "Impressions": 1917811,
+   "CTR": "2.41%",
+   "Position": 21.14
+ },
+ {
+   "Date": "2020-11-22",
+   "Clicks": 36520,
+   "Impressions": 1542147,
+   "CTR": "2.37%",
+   "Position": 23.08
+ },
+ {
+   "Date": "2020-11-21",
+   "Clicks": 32073,
+   "Impressions": 1379707,
+   "CTR": "2.32%",
+   "Position": 23.6
+ },
+ {
+   "Date": "2020-11-20",
+   "Clicks": 39779,
+   "Impressions": 1676275,
+   "CTR": "2.37%",
+   "Position": 22.33
+ },
+ {
+   "Date": "2020-11-19",
+   "Clicks": 46379,
+   "Impressions": 1839494,
+   "CTR": "2.52%",
+   "Position": 21.5
+ },
+ {
+   "Date": "2020-11-18",
+   "Clicks": 47629,
+   "Impressions": 1882836,
+   "CTR": "2.53%",
+   "Position": 21.33
+ },
+ {
+   "Date": "2020-11-17",
+   "Clicks": 47810,
+   "Impressions": 1839880,
+   "CTR": "2.60%",
+   "Position": 20.62
+ },
+ {
+   "Date": "2020-11-16",
+   "Clicks": 45693,
+   "Impressions": 1750947,
+   "CTR": "2.61%",
+   "Position": 20.83
+ },
+ {
+   "Date": "2020-11-15",
+   "Clicks": 34854,
+   "Impressions": 1432662,
+   "CTR": "2.43%",
+   "Position": 23.83
+ },
+ {
+   "Date": "2020-11-14",
+   "Clicks": 28718,
+   "Impressions": 1257006,
+   "CTR": "2.28%",
+   "Position": 24.67
+ },
+ {
+   "Date": "2020-11-13",
+   "Clicks": 36858,
+   "Impressions": 1531892,
+   "CTR": "2.41%",
+   "Position": 22.73
+ },
+ {
+   "Date": "2020-11-12",
+   "Clicks": 43312,
+   "Impressions": 1733188,
+   "CTR": "2.50%",
+   "Position": 21.56
+ },
+ {
+   "Date": "2020-11-11",
+   "Clicks": 44248,
+   "Impressions": 1733763,
+   "CTR": "2.55%",
+   "Position": 21.64
+ },
+ {
+   "Date": "2020-11-10",
+   "Clicks": 45183,
+   "Impressions": 1743151,
+   "CTR": "2.59%",
+   "Position": 21.27
+ },
+ {
+   "Date": "2020-11-09",
+   "Clicks": 45404,
+   "Impressions": 1806696,
+   "CTR": "2.51%",
+   "Position": 21.96
+ },
+ {
+   "Date": "2020-11-08",
+   "Clicks": 34071,
+   "Impressions": 1472732,
+   "CTR": "2.31%",
+   "Position": 23.93
+ },
+ {
+   "Date": "2020-11-07",
+   "Clicks": 28583,
+   "Impressions": 1347228,
+   "CTR": "2.12%",
+   "Position": 25.17
+ },
+ {
+   "Date": "2020-11-06",
+   "Clicks": 37212,
+   "Impressions": 1638067,
+   "CTR": "2.27%",
+   "Position": 23.16
+ },
+ {
+   "Date": "2020-11-05",
+   "Clicks": 43120,
+   "Impressions": 1816716,
+   "CTR": "2.37%",
+   "Position": 22.22
+ },
+ {
+   "Date": "2020-11-04",
+   "Clicks": 41993,
+   "Impressions": 1810357,
+   "CTR": "2.32%",
+   "Position": 22.51
+ },
+ {
+   "Date": "2020-11-03",
+   "Clicks": 42776,
+   "Impressions": 1834895,
+   "CTR": "2.33%",
+   "Position": 22.35
+ },
+ {
+   "Date": "2020-11-02",
+   "Clicks": 44274,
+   "Impressions": 1828123,
+   "CTR": "2.42%",
+   "Position": 21.96
+ },
+ {
+   "Date": "2020-11-01",
+   "Clicks": 34888,
+   "Impressions": 1502177,
+   "CTR": "2.32%",
+   "Position": 23.38
+ },
+ {
+   "Date": "2020-10-31",
+   "Clicks": 27956,
+   "Impressions": 1254213,
+   "CTR": "2.23%",
+   "Position": 24.09
+ },
+ {
+   "Date": "2020-10-30",
+   "Clicks": 37486,
+   "Impressions": 1580717,
+   "CTR": "2.37%",
+   "Position": 22.09
+ },
+ {
+   "Date": "2020-10-29",
+   "Clicks": 42739,
+   "Impressions": 1790789,
+   "CTR": "2.39%",
+   "Position": 21.97
+ },
+ {
+   "Date": "2020-10-28",
+   "Clicks": 44850,
+   "Impressions": 1838830,
+   "CTR": "2.44%",
+   "Position": 21.39
+ },
+ {
+   "Date": "2020-10-27",
+   "Clicks": 46536,
+   "Impressions": 1849897,
+   "CTR": "2.52%",
+   "Position": 20.69
+ },
+ {
+   "Date": "2020-10-26",
+   "Clicks": 45363,
+   "Impressions": 1819482,
+   "CTR": "2.49%",
+   "Position": 21.07
+ },
+ {
+   "Date": "2020-10-25",
+   "Clicks": 32615,
+   "Impressions": 1469333,
+   "CTR": "2.22%",
+   "Position": 23.51
+ },
+ {
+   "Date": "2020-10-24",
+   "Clicks": 28967,
+   "Impressions": 1335863,
+   "CTR": "2.17%",
+   "Position": 24.18
+ },
+ {
+   "Date": "2020-10-23",
+   "Clicks": 37988,
+   "Impressions": 1588709,
+   "CTR": "2.39%",
+   "Position": 22.99
+ },
+ {
+   "Date": "2020-10-22",
+   "Clicks": 44636,
+   "Impressions": 1723312,
+   "CTR": "2.59%",
+   "Position": 21.37
+ },
+ {
+   "Date": "2020-10-21",
+   "Clicks": 45927,
+   "Impressions": 1756396,
+   "CTR": "2.61%",
+   "Position": 21.11
+ },
+ {
+   "Date": "2020-10-20",
+   "Clicks": 46384,
+   "Impressions": 1747229,
+   "CTR": "2.65%",
+   "Position": 20.94
+ },
+ {
+   "Date": "2020-10-19",
+   "Clicks": 46797,
+   "Impressions": 1743659,
+   "CTR": "2.68%",
+   "Position": 21.18
+ },
+ {
+   "Date": "2020-10-18",
+   "Clicks": 33949,
+   "Impressions": 1339596,
+   "CTR": "2.53%",
+   "Position": 23.42
+ },
+ {
+   "Date": "2020-10-17",
+   "Clicks": 29400,
+   "Impressions": 1224296,
+   "CTR": "2.40%",
+   "Position": 25.16
+ },
+ {
+   "Date": "2020-10-16",
+   "Clicks": 38881,
+   "Impressions": 1579342,
+   "CTR": "2.46%",
+   "Position": 22.6
+ },
+ {
+   "Date": "2020-10-15",
+   "Clicks": 44295,
+   "Impressions": 1722342,
+   "CTR": "2.57%",
+   "Position": 21.34
+ },
+ {
+   "Date": "2020-10-14",
+   "Clicks": 45100,
+   "Impressions": 1756869,
+   "CTR": "2.57%",
+   "Position": 21.8
+ },
+ {
+   "Date": "2020-10-13",
+   "Clicks": 46083,
+   "Impressions": 1798560,
+   "CTR": "2.56%",
+   "Position": 21.58
+ },
+ {
+   "Date": "2020-10-12",
+   "Clicks": 44559,
+   "Impressions": 1724425,
+   "CTR": "2.58%",
+   "Position": 22.35
+ },
+ {
+   "Date": "2020-10-11",
+   "Clicks": 33219,
+   "Impressions": 1390224,
+   "CTR": "2.39%",
+   "Position": 25.11
+ },
+ {
+   "Date": "2020-10-10",
+   "Clicks": 29134,
+   "Impressions": 1261154,
+   "CTR": "2.31%",
+   "Position": 26.14
+ },
+ {
+   "Date": "2020-10-09",
+   "Clicks": 38811,
+   "Impressions": 1632760,
+   "CTR": "2.38%",
+   "Position": 22.28
+ },
+ {
+   "Date": "2020-10-08",
+   "Clicks": 44368,
+   "Impressions": 1685572,
+   "CTR": "2.63%",
+   "Position": 22.03
+ },
+ {
+   "Date": "2020-10-07",
+   "Clicks": 45280,
+   "Impressions": 1711534,
+   "CTR": "2.65%",
+   "Position": 21.64
+ },
+ {
+   "Date": "2020-10-06",
+   "Clicks": 45382,
+   "Impressions": 1653192,
+   "CTR": "2.75%",
+   "Position": 21.25
+ },
+ {
+   "Date": "2020-10-05",
+   "Clicks": 45005,
+   "Impressions": 1653996,
+   "CTR": "2.72%",
+   "Position": 22.06
+ },
+ {
+   "Date": "2020-10-04",
+   "Clicks": 32626,
+   "Impressions": 1401345,
+   "CTR": "2.33%",
+   "Position": 25.15
+ }
+]
