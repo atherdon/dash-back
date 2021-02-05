@@ -1,4 +1,127 @@
-# dash-back
+# Backend server
+
+Backed server for Dashboard with `GraphQL` language query and `SQLite` database.
+
+#### Extern links  
+[types](#types)
+
+# Usage instruction
+
+## Requirements
+
+### System
+
+Development:
+```
+node v^14.15.4
+```
+
+Production:
+```
+node v^14.15.4
+screen v^4.01.00
+```
+
+### Node
+
+#### Global packages
+
+Development:
+```
+yarn v^1.22.10
+typescript v^4.1.3
+eslint v7^18.0
+gulp v^2.3.0
+nodemon v^2.0.7
+prisma v^2.16.0
+```
+
+Production:
+```
+yarn v^1.22.10
+typescript v^4.1.3
+prisma v^2.16.0
+```
+
+## Installation
+
+```
+git clone https://github.com/atherdon/dash-back
+cd dash-back
+yarn install
+```
+Rename `.env.example` to `.env`
+Set up yourself environment variables:
+```ini
+DATABASE_URL=file://${absPathToPWD}/database/sqlite/dash.db
+```
+
+## Usage
+
+### Development
+
+Start watch ts changes:
+```
+yarn ts
+```
+
+Start server:
+```
+yarn dev
+```
+
+##### Types
+
+
+| GraphQL types |
+|--|
+Types for GraphQL Schema created automatically with package `@graphql-codegen`. When changed src/graphql/Schema.ts. To create types into src/types/graphql/index.d.ts run `yarn codegen` or simple run `gulp` and generated file will be changed everytime when `Schema.ts` saved. |
+
+#### Highlight syntax
+
+For highlight specified syntax need install vscode extensions:
+```
+dbaeumer.vscode-eslint
+graphql.vscode-graphql
+esbenp.prettier-vscode
+prisma/prisma
+```
+
+### Production 
+
+| Attention! |
+|--|
+Only `Linux` based OS support |
+
+#### Build and start
+
+Build typescript:
+```
+yarn build
+```
+
+Run server in `screen`:
+```
+yarn prod
+```
+
+| Or |
+|--|
+Run build and prod commands: `yarn deploy` |
+
+#### Additions
+
+Show actual log:
+```
+yarn logs
+```
+
+Focus `screen`:
+```
+yarn focus
+``` 
+
+# TODOS
 
 
 - basic backend server
