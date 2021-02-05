@@ -14,3 +14,5 @@ node_modules
 # Local database file
 database/sqlite/*
 !database/sqlite/SQLITE.md
+
+package-lock.json
