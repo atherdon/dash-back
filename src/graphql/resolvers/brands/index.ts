@@ -2,5 +2,5 @@
  * Export namespace brands
  */
 
-export { default as getBrands } from './getBrands';
-export { default as postBrand } from './postBrand';
+export { default as getAll } from './getAll';
+export { default as postOne } from './postOne';

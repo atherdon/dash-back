@@ -4,6 +4,7 @@ dist
 # Logs files
 logs/*
 !logs/LOGS.md
+yarn-error.log
 
 # Dependencies
 node_modules

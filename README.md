@@ -2,10 +2,30 @@
 
 Backed server for Dashboard with `GraphQL` language query and `SQLite` database.
 
-#### Extern links  
-[types](#types)
+#### Documents
+- [API documentation](./docs/API.md)
+- [Contributing information](./docs/CONTRIBUTING.md)
+- [Changelog](./docs/CHANGELOG.md)
 
-# Usage instruction
+#### Menu
+- [Requirements](#requirements)  
+- - [System](#system)
+- - [Node](#node)
+- [Installation](#installation)
+- [Usage](#usage)
+- - [Development](#development)
+- - - [Migration](#migration-on-development)
+- - - [Types](#types)
+- - - [IDE settings](#ide-settings)
+- - - [Debug](#debug)
+- - [Production](#production)
+- - - [Build and start](#build-and-start)
+- - - [Migration](#migration-on-production)
+- - - [Test](#test)
+- - - [Additions](#additions)
+- [Todos](#todos)  
+
+# Package instruction
 
 ## Requirements
 
@@ -50,10 +70,12 @@ git clone https://github.com/atherdon/dash-back
 cd dash-back
 yarn install
 ```
-Rename `.env.example` to `.env`
-Set up yourself environment variables:
+Rename [.env.example](./.env.example) to `.env` and set up your environment variables:
 ```ini
+# Database url (need change ${absPathToPWD} to /abs/path/to/project)
 DATABASE_URL=file://${absPathToPWD}/database/sqlite/dash.db
+# List of allowed origins, in NODE_ENV !== production that origin is '*' everytime
+CORS_ORIGIN=localhost,second.origin 
 ```
 
 ## Usage
@@ -70,14 +92,38 @@ Start server:
 yarn dev
 ```
 
-##### Types
+#### Migration on development
+
+Database migrations: [src/prisma/migrations](./src/prisma/migrations)  
+Database schema: [src/prisma/schema.prisma](./src/prisma/schema.prisma)
+
+Create new migration.
+__This command delete all data from database__:
+```
+yarn migrate:dev
+```
+
+
+Only delete data from database without create migration:
+```
+yarn migrate:reset
+```
+
+Get status of migrations:
+```
+yarn migrate:status
+```
+
+#### Types
 
 
 | GraphQL types |
 |--|
 Types for GraphQL Schema created automatically with package `@graphql-codegen`. When changed src/graphql/Schema.ts. To create types into src/types/graphql/index.d.ts run `yarn codegen` or simple run `gulp` and generated file will be changed everytime when `Schema.ts` saved. |
 
-#### Highlight syntax
+#### IDE settings
+
+Local settings for `vscode` in [.vscode/settings.json](./.vscode/settings.json)`
 
 For highlight specified syntax need install vscode extensions:
 ```
@@ -86,6 +132,12 @@ graphql.vscode-graphql
 esbenp.prettier-vscode
 prisma/prisma
 ```
+#### Debug
+To run server in debug console need set up file [.vscode/launch.json](./.vscode/launch.json)
+```json
+"runtimeExecutable": "~/.nvm/versions/node/v14.15.4/bin/node"
+```
+And run debug `F5`
 
 ### Production 
 
@@ -108,6 +160,28 @@ yarn prod
 | Or |
 |--|
 Run build and prod commands: `yarn deploy` |
+
+#### Migration on production
+
+Create database schemas from exists migrations:
+```
+yarn migrate
+```
+
+#### Test
+
+File 'postman.json' in [resources/postman](./resources/postman)
+
+Start without `screen` in development mode:
+```
+yarn start
+```
+
+Start with environment variable NODE_ENV=test (in this case in result of requests added variable 'stdErrMessage'):
+```
+yarn prod:test
+```
+_Before this command do not forgot_ `yarn build`
 
 #### Additions
 

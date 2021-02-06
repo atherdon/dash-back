@@ -8,10 +8,10 @@ import * as resolvers from './resolvers';
 
 const Resolvers = {
   Query: {
-    getBrands: resolvers.brands.getBrands,
+    getBrands: resolvers.brands.getAll,
   },
   Mutation: {
-    postBrand: resolvers.brands.postBrand,
+    postBrand: resolvers.brands.postOne,
   },
 };
 
