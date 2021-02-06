@@ -1,0 +1,14 @@
+{
+  "telemetry.enableTelemetry": false,
+  "eslint.validate": ["javascript"],
+  "eslint.options": { "configFile": ".eslintrc.js" },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vscode-graphql.useSchemaFileDefinition": true,
+  "files.associations": {
+    ".env": "ini",
+    ".env.example": "ini"
+  }
+}

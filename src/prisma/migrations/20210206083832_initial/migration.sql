@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "Brand" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "url" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "created" DATETIME DEFAULT CURRENT_TIMESTAMP,
+    "updated" DATETIME DEFAULT CURRENT_TIMESTAMP,
+    "avgTimeStory" DECIMAL DEFAULT 0,
+    "avgAllTimeStory" DECIMAL DEFAULT 0
+);
