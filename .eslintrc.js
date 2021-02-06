@@ -18,10 +18,11 @@ module.exports = {
         "@typescript-eslint",
         "prettier"
     ],
-    "ignorePatterns": ["src/types/generated/graphql.d.ts", "gulpfile.js"],
+    "ignorePatterns": ["src/types/graphql/index.d.ts", "gulpfile.js"],
     "rules": {
         "prettier/prettier": 1,
         "@typescript-eslint/no-unused-vars": 1,
-        "prefer-const": 1
+        "prefer-const": 1,
+        "@typescript-eslint/ban-ts-comment" : 0
     }
 };

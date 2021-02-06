@@ -1,6 +1,6 @@
 {
   "name": "dash-back",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Dashboard backend",
   "main": "dist/index.js",
   "repository": "https://github.com/atherdon/dash-back",
@@ -8,27 +8,34 @@
   "license": "MIT",
   "private": false,
   "prisma": {
-    "schema": "src/orm/schema.prisma"
+    "schema": "src/prisma/schema.prisma"
   },
   "scripts": {
     "ts": "tsc -p . -w",
     "build": "tsc -p .",
-    "dev": "nodemon ${npm_package_main}",
-    "start": "node ${npm_package_main}",
-    "prod": "echo logfile $(pwd)/logs/${npm_package_name}-${npm_package_version}.log > ~/.screenrc && screen -dmS you -L yarn start",
+    "dev": "NODE_ENV=development nodemon ${npm_package_main}",
+    "start": "NODE_ENV=development node ${npm_package_main}",
+    "start:test": "NODE_ENV=test node ${npm_package_main}",
+    "start:prod": "NODE_ENV=production node ${npm_package_main}",
+    "predeploy": "echo logfile $(pwd)/logs/${npm_package_name}-${npm_package_version}.log > ~/.screenrc",
+    "screen": "screen -dmS ${npm_package_name} -L yarn start:prod",
+    "screen:test": "screen -dmS ${npm_package_name} -L yarn start:test",
+    "prod": "yarn predeploy && yarn screen",
+    "prod:test": "yarn predeploy && yarn screen:test",
     "deploy": "yarn build && yarn prod",
     "logs": "cat $(pwd)/logs/${npm_package_name}-${npm_package_version}.log",
     "focus": "screen -x ${npm_package_name}",
     "codegen": "graphql-codegen --config codegen.yml",
     "migrate:dev": "prisma migrate dev --preview-feature",
+    "migrate": "prisma migrate deploy --preview-feature",
     "migrate:reset": "prisma migrate reset --preview-feature",
-    "migrate:deploy": "prisma migrate deploy --preview-feature",
     "migrate:status": "prisma migrate status --preview-feature"
-
   },
   "dependencies": {
     "@prisma/client": "^2.16.0",
-    "apollo-server-express": "^2.19.2"
+    "apollo-server-express": "^2.19.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.20.1",
@@ -36,11 +43,7 @@
     "@graphql-codegen/typescript": "1.20.2",
     "@graphql-codegen/typescript-document-nodes": "1.17.9",
     "@graphql-codegen/typescript-resolvers": "1.18.1",
-    "@typescript-eslint/eslint-plugin": "4.14.2",
-    "@typescript-eslint/parser": "4.14.2",
-    "eslint": "7.19.0",
-    "eslint-config-prettier": "7.2.0",
-    "eslint-plugin-prettier": "3.3.1",
+    "@types/node": "^14.14.25",
     "gulp": "4.0.2",
     "prettier": "2.2.1",
     "prettierrc": "0.0.0",

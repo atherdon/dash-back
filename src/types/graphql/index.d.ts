@@ -17,12 +17,6 @@ export type Scalars = {
 };
 
 
-export enum Result {
-  Error = 'error',
-  Warning = 'warning',
-  Success = 'success'
-}
-
 export type Brand = {
   __typename?: 'Brand';
   id?: Maybe<Scalars['Int']>;
@@ -34,9 +28,22 @@ export type Brand = {
   avgAllTimeStory?: Maybe<Scalars['Float']>;
 };
 
+export type WrongParam = {
+  __typename?: 'WrongParam';
+  name: Scalars['String'];
+  required: Scalars['String'];
+  received: Scalars['String'];
+};
+
 export type Response = {
   __typename?: 'Response';
+  status: Scalars['String'];
+  message: Scalars['String'];
+  httpCode: Scalars['Int'];
+  stdErrorMessage?: Maybe<Scalars['String']>;
+  wrongParameter?: Maybe<WrongParam>;
   brand?: Maybe<Brand>;
+  brands?: Maybe<Array<Maybe<Brand>>>;
 };
 
 export type ParamsBrand = {
@@ -46,7 +53,7 @@ export type ParamsBrand = {
 
 export type Query = {
   __typename?: 'Query';
-  getBrands?: Maybe<Array<Maybe<Brand>>>;
+  getBrands: Response;
 };
 
 export type Mutation = {
@@ -143,11 +150,11 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Result: Result;
   Brand: ResolverTypeWrapper<Brand>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Float: ResolverTypeWrapper<Scalars['Float']>;
+  WrongParam: ResolverTypeWrapper<WrongParam>;
   Response: ResolverTypeWrapper<Response>;
   ParamsBrand: ParamsBrand;
   Query: ResolverTypeWrapper<{}>;
@@ -163,6 +170,7 @@ export type ResolversParentTypes = {
   Int: Scalars['Int'];
   String: Scalars['String'];
   Float: Scalars['Float'];
+  WrongParam: WrongParam;
   Response: Response;
   ParamsBrand: ParamsBrand;
   Query: {};
@@ -187,13 +195,26 @@ export type BrandResolvers<ContextType = any, ParentType extends ResolversParent
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type WrongParamResolvers<ContextType = any, ParentType extends ResolversParentTypes['WrongParam'] = ResolversParentTypes['WrongParam']> = {
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  required?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  received?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type ResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['Response'] = ResolversParentTypes['Response']> = {
+  status?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  httpCode?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  stdErrorMessage?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  wrongParameter?: Resolver<Maybe<ResolversTypes['WrongParam']>, ParentType, ContextType>;
   brand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType>;
+  brands?: Resolver<Maybe<Array<Maybe<ResolversTypes['Brand']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  getBrands?: Resolver<Maybe<Array<Maybe<ResolversTypes['Brand']>>>, ParentType, ContextType>;
+  getBrands?: Resolver<ResolversTypes['Response'], ParentType, ContextType>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
@@ -206,6 +227,7 @@ export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTyp
 
 export type Resolvers<ContextType = any> = {
   Brand?: BrandResolvers<ContextType>;
+  WrongParam?: WrongParamResolvers<ContextType>;
   Response?: ResponseResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;

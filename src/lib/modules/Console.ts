@@ -59,8 +59,8 @@ const Console: Console = {
   error: (message, err, stdErr) => {
     const date = Console.getDate();
     console.error(
-      `[${date}] <ERROR> ${Yellow}${message}`,
-      `${Bright}Message: ${Red}${err.message}${Reset}`,
+      `[${date}] <ERROR> ${Yellow}${message}. `,
+      `${Reset}Message: ${Red}${err.message}${Reset}`,
       stdErr.stack,
       `${Dim}Module answer: ${Reset}`,
       err.stack
