@@ -7,6 +7,10 @@
 
 ## Changes by version 
 
+- ### version 2.0.0-07.02.2021
+
+The `checkGraphQLParams` middleware was removed from the project because it was not suitable for handling nested types. Its completion under the current project was not justified for financial reasons. However, if its relevance is studied and proven, it will be possible to write an open source library in the future.
+
 - ### version 1.0.0-06.02.2021
 
 ### #Code review request:

@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "7326479e-7b75-4f19-8b45-be2279a3ebca",
+		"name": "DashBack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "brand",
+			"item": [
+				{
+					"name": "Get many",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    getManyBrand {\n        status\n        message\n        brands {\n            id\n            created\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($data: PostOneBrandParams!) {\n    postOneBrand(data: $data) {\n        status\n        message\n        stdErrorMessage\n        brand {\n            id\n            created\n        }\n    }\n}",
+								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"email\": \"dasd\"\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query($where: GetOneBrandParams!) {\n    getOneBrand(where: $where) {\n        status\n        message\n        stdErrorMessage\n        brand {\n            id\n            url\n            created\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 2\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneBrandParams!, $data: UpdateOneBrandParams!) {\n    updateOneBrand(where: $where, data: $data) {\n        status\n        message\n        stdErrorMessage\n        brand {\n            id\n            created\n            url\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 2\n    },\n    \"data\": {\n        \"url\": \"updatsed url\"\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneBrandParams!) {\n    deleteOneBrand(where: $where) {\n        status\n        message\n        stdErrorMessage\n        httpCode\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 2\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "author",
+			"item": [
+				{
+					"name": "Get many",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    getManyAuthor {\n        status\n        message\n        authors {\n            id\n            created\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($data: PostOneAuthorParams!) {\n    postOneAuthor(data: $data) {\n        status\n        message\n        stdErrorMessage\n        author {\n            id\n            created\n        }\n    }\n}",
+								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"email\": \"dasd\"\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query($where: GetOneAuthorParams!) {\n    getOneAuthor(where: $where) {\n        status\n        message\n        stdErrorMessage\n        author {\n            id\n            url\n            created\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneAuthorParams!, $data: UpdateOneAuthorParams!) {\n    updateOneAuthor(where: $where, data: $data) {\n        status\n        message\n        stdErrorMessage\n        author {\n            id\n            created\n            url\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    },\n    \"data\": {\n        \"url\": \"updatsed url\"\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneAuthorParams!) {\n    deleteOneAuthor(where: $where) {\n        status\n        message\n        stdErrorMessage\n        httpCode\n        author {\n            id\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "editor",
+			"item": [
+				{
+					"name": "Get many",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    getManyEditor {\n        status\n        message\n        editors {\n            id\n            created\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($data: PostOneEditorParams!) {\n    postOneEditor(data: $data) {\n        status\n        message\n        stdErrorMessage\n        editor {\n            id\n            created\n        }\n    }\n}",
+								"variables": "{\n    \"data\": {\n        \"name\": \"dasd\"\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query($where: GetOneEditorParams!) {\n    getOneEditor(where: $where) {\n        status\n        message\n        stdErrorMessage\n        editor {\n            id\n            name\n            created\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneEditorParams!, $data: UpdateOneEditorParams!) {\n    updateOneEditor(where: $where, data: $data) {\n        status\n        message\n        stdErrorMessage\n        editor {\n            id\n            created\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    },\n    \"data\": {\n        \"name\": \"updatsed url\"\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneEditorParams!) {\n    deleteOneEditor(where: $where) {\n        status\n        message\n        stdErrorMessage\n        httpCode\n        editor {\n            id\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
