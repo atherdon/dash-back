@@ -2,7 +2,7 @@
  * Type of example resolver file
  */
 import type * as T from '../../../types';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Brand } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
 import * as lib from '../../../lib';
 
@@ -12,20 +12,20 @@ const prisma = new PrismaClient();
 // Define handler with any specific name
 
 /**
- * Create one brand
- * @param params [GraphQL.MutationPostBrandArgs]
+ * Post one brand
+ * @param brand [GraphQL.Brand]
  * @return "brand" [GraphQL.Brand]
  */
-const postBrand: T.Resolver<GraphQL.MutationPostBrandArgs, GraphQL.Response> = async (
+const postOneBrand: T.Resolver<GraphQL.MutationPostOneBrandArgs, GraphQL.Response> = async (
   _,
   params
 ) => {
   // Get params
-  const { email, url } = params.brand;
+  const { email, url } = params.data;
   // Catch database error
-  let brand;
+  let result: Brand;
   try {
-    brand = await prisma.brand.create({
+    result = await prisma.brand.create({
       data: {
         email,
         url,
@@ -48,16 +48,16 @@ const postBrand: T.Resolver<GraphQL.MutationPostBrandArgs, GraphQL.Response> = a
     message: 'Brand created',
     httpCode: 201,
     brand: {
-      id: brand.id,
-      url: brand.url,
-      email: brand.email,
-      avgTimeStory: brand.avgAllTimeStory,
-      avgAllTimeStory: brand.avgAllTimeStory,
-      created: brand.created?.toISOString(),
-      updated: brand.updated?.toISOString(),
+      id: result.id,
+      url: result.url,
+      email: result.email,
+      avgTimeStory: result.avgAllTimeStory || 0,
+      avgAllTimeStory: result.avgAllTimeStory || 0,
+      created: result.created?.toISOString() || '',
+      updated: result.updated?.toISOString() || '',
     },
   };
 };
 
 // Export by default
-export default postBrand;
+export default postOneBrand;
