@@ -5,6 +5,10 @@ export type Env = {
   CORS_ORIGIN: string;
 };
 
+export type Info = {
+  onlyCheck: boolean;
+};
+
 export interface Resolver<T, U> {
   (parent: any, params: T, context: any, info: any): Promise<U>;
 }

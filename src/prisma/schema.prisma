@@ -6,7 +6,7 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
-// Dependendency 'graphql/Schema.ts'{Brand}
+// Have no direct dependendencies 'graphql/Schema.ts'{SameName}
 model Brand {
   id  Int @id @default(autoincrement())
   url String
@@ -15,4 +15,28 @@ model Brand {
   updated  DateTime? @default(now())
   avgTimeStory  Float? @default(0)
   avgAllTimeStory Float? @default(0)
+}
+model Author {
+  id  Int @id @default(autoincrement())
+  url String
+  email String
+  isPublished Boolean? @default(false)
+  created  DateTime? @default(now())
+  edited  DateTime? @default(now())
+  updated  DateTime? @default(now())
+  published  DateTime? @default(now())
+  avgTimeStory  Float? @default(0)
+  avgAllTimeStory Float? @default(0)
+}
+model Editor {
+  id  Int @id @default(autoincrement())
+  name String
+  edited  Int? @default(0)
+  editedPercent Float? @default(0)
+  published Int? @default(0)
+  publishedPercent Float? @default(0)
+  rejected Int? @default(0)
+  rejectedPercent Float? @default(0)
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
 }

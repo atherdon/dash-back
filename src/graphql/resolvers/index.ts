@@ -3,4 +3,6 @@
  * specified namespaces from ./resolvers
  */
 
-export * as brands from './brands';
+export * as brand from './brand';
+export * as author from './author';
+export * as editor from './editor';

@@ -2,17 +2,15 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-dotenv.config();
 import Schema from './graphql/Schema';
+dotenv.config();
 import Resolvers from './graphql/Resolvers';
 import * as lib from './lib';
 import * as T from './types';
-import * as mids from './middlewares';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const env: any = process.env;
 const { CORS_ORIGIN }: T.Env = env;
-
 /**
  * GraphQL server port
  * Dependency: schema [codegen.yml]
@@ -34,8 +32,6 @@ const server = new ApolloServer({
 const app = express();
 // Enable body parser
 app.use(server.graphqlPath, bodyParser.json({ limit: '1mb' }));
-// Check parameters middleware
-app.use(mids.checkGraphQLParams);
 
 server.applyMiddleware({
   app,
