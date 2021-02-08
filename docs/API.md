@@ -34,9 +34,9 @@ By default server listen on: `http://localhost:4000/graphql`
 
 Examples of request place in Postman_collection files from dir `resources/postman`.
 ### Schema
-GraphQL schema: [src/graphql/Schema.ts](./src/graphql/Schema.ts)  
+GraphQL schema: [../src/graphql/Schema.ts](./src/graphql/Schema.ts)  
 
-Types of schema: [src/types/graphql/index.d.ts](./src/types/graphql/index.d.ts)
+Types of schema: [../src/types/graphql/index.d.ts](./src/types/graphql/index.d.ts)
 
 All requests return the type `Response`:
 ```typescript
