@@ -15,7 +15,7 @@ The `checkGraphQLParams` middleware was removed from the project because it was 
 
 ### #Code review request:
 
-Added express middleware [src/middlewares/checkGraphQLParams.ts](../src/middlewares/checkGraphQLParams.ts) which check all request parameters, compare their with GraphQL Schema and if error return formatted error.
+Added express middleware [src/middlewares/checkGraphQLParams.ts](https://github.com/atherdon/dash-back/blob/861223748fcf0d967fc1d0eee32aa117148c5abf/src/middlewares/checkGraphQLParams.ts) which check all request parameters, compare their with GraphQL Schema and if error return formatted error.
 If is use standart GraphQL error formatter, then on error in development mode will be:
 ```json
 {
