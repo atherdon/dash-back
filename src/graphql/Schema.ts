@@ -38,23 +38,6 @@ const Schema = gql`
     created: String!
     updated: String!
   }
-  # All returned types must have in Response
-  type Response {
-    # Required fields on all response result
-    status: String!
-    message: String!
-    httpCode: Int!
-    # Optional fields
-    # Standart error in development mode
-    stdErrorMessage: String
-    # Fields of custom objects
-    brand: Brand
-    brands: [Brand]
-    author: Author
-    authors: [Author]
-    editor: Editor
-    editors: [Editor]
-  }
   # Inputs as requests parameters
   ## Brand
   input PostOneBrandParams {
@@ -105,27 +88,27 @@ const Schema = gql`
   }
   type Query {
     # Get many
-    getManyBrand: Response!
-    getManyAuthor: Response!
-    getManyEditor: Response!
+    getManyBrand: [Brand]!
+    getManyAuthor: [Author]!
+    getManyEditor: [Editor]!
     # Get one
-    getOneBrand(where: GetOneBrandParams!): Response!
-    getOneAuthor(where: GetOneAuthorParams!): Response!
-    getOneEditor(where: GetOneEditorParams!): Response!
+    getOneBrand(where: GetOneBrandParams!): Brand
+    getOneAuthor(where: GetOneAuthorParams!): Author
+    getOneEditor(where: GetOneEditorParams!): Editor
   }
   type Mutation {
     # Post one
-    postOneBrand(data: PostOneBrandParams!): Response!
-    postOneAuthor(data: PostOneAuthorParams!): Response!
-    postOneEditor(data: PostOneEditorParams!): Response!
+    postOneBrand(data: PostOneBrandParams!): Brand
+    postOneAuthor(data: PostOneAuthorParams!): Author
+    postOneEditor(data: PostOneEditorParams!): Editor
     # Update one
-    updateOneBrand(where: GetOneBrandParams!, data: UpdateOneBrandParams!): Response!
-    updateOneAuthor(where: GetOneAuthorParams!, data: UpdateOneAuthorParams!): Response!
-    updateOneEditor(where: GetOneEditorParams!, data: UpdateOneEditorParams!): Response!
+    updateOneBrand(where: GetOneBrandParams!, data: UpdateOneBrandParams!): Brand
+    updateOneAuthor(where: GetOneAuthorParams!, data: UpdateOneAuthorParams!): Author
+    updateOneEditor(where: GetOneEditorParams!, data: UpdateOneEditorParams!): Editor
     # Delete one
-    deleteOneBrand(where: GetOneBrandParams!): Response!
-    deleteOneAuthor(where: GetOneAuthorParams!): Response!
-    deleteOneEditor(where: GetOneEditorParams!): Response!
+    deleteOneBrand(where: GetOneBrandParams!): Brand
+    deleteOneAuthor(where: GetOneAuthorParams!): Author
+    deleteOneEditor(where: GetOneEditorParams!): Editor
   }
 `;
 

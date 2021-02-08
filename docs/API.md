@@ -34,43 +34,28 @@ By default server listen on: `http://localhost:4000/graphql`
 
 Examples of request place in Postman_collection files from dir `resources/postman`.
 ### Schema
-GraphQL schema: [src/graphql/Schema.ts](./src/graphql/Schema.ts)  
+GraphQL schema: [../src/graphql/Schema.ts](./src/graphql/Schema.ts)  
 
-Types of schema: [src/types/graphql/index.d.ts](./src/types/graphql/index.d.ts)
-
-All requests return the type `Response`:
-```typescript
-
-// Response type
-type Response = {
-  __typename?: 'Response';
-  status: Scalars['String']; // status ['error', 'warning', 'success']
-  message: Scalars['String']; // message of request result
-  stdErrorMessage?: Maybe<Scalars['String']>; // standart error message: (NODE_ENV === production ? "" : {string}) | {null}
-  httpCode: Scalars['Int']; // Number of http response code
-  brand?: Maybe<Brand>; // one of @return "brand" objects
-  ...
-};
-```
+Types of schema: [../src/types/graphql/index.d.ts](./src/types/graphql/index.d.ts)
 
 #### Brand
 ##### Get many brands
 ```
-@param void
+@param - [void]
 
-@return — "brands" [GraphQL.Brands]
+@return — [GraphQL.Brand[]]
 ```
 ##### Get one brand
 ```
 @param where — [GraphQL.GetOneBrandParams]
 
-@return — "brand" [GraphQL.Brand]
+@return — [GraphQL.Brand]
 ```
 ##### Post one brand
 ```
 @param data — [GraphQL.Brand]
 
-@return — "brand" [GraphQL.Brand]
+@return — [GraphQL.Brand]
 ```
 
 ##### Update one brand
@@ -79,7 +64,7 @@ type Response = {
 
 @param data — [GraphQL.UpdateOneBrandParams]
 
-@return — "brand" [GraphQL.Brand]
+@return — [GraphQL.Brand]
 ```
 ##### Delete one brand
 ```
@@ -87,26 +72,26 @@ type Response = {
 
 @param data — [GraphQL.UpdateOneBrandParams]
 
-@return — "brand" [GraphQL.Brand]
+@return - [GraphQL.Brand]
 ```
 ### Author
 ##### Get many authors
 ```
-@param void
+@param - [void]
 
-@return — "authors" [GraphQL.Authors]
+@return — [GraphQL.Author[]]
 ```
 ##### Get one author
 ```
 @param where — [GraphQL.GetOneAuthorParams]
 
-@return — "author" [GraphQL.Author]
+@return — [GraphQL.Author]
 ```
 ##### Post one author
 ```
 @param data — [GraphQL.Author]
 
-@return — "author" [GraphQL.Author]
+@return — [GraphQL.Author]
 ```
 
 ##### Update one author
@@ -115,7 +100,7 @@ type Response = {
 
 @param data — [GraphQL.UpdateOneAuthorParams]
 
-@return — "author" [GraphQL.Brand]
+@return — [GraphQL.Author]
 ```
 ##### Delete one author
 ```
@@ -123,26 +108,26 @@ type Response = {
 
 @param data — [GraphQL.UpdateOneAuthorParams]
 
-@return — "author" [GraphQL.Author]
+@return — [GraphQL.Author]
 ```
 ### Editor
 ##### Get many editors
 ```
-@param void
+@param - [void]
 
-@return — "editors" [GraphQL.Editors]
+@return — [GraphQL.Editor[]]
 ```
 ##### Get one editor
 ```
 @param where — [GraphQL.GetOneEditorParams]
 
-@return — "editor" [GraphQL.Editor]
+@return — [GraphQL.Editor]
 ```
 ##### Post one editor
 ```
 @param data — [GraphQL.Editor]
 
-@return — "editor" [GraphQL.Editor]
+@return — [GraphQL.Editor]
 ```
 
 ##### Update one editor
@@ -151,7 +136,7 @@ type Response = {
 
 @param data — [GraphQL.UpdateOneEditorParams]
 
-@return — "editor" [GraphQL.Editor]
+@return — [GraphQL.Editor]
 ```
 ##### Delete one editor
 ```
@@ -159,5 +144,5 @@ type Response = {
 
 @param data — [GraphQL.UpdateOneEditorParams]
 
-@return — "editor" [GraphQL.Editor]
+@return — [GraphQL.Editor]
 ```

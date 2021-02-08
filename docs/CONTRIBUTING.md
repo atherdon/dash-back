@@ -69,30 +69,18 @@ import { PrismaClient, Brand } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// Update brand
-  let newBrand: Brand | null;
+// Get author
+  let result: Author | null;
   try {
-    newBrand = await prisma.brand.update({
+    result = await prisma.author.findFirst({
       where,
-      data: {
-        url: brand.url || undefined,
-        email: brand.email || undefined,
-        avgTimeStory: brand.avgTimeStory || undefined,
-        avgAllTimeStory: brand.avgAllTimeStory || undefined,
-      },
     });
   } catch (e) {
-    const errMess = 'Error update brand';
-    lib.Console.error(errMess, e, new Error());
-    // Return error result
-    return {
-      status: lib.ERROR,
-      message: errMess,
-      stdErrorMessage: lib.isDev() ? e.message : '',
-      httpCode: 500,
-    };
+    // Write log
+    lib.Console.error('Error get author', e, new Error());
+    return null;
   }
-  // ... use newBrand
+  // ... use result
 ```
 #### Types prisma
 Exported from `@prisma/client`

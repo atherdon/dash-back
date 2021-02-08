@@ -8,12 +8,11 @@ const prisma = new PrismaClient();
 /**
  * Get one author
  * @param where [GraphQL.GetOneAuthorParams]
- * @return "author" [GraphQL.Author]
+ * @return [GraphQL.Author]
  */
-const getOneAuthor: T.Resolver<GraphQL.QueryGetOneAuthorArgs, GraphQL.Response> = async (
+const getOneAuthor: T.Resolver<GraphQL.QueryGetOneAuthorArgs, GraphQL.Author | null> = async (
   _parent,
-  params,
-  info: T.Info
+  params
 ) => {
   const { where } = params;
   let result: Author | null;
@@ -22,41 +21,23 @@ const getOneAuthor: T.Resolver<GraphQL.QueryGetOneAuthorArgs, GraphQL.Response> 
       where,
     });
   } catch (e) {
-    const errMess = 'Error get author';
-    lib.Console.error(errMess, e, new Error());
-    // Return error result
-    return {
-      status: lib.ERROR,
-      message: errMess,
-      stdErrorMessage: lib.isDev() ? e.message : '',
-      httpCode: 500,
-    };
+    lib.Console.error('Error get author', e, new Error());
+    return null;
   }
   if (result === null) {
-    return {
-      status: lib.WARNING,
-      message: 'Author not found',
-      httpCode: 404,
-    };
+    return result;
   }
   return {
-    status: lib.SUCCESS,
-    message: 'Author received',
-    httpCode: 200,
-    author: info.onlyCheck
-      ? undefined
-      : {
-          id: result.id,
-          url: result.url,
-          email: result.email,
-          isPublished: result.isPublished || false,
-          avgTimeStory: result.avgAllTimeStory || 0,
-          avgAllTimeStory: result.avgAllTimeStory || 0,
-          created: result.created?.toISOString() || '',
-          edited: result.edited?.toISOString() || '',
-          updated: result.updated?.toISOString() || '',
-          published: result.published?.toISOString() || '',
-        },
+    id: result.id,
+    url: result.url,
+    email: result.email,
+    isPublished: result.isPublished || false,
+    avgTimeStory: result.avgAllTimeStory || 0,
+    avgAllTimeStory: result.avgAllTimeStory || 0,
+    created: result.created?.toISOString() || '',
+    edited: result.edited?.toISOString() || '',
+    updated: result.updated?.toISOString() || '',
+    published: result.published?.toISOString() || '',
   };
 };
 

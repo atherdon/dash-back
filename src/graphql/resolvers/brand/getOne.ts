@@ -8,9 +8,9 @@ const prisma = new PrismaClient();
 /**
  * Get one brand
  * @param where [GraphQL.GetOneBrandParams]
- * @return "brand" [GraphQL.Brand]
+ * @return [GraphQL.Brand]
  */
-const getOneBrand: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.Response> = async (
+const getOneBrand: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.Brand | null> = async (
   _parent,
   params,
   info: T.Info
@@ -24,36 +24,19 @@ const getOneBrand: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.Response> = 
   } catch (e) {
     const errMess = 'Error get brand';
     lib.Console.error(errMess, e, new Error());
-    // Return error result
-    return {
-      status: lib.ERROR,
-      message: errMess,
-      stdErrorMessage: lib.isDev() ? e.message : '',
-      httpCode: 500,
-    };
+    return null;
   }
   if (result === null) {
-    return {
-      status: lib.WARNING,
-      message: 'Brand not found',
-      httpCode: 404,
-    };
+    return result;
   }
   return {
-    status: lib.SUCCESS,
-    message: 'Brand received',
-    httpCode: 200,
-    brand: info.onlyCheck
-      ? undefined
-      : {
-          id: result.id,
-          url: result.url,
-          email: result.email,
-          avgTimeStory: result.avgAllTimeStory || 0,
-          avgAllTimeStory: result.avgAllTimeStory || 0,
-          created: result.created?.toISOString() || '',
-          updated: result.updated?.toISOString() || '',
-        },
+    id: result.id,
+    url: result.url,
+    email: result.email,
+    avgTimeStory: result.avgAllTimeStory || 0,
+    avgAllTimeStory: result.avgAllTimeStory || 0,
+    created: result.created?.toISOString() || '',
+    updated: result.updated?.toISOString() || '',
   };
 };
 

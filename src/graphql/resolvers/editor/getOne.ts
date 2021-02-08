@@ -8,12 +8,11 @@ const prisma = new PrismaClient();
 /**
  * Get one editor
  * @param where [GraphQL.GetOneEditorParams]
- * @return "editor" [GraphQL.Editor]
+ * @return [GraphQL.Editor]
  */
-const getOneEditor: T.Resolver<GraphQL.QueryGetOneEditorArgs, GraphQL.Response> = async (
+const getOneEditor: T.Resolver<GraphQL.QueryGetOneEditorArgs, GraphQL.Editor | null> = async (
   _parent,
-  params,
-  info: T.Info
+  params
 ) => {
   const { where } = params;
   let result: Editor | null;
@@ -24,39 +23,22 @@ const getOneEditor: T.Resolver<GraphQL.QueryGetOneEditorArgs, GraphQL.Response> 
   } catch (e) {
     const errMess = 'Error get editor';
     lib.Console.error(errMess, e, new Error());
-    // Return error result
-    return {
-      status: lib.ERROR,
-      message: errMess,
-      stdErrorMessage: lib.isDev() ? e.message : '',
-      httpCode: 500,
-    };
+    return null;
   }
   if (result === null) {
-    return {
-      status: lib.WARNING,
-      message: 'Editor not found',
-      httpCode: 404,
-    };
+    return result;
   }
   return {
-    status: lib.SUCCESS,
-    message: 'Editor received',
-    httpCode: 200,
-    editor: info.onlyCheck
-      ? undefined
-      : {
-          id: result.id,
-          name: result.name,
-          edited: result.edited || 0,
-          editedPercent: result.editedPercent || 0,
-          published: result.published || 0,
-          publishedPercent: result.publishedPercent || 0,
-          rejected: result.rejectedPercent || 0,
-          rejectedPercent: result.rejectedPercent || 0,
-          created: result.created?.toISOString() || '',
-          updated: result.updated?.toISOString() || '',
-        },
+    id: result.id,
+    name: result.name,
+    edited: result.edited || 0,
+    editedPercent: result.editedPercent || 0,
+    published: result.published || 0,
+    publishedPercent: result.publishedPercent || 0,
+    rejected: result.rejectedPercent || 0,
+    rejectedPercent: result.rejectedPercent || 0,
+    created: result.created?.toISOString() || '',
+    updated: result.updated?.toISOString() || '',
   };
 };
 
