@@ -7,6 +7,10 @@
 
 ## Changes by version 
 
+- ### version 3.0.0-08.02.2021
+
+Remove type `Response` from handle all requests.
+
 - ### version 2.0.0-07.02.2021
 
 The `checkGraphQLParams` middleware was removed from the project because it was not suitable for handling nested types. Its completion under the current project was not justified for financial reasons. However, if its relevance is studied and proven, it will be possible to write an open source library in the future.
@@ -15,7 +19,7 @@ The `checkGraphQLParams` middleware was removed from the project because it was 
 
 ### #Code review request:
 
-Added express middleware [src/middlewares/checkGraphQLParams.ts](../src/middlewares/checkGraphQLParams.ts) which check all request parameters, compare their with GraphQL Schema and if error return formatted error.
+Added express middleware [src/middlewares/checkGraphQLParams.ts](https://github.com/atherdon/dash-back/blob/861223748fcf0d967fc1d0eee32aa117148c5abf/src/middlewares/checkGraphQLParams.ts) which check all request parameters, compare their with GraphQL Schema and if error return formatted error.
 If is use standart GraphQL error formatter, then on error in development mode will be:
 ```json
 {
