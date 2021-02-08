@@ -56,20 +56,6 @@ export type Editor = {
   updated: Scalars['String'];
 };
 
-export type Response = {
-  __typename?: 'Response';
-  status: Scalars['String'];
-  message: Scalars['String'];
-  httpCode: Scalars['Int'];
-  stdErrorMessage?: Maybe<Scalars['String']>;
-  brand?: Maybe<Brand>;
-  brands?: Maybe<Array<Maybe<Brand>>>;
-  author?: Maybe<Author>;
-  authors?: Maybe<Array<Maybe<Author>>>;
-  editor?: Maybe<Editor>;
-  editors?: Maybe<Array<Maybe<Editor>>>;
-};
-
 export type PostOneBrandParams = {
   url: Scalars['String'];
   email: Scalars['String'];
@@ -125,12 +111,12 @@ export type UpdateOneEditorParams = {
 
 export type Query = {
   __typename?: 'Query';
-  getManyBrand: Response;
-  getManyAuthor: Response;
-  getManyEditor: Response;
-  getOneBrand: Response;
-  getOneAuthor: Response;
-  getOneEditor: Response;
+  getManyBrand: Array<Maybe<Brand>>;
+  getManyAuthor: Array<Maybe<Author>>;
+  getManyEditor: Array<Maybe<Editor>>;
+  getOneBrand?: Maybe<Brand>;
+  getOneAuthor?: Maybe<Author>;
+  getOneEditor?: Maybe<Editor>;
 };
 
 
@@ -150,15 +136,15 @@ export type QueryGetOneEditorArgs = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  postOneBrand: Response;
-  postOneAuthor: Response;
-  postOneEditor: Response;
-  updateOneBrand: Response;
-  updateOneAuthor: Response;
-  updateOneEditor: Response;
-  deleteOneBrand: Response;
-  deleteOneAuthor: Response;
-  deleteOneEditor: Response;
+  postOneBrand?: Maybe<Brand>;
+  postOneAuthor?: Maybe<Author>;
+  postOneEditor?: Maybe<Editor>;
+  updateOneBrand?: Maybe<Brand>;
+  updateOneAuthor?: Maybe<Author>;
+  updateOneEditor?: Maybe<Editor>;
+  deleteOneBrand?: Maybe<Brand>;
+  deleteOneAuthor?: Maybe<Author>;
+  deleteOneEditor?: Maybe<Editor>;
 };
 
 
@@ -300,7 +286,6 @@ export type ResolversTypes = {
   Author: ResolverTypeWrapper<Author>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Editor: ResolverTypeWrapper<Editor>;
-  Response: ResolverTypeWrapper<Response>;
   PostOneBrandParams: PostOneBrandParams;
   GetOneBrandParams: GetOneBrandParams;
   UpdateOneBrandParams: UpdateOneBrandParams;
@@ -325,7 +310,6 @@ export type ResolversParentTypes = {
   Author: Author;
   Boolean: Scalars['Boolean'];
   Editor: Editor;
-  Response: Response;
   PostOneBrandParams: PostOneBrandParams;
   GetOneBrandParams: GetOneBrandParams;
   UpdateOneBrandParams: UpdateOneBrandParams;
@@ -384,39 +368,25 @@ export type EditorResolvers<ContextType = any, ParentType extends ResolversParen
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['Response'] = ResolversParentTypes['Response']> = {
-  status?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  httpCode?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  stdErrorMessage?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  brand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType>;
-  brands?: Resolver<Maybe<Array<Maybe<ResolversTypes['Brand']>>>, ParentType, ContextType>;
-  author?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType>;
-  authors?: Resolver<Maybe<Array<Maybe<ResolversTypes['Author']>>>, ParentType, ContextType>;
-  editor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType>;
-  editors?: Resolver<Maybe<Array<Maybe<ResolversTypes['Editor']>>>, ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  getManyBrand?: Resolver<ResolversTypes['Response'], ParentType, ContextType>;
-  getManyAuthor?: Resolver<ResolversTypes['Response'], ParentType, ContextType>;
-  getManyEditor?: Resolver<ResolversTypes['Response'], ParentType, ContextType>;
-  getOneBrand?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<QueryGetOneBrandArgs, 'where'>>;
-  getOneAuthor?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<QueryGetOneAuthorArgs, 'where'>>;
-  getOneEditor?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<QueryGetOneEditorArgs, 'where'>>;
+  getManyBrand?: Resolver<Array<Maybe<ResolversTypes['Brand']>>, ParentType, ContextType>;
+  getManyAuthor?: Resolver<Array<Maybe<ResolversTypes['Author']>>, ParentType, ContextType>;
+  getManyEditor?: Resolver<Array<Maybe<ResolversTypes['Editor']>>, ParentType, ContextType>;
+  getOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<QueryGetOneBrandArgs, 'where'>>;
+  getOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<QueryGetOneAuthorArgs, 'where'>>;
+  getOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<QueryGetOneEditorArgs, 'where'>>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  postOneBrand?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationPostOneBrandArgs, 'data'>>;
-  postOneAuthor?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationPostOneAuthorArgs, 'data'>>;
-  postOneEditor?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationPostOneEditorArgs, 'data'>>;
-  updateOneBrand?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationUpdateOneBrandArgs, 'where' | 'data'>>;
-  updateOneAuthor?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationUpdateOneAuthorArgs, 'where' | 'data'>>;
-  updateOneEditor?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationUpdateOneEditorArgs, 'where' | 'data'>>;
-  deleteOneBrand?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationDeleteOneBrandArgs, 'where'>>;
-  deleteOneAuthor?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationDeleteOneAuthorArgs, 'where'>>;
-  deleteOneEditor?: Resolver<ResolversTypes['Response'], ParentType, ContextType, RequireFields<MutationDeleteOneEditorArgs, 'where'>>;
+  postOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationPostOneBrandArgs, 'data'>>;
+  postOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationPostOneAuthorArgs, 'data'>>;
+  postOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationPostOneEditorArgs, 'data'>>;
+  updateOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationUpdateOneBrandArgs, 'where' | 'data'>>;
+  updateOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationUpdateOneAuthorArgs, 'where' | 'data'>>;
+  updateOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationUpdateOneEditorArgs, 'where' | 'data'>>;
+  deleteOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationDeleteOneBrandArgs, 'where'>>;
+  deleteOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationDeleteOneAuthorArgs, 'where'>>;
+  deleteOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationDeleteOneEditorArgs, 'where'>>;
 };
 
 export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {
@@ -427,7 +397,6 @@ export type Resolvers<ContextType = any> = {
   Brand?: BrandResolvers<ContextType>;
   Author?: AuthorResolvers<ContextType>;
   Editor?: EditorResolvers<ContextType>;
-  Response?: ResponseResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Upload?: GraphQLScalarType;

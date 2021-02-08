@@ -7,46 +7,28 @@ const prisma = new PrismaClient();
 
 /**
  * Get many brands
- * @return "brands" [GraphQL.Brands]
+ * @return [GraphQL.Brand[]]
  */
-const getManyBrand: T.Resolver<void, GraphQL.Response> = async () => {
+const getManyBrand: T.Resolver<void, GraphQL.Brand[]> = async () => {
   let result: Brand[];
   try {
     result = await prisma.brand.findMany();
   } catch (e) {
     const errMess = 'Error get brands';
     lib.Console.error(errMess, e, new Error());
-    // Return error result
-    return {
-      status: lib.ERROR,
-      message: errMess,
-      stdErrorMessage: lib.isDev() ? e.message : '',
-      httpCode: 500,
-    };
+    return [];
   }
-  if (result.length === 0) {
+  return result.map((result) => {
     return {
-      status: lib.WARNING,
-      message: 'Brands not found',
-      httpCode: 404,
+      id: result.id,
+      url: result.url,
+      email: result.email,
+      avgTimeStory: result.avgAllTimeStory || 0,
+      avgAllTimeStory: result.avgAllTimeStory || 0,
+      created: result.created?.toISOString() || '',
+      updated: result.updated?.toISOString() || '',
     };
-  }
-  return {
-    status: lib.SUCCESS,
-    message: 'Brands received',
-    httpCode: 200,
-    brands: result.map((result) => {
-      return {
-        id: result.id,
-        url: result.url,
-        email: result.email,
-        avgTimeStory: result.avgAllTimeStory || 0,
-        avgAllTimeStory: result.avgAllTimeStory || 0,
-        created: result.created?.toISOString() || '',
-        updated: result.updated?.toISOString() || '',
-      };
-    }),
-  };
+  });
 };
 
 export default getManyBrand;
