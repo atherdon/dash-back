@@ -7,9 +7,13 @@
 
 ## Changes by version 
 
+- ### version 3.1.0-09.02.2021
+
+Removed catching errors of `prisma` from all resolvers
+
 - ### version 3.0.0-08.02.2021
 
-Remove type `Response` from handle all requests.
+Removed type `Response` from handle all requests.
 
 - ### version 2.0.0-07.02.2021
 

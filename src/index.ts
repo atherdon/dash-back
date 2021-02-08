@@ -25,7 +25,7 @@ const server = new ApolloServer({
     return {
       status: 'error',
       message: 'Something went wrong',
-      stdErrMessage: e.message,
+      stdErrMessage: lib.isDev() ? e.message : 'Standard error is not available in production',
     };
   },
 });

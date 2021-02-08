@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Author } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -10,14 +9,7 @@ const prisma = new PrismaClient();
  * @return [GraphQL.Author[]]
  */
 const getManyAuthor: T.Resolver<void, GraphQL.Author[]> = async () => {
-  let result: Author[];
-  try {
-    result = await prisma.author.findMany();
-  } catch (e) {
-    const errMess = 'Error get authors';
-    lib.Console.error(errMess, e, new Error());
-    return [];
-  }
+  const result = await prisma.author.findMany();
   return result.map((result) => {
     return {
       id: result.id,

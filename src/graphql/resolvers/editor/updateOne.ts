@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Editor } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -16,26 +15,19 @@ const updateOneBrand: T.Resolver<
   GraphQL.Editor | null
 > = async (_parent, params) => {
   const { where, data } = params;
-  let result: Editor | null;
-  try {
-    result = await prisma.editor.update({
-      where,
-      data: {
-        name: data.name || undefined,
-        edited: data.edited || undefined,
-        editedPercent: data.editedPercent || undefined,
-        published: data.published || undefined,
-        publishedPercent: data.publishedPercent || undefined,
-        rejected: data.rejected || undefined,
-        rejectedPercent: data.rejectedPercent || undefined,
-        updated: new Date(),
-      },
-    });
-  } catch (e) {
-    const errMess = 'Error update editor';
-    lib.Console.error(errMess, e, new Error());
-    return null;
-  }
+  const result = await prisma.editor.update({
+    where,
+    data: {
+      name: data.name || undefined,
+      edited: data.edited || undefined,
+      editedPercent: data.editedPercent || undefined,
+      published: data.published || undefined,
+      publishedPercent: data.publishedPercent || undefined,
+      rejected: data.rejected || undefined,
+      rejectedPercent: data.rejectedPercent || undefined,
+      updated: new Date(),
+    },
+  });
   return {
     id: result.id,
     name: result.name,

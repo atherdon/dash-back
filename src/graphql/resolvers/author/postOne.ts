@@ -2,9 +2,8 @@
  * Type of example resolver file
  */
 import type * as T from '../../../types';
-import { PrismaClient, Author } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -20,19 +19,12 @@ const postOneAuthor: T.Resolver<GraphQL.MutationPostOneAuthorArgs, GraphQL.Autho
   params
 ) => {
   const { email, url } = params.data;
-  let result: Author;
-  try {
-    result = await prisma.author.create({
-      data: {
-        email,
-        url,
-      },
-    });
-  } catch (e) {
-    const errMess = 'Error create author';
-    lib.Console.error(errMess, e, new Error());
-    return null;
-  }
+  const result = await prisma.author.create({
+    data: {
+      email,
+      url,
+    },
+  });
   return {
     id: result.id,
     url: result.url,
