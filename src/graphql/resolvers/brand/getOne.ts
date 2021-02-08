@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Brand } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -12,20 +11,12 @@ const prisma = new PrismaClient();
  */
 const getOneBrand: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.Brand | null> = async (
   _parent,
-  params,
-  info: T.Info
+  params
 ) => {
   const { where } = params;
-  let result: Brand | null;
-  try {
-    result = await prisma.brand.findFirst({
-      where,
-    });
-  } catch (e) {
-    const errMess = 'Error get brand';
-    lib.Console.error(errMess, e, new Error());
-    return null;
-  }
+  const result = await prisma.brand.findFirst({
+    where,
+  });
   if (result === null) {
     return result;
   }

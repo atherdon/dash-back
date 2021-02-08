@@ -17,22 +17,13 @@ const postOneBrand: T.Resolver<GraphQL.MutationPostOneBrandArgs, GraphQL.Brand |
   _,
   params
 ) => {
-  // Get params
   const { email, url } = params.data;
-  // Catch database error
-  let result: Brand;
-  try {
-    result = await prisma.brand.create({
-      data: {
-        email,
-        url,
-      },
-    });
-  } catch (e) {
-    const errMess = 'Error create brand';
-    lib.Console.error(errMess, e, new Error());
-    return null;
-  }
+  const result = await prisma.brand.create({
+    data: {
+      email,
+      url,
+    },
+  });
   return {
     id: result.id,
     url: result.url,

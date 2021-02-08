@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Author } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -15,15 +14,9 @@ const getOneAuthor: T.Resolver<GraphQL.QueryGetOneAuthorArgs, GraphQL.Author | n
   params
 ) => {
   const { where } = params;
-  let result: Author | null;
-  try {
-    result = await prisma.author.findFirst({
-      where,
-    });
-  } catch (e) {
-    lib.Console.error('Error get author', e, new Error());
-    return null;
-  }
+  const result = await prisma.author.findFirst({
+    where,
+  });
   if (result === null) {
     return result;
   }

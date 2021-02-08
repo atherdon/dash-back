@@ -62,25 +62,16 @@ yarn migrate:dev
 Prisma is very easy to use. Just import `PrismaClient` from the `prisma` library. We create an object `prisma` (preferably outside the request processing method). Also from the library we import the type of the circuit created in [Schema](#schema-prisma). Next, we use Prisma API for database queries.
 Example: 
 ```typescript
-/*
-  An example is given right away with catching a possible error 
-*/
 import { PrismaClient, Brand } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// Get author
-  let result: Author | null;
-  try {
-    result = await prisma.author.findFirst({
-      where,
-    });
-  } catch (e) {
-    // Write log
-    lib.Console.error('Error get author', e, new Error());
-    return null;
-  }
-  // ... use result
+const result = await prisma.brand.create({
+    data: {
+      email,
+      url,
+    },
+  });
 ```
 #### Types prisma
 Exported from `@prisma/client`

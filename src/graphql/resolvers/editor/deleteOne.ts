@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Editor } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -16,16 +15,9 @@ const deleteOneEditor: T.Resolver<
   GraphQL.Editor | null
 > = async (_parent, params) => {
   const { where } = params;
-  let result: Editor | null;
-  try {
-    result = await prisma.editor.delete({
-      where,
-    });
-  } catch (e) {
-    const errMess = 'Error delete editor';
-    lib.Console.error(errMess, e, new Error());
-    return null;
-  }
+  const result = await prisma.editor.delete({
+    where,
+  });
   return {
     id: result.id,
     name: result.name,

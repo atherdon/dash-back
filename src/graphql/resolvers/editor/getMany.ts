@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Editor } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -10,14 +9,7 @@ const prisma = new PrismaClient();
  * @return [GraphQL.Editor[]]
  */
 const getManyEditor: T.Resolver<void, GraphQL.Editor[]> = async () => {
-  let result: Editor[];
-  try {
-    result = await prisma.editor.findMany();
-  } catch (e) {
-    const errMess = 'Error get editors';
-    lib.Console.error(errMess, e, new Error());
-    return [];
-  }
+  const result = await prisma.editor.findMany();
   return result.map((result) => {
     return {
       id: result.id,
