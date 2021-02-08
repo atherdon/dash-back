@@ -2,9 +2,8 @@
  * Type of example resolver file
  */
 import type * as T from '../../../types';
-import { PrismaClient, Editor } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -18,18 +17,11 @@ const postOneEditor: T.Resolver<GraphQL.MutationPostOneEditorArgs, GraphQL.Edito
   params
 ) => {
   const { data } = params;
-  let result: Editor;
-  try {
-    result = await prisma.editor.create({
-      data: {
-        name: data.name,
-      },
-    });
-  } catch (e) {
-    const errMess = 'Error create editor';
-    lib.Console.error(errMess, e, new Error());
-    return null;
-  }
+  const result = await prisma.editor.create({
+    data: {
+      name: data.name,
+    },
+  });
   return {
     id: result.id,
     name: result.name,

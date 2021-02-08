@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Author } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -16,25 +15,18 @@ const updateOneAuthor: T.Resolver<
   GraphQL.Author | null
 > = async (_parent, params) => {
   const { where, data } = params;
-  let result: Author | null;
-  try {
-    result = await prisma.author.update({
-      where,
-      data: {
-        url: data.url || undefined,
-        email: data.email || undefined,
-        avgTimeStory: data.avgTimeStory || undefined,
-        avgAllTimeStory: data.avgAllTimeStory || undefined,
-        edited: data.edited || undefined,
-        published: data.published || undefined,
-        updated: new Date(),
-      },
-    });
-  } catch (e) {
-    const errMess = 'Error update author';
-    lib.Console.error(errMess, e, new Error());
-    return null;
-  }
+  const result = await prisma.author.update({
+    where,
+    data: {
+      url: data.url || undefined,
+      email: data.email || undefined,
+      avgTimeStory: data.avgTimeStory || undefined,
+      avgAllTimeStory: data.avgAllTimeStory || undefined,
+      edited: data.edited || undefined,
+      published: data.published || undefined,
+      updated: new Date(),
+    },
+  });
   return {
     id: result.id,
     url: result.url,

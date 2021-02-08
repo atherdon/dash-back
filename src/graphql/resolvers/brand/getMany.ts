@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Brand } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -10,14 +9,7 @@ const prisma = new PrismaClient();
  * @return [GraphQL.Brand[]]
  */
 const getManyBrand: T.Resolver<void, GraphQL.Brand[]> = async () => {
-  let result: Brand[];
-  try {
-    result = await prisma.brand.findMany();
-  } catch (e) {
-    const errMess = 'Error get brands';
-    lib.Console.error(errMess, e, new Error());
-    return [];
-  }
+  const result = await prisma.brand.findMany();
   return result.map((result) => {
     return {
       id: result.id,

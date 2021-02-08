@@ -1,7 +1,6 @@
 import * as T from '../../../types';
-import { PrismaClient, Brand } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
@@ -16,16 +15,9 @@ const deleteOneBrand: T.Resolver<GraphQL.MutationDeleteOneBrandArgs, GraphQL.Bra
   params
 ) => {
   const { where } = params;
-  let result: Brand | null;
-  try {
-    result = await prisma.brand.delete({
-      where,
-    });
-  } catch (e) {
-    const errMess = 'Error delete brand';
-    lib.Console.error(errMess, e, new Error());
-    return null;
-  }
+  const result = await prisma.brand.delete({
+    where,
+  });
   return {
     id: result.id,
     url: result.url,
