@@ -45,7 +45,7 @@ Each subdirectory have index file which exported all self resolvers.
 2. Get example code from one of old Resolver file, create new resolver. Make target Resolver name, for example in file `user/postOne` use `postOneUser` method name for fast understanding.
 3. Export new Resolver from resolver subdirectory index file. 
 4. Create GraphQl Schema in [graphql/Schema.ts](../src/graphql/Schema.ts) (add `query` or `mutation` type). Name of resolver field need will be identity with resolver method name (optional). Do not forget check or add optional method type in type Response (`# Fields of custom objects`)! Property prefix with `*s` at the end if need return a list of existed type.
-5. Import and add the Resolver in [graphql/Resolvers.ts](../src/graphql/Resolvers.ts).
+5. Import and add the Resolver in [graphql/Resolvers.ts](../src/graphql/Resolver.ts).
 6. Change Resolver file with custom Schema types. 
 7. Create request in `Postman.json` collection and test Resolver.
 8. Add anotation in source and API documentation in [docs/API.md](./API.md).
@@ -87,7 +87,7 @@ If not added the resolver:
 ```
 Cannot return null for non-nullable field Mutation.postOneEditor
 ```
-No changed namespace in [graphql/Resolvers.ts](../src/graphql/Resolvers.ts):
+No changed namespace in [graphql/Resolvers.ts](../src/graphql/Resolver.ts):
 ```
 Invalid `prisma.author.create()` invocation:\n\n{\n  data:
 ```

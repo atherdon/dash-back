@@ -7,6 +7,10 @@
 
 ## Changes by version 
 
+- ### version 3.1.1-10.02.2021
+
+Renamed `src/graphql/Resolvers.ts` to `src/graphql/Resolver.ts`
+
 - ### version 3.1.0-09.02.2021
 
 Removed catching errors of `prisma` from all resolvers
