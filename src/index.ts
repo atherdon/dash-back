@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import Schema from './graphql/Schema';
 dotenv.config();
-import Resolvers from './graphql/Resolvers';
+import Resolvers from './graphql/Resolver';
 import * as lib from './lib';
 import * as T from './types';
 
