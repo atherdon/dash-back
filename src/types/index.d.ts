@@ -3,6 +3,7 @@
 export type Env = {
   DATABASE_URL: string;
   CORS_ORIGIN: string;
+  TOKEN_KEY: string;
 };
 
 export type Info = {
@@ -19,4 +20,25 @@ export interface Response<T> {
   data: T;
 }
 
-export type Result = 'error' | 'warning' | 'success';
+export type HandleResult<T> = {
+  error: Error | null;
+  data: T | null;
+};
+
+export type JWT = {
+  id: number;
+  pass: string;
+};
+
+export type Status = 'error' | 'warning';
+
+export type ErrorsItem = {
+  code: number;
+  status: Result;
+  message: string;
+  stdErrMessage: string;
+};
+
+export type Errors = {
+  errors: ErrorsItem[];
+};

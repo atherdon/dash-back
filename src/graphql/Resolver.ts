@@ -13,11 +13,15 @@ const Resolvers = {
     getManyAuthor: resolvers.author.getMany,
     getManyEditor: resolvers.editor.getMany,
     // Get one
+    getOneUser: resolvers.user.getOne,
     getOneBrand: resolvers.brand.getOne,
     getOneAuthor: resolvers.author.getOne,
     getOneEditor: resolvers.editor.getOne,
   },
   Mutation: {
+    // User mutations
+    registration: resolvers.user.registration,
+    login: resolvers.user.login,
     // Post one
     postOneBrand: resolvers.brand.postOne,
     postOneAuthor: resolvers.author.postOne,

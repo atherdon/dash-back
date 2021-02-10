@@ -1,10 +1,6 @@
-/**
- * Type of example resolver file
- */
 import type * as T from '../../../types';
-import { PrismaClient, Brand } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';
-import * as lib from '../../../lib';
 
 const prisma = new PrismaClient();
 
