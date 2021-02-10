@@ -6,3 +6,4 @@
 export * as brand from './brand';
 export * as author from './author';
 export * as editor from './editor';
+export * as user from './user';

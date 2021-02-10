@@ -33,7 +33,8 @@ interface Console {
    * @param err {string}
    * @param stdErr {string}
    */
-  error: (message: string, err: Error, stdErr: Error) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  error: (message: string, err: Error, stdErr: Error, context?: any) => void;
   getDate: () => string;
 }
 
@@ -56,14 +57,16 @@ const Console: Console = {
     const date = Console.getDate();
     console.info(`[${date}] <WARNING> ${Yellow}${message}${Reset}`);
   },
-  error: (message, err, stdErr) => {
+  error: (message, err, stdErr, context = {}) => {
     const date = Console.getDate();
     console.error(
       `[${date}] <ERROR> ${Yellow}${message}. `,
       `${Reset}Message: ${Red}${err.message}${Reset}`,
       stdErr.stack,
       `${Dim}Module answer: ${Reset}`,
-      err.stack
+      err.stack,
+      `${Dim}Context: ${Reset}`,
+      context
     );
   },
 };

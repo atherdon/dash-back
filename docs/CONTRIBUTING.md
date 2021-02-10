@@ -23,7 +23,6 @@
 - [Data](#data)
 - [Important](#important)
 
-// TODO
 ## Architecture
 Projects settings: [.env](../.env)
 ### Server runtime

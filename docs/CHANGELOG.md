@@ -7,6 +7,28 @@
 
 ## Changes by version 
 
+- ### version 3.2.0-10.02.2021
+
+Added Registration and Login routes
+
+Changed one error type:
+```typescript
+export type Status = 'error' | 'warning';
+
+export type ErrorsItem = {
+  code: number;
+  status: Result;
+  message: string;
+  stdErrMessage: string;
+};
+
+export type Errors = {
+  errors: ErrorsItem[];
+};
+```
+TODO:
+Added authorization middleware. But due to limitations `GraphQL`, it was not possible to fully implement it, so it needs to be redone. 
+
 - ### version 3.1.1-10.02.2021
 
 Renamed `src/graphql/Resolvers.ts` to `src/graphql/Resolver.ts`

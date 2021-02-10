@@ -156,12 +156,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
+							"raw": "https://dash-back.uyem.ru/graphql",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"dash-back",
+								"uyem",
+								"ru"
 							],
-							"port": "4000",
 							"path": [
 								"graphql"
 							]
@@ -230,7 +231,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation($where: GetOneAuthorParams!, $data: UpdateOneAuthorParams!) {\n    updateOneAuthor(where: $where, data: $data) {\n        id\n        created\n        url\n    }\n}",
-								"variables": "{\n    \"where\": {\n        \"id\": 1\n    },\n    \"data\": {\n        \"url\": \"updatsed url\"\n    }\n}"
+								"variables": "{\n    \"where\": {\n        \"id\": 12\n    },\n    \"data\": {\n        \"url\": \"updatsed url\"\n    }\n}"
 							}
 						},
 						"url": {
@@ -392,6 +393,95 @@
 							"graphql": {
 								"query": "mutation($where: GetOneEditorParams!) {\n    deleteOneEditor(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($data: RegistrationParams!) {\n    registration(data: $data) {\n        id\n        name\n        email\n        password\n    }\n}",
+								"variables": "{\n    \"data\": {\n        \"email\": \"da2wssdsasd@das.sd\",\n        \"password\": \"ddddddd\",\n        \"passwordRepeat\": \"ddddddd\",\n        \"name\": \"da\"\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($data: LoginParams!) {\n    login(data: $data) {\n        token\n        id\n    }\n}",
+								"variables": "{\n    \"data\": {\n        \"email\": \"da2wssdsasd@das.sd\",\n        \"password\": \"ddddddd\"\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicGFzcyI6IjJSREFvWmpQcGlpMlFKaHBYVjgwS2JaQTY0RlQvQnkiLCJpYXQiOjE2MTI5MjA4OTF9.SnnJ4A9r0Ca5kexO38BA8O9NnxFg3U6gwJO1LddMISE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query($where: GetOneUserParams!) {\n    getOneUser(where: $where) {\n        id\n        name\n        created\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 3\n    }\n}"
 							}
 						},
 						"url": {

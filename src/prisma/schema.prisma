@@ -7,6 +7,16 @@ generator client {
   provider = "prisma-client-js"
 }
 // Have no direct dependendencies 'graphql/Schema.ts'{SameName}
+model User {
+  id  Int @id @default(autoincrement())
+  email String
+  password String
+  name String?
+  role Int? @default(0)
+  lastLogin  DateTime?
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
 model Brand {
   id  Int @id @default(autoincrement())
   url String
