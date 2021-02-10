@@ -5,6 +5,19 @@ const Schema = gql`
   # Schemas
   # Have no direct dependendencies with 'orm/schema.prisma' [SameName]
   #
+  type User @cacheControl(maxAge: 1000) {
+    id: Int!
+    email: String!
+    name: String!
+    password: String!
+    role: Int!
+    lastLogin: String!
+    created: String!
+    updated: String!
+    ### Only graphql types
+    token: String
+    refreshToken: String
+  }
   type Brand @cacheControl(maxAge: 1000) {
     id: Int!
     url: String!
@@ -39,6 +52,26 @@ const Schema = gql`
     updated: String!
   }
   # Inputs as requests parameters
+  ## User
+  input RegistrationParams {
+    name: String
+    password: String!
+    passwordRepeat: String!
+    email: String!
+  }
+  input LoginParams {
+    email: String!
+    password: String!
+  }
+  input GetOneUserParams {
+    id: Int!
+  }
+  input UpdateOneUserParams {
+    name: String
+    email: String
+    role: String
+    password: String
+  }
   ## Brand
   input PostOneBrandParams {
     url: String!
@@ -92,11 +125,15 @@ const Schema = gql`
     getManyAuthor: [Author]!
     getManyEditor: [Editor]!
     # Get one
+    getOneUser(where: GetOneUserParams!): User
     getOneBrand(where: GetOneBrandParams!): Brand
     getOneAuthor(where: GetOneAuthorParams!): Author
     getOneEditor(where: GetOneEditorParams!): Editor
   }
   type Mutation {
+    # User mutations
+    registration(data: RegistrationParams!): User
+    login(data: LoginParams!): User
     # Post one
     postOneBrand(data: PostOneBrandParams!): Brand
     postOneAuthor(data: PostOneAuthorParams!): Author

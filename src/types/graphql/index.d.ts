@@ -17,6 +17,20 @@ export type Scalars = {
 };
 
 
+export type User = {
+  __typename?: 'User';
+  id: Scalars['Int'];
+  email: Scalars['String'];
+  name: Scalars['String'];
+  password: Scalars['String'];
+  role: Scalars['Int'];
+  lastLogin: Scalars['String'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+  token?: Maybe<Scalars['String']>;
+  refreshToken?: Maybe<Scalars['String']>;
+};
+
 export type Brand = {
   __typename?: 'Brand';
   id: Scalars['Int'];
@@ -54,6 +68,29 @@ export type Editor = {
   rejectedPercent: Scalars['Float'];
   created: Scalars['String'];
   updated: Scalars['String'];
+};
+
+export type RegistrationParams = {
+  name?: Maybe<Scalars['String']>;
+  password: Scalars['String'];
+  passwordRepeat: Scalars['String'];
+  email: Scalars['String'];
+};
+
+export type LoginParams = {
+  email: Scalars['String'];
+  password: Scalars['String'];
+};
+
+export type GetOneUserParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneUserParams = {
+  name?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  role?: Maybe<Scalars['String']>;
+  password?: Maybe<Scalars['String']>;
 };
 
 export type PostOneBrandParams = {
@@ -114,9 +151,15 @@ export type Query = {
   getManyBrand: Array<Maybe<Brand>>;
   getManyAuthor: Array<Maybe<Author>>;
   getManyEditor: Array<Maybe<Editor>>;
+  getOneUser?: Maybe<User>;
   getOneBrand?: Maybe<Brand>;
   getOneAuthor?: Maybe<Author>;
   getOneEditor?: Maybe<Editor>;
+};
+
+
+export type QueryGetOneUserArgs = {
+  where: GetOneUserParams;
 };
 
 
@@ -136,6 +179,8 @@ export type QueryGetOneEditorArgs = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  registration?: Maybe<User>;
+  login?: Maybe<User>;
   postOneBrand?: Maybe<Brand>;
   postOneAuthor?: Maybe<Author>;
   postOneEditor?: Maybe<Editor>;
@@ -145,6 +190,16 @@ export type Mutation = {
   deleteOneBrand?: Maybe<Brand>;
   deleteOneAuthor?: Maybe<Author>;
   deleteOneEditor?: Maybe<Editor>;
+};
+
+
+export type MutationRegistrationArgs = {
+  data: RegistrationParams;
+};
+
+
+export type MutationLoginArgs = {
+  data: LoginParams;
 };
 
 
@@ -279,13 +334,18 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Brand: ResolverTypeWrapper<Brand>;
+  User: ResolverTypeWrapper<User>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Brand: ResolverTypeWrapper<Brand>;
   Float: ResolverTypeWrapper<Scalars['Float']>;
   Author: ResolverTypeWrapper<Author>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Editor: ResolverTypeWrapper<Editor>;
+  RegistrationParams: RegistrationParams;
+  LoginParams: LoginParams;
+  GetOneUserParams: GetOneUserParams;
+  UpdateOneUserParams: UpdateOneUserParams;
   PostOneBrandParams: PostOneBrandParams;
   GetOneBrandParams: GetOneBrandParams;
   UpdateOneBrandParams: UpdateOneBrandParams;
@@ -303,13 +363,18 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Brand: Brand;
+  User: User;
   Int: Scalars['Int'];
   String: Scalars['String'];
+  Brand: Brand;
   Float: Scalars['Float'];
   Author: Author;
   Boolean: Scalars['Boolean'];
   Editor: Editor;
+  RegistrationParams: RegistrationParams;
+  LoginParams: LoginParams;
+  GetOneUserParams: GetOneUserParams;
+  UpdateOneUserParams: UpdateOneUserParams;
   PostOneBrandParams: PostOneBrandParams;
   GetOneBrandParams: GetOneBrandParams;
   UpdateOneBrandParams: UpdateOneBrandParams;
@@ -328,6 +393,20 @@ export type CacheControlDirectiveArgs = {   maxAge?: Maybe<Scalars['Int']>;
   scope?: Maybe<CacheControlScope>; };
 
 export type CacheControlDirectiveResolver<Result, Parent, ContextType = any, Args = CacheControlDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+
+export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  password?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  role?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  lastLogin?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  refreshToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
 export type BrandResolvers<ContextType = any, ParentType extends ResolversParentTypes['Brand'] = ResolversParentTypes['Brand']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
@@ -372,12 +451,15 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   getManyBrand?: Resolver<Array<Maybe<ResolversTypes['Brand']>>, ParentType, ContextType>;
   getManyAuthor?: Resolver<Array<Maybe<ResolversTypes['Author']>>, ParentType, ContextType>;
   getManyEditor?: Resolver<Array<Maybe<ResolversTypes['Editor']>>, ParentType, ContextType>;
+  getOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryGetOneUserArgs, 'where'>>;
   getOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<QueryGetOneBrandArgs, 'where'>>;
   getOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<QueryGetOneAuthorArgs, 'where'>>;
   getOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<QueryGetOneEditorArgs, 'where'>>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  registration?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationRegistrationArgs, 'data'>>;
+  login?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'data'>>;
   postOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationPostOneBrandArgs, 'data'>>;
   postOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationPostOneAuthorArgs, 'data'>>;
   postOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationPostOneEditorArgs, 'data'>>;
@@ -394,6 +476,7 @@ export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTyp
 }
 
 export type Resolvers<ContextType = any> = {
+  User?: UserResolvers<ContextType>;
   Brand?: BrandResolvers<ContextType>;
   Author?: AuthorResolvers<ContextType>;
   Editor?: EditorResolvers<ContextType>;

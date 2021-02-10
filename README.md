@@ -75,7 +75,9 @@ Rename [.env.example](./.env.example) to `.env` and set up your environment vari
 # Database url (need change ${absPathToPWD} to /abs/path/to/project)
 DATABASE_URL=file://${absPathToPWD}/database/sqlite/dash.db
 # List of allowed origins, in NODE_ENV !== production that origin is '*' everytime
-CORS_ORIGIN=localhost,second.origin 
+CORS_ORIGIN=localhost,second.origin
+# JWT token secret key
+TOKEN_KEY=QpLwz7AqqUg0GU6VHLO31aR8zqoeMiJiYXIiLCJpY
 ```
 
 ## Usage
