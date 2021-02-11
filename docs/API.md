@@ -29,6 +29,9 @@
 - - [User](#user)
 - - - [Registration](#registration)
 - - - [Login](#login)
+- - - [Get one](#get-one-user)
+- - - [Update one](#update-one-user)
+- - - [Delete one](#delete-one-user)
 
 ### Introduction
 "Dash back" server use GraphQL query language schema.  
@@ -73,8 +76,6 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 ```
 @param where — [GraphQL.GetOneBrandParams]
 
-@param data — [GraphQL.UpdateOneBrandParams]
-
 @return - [GraphQL.Brand]
 ```
 ### Author
@@ -108,8 +109,6 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 ##### Delete one author
 ```
 @param where — [GraphQL.GetOneAuthorParams]
-
-@param data — [GraphQL.UpdateOneAuthorParams]
 
 @return — [GraphQL.Author]
 ```
@@ -145,8 +144,6 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 ```
 @param where — [GraphQL.GetOneEditorParams]
 
-@param data — [GraphQL.UpdateOneEditorParams]
-
 @return — [GraphQL.Editor]
 ```
 
@@ -160,6 +157,32 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 ##### Login
 ```
 @param data — [GraphQL.LoginParams]
+
+@return — [GraphQL.User]
+```
+##### Get one user
+```
+Authorization: true
+
+@param where — [GraphQL.GetOneUserParams]
+
+@return — [GraphQL.User]
+```
+##### Update one user
+```
+Authorization: true;
+
+@param where — [GraphQL.GetOneUserParams]
+
+@param data — [GraphQL.UpdateOneUserParams]
+
+@return — [GraphQL.User]
+```
+##### Delete one user
+```
+Authorization: true;
+
+@param where — [GraphQL.GetOneUserParams]
 
 @return — [GraphQL.User]
 ```

@@ -20,23 +20,38 @@ const postOneUser: T.Resolver<GraphQL.MutationRegistrationArgs, GraphQL.User | n
   const { email, password, passwordRepeat, name } = params.data;
   // Check email is valid
   if (!lib.checkEmail(email)) {
-    new lib.ErrorHandler(`Email '${email}' is not valid`, 400);
+    new lib.ErrorHandler(`Email '${email}' is not valid`, 400, `Email regex: ${lib.emailRegex}`);
   }
   // Check user is exists
   const user = await prisma.user.findFirst({
     where: { email },
   });
   if (user !== null) {
-    new lib.ErrorHandler(`Email '${email}' was registered earlier`, 400);
+    new lib.ErrorHandler(
+      `Email '${email}' was registered earlier`,
+      400,
+      `Registered user id: ${user.id}`
+    );
   }
   // Check password length
   const minPasswordLength = 6;
-  if (password.length < minPasswordLength) {
-    new lib.ErrorHandler(`Password length less than ${minPasswordLength} not accepted`, 400);
+  const passwordLength = password.length;
+  if (passwordLength < minPasswordLength) {
+    new lib.ErrorHandler(
+      `Password length less than ${minPasswordLength} not accepted`,
+      400,
+      `Received password lenght: ${passwordLength}`
+    );
+    return null;
   }
   // Check password repeat
   if (password !== passwordRepeat) {
-    throw new Error(JSON.stringify({ mess: 'Passwords do not match', code: 400 }));
+    new lib.ErrorHandler(
+      'Passwords do not match',
+      400,
+      `Password: ${password}. Password repeat: ${passwordRepeat}`
+    );
+    return null;
   }
   // Hashing password
   const errMess = 'Create password hash failed';
@@ -59,8 +74,7 @@ const postOneUser: T.Resolver<GraphQL.MutationRegistrationArgs, GraphQL.User | n
   });
   // Check error
   if (typeof passwordHash !== 'string') {
-    new lib.ErrorHandler(errMess, 500);
-    // Return null for typescript
+    new lib.ErrorHandler(errMess, 500, passwordHash.message);
     return null;
   }
   const result = await prisma.user.create({
