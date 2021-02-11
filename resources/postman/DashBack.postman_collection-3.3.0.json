@@ -423,7 +423,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation($data: RegistrationParams!) {\n    registration(data: $data) {\n        id\n        name\n        email\n        password\n    }\n}",
-								"variables": "{\n    \"data\": {\n        \"email\": \"da2wssdsasd@das.sd\",\n        \"password\": \"ddddddd\",\n        \"passwordRepeat\": \"ddddddd\",\n        \"name\": \"da\"\n    }\n}"
+								"variables": "{\n    \"data\": {\n        \"email\": \"da2wsswd@sasddas.sd\",\n        \"password\": \"ddddd\",\n        \"passwordRepeat\": \"ddddd\",\n        \"name\": \"da\"\n    }\n}"
 							}
 						},
 						"url": {
@@ -481,7 +481,71 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "query($where: GetOneUserParams!) {\n    getOneUser(where: $where) {\n        id\n        name\n        created\n    }\n}",
-								"variables": "{\n    \"where\": {\n        \"id\": 3\n    }\n}"
+								"variables": "{\n    \"where\": {\n        \"id\": 4\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicGFzcyI6IjJSREFvWmpQcGlpMlFKaHBYVjgwS2JaQTY0RlQvQnkiLCJpYXQiOjE2MTI5MjA4OTF9.SnnJ4A9r0Ca5kexO38BA8O9NnxFg3U6gwJO1LddMISE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneUserParams!, $data: UpdateOneUserParams!) {\n    updateOneUser(where: $where, data: $data) {\n        id\n        name\n        role\n        created\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 8\n    },\n    \"data\": {\n        \"name\": \"upsddatsed name\",\n        \"role\": 1\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInBhc3MiOiJHWEZDRHJNaWRNdUVJejIyZklid3IwZnVOWlRjUkdYIiwiaWF0IjoxNjEzMDEwMzkwfQ.hesEeD7sj7LHCo2Umbrd-7-oUE9Tn_qekdYjLF7Eylw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneUserParams!) {\n    deleteOneUser(where: $where) {\n        id\n        created\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 8\n    }\n}"
 							}
 						},
 						"url": {

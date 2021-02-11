@@ -7,6 +7,10 @@
 
 ## Changes by version 
 
+- ### version 3.3.0-11.02.2021
+
+Added authentification middleware hook [middlewares/hooks/withAuth.ts](../src/middlewares/hooks/withAuth.ts) 
+
 - ### version 3.2.0-10.02.2021
 
 Added Registration and Login routes

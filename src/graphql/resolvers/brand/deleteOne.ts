@@ -7,7 +7,6 @@ const prisma = new PrismaClient();
 /**
  * Delete one brand
  * @param where [GraphQL.GetOneBrandParams]
- * @param data [GraphQL.UpdateOneBrandParams]
  * @return [GraphQL.Brand]
  */
 const deleteOneBrand: T.Resolver<GraphQL.MutationDeleteOneBrandArgs, GraphQL.Brand | null> = async (

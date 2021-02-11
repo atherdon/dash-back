@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import Schema from './graphql/Schema';
 dotenv.config();
-import * as middlewares from './middlewares';
 import Resolvers from './graphql/Resolver';
 import * as lib from './lib';
 import * as T from './types';
@@ -28,6 +27,9 @@ const server = new ApolloServer({
   },
   // @ts-ignore
   formatError: (e) => {
+    if (lib.isDev()) {
+      console.error(e);
+    }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let messObj: any;
     // Get custom error object
@@ -36,16 +38,18 @@ const server = new ApolloServer({
     } catch (e) {
       messObj = e;
     }
-    const { code, status, message } = messObj;
+    const { code, status, errMess, stdMessage } = messObj;
     // Server error from resolver
     if (status && status !== 'warning') {
-      lib.Console.error(message || e.message, e, new Error('Server error'));
+      lib.Console.error(errMess || e.message, e, new Error('Server error'));
     }
+    let stdErrMessage = stdMessage ? stdMessage : e.message;
+    stdErrMessage = lib.isDev() ? stdErrMessage : 'Standard error is not available in production';
     const error: T.ErrorsItem = {
       code: code ? code : 502,
       status: status ? status : 'error',
-      message: message ? message : 'Something went wrong',
-      stdErrMessage: lib.isDev() ? e.message : 'Standard error is not available in production',
+      message: errMess ? errMess : 'Something went wrong',
+      stdErrMessage,
     };
     return error;
   },
@@ -53,8 +57,6 @@ const server = new ApolloServer({
 const app = express();
 // Enable body parser
 app.use(server.graphqlPath, bodyParser.json({ limit: '1mb' }));
-// Auth middleware
-app.use(server.graphqlPath, middlewares.auth);
 server.applyMiddleware({
   app,
   cors: { credentials: true, origin: lib.isDev() ? '*' : CORS_ORIGIN },

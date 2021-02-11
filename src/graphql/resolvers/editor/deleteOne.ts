@@ -7,7 +7,6 @@ const prisma = new PrismaClient();
 /**
  * Delete one editor
  * @param where [GraphQL.GetOneEditorParams]
- * @param data [GraphQL.UpdateOneBrandParams]
  * @return [GraphQL.Brand]
  */
 const deleteOneEditor: T.Resolver<

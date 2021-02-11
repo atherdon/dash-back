@@ -69,7 +69,7 @@ const Schema = gql`
   input UpdateOneUserParams {
     name: String
     email: String
-    role: String
+    role: Int
     password: String
   }
   ## Brand
@@ -131,7 +131,7 @@ const Schema = gql`
     getOneEditor(where: GetOneEditorParams!): Editor
   }
   type Mutation {
-    # User mutations
+    # Special user mutations
     registration(data: RegistrationParams!): User
     login(data: LoginParams!): User
     # Post one
@@ -139,10 +139,12 @@ const Schema = gql`
     postOneAuthor(data: PostOneAuthorParams!): Author
     postOneEditor(data: PostOneEditorParams!): Editor
     # Update one
+    updateOneUser(where: GetOneUserParams!, data: UpdateOneUserParams!): User
     updateOneBrand(where: GetOneBrandParams!, data: UpdateOneBrandParams!): Brand
     updateOneAuthor(where: GetOneAuthorParams!, data: UpdateOneAuthorParams!): Author
     updateOneEditor(where: GetOneEditorParams!, data: UpdateOneEditorParams!): Editor
     # Delete one
+    deleteOneUser(where: GetOneUserParams!): User
     deleteOneBrand(where: GetOneBrandParams!): Brand
     deleteOneAuthor(where: GetOneAuthorParams!): Author
     deleteOneEditor(where: GetOneEditorParams!): Editor

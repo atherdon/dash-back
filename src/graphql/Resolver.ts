@@ -5,6 +5,7 @@
  */
 
 import * as resolvers from './resolvers';
+import withAuth from '../middlewares/hooks/withAuth';
 
 const Resolvers = {
   Query: {
@@ -13,7 +14,14 @@ const Resolvers = {
     getManyAuthor: resolvers.author.getMany,
     getManyEditor: resolvers.editor.getMany,
     // Get one
-    getOneUser: resolvers.user.getOne,
+    getOneUser: withAuth(
+      {
+        minRole: 1,
+        roles: [0], // That will be ignored, because minRole is 1
+        selfSchema: 'user',
+      },
+      resolvers.user.getOne
+    ),
     getOneBrand: resolvers.brand.getOne,
     getOneAuthor: resolvers.author.getOne,
     getOneEditor: resolvers.editor.getOne,
@@ -30,7 +38,21 @@ const Resolvers = {
     updateOneBrand: resolvers.brand.updateOne,
     updateOneAuthor: resolvers.author.updateOne,
     updateOneEditor: resolvers.editor.updateOne,
+    updateOneUser: withAuth(
+      {
+        minRole: 1,
+        selfSchema: 'user',
+        nonRenewable: ['role'], // If set selfSchema and its resolved bud user role not resolved with minRole that this fields will be secure for change
+      },
+      resolvers.user.updateOne
+    ),
     // Delete one
+    deleteOneUser: withAuth(
+      {
+        minRole: 2,
+      },
+      resolvers.user.deleteOne
+    ),
     deleteOneBrand: resolvers.brand.deleteOne,
     deleteOneAuthor: resolvers.author.deleteOne,
     deleteOneEditor: resolvers.editor.deleteOne,

@@ -187,6 +187,11 @@ _Before this command do not forgot_ `yarn build`
 
 #### Additions
 
+Open database explorer
+```
+yarn studio
+```
+
 Show actual log:
 ```
 yarn logs
