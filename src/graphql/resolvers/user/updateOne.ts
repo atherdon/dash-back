@@ -5,22 +5,27 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Get one User
- * Authorization: true
+ * Update one user.
+ * Authorization: true;
  * @param where [GraphQL.GetOneUserParams]
+ * @param data [GraphQL.UpdateOneUserParams]
  * @return [GraphQL.User]
  */
-const getOneUser: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.User | null> = async (
+const updateOneUser: T.Resolver<GraphQL.MutationUpdateOneUserArgs, GraphQL.User | null> = async (
   _parent,
   params
 ) => {
-  const { where } = params;
-  const result = await prisma.user.findFirst({
+  const { where, data } = params;
+  const result = await prisma.user.update({
     where,
+    data: {
+      // Field 'email' is skiped for update
+      name: data.name || undefined,
+      role: data.role || 0,
+      password: data.password || undefined,
+      updated: new Date(),
+    },
   });
-  if (result === null) {
-    return result;
-  }
   return {
     id: result.id,
     name: result.name || 'No name',
@@ -33,4 +38,4 @@ const getOneUser: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.User | null> 
   };
 };
 
-export default getOneUser;
+export default updateOneUser;

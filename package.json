@@ -1,6 +1,6 @@
 {
   "name": "dash-back",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Dashboard backend",
   "main": "dist/index.js",
   "repository": "https://github.com/atherdon/dash-back",
@@ -29,7 +29,8 @@
     "migrate:dev": "prisma migrate dev --preview-feature",
     "migrate": "prisma migrate deploy --preview-feature",
     "migrate:reset": "prisma migrate reset --preview-feature",
-    "migrate:status": "prisma migrate status --preview-feature"
+    "migrate:status": "prisma migrate status --preview-feature",
+    "studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^2.16.0",

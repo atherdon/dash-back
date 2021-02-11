@@ -89,7 +89,7 @@ export type GetOneUserParams = {
 export type UpdateOneUserParams = {
   name?: Maybe<Scalars['String']>;
   email?: Maybe<Scalars['String']>;
-  role?: Maybe<Scalars['String']>;
+  role?: Maybe<Scalars['Int']>;
   password?: Maybe<Scalars['String']>;
 };
 
@@ -184,9 +184,11 @@ export type Mutation = {
   postOneBrand?: Maybe<Brand>;
   postOneAuthor?: Maybe<Author>;
   postOneEditor?: Maybe<Editor>;
+  updateOneUser?: Maybe<User>;
   updateOneBrand?: Maybe<Brand>;
   updateOneAuthor?: Maybe<Author>;
   updateOneEditor?: Maybe<Editor>;
+  deleteOneUser?: Maybe<User>;
   deleteOneBrand?: Maybe<Brand>;
   deleteOneAuthor?: Maybe<Author>;
   deleteOneEditor?: Maybe<Editor>;
@@ -218,6 +220,12 @@ export type MutationPostOneEditorArgs = {
 };
 
 
+export type MutationUpdateOneUserArgs = {
+  where: GetOneUserParams;
+  data: UpdateOneUserParams;
+};
+
+
 export type MutationUpdateOneBrandArgs = {
   where: GetOneBrandParams;
   data: UpdateOneBrandParams;
@@ -233,6 +241,11 @@ export type MutationUpdateOneAuthorArgs = {
 export type MutationUpdateOneEditorArgs = {
   where: GetOneEditorParams;
   data: UpdateOneEditorParams;
+};
+
+
+export type MutationDeleteOneUserArgs = {
+  where: GetOneUserParams;
 };
 
 
@@ -463,9 +476,11 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   postOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationPostOneBrandArgs, 'data'>>;
   postOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationPostOneAuthorArgs, 'data'>>;
   postOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationPostOneEditorArgs, 'data'>>;
+  updateOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationUpdateOneUserArgs, 'where' | 'data'>>;
   updateOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationUpdateOneBrandArgs, 'where' | 'data'>>;
   updateOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationUpdateOneAuthorArgs, 'where' | 'data'>>;
   updateOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationUpdateOneEditorArgs, 'where' | 'data'>>;
+  deleteOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationDeleteOneUserArgs, 'where'>>;
   deleteOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationDeleteOneBrandArgs, 'where'>>;
   deleteOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationDeleteOneAuthorArgs, 'where'>>;
   deleteOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationDeleteOneEditorArgs, 'where'>>;

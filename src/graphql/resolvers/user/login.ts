@@ -20,22 +20,23 @@ const loginUser: T.Resolver<GraphQL.MutationLoginArgs, GraphQL.User | null> = as
   const { email, password } = params.data;
   // Check email is valid
   if (!lib.checkEmail(email)) {
-    new lib.ErrorHandler(`Email '${email}' is not valid`, 400);
+    new lib.ErrorHandler(`Email '${email}' is not valid`, 400, `Email regex: ${lib.emailRegex}`);
+    return null;
   }
-  const result = await prisma.user.findFirst({
+  const user = await prisma.user.findFirst({
     where: {
       email,
     },
   });
   // Check user exists
-  if (result === null) {
-    new lib.ErrorHandler(`Email '${email}' is not registered`, 404);
+  if (user === null) {
+    new lib.ErrorHandler(`Email '${email}' is not registered`, 404, 'User not found');
     return null;
   }
   // Compare passwords
   let errMess = 'Error compare passwords';
   const compRes: boolean | Error = await new Promise((resolve) => {
-    bcrypt.compare(password, result.password, function (err: Error, result) {
+    bcrypt.compare(password, user.password, function (err: Error, result) {
       if (err) {
         lib.Console.error(errMess, err, new Error());
         resolve(err);
@@ -45,14 +46,16 @@ const loginUser: T.Resolver<GraphQL.MutationLoginArgs, GraphQL.User | null> = as
   });
   // Check compare error
   if (typeof compRes !== 'boolean') {
-    throw new lib.ErrorHandler(errMess, 500);
+    new lib.ErrorHandler(errMess, 500, compRes.message);
+    return null;
   }
   // Check password is the same
   if (compRes === false) {
-    throw new lib.ErrorHandler('Email or password do not match', 406);
+    new lib.ErrorHandler('Email or password do not match', 406, 'Password not the same');
+    return null;
   }
   errMess = 'Error create token';
-  const parsedToken: T.JWT = { id: result.id, pass: lib.mirrorTailString(result.password) };
+  const parsedToken: T.JWT = { id: user.id, pass: lib.mirrorTailString(user.password) };
   let token: string | Error;
   try {
     token = jwt.sign(parsedToken, TOKEN_KEY);
@@ -61,9 +64,18 @@ const loginUser: T.Resolver<GraphQL.MutationLoginArgs, GraphQL.User | null> = as
     token = e;
   }
   if (typeof token !== 'string') {
-    new lib.ErrorHandler(errMess, 500);
+    new lib.ErrorHandler(errMess, 500, token.message);
     return null;
   }
+  // Update last login time
+  const result = await prisma.user.update({
+    where: {
+      id: user.id,
+    },
+    data: {
+      lastLogin: new Date(),
+    },
+  });
   return {
     id: result.id,
     name: result.name || 'No name',
@@ -71,7 +83,7 @@ const loginUser: T.Resolver<GraphQL.MutationLoginArgs, GraphQL.User | null> = as
     role: result.role || 0,
     password: '••••••',
     token,
-    lastLogin: result.created?.toISOString() || '',
+    lastLogin: result.lastLogin?.toISOString() || '',
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };
