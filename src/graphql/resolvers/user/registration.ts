@@ -82,13 +82,18 @@ const postOneUser: T.Resolver<GraphQL.MutationRegistrationArgs, GraphQL.User | n
       email,
       password: passwordHash,
       name,
+      role: 1,
+    },
+    include: {
+      Role: true,
     },
   });
   return {
     id: result.id,
     name: result.name || 'No name',
     email: result.email,
-    role: result.role || 0,
+    role: result.role,
+    roleName: result.Role.name,
     lastLogin: result.created?.toISOString() || '',
     password: '••••••',
     created: result.created?.toISOString() || '',

@@ -15,6 +15,7 @@ const Schema = gql`
     created: String!
     updated: String!
     ### Only graphql types
+    roleName: String!
     token: String
     refreshToken: String
   }

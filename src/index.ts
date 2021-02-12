@@ -2,11 +2,17 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import Schema from './graphql/Schema';
 dotenv.config();
+import recreateRoles from './prisma/fill/recreateRoles';
 import Resolvers from './graphql/Resolver';
 import * as lib from './lib';
 import * as T from './types';
+
+// Fill database
+//// Recreate roles from 'prisma/config/roles.json'
+recreateRoles();
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const env: any = process.env;
@@ -57,9 +63,15 @@ const server = new ApolloServer({
 const app = express();
 // Enable body parser
 app.use(server.graphqlPath, bodyParser.json({ limit: '1mb' }));
+// Enable cors
+app.use(
+  cors({
+    credentials: true,
+    origin: lib.isDev() ? '*' : CORS_ORIGIN,
+  })
+);
 server.applyMiddleware({
   app,
-  cors: { credentials: true, origin: lib.isDev() ? '*' : CORS_ORIGIN },
 });
 
 app.listen({ port: PORT }, () =>

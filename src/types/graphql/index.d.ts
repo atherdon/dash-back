@@ -27,6 +27,7 @@ export type User = {
   lastLogin: Scalars['String'];
   created: Scalars['String'];
   updated: Scalars['String'];
+  roleName: Scalars['String'];
   token?: Maybe<Scalars['String']>;
   refreshToken?: Maybe<Scalars['String']>;
 };
@@ -416,6 +417,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   lastLogin?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  roleName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   refreshToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
