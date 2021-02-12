@@ -75,13 +75,17 @@ const loginUser: T.Resolver<GraphQL.MutationLoginArgs, GraphQL.User | null> = as
     data: {
       lastLogin: new Date(),
     },
+    include: {
+      Role: true,
+    },
   });
   return {
     id: result.id,
     name: result.name || 'No name',
     email: result.email,
-    role: result.role || 0,
+    role: result.role,
     password: '••••••',
+    roleName: result.Role.name,
     token,
     lastLogin: result.lastLogin?.toISOString() || '',
     created: result.created?.toISOString() || '',

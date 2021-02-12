@@ -17,6 +17,9 @@ const getOneUser: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.User | null> 
   const { where } = params;
   const result = await prisma.user.findFirst({
     where,
+    include: {
+      Role: true,
+    },
   });
   if (result === null) {
     return result;
@@ -25,8 +28,9 @@ const getOneUser: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.User | null> 
     id: result.id,
     name: result.name || 'No name',
     email: result.email,
-    role: result.role || 0,
+    role: result.role,
     password: '••••••',
+    roleName: result.Role.name,
     lastLogin: result.created?.toISOString() || '',
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
