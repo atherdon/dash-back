@@ -40,28 +40,6 @@ export function mirrorTailString(string: string, countSymbols = 32): string {
   return result;
 }
 
-/**
- * Get forematted error
- * @param code {number}
- * @param status {T.Status}
- * @param message {string}
- * @param stdError {string} ['']
- */
-export function getError(code: number, status: T.Status, message: string, stdError = ''): T.Errors {
-  const error: T.ErrorsItem = {
-    code,
-    status,
-    message,
-    stdErrMessage: lib.isDev() ? stdError : 'Standard error is not available in production',
-  };
-  const errArr: T.ErrorsItem[] = [];
-  errArr.push(error);
-  const errors: T.Errors = {
-    errors: errArr,
-  };
-  return errors;
-}
-
 const { env }: any = process;
 const { TOKEN_KEY }: T.Env = env;
 

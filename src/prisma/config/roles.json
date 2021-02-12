@@ -1,0 +1,26 @@
+{
+  "1": {
+    "name": "managed-account"
+  },
+  "2": {
+    "name": "freelancer"
+  },
+  "3": {
+    "name": "top-authors"
+  },
+  "4": {
+    "name": "contributing editor"
+  },
+  "5": {
+    "name": "Junior Editor"
+  },
+  "6": {
+    "name": "Managed Editor"
+  },
+  "7": {
+    "name": "Editor"
+  },
+  "8": {
+    "name": "admin"
+  }
+}

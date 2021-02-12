@@ -17,13 +17,17 @@ const deleteOneUser: T.Resolver<GraphQL.MutationDeleteOneUserArgs, GraphQL.User 
   const { where } = params;
   const result = await prisma.user.delete({
     where,
+    include: {
+      Role: true,
+    },
   });
   return {
     id: result.id,
     name: result.name || 'No name',
     email: result.email,
-    role: result.role || 0,
+    role: result.role,
     password: '••••••',
+    roleName: result.Role.name,
     lastLogin: result.lastLogin?.toISOString() || '',
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',

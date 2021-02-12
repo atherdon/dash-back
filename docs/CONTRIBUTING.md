@@ -21,6 +21,7 @@
 - - [Schema](#schema-prisma)
 - - [Orm](#orm)
 - - [Types](#types-prisma)
+- - [User roles](#user-roles)
 - [Global types](#types)
 - [Library](#library)
 - [Data](#data)
@@ -120,6 +121,39 @@ const result = await prisma.brand.create({
 ```
 #### Types prisma
 Exported from `@prisma/client`
+#### User roles
+User roles placed in [prisma/config/roles.json](../src/prisma/config/roles.json).  
+All start server roles in table `Role` changed from file `roles.json`.
+Tables `User` and `Role` are linked by foreign key. `User.role` are foreign key from `Role.id`.     
+```json
+{
+  "1": { // First index is strongly 1
+    "name": "managed-account"
+  },
+  "2": { // Other index by order
+    "name": "freelancer"
+  },
+  "3": {
+    "name": "top-authors"
+  },
+  "4": {
+    "name": "contributing editor"
+  },
+  "5": {
+    "name": "Junior Editor"
+  },
+  "6": {
+    "name": "Managed Editor"
+  },
+  "7": {
+    "name": "Editor"
+  },
+  "8": {
+    "name": "admin"
+  }
+}
+```
+_You can change fields `name`, and add new ones or delete old ones, but watch the order of the indices as they are access levels._
 ## Types
 Global types [src/types/index.d.ts](../src/types/index.d.ts)
 ## Library

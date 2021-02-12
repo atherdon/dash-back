@@ -21,16 +21,20 @@ const updateOneUser: T.Resolver<GraphQL.MutationUpdateOneUserArgs, GraphQL.User 
     data: {
       // Field 'email' is skiped for update
       name: data.name || undefined,
-      role: data.role || 0,
+      role: data.role || undefined,
       password: data.password || undefined,
       updated: new Date(),
+    },
+    include: {
+      Role: true,
     },
   });
   return {
     id: result.id,
     name: result.name || 'No name',
     email: result.email,
-    role: result.role || 0,
+    role: result.role,
+    roleName: result.Role.name,
     password: '••••••',
     lastLogin: result.created?.toISOString() || '',
     created: result.created?.toISOString() || '',

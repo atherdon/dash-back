@@ -7,6 +7,10 @@
 
 ## Changes by version 
 
+- ### version 3.3.1-12.02.2021
+Fixed `CORS` bug
+Added returned value`roleName` in `User` type see: [User roles](./CONTRIBUTING.md#user-roles)
+
 - ### version 3.3.0-11.02.2021
 
 Added authentification middleware hook [middlewares/hooks/withAuth.ts](../src/middlewares/hooks/withAuth.ts) 
