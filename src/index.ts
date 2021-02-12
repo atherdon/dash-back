@@ -10,10 +10,6 @@ import Resolvers from './graphql/Resolver';
 import * as lib from './lib';
 import * as T from './types';
 
-// Fill database
-//// Recreate roles from 'prisma/config/roles.json'
-recreateRoles();
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const env: any = process.env;
 const { CORS_ORIGIN }: T.Env = env;
@@ -74,6 +70,9 @@ server.applyMiddleware({
   app,
 });
 
-app.listen({ port: PORT }, () =>
+app.listen({ port: PORT }, async () => {
+  // Fill database
+  //// Recreate roles from 'prisma/config/roles.json'
+  await recreateRoles();
   lib.Console.info(`Server ready at http://localhost:${PORT}${server.graphqlPath}`)
-);
+});

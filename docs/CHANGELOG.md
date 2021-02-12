@@ -7,6 +7,8 @@
 
 ## Changes by version 
 
+- ### version 3.3.2-12.02.2021
+Fixed deploy bug with `prisma generate`
 - ### version 3.3.1-12.02.2021
 Fixed `CORS` bug
 Added returned value`roleName` in `User` type see: [User roles](./CONTRIBUTING.md#user-roles)
