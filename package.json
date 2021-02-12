@@ -1,6 +1,6 @@
 {
   "name": "dash-back",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "Dashboard backend",
   "main": "dist/index.js",
   "repository": "https://github.com/atherdon/dash-back",
@@ -11,8 +11,8 @@
     "schema": "src/prisma/schema.prisma"
   },
   "scripts": {
-    "ts": "tsc -p . -w",
-    "build": "tsc -p .",
+    "ts": "prisma generate && tsc -p . -w",
+    "build": "prisma generate && tsc -p .",
     "dev": "NODE_ENV=development nodemon ${npm_package_main}",
     "start": "NODE_ENV=development node ${npm_package_main}",
     "start:test": "NODE_ENV=test node ${npm_package_main}",
