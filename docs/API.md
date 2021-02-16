@@ -8,24 +8,48 @@
 #### Menu
 - [Introduction](#introduction)
 - [Schema](#schema)
+- - [Article](#article)
+- - - [Get one](#get-one-article)
+- - - [Get many](#get-many-articles)
+- - - [Post one](#post-one-article)
+- - - [Update one](#update-one-article)
+- - - [Delete one](#delete-one-article)
 - - [Brand](#brand)
 - - - [Get one](#get-one-brand)
 - - - [Get many](#get-many-brands)
 - - - [Post one](#post-one-brand)
 - - - [Update one](#update-one-brand)
 - - - [Delete one](#delete-one-brand)
-- - [Author](#author)
-- - - [Get one](#get-one-author)
-- - - [Get many](#get-many-authors)
-- - - [Post one](#post-one-author)
-- - - [Update one](#update-one-author)
-- - - [Delete one](#delete-one-author)
+- - [Top author](#top-author)
+- - - [Get one](#get-one-top-author)
+- - - [Get many](#get-many-top-authors)
+- - - [Post one](#post-one-top-author)
+- - - [Update one](#update-one-top-author)
+- - - [Delete one](#delete-one-top-author)
 - - [Editor](#editor)
 - - - [Get one](#get-one-editor)
 - - - [Get many](#get-many-editors)
 - - - [Post one](#post-one-editor)
 - - - [Update one](#update-one-editor)
 - - - [Delete one](#delete-one-editor)
+- - [Expandable](#expandable)
+- - - [Get one](#get-one-expandable)
+- - - [Get many](#get-many-expandables)
+- - - [Post one](#post-one-expandable)
+- - - [Update one](#update-one-expandable)
+- - - [Delete one](#delete-one-expandable)
+- - [Filter](#filter)
+- - - [Get one](#get-one-filter)
+- - - [Get many](#get-many-filters)
+- - - [Post one](#post-one-filter)
+- - - [Update one](#update-one-filter)
+- - - [Delete one](#delete-one-filter)
+- - [Appearance](#appearance)
+- - - [Get one](#get-one-appearance)
+- - - [Get many](#get-many-appearances)
+- - - [Post one](#post-one-appearance)
+- - - [Update one](#update-one-appearance)
+- - - [Delete one](#delete-one-appearance)
 - - [User](#user)
 - - - [Registration](#registration)
 - - - [Login](#login)
@@ -44,6 +68,40 @@ GraphQL schema: [../src/graphql/Schema.ts](../src/graphql/Schema.ts)
 
 Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.ts)
 
+#### Article
+##### Get many articles
+```
+@param - [void]
+
+@return — [GraphQL.Article[]]
+```
+##### Get one article
+```
+@param where — [GraphQL.GetOneArticleParams]
+
+@return — [GraphQL.Article]
+```
+##### Post one article
+```
+@param data — [GraphQL.PostOneArticleParams]
+
+@return — [GraphQL.Article]
+```
+
+##### Update one article
+```
+@param where — [GraphQL.GetOneArticleParams]
+
+@param data — [GraphQL.UpdateOneArticleParams]
+
+@return — [GraphQL.Article]
+```
+##### Delete one article
+```
+@param where — [GraphQL.GetOneArticleParams]
+
+@return - [GraphQL.Article]
+```
 #### Brand
 ##### Get many brands
 ```
@@ -59,7 +117,7 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 ```
 ##### Post one brand
 ```
-@param data — [GraphQL.Brand]
+@param data — [GraphQL.PostOneBrandParams]
 
 @return — [GraphQL.Brand]
 ```
@@ -79,38 +137,38 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 @return - [GraphQL.Brand]
 ```
 ### Author
-##### Get many authors
+##### Get many top authors
 ```
 @param - [void]
 
-@return — [GraphQL.Author[]]
+@return — [GraphQL.TopAuthor[]]
 ```
-##### Get one author
+##### Get one top author
 ```
-@param where — [GraphQL.GetOneAuthorParams]
+@param where — [GraphQL.GetOneTopAuthorParams]
 
-@return — [GraphQL.Author]
+@return — [GraphQL.TopAuthor]
 ```
-##### Post one author
+##### Post one top author
 ```
-@param data — [GraphQL.Author]
+@param data — [GraphQL.PostOneTopAuthorParams]
 
-@return — [GraphQL.Author]
+@return — [GraphQL.TopAuthor]
 ```
 
-##### Update one author
+##### Update one top author
 ```
-@param where — [GraphQL.GetOneAuthorParams]
+@param where — [GraphQL.GetOneTopAuthorParams]
 
-@param data — [GraphQL.UpdateOneAuthorParams]
+@param data — [GraphQL.UpdateOneTopAuthorParams]
 
-@return — [GraphQL.Author]
+@return — [GraphQL.TopAuthor]
 ```
-##### Delete one author
+##### Delete one top author
 ```
-@param where — [GraphQL.GetOneAuthorParams]
+@param where — [GraphQL.GetOneTopAuthorParams]
 
-@return — [GraphQL.Author]
+@return — [GraphQL.TopAuthor]
 ```
 ### Editor
 ##### Get many editors
@@ -127,7 +185,7 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 ```
 ##### Post one editor
 ```
-@param data — [GraphQL.Editor]
+@param data — [GraphQL.PostOneEditorParams]
 
 @return — [GraphQL.Editor]
 ```
@@ -145,6 +203,111 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 @param where — [GraphQL.GetOneEditorParams]
 
 @return — [GraphQL.Editor]
+```
+
+### Expandable
+##### Get many expandables
+```
+@param - [void]
+
+@return — [GraphQL.Expandable[]]
+```
+##### Get one expandable
+```
+@param where — [GraphQL.GetOneExpandableParams]
+
+@return — [GraphQL.Expandable]
+```
+##### Post one expandable
+```
+@param data — [GraphQL.PostOneExpandableParams]
+
+@return — [GraphQL.Expandable]
+```
+
+##### Update one expandable
+```
+@param where — [GraphQL.GetOneExpandableParams]
+
+@param data — [GraphQL.UpdateOneExpandableParams]
+
+@return — [GraphQL.Expandable]
+```
+##### Delete one expandable
+```
+@param where — [GraphQL.GetOneExpandableParams]
+
+@return — [GraphQL.Expandable]
+```
+
+### Filter
+##### Get many filters
+```
+@param - [void]
+
+@return — [GraphQL.Filter[]]
+```
+##### Get one filter
+```
+@param where — [GraphQL.GetOneFilterParams]
+
+@return — [GraphQL.Filter]
+```
+##### Post one filter
+```
+@param data — [GraphQL.PostOneFilterParams]
+
+@return — [GraphQL.Filter]
+```
+
+##### Update one filter
+```
+@param where — [GraphQL.GetOneFilterParams]
+
+@param data — [GraphQL.UpdateOneFilterParams]
+
+@return — [GraphQL.Filter]
+```
+##### Delete one filter
+```
+@param where — [GraphQL.GetOneFilterParams]
+
+@return — [GraphQL.Filter]
+```
+
+### Appearance
+##### Get many appearances
+```
+@param - [void]
+
+@return — [GraphQL.Appearance[]]
+```
+##### Get one appearance
+```
+@param where — [GraphQL.GetOneAppearanceParams]
+
+@return — [GraphQL.Appearance]
+```
+##### Post one appearance
+```
+@param data — [GraphQL.PostOneAppearanceParams]
+
+@return — [GraphQL.Appearance]
+```
+
+##### Update one appearance
+```
+@param where — [GraphQL.GetOneAppearanceParams]
+
+@param data — [GraphQL.UpdateOneAppearanceParams]
+
+@return — [GraphQL.Appearance]
+```
+##### Delete one appearance
+```
+@param where — [GraphQL.GetOneAppearanceParams]
+
+@return — [GraphQL.Appearance]
 ```
 
 #### User

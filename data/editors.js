@@ -118,4 +118,4 @@ const editors = [
   }
 ];
 
-export default editors;
+module.exports = { editors };

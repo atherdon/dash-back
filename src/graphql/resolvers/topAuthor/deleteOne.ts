@@ -5,29 +5,31 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Delete one author
- * @param where [GraphQL.GetOneAuthorParams]
- * @return [GraphQL.Author]
+ * Delete one top author
+ * @param where [GraphQL.GetOneTopAuthorParams]
+ * @return [GraphQL.TopAuthor]
  */
 const deleteOneAuthor: T.Resolver<
-  GraphQL.MutationDeleteOneBrandArgs,
-  GraphQL.Author | null
+  GraphQL.MutationDeleteOneTopAuthorArgs,
+  GraphQL.TopAuthor | null
 > = async (_parent, params) => {
   const { where } = params;
-  const result = await prisma.author.delete({
+  const result = await prisma.topAuthor.delete({
     where,
   });
   return {
     id: result.id,
     url: result.url,
+    v: result.v,
     email: result.email,
-    isPublished: result.isPublished || false,
-    avgTimeStory: result.avgAllTimeStory || 0,
-    avgAllTimeStory: result.avgAllTimeStory || 0,
+    isPublished: result.isPublished,
+    added: result.added,
+    published: result.published,
+    edited: result.edited,
+    avgTimeStory: result.avgAllTimeStory,
+    avgAllTimeStory: result.avgAllTimeStory,
     created: result.created?.toISOString() || '',
-    edited: result.edited?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
-    published: result.published?.toISOString() || '',
   };
 };
 

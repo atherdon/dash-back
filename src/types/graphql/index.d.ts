@@ -32,41 +32,109 @@ export type User = {
   refreshToken?: Maybe<Scalars['String']>;
 };
 
+export type Article = {
+  __typename?: 'Article';
+  id: Scalars['Int'];
+  v: Scalars['String'];
+  url: Scalars['String'];
+  email: Scalars['String'];
+  isPublished: Scalars['String'];
+  added: Scalars['String'];
+  edited: Scalars['String'];
+  published: Scalars['String'];
+  avgTimeStory: Scalars['String'];
+  avgAllTimeStory: Scalars['String'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
+export type Filter = {
+  __typename?: 'Filter';
+  id: Scalars['Int'];
+  filter: Scalars['String'];
+  value: Scalars['String'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
 export type Brand = {
   __typename?: 'Brand';
   id: Scalars['Int'];
+  v: Scalars['String'];
   url: Scalars['String'];
   email: Scalars['String'];
+  isPublished: Scalars['String'];
+  added: Scalars['String'];
+  edited: Scalars['String'];
+  published: Scalars['String'];
+  avgTimeStory: Scalars['String'];
+  avgAllTimeStory: Scalars['String'];
   created: Scalars['String'];
   updated: Scalars['String'];
-  avgTimeStory: Scalars['Float'];
-  avgAllTimeStory: Scalars['Float'];
 };
 
-export type Author = {
-  __typename?: 'Author';
+export type TopAuthor = {
+  __typename?: 'TopAuthor';
   id: Scalars['Int'];
+  v: Scalars['String'];
   url: Scalars['String'];
   email: Scalars['String'];
-  isPublished: Scalars['Boolean'];
-  created: Scalars['String'];
+  isPublished: Scalars['String'];
+  added: Scalars['String'];
   edited: Scalars['String'];
-  updated: Scalars['String'];
   published: Scalars['String'];
-  avgTimeStory: Scalars['Float'];
-  avgAllTimeStory: Scalars['Float'];
+  avgTimeStory: Scalars['String'];
+  avgAllTimeStory: Scalars['String'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
 };
 
 export type Editor = {
   __typename?: 'Editor';
   id: Scalars['Int'];
   name: Scalars['String'];
-  edited: Scalars['Int'];
-  editedPercent: Scalars['Float'];
-  published: Scalars['Int'];
-  publishedPercent: Scalars['Float'];
-  rejected: Scalars['Int'];
-  rejectedPercent: Scalars['Float'];
+  edited: Scalars['String'];
+  editedPercent: Scalars['String'];
+  published: Scalars['String'];
+  publishedPercent: Scalars['String'];
+  rejected: Scalars['String'];
+  rejectedPercent: Scalars['String'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
+export type Expandable = {
+  __typename?: 'Expandable';
+  id: Scalars['Int'];
+  key: Scalars['Int'];
+  name: Scalars['String'];
+  age: Scalars['Int'];
+  address: Scalars['String'];
+  description: Scalars['String'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
+export type Appearance = {
+  __typename?: 'Appearance';
+  id: Scalars['Int'];
+  search: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
+export type ClicksPosition = {
+  __typename?: 'ClicksPosition';
+  id: Scalars['Int'];
+  date: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
   created: Scalars['String'];
   updated: Scalars['String'];
 };
@@ -94,9 +162,44 @@ export type UpdateOneUserParams = {
   password?: Maybe<Scalars['String']>;
 };
 
-export type PostOneBrandParams = {
+export type PostOneArticleParams = {
+  v: Scalars['String'];
   url: Scalars['String'];
   email: Scalars['String'];
+  isPublished: Scalars['String'];
+  added: Scalars['String'];
+  edited: Scalars['String'];
+  published: Scalars['String'];
+  avgTimeStory: Scalars['String'];
+  avgAllTimeStory: Scalars['String'];
+};
+
+export type GetOneArticleParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneArticleParams = {
+  v?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  isPublished?: Maybe<Scalars['String']>;
+  added?: Maybe<Scalars['String']>;
+  edited?: Maybe<Scalars['String']>;
+  published?: Maybe<Scalars['String']>;
+  avgTimeStory?: Maybe<Scalars['String']>;
+  avgAllTimeStory?: Maybe<Scalars['String']>;
+};
+
+export type PostOneBrandParams = {
+  v: Scalars['String'];
+  url: Scalars['String'];
+  email: Scalars['String'];
+  isPublished: Scalars['String'];
+  added: Scalars['String'];
+  edited: Scalars['String'];
+  published: Scalars['String'];
+  avgTimeStory: Scalars['String'];
+  avgAllTimeStory: Scalars['String'];
 };
 
 export type GetOneBrandParams = {
@@ -104,33 +207,53 @@ export type GetOneBrandParams = {
 };
 
 export type UpdateOneBrandParams = {
+  v?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   email?: Maybe<Scalars['String']>;
-  avgTimeStory?: Maybe<Scalars['Float']>;
-  avgAllTimeStory?: Maybe<Scalars['Float']>;
+  isPublished?: Maybe<Scalars['String']>;
+  added?: Maybe<Scalars['String']>;
+  edited?: Maybe<Scalars['String']>;
+  published?: Maybe<Scalars['String']>;
+  avgTimeStory?: Maybe<Scalars['String']>;
+  avgAllTimeStory?: Maybe<Scalars['String']>;
 };
 
-export type PostOneAuthorParams = {
+export type PostOneTopAuthorParams = {
+  v: Scalars['String'];
   url: Scalars['String'];
   email: Scalars['String'];
+  isPublished: Scalars['String'];
+  added: Scalars['String'];
+  edited: Scalars['String'];
+  published: Scalars['String'];
+  avgTimeStory: Scalars['String'];
+  avgAllTimeStory: Scalars['String'];
 };
 
-export type GetOneAuthorParams = {
+export type GetOneTopAuthorParams = {
   id: Scalars['Int'];
 };
 
-export type UpdateOneAuthorParams = {
+export type UpdateOneTopAuthorParams = {
+  v?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   email?: Maybe<Scalars['String']>;
-  isPublished?: Maybe<Scalars['Boolean']>;
+  isPublished?: Maybe<Scalars['String']>;
+  added?: Maybe<Scalars['String']>;
   edited?: Maybe<Scalars['String']>;
   published?: Maybe<Scalars['String']>;
-  avgTimeStory?: Maybe<Scalars['Float']>;
-  avgAllTimeStory?: Maybe<Scalars['Float']>;
+  avgTimeStory?: Maybe<Scalars['String']>;
+  avgAllTimeStory?: Maybe<Scalars['String']>;
 };
 
 export type PostOneEditorParams = {
   name: Scalars['String'];
+  edited: Scalars['String'];
+  editedPercent: Scalars['String'];
+  published: Scalars['String'];
+  publishedPercent: Scalars['String'];
+  rejected: Scalars['String'];
+  rejectedPercent: Scalars['String'];
 };
 
 export type GetOneEditorParams = {
@@ -139,22 +262,106 @@ export type GetOneEditorParams = {
 
 export type UpdateOneEditorParams = {
   name?: Maybe<Scalars['String']>;
-  edited?: Maybe<Scalars['Int']>;
-  editedPercent?: Maybe<Scalars['Float']>;
-  published?: Maybe<Scalars['Int']>;
-  publishedPercent?: Maybe<Scalars['Float']>;
-  rejected?: Maybe<Scalars['Int']>;
-  rejectedPercent?: Maybe<Scalars['Float']>;
+  edited?: Maybe<Scalars['String']>;
+  editedPercent?: Maybe<Scalars['String']>;
+  published?: Maybe<Scalars['String']>;
+  publishedPercent?: Maybe<Scalars['String']>;
+  rejected?: Maybe<Scalars['String']>;
+  rejectedPercent?: Maybe<Scalars['String']>;
+};
+
+export type PostOneExpandableParams = {
+  key: Scalars['Int'];
+  name: Scalars['String'];
+  age: Scalars['Int'];
+  address: Scalars['String'];
+  description: Scalars['String'];
+};
+
+export type GetOneExpandableParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneExpandableParams = {
+  key?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  age?: Maybe<Scalars['Int']>;
+  address?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+};
+
+export type PostOneFilterParams = {
+  filter: Scalars['String'];
+  value: Scalars['String'];
+};
+
+export type GetOneFilterParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneFilterParams = {
+  filter?: Maybe<Scalars['String']>;
+  value?: Maybe<Scalars['String']>;
+};
+
+export type PostOneAppearanceParams = {
+  search: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type GetOneAppearanceParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneAppearanceParams = {
+  search?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type PostOneClicksPositionParams = {
+  date: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type GetOneClicksPositionParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneClicksPositionParams = {
+  date?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
 };
 
 export type Query = {
   __typename?: 'Query';
+  getManyArticle: Array<Maybe<Article>>;
+  getManyClicksPosition: Array<Maybe<ClicksPosition>>;
+  getManyAppearance: Array<Maybe<Appearance>>;
+  getManyFilter: Array<Maybe<Filter>>;
   getManyBrand: Array<Maybe<Brand>>;
-  getManyAuthor: Array<Maybe<Author>>;
+  getManyTopAuthor: Array<Maybe<TopAuthor>>;
   getManyEditor: Array<Maybe<Editor>>;
+  getManyExpandable: Array<Maybe<Expandable>>;
   getOneUser?: Maybe<User>;
+  getOneClicksPosition?: Maybe<ClicksPosition>;
+  getOneAppearance?: Maybe<Appearance>;
+  getOneArticle?: Maybe<Article>;
+  getOneFilter?: Maybe<Filter>;
+  getOneExpandable?: Maybe<Expandable>;
   getOneBrand?: Maybe<Brand>;
-  getOneAuthor?: Maybe<Author>;
+  getOneTopAuthor?: Maybe<TopAuthor>;
   getOneEditor?: Maybe<Editor>;
 };
 
@@ -164,13 +371,38 @@ export type QueryGetOneUserArgs = {
 };
 
 
+export type QueryGetOneClicksPositionArgs = {
+  where: GetOneClicksPositionParams;
+};
+
+
+export type QueryGetOneAppearanceArgs = {
+  where: GetOneAppearanceParams;
+};
+
+
+export type QueryGetOneArticleArgs = {
+  where: GetOneArticleParams;
+};
+
+
+export type QueryGetOneFilterArgs = {
+  where: GetOneFilterParams;
+};
+
+
+export type QueryGetOneExpandableArgs = {
+  where: GetOneExpandableParams;
+};
+
+
 export type QueryGetOneBrandArgs = {
   where: GetOneBrandParams;
 };
 
 
-export type QueryGetOneAuthorArgs = {
-  where: GetOneAuthorParams;
+export type QueryGetOneTopAuthorArgs = {
+  where: GetOneTopAuthorParams;
 };
 
 
@@ -182,16 +414,31 @@ export type Mutation = {
   __typename?: 'Mutation';
   registration?: Maybe<User>;
   login?: Maybe<User>;
+  postOneExpandable?: Maybe<Expandable>;
   postOneBrand?: Maybe<Brand>;
-  postOneAuthor?: Maybe<Author>;
+  postOneClicksPosition?: Maybe<ClicksPosition>;
+  postOneAppearance?: Maybe<Appearance>;
+  postOneFilter?: Maybe<Filter>;
+  postOneArticle?: Maybe<Article>;
+  postOneTopAuthor?: Maybe<TopAuthor>;
   postOneEditor?: Maybe<Editor>;
   updateOneUser?: Maybe<User>;
+  updateOneAppearance?: Maybe<Appearance>;
+  updateOneFilter?: Maybe<Filter>;
+  updateOneClicksPosition?: Maybe<ClicksPosition>;
+  updateOneArticle?: Maybe<Article>;
   updateOneBrand?: Maybe<Brand>;
-  updateOneAuthor?: Maybe<Author>;
+  updateOneExpandable?: Maybe<Expandable>;
+  updateOneTopAuthor?: Maybe<TopAuthor>;
   updateOneEditor?: Maybe<Editor>;
   deleteOneUser?: Maybe<User>;
+  deleteOneClicksPosition?: Maybe<ClicksPosition>;
+  deleteOneAppearance?: Maybe<Appearance>;
+  deleteOneFilter?: Maybe<Filter>;
+  deleteOneArticle?: Maybe<Article>;
+  deleteOneExpandable?: Maybe<Expandable>;
   deleteOneBrand?: Maybe<Brand>;
-  deleteOneAuthor?: Maybe<Author>;
+  deleteOneTopAuthor?: Maybe<TopAuthor>;
   deleteOneEditor?: Maybe<Editor>;
 };
 
@@ -206,13 +453,38 @@ export type MutationLoginArgs = {
 };
 
 
+export type MutationPostOneExpandableArgs = {
+  data: PostOneExpandableParams;
+};
+
+
 export type MutationPostOneBrandArgs = {
   data: PostOneBrandParams;
 };
 
 
-export type MutationPostOneAuthorArgs = {
-  data: PostOneAuthorParams;
+export type MutationPostOneClicksPositionArgs = {
+  data: PostOneClicksPositionParams;
+};
+
+
+export type MutationPostOneAppearanceArgs = {
+  data: PostOneAppearanceParams;
+};
+
+
+export type MutationPostOneFilterArgs = {
+  data: PostOneFilterParams;
+};
+
+
+export type MutationPostOneArticleArgs = {
+  data: PostOneArticleParams;
+};
+
+
+export type MutationPostOneTopAuthorArgs = {
+  data: PostOneTopAuthorParams;
 };
 
 
@@ -227,15 +499,45 @@ export type MutationUpdateOneUserArgs = {
 };
 
 
+export type MutationUpdateOneAppearanceArgs = {
+  where: GetOneAppearanceParams;
+  data: UpdateOneAppearanceParams;
+};
+
+
+export type MutationUpdateOneFilterArgs = {
+  where: GetOneFilterParams;
+  data: UpdateOneFilterParams;
+};
+
+
+export type MutationUpdateOneClicksPositionArgs = {
+  where: GetOneClicksPositionParams;
+  data: UpdateOneClicksPositionParams;
+};
+
+
+export type MutationUpdateOneArticleArgs = {
+  where: GetOneArticleParams;
+  data: UpdateOneArticleParams;
+};
+
+
 export type MutationUpdateOneBrandArgs = {
   where: GetOneBrandParams;
   data: UpdateOneBrandParams;
 };
 
 
-export type MutationUpdateOneAuthorArgs = {
-  where: GetOneAuthorParams;
-  data: UpdateOneAuthorParams;
+export type MutationUpdateOneExpandableArgs = {
+  where: GetOneExpandableParams;
+  data: UpdateOneExpandableParams;
+};
+
+
+export type MutationUpdateOneTopAuthorArgs = {
+  where: GetOneTopAuthorParams;
+  data: UpdateOneTopAuthorParams;
 };
 
 
@@ -250,13 +552,38 @@ export type MutationDeleteOneUserArgs = {
 };
 
 
+export type MutationDeleteOneClicksPositionArgs = {
+  where: GetOneClicksPositionParams;
+};
+
+
+export type MutationDeleteOneAppearanceArgs = {
+  where: GetOneAppearanceParams;
+};
+
+
+export type MutationDeleteOneFilterArgs = {
+  where: GetOneFilterParams;
+};
+
+
+export type MutationDeleteOneArticleArgs = {
+  where: GetOneArticleParams;
+};
+
+
+export type MutationDeleteOneExpandableArgs = {
+  where: GetOneExpandableParams;
+};
+
+
 export type MutationDeleteOneBrandArgs = {
   where: GetOneBrandParams;
 };
 
 
-export type MutationDeleteOneAuthorArgs = {
-  where: GetOneAuthorParams;
+export type MutationDeleteOneTopAuthorArgs = {
+  where: GetOneTopAuthorParams;
 };
 
 
@@ -351,28 +678,48 @@ export type ResolversTypes = {
   User: ResolverTypeWrapper<User>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Article: ResolverTypeWrapper<Article>;
+  Filter: ResolverTypeWrapper<Filter>;
   Brand: ResolverTypeWrapper<Brand>;
-  Float: ResolverTypeWrapper<Scalars['Float']>;
-  Author: ResolverTypeWrapper<Author>;
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  TopAuthor: ResolverTypeWrapper<TopAuthor>;
   Editor: ResolverTypeWrapper<Editor>;
+  Expandable: ResolverTypeWrapper<Expandable>;
+  Appearance: ResolverTypeWrapper<Appearance>;
+  Float: ResolverTypeWrapper<Scalars['Float']>;
+  ClicksPosition: ResolverTypeWrapper<ClicksPosition>;
   RegistrationParams: RegistrationParams;
   LoginParams: LoginParams;
   GetOneUserParams: GetOneUserParams;
   UpdateOneUserParams: UpdateOneUserParams;
+  PostOneArticleParams: PostOneArticleParams;
+  GetOneArticleParams: GetOneArticleParams;
+  UpdateOneArticleParams: UpdateOneArticleParams;
   PostOneBrandParams: PostOneBrandParams;
   GetOneBrandParams: GetOneBrandParams;
   UpdateOneBrandParams: UpdateOneBrandParams;
-  PostOneAuthorParams: PostOneAuthorParams;
-  GetOneAuthorParams: GetOneAuthorParams;
-  UpdateOneAuthorParams: UpdateOneAuthorParams;
+  PostOneTopAuthorParams: PostOneTopAuthorParams;
+  GetOneTopAuthorParams: GetOneTopAuthorParams;
+  UpdateOneTopAuthorParams: UpdateOneTopAuthorParams;
   PostOneEditorParams: PostOneEditorParams;
   GetOneEditorParams: GetOneEditorParams;
   UpdateOneEditorParams: UpdateOneEditorParams;
+  PostOneExpandableParams: PostOneExpandableParams;
+  GetOneExpandableParams: GetOneExpandableParams;
+  UpdateOneExpandableParams: UpdateOneExpandableParams;
+  PostOneFilterParams: PostOneFilterParams;
+  GetOneFilterParams: GetOneFilterParams;
+  UpdateOneFilterParams: UpdateOneFilterParams;
+  PostOneAppearanceParams: PostOneAppearanceParams;
+  GetOneAppearanceParams: GetOneAppearanceParams;
+  UpdateOneAppearanceParams: UpdateOneAppearanceParams;
+  PostOneClicksPositionParams: PostOneClicksPositionParams;
+  GetOneClicksPositionParams: GetOneClicksPositionParams;
+  UpdateOneClicksPositionParams: UpdateOneClicksPositionParams;
   Query: ResolverTypeWrapper<{}>;
   Mutation: ResolverTypeWrapper<{}>;
   CacheControlScope: CacheControlScope;
   Upload: ResolverTypeWrapper<Scalars['Upload']>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -380,27 +727,47 @@ export type ResolversParentTypes = {
   User: User;
   Int: Scalars['Int'];
   String: Scalars['String'];
+  Article: Article;
+  Filter: Filter;
   Brand: Brand;
-  Float: Scalars['Float'];
-  Author: Author;
-  Boolean: Scalars['Boolean'];
+  TopAuthor: TopAuthor;
   Editor: Editor;
+  Expandable: Expandable;
+  Appearance: Appearance;
+  Float: Scalars['Float'];
+  ClicksPosition: ClicksPosition;
   RegistrationParams: RegistrationParams;
   LoginParams: LoginParams;
   GetOneUserParams: GetOneUserParams;
   UpdateOneUserParams: UpdateOneUserParams;
+  PostOneArticleParams: PostOneArticleParams;
+  GetOneArticleParams: GetOneArticleParams;
+  UpdateOneArticleParams: UpdateOneArticleParams;
   PostOneBrandParams: PostOneBrandParams;
   GetOneBrandParams: GetOneBrandParams;
   UpdateOneBrandParams: UpdateOneBrandParams;
-  PostOneAuthorParams: PostOneAuthorParams;
-  GetOneAuthorParams: GetOneAuthorParams;
-  UpdateOneAuthorParams: UpdateOneAuthorParams;
+  PostOneTopAuthorParams: PostOneTopAuthorParams;
+  GetOneTopAuthorParams: GetOneTopAuthorParams;
+  UpdateOneTopAuthorParams: UpdateOneTopAuthorParams;
   PostOneEditorParams: PostOneEditorParams;
   GetOneEditorParams: GetOneEditorParams;
   UpdateOneEditorParams: UpdateOneEditorParams;
+  PostOneExpandableParams: PostOneExpandableParams;
+  GetOneExpandableParams: GetOneExpandableParams;
+  UpdateOneExpandableParams: UpdateOneExpandableParams;
+  PostOneFilterParams: PostOneFilterParams;
+  GetOneFilterParams: GetOneFilterParams;
+  UpdateOneFilterParams: UpdateOneFilterParams;
+  PostOneAppearanceParams: PostOneAppearanceParams;
+  GetOneAppearanceParams: GetOneAppearanceParams;
+  UpdateOneAppearanceParams: UpdateOneAppearanceParams;
+  PostOneClicksPositionParams: PostOneClicksPositionParams;
+  GetOneClicksPositionParams: GetOneClicksPositionParams;
+  UpdateOneClicksPositionParams: UpdateOneClicksPositionParams;
   Query: {};
   Mutation: {};
   Upload: Scalars['Upload'];
+  Boolean: Scalars['Boolean'];
 };
 
 export type CacheControlDirectiveArgs = {   maxAge?: Maybe<Scalars['Int']>;
@@ -423,68 +790,161 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type BrandResolvers<ContextType = any, ParentType extends ResolversParentTypes['Brand'] = ResolversParentTypes['Brand']> = {
+export type ArticleResolvers<ContextType = any, ParentType extends ResolversParentTypes['Article'] = ResolversParentTypes['Article']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  v?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  isPublished?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  added?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  avgTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  avgAllTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgTimeStory?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  avgAllTimeStory?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type AuthorResolvers<ContextType = any, ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']> = {
+export type FilterResolvers<ContextType = any, ParentType extends ResolversParentTypes['Filter'] = ResolversParentTypes['Filter']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  filter?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  value?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type BrandResolvers<ContextType = any, ParentType extends ResolversParentTypes['Brand'] = ResolversParentTypes['Brand']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  v?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  isPublished?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  isPublished?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  added?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgTimeStory?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  avgAllTimeStory?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  avgTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  avgAllTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type TopAuthorResolvers<ContextType = any, ParentType extends ResolversParentTypes['TopAuthor'] = ResolversParentTypes['TopAuthor']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  v?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  isPublished?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  added?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  avgTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  avgAllTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type EditorResolvers<ContextType = any, ParentType extends ResolversParentTypes['Editor'] = ResolversParentTypes['Editor']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  edited?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  editedPercent?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  published?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  publishedPercent?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  rejected?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  rejectedPercent?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  editedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  publishedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  rejected?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  rejectedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ExpandableResolvers<ContextType = any, ParentType extends ResolversParentTypes['Expandable'] = ResolversParentTypes['Expandable']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  key?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  age?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  address?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type AppearanceResolvers<ContextType = any, ParentType extends ResolversParentTypes['Appearance'] = ResolversParentTypes['Appearance']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  search?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ClicksPositionResolvers<ContextType = any, ParentType extends ResolversParentTypes['ClicksPosition'] = ResolversParentTypes['ClicksPosition']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  date?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
   created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  getManyArticle?: Resolver<Array<Maybe<ResolversTypes['Article']>>, ParentType, ContextType>;
+  getManyClicksPosition?: Resolver<Array<Maybe<ResolversTypes['ClicksPosition']>>, ParentType, ContextType>;
+  getManyAppearance?: Resolver<Array<Maybe<ResolversTypes['Appearance']>>, ParentType, ContextType>;
+  getManyFilter?: Resolver<Array<Maybe<ResolversTypes['Filter']>>, ParentType, ContextType>;
   getManyBrand?: Resolver<Array<Maybe<ResolversTypes['Brand']>>, ParentType, ContextType>;
-  getManyAuthor?: Resolver<Array<Maybe<ResolversTypes['Author']>>, ParentType, ContextType>;
+  getManyTopAuthor?: Resolver<Array<Maybe<ResolversTypes['TopAuthor']>>, ParentType, ContextType>;
   getManyEditor?: Resolver<Array<Maybe<ResolversTypes['Editor']>>, ParentType, ContextType>;
+  getManyExpandable?: Resolver<Array<Maybe<ResolversTypes['Expandable']>>, ParentType, ContextType>;
   getOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryGetOneUserArgs, 'where'>>;
+  getOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<QueryGetOneClicksPositionArgs, 'where'>>;
+  getOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<QueryGetOneAppearanceArgs, 'where'>>;
+  getOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<QueryGetOneArticleArgs, 'where'>>;
+  getOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<QueryGetOneFilterArgs, 'where'>>;
+  getOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<QueryGetOneExpandableArgs, 'where'>>;
   getOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<QueryGetOneBrandArgs, 'where'>>;
-  getOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<QueryGetOneAuthorArgs, 'where'>>;
+  getOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<QueryGetOneTopAuthorArgs, 'where'>>;
   getOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<QueryGetOneEditorArgs, 'where'>>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   registration?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationRegistrationArgs, 'data'>>;
   login?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'data'>>;
+  postOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<MutationPostOneExpandableArgs, 'data'>>;
   postOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationPostOneBrandArgs, 'data'>>;
-  postOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationPostOneAuthorArgs, 'data'>>;
+  postOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<MutationPostOneClicksPositionArgs, 'data'>>;
+  postOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<MutationPostOneAppearanceArgs, 'data'>>;
+  postOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<MutationPostOneFilterArgs, 'data'>>;
+  postOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<MutationPostOneArticleArgs, 'data'>>;
+  postOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<MutationPostOneTopAuthorArgs, 'data'>>;
   postOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationPostOneEditorArgs, 'data'>>;
   updateOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationUpdateOneUserArgs, 'where' | 'data'>>;
+  updateOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<MutationUpdateOneAppearanceArgs, 'where' | 'data'>>;
+  updateOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<MutationUpdateOneFilterArgs, 'where' | 'data'>>;
+  updateOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<MutationUpdateOneClicksPositionArgs, 'where' | 'data'>>;
+  updateOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<MutationUpdateOneArticleArgs, 'where' | 'data'>>;
   updateOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationUpdateOneBrandArgs, 'where' | 'data'>>;
-  updateOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationUpdateOneAuthorArgs, 'where' | 'data'>>;
+  updateOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<MutationUpdateOneExpandableArgs, 'where' | 'data'>>;
+  updateOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<MutationUpdateOneTopAuthorArgs, 'where' | 'data'>>;
   updateOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationUpdateOneEditorArgs, 'where' | 'data'>>;
   deleteOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationDeleteOneUserArgs, 'where'>>;
+  deleteOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<MutationDeleteOneClicksPositionArgs, 'where'>>;
+  deleteOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<MutationDeleteOneAppearanceArgs, 'where'>>;
+  deleteOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<MutationDeleteOneFilterArgs, 'where'>>;
+  deleteOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<MutationDeleteOneArticleArgs, 'where'>>;
+  deleteOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<MutationDeleteOneExpandableArgs, 'where'>>;
   deleteOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationDeleteOneBrandArgs, 'where'>>;
-  deleteOneAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationDeleteOneAuthorArgs, 'where'>>;
+  deleteOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<MutationDeleteOneTopAuthorArgs, 'where'>>;
   deleteOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationDeleteOneEditorArgs, 'where'>>;
 };
 
@@ -494,9 +954,14 @@ export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTyp
 
 export type Resolvers<ContextType = any> = {
   User?: UserResolvers<ContextType>;
+  Article?: ArticleResolvers<ContextType>;
+  Filter?: FilterResolvers<ContextType>;
   Brand?: BrandResolvers<ContextType>;
-  Author?: AuthorResolvers<ContextType>;
+  TopAuthor?: TopAuthorResolvers<ContextType>;
   Editor?: EditorResolvers<ContextType>;
+  Expandable?: ExpandableResolvers<ContextType>;
+  Appearance?: AppearanceResolvers<ContextType>;
+  ClicksPosition?: ClicksPositionResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Upload?: GraphQLScalarType;

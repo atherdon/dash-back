@@ -1,8 +1,8 @@
 {
   "name": "dash-back",
-  "version": "3.3.2",
+  "version": "4.0.0",
   "description": "Dashboard backend",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "repository": "https://github.com/atherdon/dash-back",
   "author": "kolserdav <serega12101983@gmail.com>",
   "license": "MIT",
@@ -12,6 +12,7 @@
   },
   "scripts": {
     "ts": "prisma generate && tsc -p . -w",
+    "ts:clean": "tsc --build --clean",
     "build": "prisma generate && tsc -p .",
     "dev": "NODE_ENV=development nodemon ${npm_package_main}",
     "start": "NODE_ENV=development node ${npm_package_main}",
@@ -30,7 +31,9 @@
     "migrate": "prisma migrate deploy --preview-feature",
     "migrate:reset": "prisma migrate reset --preview-feature",
     "migrate:status": "prisma migrate status --preview-feature",
-    "studio": "prisma studio"
+    "studio": "prisma studio",
+    "generate": "prisma generate",
+    "script": "node dist/src/bin/index.js"
   },
   "dependencies": {
     "@prisma/client": "^2.16.0",

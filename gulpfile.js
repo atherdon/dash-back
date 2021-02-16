@@ -21,10 +21,31 @@ function codegen(cb) {
   cb();
 }
 
+/**
+ * Run generate command
+ * @param {*} cb 
+ */
+function generate(cb) {
+  const com = spawn('yarn', ['generate']);
+  com.stdout.on('data', (data) => {
+    console.log(`stdout: ${data}`);
+  });
+  
+  com.stderr.on('data', (data) => {
+    console.error(`stderr: ${data}`);
+  });
+  
+  com.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+  });
+  cb();
+}
+
 exports.default = function() {
   /**
    *  Watch changed on src/graphql/Schema.ts file,
    *  and run codegen command
    */
-  watch('dist/graphql/Schema.js', codegen);
+  watch('dist/src/graphql/Schema.js', codegen);
+  watch('src/prisma/schema.prisma', generate);
 };

@@ -24,36 +24,95 @@ model User {
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }
+model Article {
+  id  Int @id @default(autoincrement())
+  url String
+  v String
+  email String
+  isPublished String
+  added String
+  edited  String
+  published String
+  avgTimeStory  String
+  avgAllTimeStory String
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
 model Brand {
   id  Int @id @default(autoincrement())
   url String
+  v String
   email String
+  isPublished String
+  added String
+  edited  String
+  published String
+  avgTimeStory  String
+  avgAllTimeStory String
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
-  avgTimeStory  Float? @default(0)
-  avgAllTimeStory Float? @default(0)
 }
-model Author {
+model TopAuthor {
   id  Int @id @default(autoincrement())
   url String
+  v String
   email String
-  isPublished Boolean? @default(false)
+  isPublished String
+  added String
+  edited  String
+  published String
+  avgTimeStory  String
+  avgAllTimeStory String
   created  DateTime? @default(now())
-  edited  DateTime? @default(now())
   updated  DateTime? @default(now())
-  published  DateTime? @default(now())
-  avgTimeStory  Float? @default(0)
-  avgAllTimeStory Float? @default(0)
 }
 model Editor {
   id  Int @id @default(autoincrement())
   name String
-  edited  Int? @default(0)
-  editedPercent Float? @default(0)
-  published Int? @default(0)
-  publishedPercent Float? @default(0)
-  rejected Int? @default(0)
-  rejectedPercent Float? @default(0)
+  edited  String
+  editedPercent String
+  published String
+  publishedPercent String
+  rejected String
+  rejectedPercent String
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+model Expandable {
+  id  Int @id @default(autoincrement())
+  key Int
+  name String
+  age Int
+  address String
+  description String
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+model Filter {
+  id  Int @id @default(autoincrement())
+  filter String
+  value String
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+model Appearance {
+  id  Int @id @default(autoincrement())
+  search  String
+  clicks  Int
+  impressions Int
+  ctr String
+  position  Float 
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+
+model ClicksPosition {
+  id  Int @id @default(autoincrement())
+  date  String
+  clicks  Int
+  impressions Int
+  ctr String
+  position  Float
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }

@@ -1,4 +1,4 @@
-const topAutors = [
+const topAuthors = [
   {
     'Draft url': 'https://app.hackernoon.com/drafts/4E6A2NsOCdVtUSOvZ0rz',
     '': 'test',
@@ -313,4 +313,4 @@ const topAutors = [
   }
 ];
 
-export default topAutors;
+module.exports = { topAuthors };

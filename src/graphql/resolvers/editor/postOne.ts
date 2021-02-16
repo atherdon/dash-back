@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 
 /**
  * Post one editor
- * @param editor [GraphQL.Editor]
+ * @param data [GraphQL.PostOneEditorParams]
  * @return [GraphQL.Editor]
  */
 const postOneEditor: T.Resolver<GraphQL.MutationPostOneEditorArgs, GraphQL.Editor | null> = async (
@@ -20,17 +20,23 @@ const postOneEditor: T.Resolver<GraphQL.MutationPostOneEditorArgs, GraphQL.Edito
   const result = await prisma.editor.create({
     data: {
       name: data.name,
+      edited: data.edited,
+      editedPercent: data.editedPercent,
+      published: data.published,
+      publishedPercent: data.publishedPercent,
+      rejected: data.rejected,
+      rejectedPercent: data.rejectedPercent,
     },
   });
   return {
     id: result.id,
     name: result.name,
-    edited: result.edited || 0,
-    editedPercent: result.editedPercent || 0,
-    published: result.published || 0,
-    publishedPercent: result.publishedPercent || 0,
-    rejected: result.rejectedPercent || 0,
-    rejectedPercent: result.rejectedPercent || 0,
+    edited: result.edited,
+    editedPercent: result.editedPercent,
+    published: result.published,
+    publishedPercent: result.publishedPercent,
+    rejected: result.rejectedPercent,
+    rejectedPercent: result.rejectedPercent,
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };
