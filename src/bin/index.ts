@@ -1,0 +1,44 @@
+/**
+ * Comand line executor `yarn script [command]`
+ */
+import fillTopAuthors from '../prisma/fill/fillTopAuthors';
+import fillBrands from '../prisma/fill/fillBrands';
+import fillEditors from '../prisma/fill/fillEditors';
+import recreateRoles from '../prisma/fill/recreateRoles';
+import fillExpandable from '../prisma/fill/fillExpandable';
+import fillFilters from '../prisma/fill/fillFilters';
+import fillAppearances from '../prisma/fill/fillAppearances';
+import fillClicksPosition from '../prisma/fill/fillClicksPosition';
+
+const command = process.argv[2];
+
+/**
+ * Fill data in database from data directory
+ */
+async function fill() {
+  await fillTopAuthors();
+  await fillBrands();
+  await fillEditors();
+  await fillExpandable();
+  await fillFilters();
+  await fillAppearances();
+  await fillClicksPosition();
+}
+
+(async () => {
+  switch (command) {
+    case 'fill':
+      await fill();
+      break;
+    case 'roles':
+      await recreateRoles();
+      break;
+    case 'all':
+      await fill();
+      await recreateRoles();
+      break;
+    default:
+      console.info(`Unknow parameter '${command}'`);
+      console.info('Supported parameters: [roles, fill, all]');
+  }
+})();

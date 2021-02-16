@@ -20,9 +20,14 @@ const deleteOneBrand: T.Resolver<GraphQL.MutationDeleteOneBrandArgs, GraphQL.Bra
   return {
     id: result.id,
     url: result.url,
+    v: result.v,
     email: result.email,
-    avgTimeStory: result.avgAllTimeStory || 0,
-    avgAllTimeStory: result.avgAllTimeStory || 0,
+    isPublished: result.isPublished,
+    added: result.added,
+    edited: result.edited,
+    published: result.published,
+    avgTimeStory: result.avgAllTimeStory,
+    avgAllTimeStory: result.avgAllTimeStory,
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };

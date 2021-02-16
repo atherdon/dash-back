@@ -192,15 +192,19 @@ Open database explorer
 yarn studio
 ```
 
-Show actual log:
+Show actual log (production):
 ```
 yarn logs
 ```
 
-Focus `screen`:
+Focus `screen` (production):
 ```
 yarn focus
 ``` 
+Start `fill` scripts
+```
+yarn script fill
+```
 
 # TODOS
 

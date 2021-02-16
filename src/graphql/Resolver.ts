@@ -11,9 +11,17 @@ const Resolvers = {
   Query: {
     // Get many
     getManyBrand: resolvers.brand.getMany,
-    getManyAuthor: resolvers.author.getMany,
+    getManyClicksPosition: resolvers.clicksPosition.getMany,
+    getManyAppearance: resolvers.appearance.getMany,
+    getManyExpandable: resolvers.expandable.getMany,
+    getManyArticle: resolvers.article.getMany,
+    getManyTopAuthor: resolvers.topAuthor.getMany,
     getManyEditor: resolvers.editor.getMany,
+    getManyFilter: resolvers.filter.getMany,
     // Get one
+    getOneFilter: resolvers.filter.getOne,
+    getOneClicksPosition: resolvers.clicksPosition.getOne,
+    getOneAppearance: resolvers.appearance.getOne,
     getOneUser: withAuth(
       {
         minRole: 1,
@@ -22,8 +30,10 @@ const Resolvers = {
       },
       resolvers.user.getOne
     ),
+    getOneExpandable: resolvers.expandable.getOne,
+    getOneArticle: resolvers.article.getOne,
     getOneBrand: resolvers.brand.getOne,
-    getOneAuthor: resolvers.author.getOne,
+    getOneTopAuthor: resolvers.topAuthor.getOne,
     getOneEditor: resolvers.editor.getOne,
   },
   Mutation: {
@@ -31,12 +41,22 @@ const Resolvers = {
     registration: resolvers.user.registration,
     login: resolvers.user.login,
     // Post one
+    postOneArticle: resolvers.article.postOne,
+    postOneClicksPosition: resolvers.clicksPosition.postOne,
+    postOneAppearance: resolvers.appearance.postOne,
+    postOneFilter: resolvers.filter.postOne,
+    postOneExpandable: resolvers.expandable.postOne,
     postOneBrand: resolvers.brand.postOne,
-    postOneAuthor: resolvers.author.postOne,
+    postOneTopAuthor: resolvers.topAuthor.postOne,
     postOneEditor: resolvers.editor.postOne,
     // Update one
+    updateOneFilter: resolvers.filter.updateOne,
+    updateOneClicksPosition: resolvers.clicksPosition.updateOne,
+    updateOneAppearance: resolvers.appearance.updateOne,
+    updateOneArticle: resolvers.article.updateOne,
+    updateOneExpandable: resolvers.expandable.updateOne,
     updateOneBrand: resolvers.brand.updateOne,
-    updateOneAuthor: resolvers.author.updateOne,
+    updateOneTopAuthor: resolvers.topAuthor.updateOne,
     updateOneEditor: resolvers.editor.updateOne,
     updateOneUser: withAuth(
       {
@@ -53,8 +73,13 @@ const Resolvers = {
       },
       resolvers.user.deleteOne
     ),
+    deleteOneClicksPosition: resolvers.clicksPosition.deleteOne,
+    deleteOneAppearance: resolvers.appearance.deleteOne,
+    deleteOneFilter: resolvers.filter.deleteOne,
+    deleteOneExpandable: resolvers.expandable.deleteOne,
+    deleteOneArticle: resolvers.article.deleteOne,
     deleteOneBrand: resolvers.brand.deleteOne,
-    deleteOneAuthor: resolvers.author.deleteOne,
+    deleteOneTopAuthor: resolvers.topAuthor.deleteOne,
     deleteOneEditor: resolvers.editor.deleteOne,
   },
 };

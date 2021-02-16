@@ -19,7 +19,7 @@ module.exports = {
         "@typescript-eslint",
         "prettier"
     ],
-    "ignorePatterns": ["src/types/graphql/index.d.ts", "gulpfile.js"],
+    "ignorePatterns": ["src/types/graphql/index.d.ts", "gulpfile.js", "data"],
     "rules": {
         "prettier/prettier": 1,
         "@typescript-eslint/no-unused-vars": 1,

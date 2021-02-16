@@ -6,26 +6,38 @@ const prisma = new PrismaClient();
 
 /**
  * Post one brand
- * @param brand [GraphQL.Brand]
+ * @param data [GraphQL.PostOneBrandParams]
  * @return [GraphQL.Brand]
  */
 const postOneBrand: T.Resolver<GraphQL.MutationPostOneBrandArgs, GraphQL.Brand | null> = async (
   _,
   params
 ) => {
-  const { email, url } = params.data;
+  const { data } = params;
   const result = await prisma.brand.create({
     data: {
-      email,
-      url,
+      url: data.url,
+      email: data.email,
+      v: data.v,
+      isPublished: data.isPublished,
+      added: data.added,
+      edited: data.edited,
+      published: data.published,
+      avgTimeStory: data.avgTimeStory,
+      avgAllTimeStory: data.avgAllTimeStory,
     },
   });
   return {
     id: result.id,
     url: result.url,
+    v: result.v,
     email: result.email,
-    avgTimeStory: result.avgAllTimeStory || 0,
-    avgAllTimeStory: result.avgAllTimeStory || 0,
+    isPublished: result.isPublished,
+    added: result.added,
+    edited: result.edited,
+    published: result.published,
+    avgTimeStory: result.avgAllTimeStory,
+    avgAllTimeStory: result.avgAllTimeStory,
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };
