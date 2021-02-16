@@ -1,4 +1,4 @@
-const expandable = [
+const expandable1 = [
   {
     key: 1,
     name: 'John Brown',
@@ -29,4 +29,4 @@ const expandable = [
   }
 ];
 
-export default expandable;
+module.exports = { expandable1 };

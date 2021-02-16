@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 /**
  * Delete one editor
  * @param where [GraphQL.GetOneEditorParams]
- * @return [GraphQL.Brand]
+ * @return [GraphQL.Editor]
  */
 const deleteOneEditor: T.Resolver<
   GraphQL.MutationDeleteOneEditorArgs,
@@ -20,12 +20,12 @@ const deleteOneEditor: T.Resolver<
   return {
     id: result.id,
     name: result.name,
-    edited: result.edited || 0,
-    editedPercent: result.editedPercent || 0,
-    published: result.published || 0,
-    publishedPercent: result.publishedPercent || 0,
-    rejected: result.rejectedPercent || 0,
-    rejectedPercent: result.rejectedPercent || 0,
+    edited: result.edited,
+    editedPercent: result.editedPercent,
+    published: result.published,
+    publishedPercent: result.publishedPercent,
+    rejected: result.rejectedPercent,
+    rejectedPercent: result.rejectedPercent,
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };

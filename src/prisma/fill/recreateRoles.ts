@@ -56,5 +56,6 @@ export default async function recreateRoles(): Promise<void> {
       },
     });
   }
+  prisma.$disconnect();
   lib.Console.info('Script "recreateRoles" is done!');
 }

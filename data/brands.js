@@ -872,4 +872,4 @@ const brands = [
   }
 ];
 
-export default brands;
+module.exports = { brands };

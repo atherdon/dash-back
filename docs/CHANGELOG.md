@@ -6,7 +6,14 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version 
-
+- ### version 4.0.0-16.02.2021
+1. Renamed schema `Autor` into `TopAuthor`
+2. Added CRUD `Article`
+3. Added CRUD `Expandable`
+4. Changed schema types for `Brand` and `TopAuthor` 
+5. Added CRUD `Appearance`
+6. Added CRUD `Filter`
+7. Added scripts to fill data from data directory for existed CRUDs
 - ### version 3.3.2-12.02.2021
 Fixed deploy bug with `prisma generate`
 - ### version 3.3.1-12.02.2021
