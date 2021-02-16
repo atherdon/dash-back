@@ -43,7 +43,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation($data: PostOneBrandParams!) {\n    postOneBrand(data: $data) {\n        id\n        created\n    }\n}",
-								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": false,\n        \"added\": 23.23,\n        \"edited\": 23.23,\n        \"published\": 23.23,\n        \"avgTimeStory\": 23,\n        \"avgAllTimeStory\": 0,\n        \"email\": \"dasd\"\n    }\n}"
+								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": \"false\",\n        \"added\": \"23.23\",\n        \"edited\": \"23.23\",\n        \"published\": \"23.23\",\n        \"avgTimeStory\": \"23\",\n        \"avgAllTimeStory\": \"0\",\n        \"email\": \"dasd\"\n    }\n}"
 							}
 						},
 						"url": {
@@ -178,7 +178,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation($data: PostOneArticleParams!) {\n    postOneArticle(data: $data) {\n        id\n        created\n    }\n}",
-								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": false,\n        \"added\": 23.23,\n        \"edited\": 23.23,\n        \"published\": 23.23,\n        \"avgTimeStory\": 23,\n        \"avgAllTimeStory\": 0,\n        \"email\": \"dasd\"\n    }\n}"
+								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": \"false\",\n        \"added\": \"23.23\",\n        \"edited\": \"23.23\",\n        \"published\": \"23.23\",\n        \"avgTimeStory\": \"23\",\n        \"avgAllTimeStory\": \"0\",\n        \"email\": \"dasd\"\n    }\n}"
 							}
 						},
 						"url": {
@@ -313,7 +313,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation($data: PostOneTopAuthorParams!) {\n    postOneTopAuthor(data: $data) {\n        id\n        created\n    }\n}",
-								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": false,\n        \"added\": 23.23,\n        \"edited\": 23.23,\n        \"published\": 23.23,\n        \"avgTimeStory\": 23,\n        \"avgAllTimeStory\": 0,\n        \"email\": \"dasd\"\n    }\n}"
+								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": \"false\",\n        \"added\": \"23.23\",\n        \"edited\": \"23.23\",\n        \"published\": \"23.23\",\n        \"avgTimeStory\": \"23\",\n        \"avgAllTimeStory\": \"0\",\n        \"email\": \"dasd\"\n    }\n}"
 							}
 						},
 						"url": {
