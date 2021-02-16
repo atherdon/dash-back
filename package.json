@@ -1,6 +1,6 @@
 {
   "name": "dash-back",
-  "version": "4.0.0",
+  "version": "4.0.2",
   "description": "Dashboard backend",
   "main": "dist/src/index.js",
   "repository": "https://github.com/atherdon/dash-back",
@@ -41,8 +41,6 @@
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
-    "graphql-auth": "^1.0.0",
-    "graphql-tag": "^2.11.0",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
