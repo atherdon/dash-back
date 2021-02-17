@@ -6,18 +6,20 @@ const { spawn } = require('child_process');
  * @param {*} cb 
  */
 function codegen(cb) {
-  const com = spawn('yarn', ['codegen']);
-  com.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
-  });
-  
-  com.stderr.on('data', (data) => {
-    console.error(`stderr: ${data}`);
-  });
-  
-  com.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
-  });
+  setTimeout(() => {
+    const com = spawn('yarn', ['codegen']);
+    com.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+    });
+    
+    com.stderr.on('data', (data) => {
+      console.error(`stderr: ${data}`);
+    });
+    
+    com.on('close', (code) => {
+      console.log(`child process exited with code ${code}`);
+    });
+  }, 3000);
   cb();
 }
 
@@ -26,18 +28,20 @@ function codegen(cb) {
  * @param {*} cb 
  */
 function generate(cb) {
-  const com = spawn('yarn', ['generate']);
-  com.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
-  });
-  
-  com.stderr.on('data', (data) => {
-    console.error(`stderr: ${data}`);
-  });
-  
-  com.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
-  });
+  setTimeout(() => {
+    const com = spawn('yarn', ['generate']);
+    com.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+    });
+    
+    com.stderr.on('data', (data) => {
+      console.error(`stderr: ${data}`);
+    });
+    
+    com.on('close', (code) => {
+      console.log(`child process exited with code ${code}`);
+    });
+  }, 3000);
   cb();
 }
 
@@ -46,6 +50,6 @@ exports.default = function() {
    *  Watch changed on src/graphql/Schema.ts file,
    *  and run codegen command
    */
-  watch('dist/src/graphql/Schema.js', codegen);
+  watch('src/graphql/Schema.ts', codegen);
   watch('src/prisma/schema.prisma', generate);
 };

@@ -5,18 +5,15 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Post one appearance
- * @param data [GraphQL.PostOneAppearanceParams]
- * @return [GraphQL.Appearance]
+ * Post one device
+ * @param data [GraphQL.PostOneDeviceParams]
+ * @return [GraphQL.Device]
  */
-const postOneAppearance: T.Resolver<
-  GraphQL.MutationPostOneAppearanceArgs,
-  GraphQL.Appearance | null
-> = async (_, params) => {
+const postOneDevice: T.Resolver<GraphQL.MutationPostOneDeviceArgs, GraphQL.Device | null> = async (_, params) => {
   const { data } = params;
-  const result = await prisma.appearance.create({
+  const result = await prisma.device.create({
     data: {
-      search: data.search,
+      name: data.name,
       clicks: data.clicks,
       impressions: data.impressions,
       ctr: data.ctr,
@@ -25,7 +22,7 @@ const postOneAppearance: T.Resolver<
   });
   return {
     id: result.id,
-    search: result.search,
+    name: result.name,
     clicks: result.clicks,
     impressions: result.impressions,
     ctr: result.ctr,
@@ -35,4 +32,4 @@ const postOneAppearance: T.Resolver<
   };
 };
 
-export default postOneAppearance;
+export default postOneDevice;

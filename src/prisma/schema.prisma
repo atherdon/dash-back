@@ -116,3 +116,56 @@ model ClicksPosition {
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }
+
+model Country {
+  id  Int @id @default(autoincrement())
+  name  String
+  clicks  Int
+  impressions Int
+  ctr String
+  position  Float
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+
+model Device {
+  id  Int @id @default(autoincrement())
+  name  String
+  clicks  Int
+  impressions Int
+  ctr String
+  position  Float
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+
+model Page {
+  id  Int @id @default(autoincrement())
+  url  String
+  clicks  Int
+  impressions Int
+  ctr String
+  position  Float
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+
+model QueryS {
+  id  Int @id @default(autoincrement())
+  name  String
+  clicks  Int
+  impressions Int
+  ctr String
+  position  Float
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+
+model Tag {
+  id  Int @id @default(autoincrement())
+  word  String
+  count Int
+  char  String 
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}

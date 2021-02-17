@@ -50,6 +50,36 @@
 - - - [Post one](#post-one-appearance)
 - - - [Update one](#update-one-appearance)
 - - - [Delete one](#delete-one-appearance)
+- - [Country](#country)
+- - - [Get many](#get-many-countries)
+- - - [Get one](#get-one-country)
+- - - [Post one](#post-one-country)
+- - - [Update one](#update-one-country)
+- - - [Delete one](#delete-one-country)
+- - [Device](#device)
+- - - [Get many](#get-many-devices)
+- - - [Get one](#get-one-device)
+- - - [Post one](#post-one-device)
+- - - [Update one](#update-one-device)
+- - - [Delete one](#delete-one-device)
+- - [Page](#page)
+- - - [Get many](#get-many-pages)
+- - - [Get one](#get-one-page)
+- - - [Post one](#post-one-page)
+- - - [Update one](#update-one-page)
+- - - [Delete one](#delete-one-page)
+- - [Query](#query)
+- - - [Get many](#get-many-queries)
+- - - [Get one](#get-one-query)
+- - - [Post one](#post-one-query)
+- - - [Update one](#update-one-query)
+- - - [Delete one](#delete-one-query)
+- - [Tag](#tag)
+- - - [Get many](#get-many-tags)
+- - - [Get one](#get-one-tag)
+- - - [Post one](#post-one-tag)
+- - - [Update one](#update-one-tag)
+- - - [Delete one](#delete-one-tag)
 - - [User](#user)
 - - - [Registration](#registration)
 - - - [Login](#login)
@@ -308,6 +338,181 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 @param where — [GraphQL.GetOneAppearanceParams]
 
 @return — [GraphQL.Appearance]
+```
+
+### Country
+##### Get many countries
+```
+@param - [void]
+
+@return — [GraphQL.Country[]]
+```
+##### Get one country
+```
+@param where — [GraphQL.GetOneCountryParams]
+
+@return — [GraphQL.Country]
+```
+##### Post one country
+```
+@param data — [GraphQL.PostOneCountryParams]
+
+@return — [GraphQL.Country]
+```
+
+##### Update one country
+```
+@param where — [GraphQL.GetOneCountryParams]
+
+@param data — [GraphQL.UpdateOneCountryParams]
+
+@return — [GraphQL.Country]
+```
+##### Delete one country
+```
+@param where — [GraphQL.GetOneCountryParams]
+
+@return — [GraphQL.Country]
+```
+
+### Device
+##### Get many devices
+```
+@param - [void]
+
+@return — [GraphQL.Device[]]
+```
+##### Get one device
+```
+@param where — [GraphQL.GetOneDeviceParams]
+
+@return — [GraphQL.Device]
+```
+##### Post one device
+```
+@param data — [GraphQL.PostOneDeviceParams]
+
+@return — [GraphQL.Device]
+```
+
+##### Update one device
+```
+@param where — [GraphQL.GetOneDeviceParams]
+
+@param data — [GraphQL.UpdateOneDeviceParams]
+
+@return — [GraphQL.Device]
+```
+##### Delete one device
+```
+@param where — [GraphQL.GetOneDeviceParams]
+
+@return — [GraphQL.Device]
+```
+
+### Page
+##### Get many pages
+```
+@param - [void]
+
+@return — [GraphQL.Page[]]
+```
+##### Get one page
+```
+@param where — [GraphQL.GetOnePageParams]
+
+@return — [GraphQL.Page]
+```
+##### Post one page
+```
+@param data — [GraphQL.PostOnePageParams]
+
+@return — [GraphQL.Page]
+```
+
+##### Update one page
+```
+@param where — [GraphQL.GetOnePageParams]
+
+@param data — [GraphQL.UpdateOnePageParams]
+
+@return — [GraphQL.Page]
+```
+##### Delete one page
+```
+@param where — [GraphQL.GetOnePageParams]
+
+@return — [GraphQL.Page]
+```
+
+### Query
+##### Get many queries
+```
+@param - [void]
+
+@return — [GraphQL.QueryS[]]
+```
+##### Get one query
+```
+@param where — [GraphQL.GetOneQuerySParams]
+
+@return — [GraphQL.QueryS]
+```
+##### Post one query
+```
+@param data — [GraphQL.PostOneQuerySParams]
+
+@return — [GraphQL.QueryS]
+```
+
+##### Update one query
+```
+@param where — [GraphQL.GetOneQuerySParams]
+
+@param data — [GraphQL.UpdateOneQuerySParams]
+
+@return — [GraphQL.QueryS]
+```
+##### Delete one query
+```
+@param where — [GraphQL.GetOneQuerySParams]
+
+@return — [GraphQL.QueryS]
+```
+
+### Tag
+##### Get many tag
+```
+@param - [void]
+
+@return — [GraphQL.Tag[]]
+```
+##### Get one tag
+```
+@param where — [GraphQL.GetOneTagParams]
+
+@return — [GraphQL.Tag]
+```
+##### Post one tag
+```
+@param data — [GraphQL.PostOneTagParams]
+
+@return — [GraphQL.Tag]
+```
+
+##### Update one tag
+```
+@param where — [GraphQL.GetOneTagParams]
+
+@param data — [GraphQL.UpdateOneTagParams]
+
+@return — [GraphQL.Tag]
+```
+##### Delete one tag
+```
+@param where — [GraphQL.GetOneTagParams]
+
+@return — [GraphQL.Tag]
 ```
 
 #### User

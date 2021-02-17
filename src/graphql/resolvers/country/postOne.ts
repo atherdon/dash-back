@@ -5,18 +5,18 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Post one appearance
- * @param data [GraphQL.PostOneAppearanceParams]
- * @return [GraphQL.Appearance]
+ * Post one country
+ * @param data [GraphQL.PostOneCountryParams]
+ * @return [GraphQL.Country]
  */
-const postOneAppearance: T.Resolver<
-  GraphQL.MutationPostOneAppearanceArgs,
-  GraphQL.Appearance | null
+const postOneCountry: T.Resolver<
+  GraphQL.MutationPostOneCountryArgs,
+  GraphQL.Country | null
 > = async (_, params) => {
   const { data } = params;
-  const result = await prisma.appearance.create({
+  const result = await prisma.country.create({
     data: {
-      search: data.search,
+      name: data.name,
       clicks: data.clicks,
       impressions: data.impressions,
       ctr: data.ctr,
@@ -25,7 +25,7 @@ const postOneAppearance: T.Resolver<
   });
   return {
     id: result.id,
-    search: result.search,
+    name: result.name,
     clicks: result.clicks,
     impressions: result.impressions,
     ctr: result.ctr,
@@ -35,4 +35,4 @@ const postOneAppearance: T.Resolver<
   };
 };
 
-export default postOneAppearance;
+export default postOneCountry;

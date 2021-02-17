@@ -9,6 +9,11 @@ import fillExpandable from '../prisma/fill/fillExpandable';
 import fillFilters from '../prisma/fill/fillFilters';
 import fillAppearances from '../prisma/fill/fillAppearances';
 import fillClicksPosition from '../prisma/fill/fillClicksPosition';
+import fillCountries from '../prisma/fill/fillCountries';
+import fillDevices from '../prisma/fill/fillDevices';
+import fillPages from '../prisma/fill/fillPages';
+import fillQueries from '../prisma/fill/fillQueries';
+import fillTags from '../prisma/fill/fillTags';
 
 const command = process.argv[2];
 
@@ -23,6 +28,11 @@ async function fill() {
   await fillFilters();
   await fillAppearances();
   await fillClicksPosition();
+  await fillCountries();
+  await fillDevices();
+  await fillPages();
+  await fillQueries();
+  await fillTags();
 }
 
 (async () => {
