@@ -1,6 +1,3 @@
-/**
- * Type of example resolver file
- */
 import type * as T from '../../../types';
 import { PrismaClient } from '@prisma/client';
 import type * as GraphQL from '../../../types/graphql';

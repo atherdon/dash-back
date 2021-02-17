@@ -25,7 +25,7 @@ export default async function fillFilters(): Promise<void> {
       },
     });
     if (oldFilter === null) {
-      lib.Console.info(`Insert filter with name: ${saveRes.filter}`);
+      lib.Console.info(`Insert filter with filter: ${saveRes.filter}`);
       await prisma.filter.create({
         data: saveRes,
       });
