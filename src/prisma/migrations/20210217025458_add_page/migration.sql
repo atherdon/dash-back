@@ -1,0 +1,11 @@
+-- CreateTable
+CREATE TABLE "Page" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "url" TEXT NOT NULL,
+    "clicks" INTEGER NOT NULL,
+    "impressions" INTEGER NOT NULL,
+    "ctr" TEXT NOT NULL,
+    "position" DECIMAL NOT NULL,
+    "created" DATETIME DEFAULT CURRENT_TIMESTAMP,
+    "updated" DATETIME DEFAULT CURRENT_TIMESTAMP
+);

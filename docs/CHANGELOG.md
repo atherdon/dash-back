@@ -6,6 +6,12 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version 
+- ### version 4.0.3-17.02.2021
+1. Added CRUD `Country`
+2. Added CRUD `Device`
+3. Added CRUD `QueryS`
+4. Added CRUD `Tag`
+5. Added fill scripts for all CRUDs
 - ### version 4.0.0-16.02.2021
 1. Renamed schema `Autor` into `TopAuthor`
 2. Added CRUD `Article`

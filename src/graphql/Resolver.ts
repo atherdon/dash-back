@@ -10,7 +10,12 @@ import withAuth from '../middlewares/hooks/withAuth';
 const Resolvers = {
   Query: {
     // Get many
+    getManyTag: resolvers.tag.getMany,
     getManyBrand: resolvers.brand.getMany,
+    getManyQueryS: resolvers.queryS.getMany,
+    getManyPage: resolvers.page.getMany,
+    getManyDevice: resolvers.device.getMany,
+    getManyCountry: resolvers.country.getMany,
     getManyClicksPosition: resolvers.clicksPosition.getMany,
     getManyAppearance: resolvers.appearance.getMany,
     getManyExpandable: resolvers.expandable.getMany,
@@ -20,6 +25,10 @@ const Resolvers = {
     getManyFilter: resolvers.filter.getMany,
     // Get one
     getOneFilter: resolvers.filter.getOne,
+    getOneTag: resolvers.tag.getOne,
+    getOneQueryS: resolvers.queryS.getOne,
+    getOnePage: resolvers.page.getOne,
+    getOneDevice: resolvers.device.getOne,
     getOneClicksPosition: resolvers.clicksPosition.getOne,
     getOneAppearance: resolvers.appearance.getOne,
     getOneUser: withAuth(
@@ -32,6 +41,7 @@ const Resolvers = {
     ),
     getOneExpandable: resolvers.expandable.getOne,
     getOneArticle: resolvers.article.getOne,
+    getOneCountry: resolvers.country.getOne,
     getOneBrand: resolvers.brand.getOne,
     getOneTopAuthor: resolvers.topAuthor.getOne,
     getOneEditor: resolvers.editor.getOne,
@@ -42,6 +52,11 @@ const Resolvers = {
     login: resolvers.user.login,
     // Post one
     postOneArticle: resolvers.article.postOne,
+    postOneTag: resolvers.tag.postOne,
+    postOneQueryS: resolvers.queryS.postOne,
+    postOnePage: resolvers.page.postOne,
+    postOneDevice: resolvers.device.postOne,
+    postOneCountry: resolvers.country.postOne,
     postOneClicksPosition: resolvers.clicksPosition.postOne,
     postOneAppearance: resolvers.appearance.postOne,
     postOneFilter: resolvers.filter.postOne,
@@ -51,6 +66,11 @@ const Resolvers = {
     postOneEditor: resolvers.editor.postOne,
     // Update one
     updateOneFilter: resolvers.filter.updateOne,
+    updateOneTag: resolvers.tag.updateOne,
+    updateOneQueryS: resolvers.queryS.updateOne,
+    updateOnePage: resolvers.page.updateOne,
+    updateOneDevice: resolvers.device.updateOne,
+    updateOneCountry: resolvers.country.updateOne,
     updateOneClicksPosition: resolvers.clicksPosition.updateOne,
     updateOneAppearance: resolvers.appearance.updateOne,
     updateOneArticle: resolvers.article.updateOne,
@@ -73,6 +93,11 @@ const Resolvers = {
       },
       resolvers.user.deleteOne
     ),
+    deleteOnePage: resolvers.page.deleteOne,
+    deleteOneTag: resolvers.tag.deleteOne,
+    deleteOneQueryS: resolvers.queryS.deleteOne,
+    deleteOneCountry: resolvers.country.deleteOne,
+    deleteOneDevice: resolvers.device.deleteOne,
     deleteOneClicksPosition: resolvers.clicksPosition.deleteOne,
     deleteOneAppearance: resolvers.appearance.deleteOne,
     deleteOneFilter: resolvers.filter.deleteOne,

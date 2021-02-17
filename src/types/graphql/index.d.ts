@@ -139,6 +139,64 @@ export type ClicksPosition = {
   updated: Scalars['String'];
 };
 
+export type Country = {
+  __typename?: 'Country';
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
+export type Device = {
+  __typename?: 'Device';
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
+export type Page = {
+  __typename?: 'Page';
+  id: Scalars['Int'];
+  url: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
+export type QueryS = {
+  __typename?: 'QueryS';
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
+export type Tag = {
+  __typename?: 'Tag';
+  id: Scalars['Int'];
+  word: Scalars['String'];
+  count: Scalars['Int'];
+  char: Scalars['String'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+};
+
 export type RegistrationParams = {
   name?: Maybe<Scalars['String']>;
   password: Scalars['String'];
@@ -344,9 +402,110 @@ export type UpdateOneClicksPositionParams = {
   position?: Maybe<Scalars['Float']>;
 };
 
+export type PostOneCountryParams = {
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type GetOneCountryParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneCountryParams = {
+  name?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type PostOneDeviceParams = {
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type GetOneDeviceParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneDeviceParams = {
+  name?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type PostOnePageParams = {
+  url: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type GetOnePageParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOnePageParams = {
+  url?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type PostOneQuerySParams = {
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type GetOneQuerySParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneQuerySParams = {
+  name?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type PostOneTagParams = {
+  word: Scalars['String'];
+  count: Scalars['Int'];
+  char: Scalars['String'];
+};
+
+export type GetOneTagParams = {
+  id: Scalars['Int'];
+};
+
+export type UpdateOneTagParams = {
+  word?: Maybe<Scalars['String']>;
+  count?: Maybe<Scalars['Int']>;
+  char?: Maybe<Scalars['String']>;
+};
+
 export type Query = {
   __typename?: 'Query';
   getManyArticle: Array<Maybe<Article>>;
+  getManyTag: Array<Maybe<Tag>>;
+  getManyQueryS: Array<Maybe<QueryS>>;
+  getManyPage: Array<Maybe<Page>>;
+  getManyDevice: Array<Maybe<Device>>;
+  getManyCountry: Array<Maybe<Country>>;
   getManyClicksPosition: Array<Maybe<ClicksPosition>>;
   getManyAppearance: Array<Maybe<Appearance>>;
   getManyFilter: Array<Maybe<Filter>>;
@@ -355,6 +514,11 @@ export type Query = {
   getManyEditor: Array<Maybe<Editor>>;
   getManyExpandable: Array<Maybe<Expandable>>;
   getOneUser?: Maybe<User>;
+  getOneTag?: Maybe<Tag>;
+  getOneQueryS?: Maybe<QueryS>;
+  getOnePage?: Maybe<Page>;
+  getOneDevice?: Maybe<Device>;
+  getOneCountry?: Maybe<Country>;
   getOneClicksPosition?: Maybe<ClicksPosition>;
   getOneAppearance?: Maybe<Appearance>;
   getOneArticle?: Maybe<Article>;
@@ -368,6 +532,31 @@ export type Query = {
 
 export type QueryGetOneUserArgs = {
   where: GetOneUserParams;
+};
+
+
+export type QueryGetOneTagArgs = {
+  where: GetOneTagParams;
+};
+
+
+export type QueryGetOneQuerySArgs = {
+  where: GetOneQuerySParams;
+};
+
+
+export type QueryGetOnePageArgs = {
+  where: GetOnePageParams;
+};
+
+
+export type QueryGetOneDeviceArgs = {
+  where: GetOneDeviceParams;
+};
+
+
+export type QueryGetOneCountryArgs = {
+  where: GetOneCountryParams;
 };
 
 
@@ -415,7 +604,12 @@ export type Mutation = {
   registration?: Maybe<User>;
   login?: Maybe<User>;
   postOneExpandable?: Maybe<Expandable>;
+  postOneTag?: Maybe<Tag>;
   postOneBrand?: Maybe<Brand>;
+  postOneQueryS?: Maybe<QueryS>;
+  postOnePage?: Maybe<Page>;
+  postOneDevice?: Maybe<Device>;
+  postOneCountry?: Maybe<Country>;
   postOneClicksPosition?: Maybe<ClicksPosition>;
   postOneAppearance?: Maybe<Appearance>;
   postOneFilter?: Maybe<Filter>;
@@ -431,7 +625,17 @@ export type Mutation = {
   updateOneExpandable?: Maybe<Expandable>;
   updateOneTopAuthor?: Maybe<TopAuthor>;
   updateOneEditor?: Maybe<Editor>;
+  updateOneCountry?: Maybe<Country>;
+  updateOneDevice?: Maybe<Device>;
+  updateOnePage?: Maybe<Page>;
+  updateOneQueryS?: Maybe<QueryS>;
+  updateOneTag?: Maybe<Tag>;
   deleteOneUser?: Maybe<User>;
+  deleteOneTag?: Maybe<Tag>;
+  deleteOneQueryS?: Maybe<QueryS>;
+  deleteOnePage?: Maybe<Page>;
+  deleteOneDevice?: Maybe<Device>;
+  deleteOneCountry?: Maybe<Country>;
   deleteOneClicksPosition?: Maybe<ClicksPosition>;
   deleteOneAppearance?: Maybe<Appearance>;
   deleteOneFilter?: Maybe<Filter>;
@@ -458,8 +662,33 @@ export type MutationPostOneExpandableArgs = {
 };
 
 
+export type MutationPostOneTagArgs = {
+  data: PostOneTagParams;
+};
+
+
 export type MutationPostOneBrandArgs = {
   data: PostOneBrandParams;
+};
+
+
+export type MutationPostOneQuerySArgs = {
+  data: PostOneQuerySParams;
+};
+
+
+export type MutationPostOnePageArgs = {
+  data: PostOnePageParams;
+};
+
+
+export type MutationPostOneDeviceArgs = {
+  data: PostOneDeviceParams;
+};
+
+
+export type MutationPostOneCountryArgs = {
+  data: PostOneCountryParams;
 };
 
 
@@ -547,8 +776,63 @@ export type MutationUpdateOneEditorArgs = {
 };
 
 
+export type MutationUpdateOneCountryArgs = {
+  where: GetOneCountryParams;
+  data: UpdateOneCountryParams;
+};
+
+
+export type MutationUpdateOneDeviceArgs = {
+  where: GetOneDeviceParams;
+  data: UpdateOneDeviceParams;
+};
+
+
+export type MutationUpdateOnePageArgs = {
+  where: GetOnePageParams;
+  data: UpdateOnePageParams;
+};
+
+
+export type MutationUpdateOneQuerySArgs = {
+  where: GetOneQuerySParams;
+  data: UpdateOneQuerySParams;
+};
+
+
+export type MutationUpdateOneTagArgs = {
+  where: GetOneTagParams;
+  data: UpdateOneTagParams;
+};
+
+
 export type MutationDeleteOneUserArgs = {
   where: GetOneUserParams;
+};
+
+
+export type MutationDeleteOneTagArgs = {
+  where: GetOneTagParams;
+};
+
+
+export type MutationDeleteOneQuerySArgs = {
+  where: GetOneQuerySParams;
+};
+
+
+export type MutationDeleteOnePageArgs = {
+  where: GetOnePageParams;
+};
+
+
+export type MutationDeleteOneDeviceArgs = {
+  where: GetOneDeviceParams;
+};
+
+
+export type MutationDeleteOneCountryArgs = {
+  where: GetOneCountryParams;
 };
 
 
@@ -687,6 +971,11 @@ export type ResolversTypes = {
   Appearance: ResolverTypeWrapper<Appearance>;
   Float: ResolverTypeWrapper<Scalars['Float']>;
   ClicksPosition: ResolverTypeWrapper<ClicksPosition>;
+  Country: ResolverTypeWrapper<Country>;
+  Device: ResolverTypeWrapper<Device>;
+  Page: ResolverTypeWrapper<Page>;
+  QueryS: ResolverTypeWrapper<QueryS>;
+  Tag: ResolverTypeWrapper<Tag>;
   RegistrationParams: RegistrationParams;
   LoginParams: LoginParams;
   GetOneUserParams: GetOneUserParams;
@@ -715,6 +1004,21 @@ export type ResolversTypes = {
   PostOneClicksPositionParams: PostOneClicksPositionParams;
   GetOneClicksPositionParams: GetOneClicksPositionParams;
   UpdateOneClicksPositionParams: UpdateOneClicksPositionParams;
+  PostOneCountryParams: PostOneCountryParams;
+  GetOneCountryParams: GetOneCountryParams;
+  UpdateOneCountryParams: UpdateOneCountryParams;
+  PostOneDeviceParams: PostOneDeviceParams;
+  GetOneDeviceParams: GetOneDeviceParams;
+  UpdateOneDeviceParams: UpdateOneDeviceParams;
+  PostOnePageParams: PostOnePageParams;
+  GetOnePageParams: GetOnePageParams;
+  UpdateOnePageParams: UpdateOnePageParams;
+  PostOneQuerySParams: PostOneQuerySParams;
+  GetOneQuerySParams: GetOneQuerySParams;
+  UpdateOneQuerySParams: UpdateOneQuerySParams;
+  PostOneTagParams: PostOneTagParams;
+  GetOneTagParams: GetOneTagParams;
+  UpdateOneTagParams: UpdateOneTagParams;
   Query: ResolverTypeWrapper<{}>;
   Mutation: ResolverTypeWrapper<{}>;
   CacheControlScope: CacheControlScope;
@@ -736,6 +1040,11 @@ export type ResolversParentTypes = {
   Appearance: Appearance;
   Float: Scalars['Float'];
   ClicksPosition: ClicksPosition;
+  Country: Country;
+  Device: Device;
+  Page: Page;
+  QueryS: QueryS;
+  Tag: Tag;
   RegistrationParams: RegistrationParams;
   LoginParams: LoginParams;
   GetOneUserParams: GetOneUserParams;
@@ -764,6 +1073,21 @@ export type ResolversParentTypes = {
   PostOneClicksPositionParams: PostOneClicksPositionParams;
   GetOneClicksPositionParams: GetOneClicksPositionParams;
   UpdateOneClicksPositionParams: UpdateOneClicksPositionParams;
+  PostOneCountryParams: PostOneCountryParams;
+  GetOneCountryParams: GetOneCountryParams;
+  UpdateOneCountryParams: UpdateOneCountryParams;
+  PostOneDeviceParams: PostOneDeviceParams;
+  GetOneDeviceParams: GetOneDeviceParams;
+  UpdateOneDeviceParams: UpdateOneDeviceParams;
+  PostOnePageParams: PostOnePageParams;
+  GetOnePageParams: GetOnePageParams;
+  UpdateOnePageParams: UpdateOnePageParams;
+  PostOneQuerySParams: PostOneQuerySParams;
+  GetOneQuerySParams: GetOneQuerySParams;
+  UpdateOneQuerySParams: UpdateOneQuerySParams;
+  PostOneTagParams: PostOneTagParams;
+  GetOneTagParams: GetOneTagParams;
+  UpdateOneTagParams: UpdateOneTagParams;
   Query: {};
   Mutation: {};
   Upload: Scalars['Upload'];
@@ -897,8 +1221,71 @@ export type ClicksPositionResolvers<ContextType = any, ParentType extends Resolv
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type CountryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Country'] = ResolversParentTypes['Country']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type DeviceResolvers<ContextType = any, ParentType extends ResolversParentTypes['Device'] = ResolversParentTypes['Device']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type PageResolvers<ContextType = any, ParentType extends ResolversParentTypes['Page'] = ResolversParentTypes['Page']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type QuerySResolvers<ContextType = any, ParentType extends ResolversParentTypes['QueryS'] = ResolversParentTypes['QueryS']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type TagResolvers<ContextType = any, ParentType extends ResolversParentTypes['Tag'] = ResolversParentTypes['Tag']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  word?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  count?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  char?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   getManyArticle?: Resolver<Array<Maybe<ResolversTypes['Article']>>, ParentType, ContextType>;
+  getManyTag?: Resolver<Array<Maybe<ResolversTypes['Tag']>>, ParentType, ContextType>;
+  getManyQueryS?: Resolver<Array<Maybe<ResolversTypes['QueryS']>>, ParentType, ContextType>;
+  getManyPage?: Resolver<Array<Maybe<ResolversTypes['Page']>>, ParentType, ContextType>;
+  getManyDevice?: Resolver<Array<Maybe<ResolversTypes['Device']>>, ParentType, ContextType>;
+  getManyCountry?: Resolver<Array<Maybe<ResolversTypes['Country']>>, ParentType, ContextType>;
   getManyClicksPosition?: Resolver<Array<Maybe<ResolversTypes['ClicksPosition']>>, ParentType, ContextType>;
   getManyAppearance?: Resolver<Array<Maybe<ResolversTypes['Appearance']>>, ParentType, ContextType>;
   getManyFilter?: Resolver<Array<Maybe<ResolversTypes['Filter']>>, ParentType, ContextType>;
@@ -907,6 +1294,11 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   getManyEditor?: Resolver<Array<Maybe<ResolversTypes['Editor']>>, ParentType, ContextType>;
   getManyExpandable?: Resolver<Array<Maybe<ResolversTypes['Expandable']>>, ParentType, ContextType>;
   getOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryGetOneUserArgs, 'where'>>;
+  getOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<QueryGetOneTagArgs, 'where'>>;
+  getOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<QueryGetOneQuerySArgs, 'where'>>;
+  getOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<QueryGetOnePageArgs, 'where'>>;
+  getOneDevice?: Resolver<Maybe<ResolversTypes['Device']>, ParentType, ContextType, RequireFields<QueryGetOneDeviceArgs, 'where'>>;
+  getOneCountry?: Resolver<Maybe<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<QueryGetOneCountryArgs, 'where'>>;
   getOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<QueryGetOneClicksPositionArgs, 'where'>>;
   getOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<QueryGetOneAppearanceArgs, 'where'>>;
   getOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<QueryGetOneArticleArgs, 'where'>>;
@@ -921,7 +1313,12 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   registration?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationRegistrationArgs, 'data'>>;
   login?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'data'>>;
   postOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<MutationPostOneExpandableArgs, 'data'>>;
+  postOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<MutationPostOneTagArgs, 'data'>>;
   postOneBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<MutationPostOneBrandArgs, 'data'>>;
+  postOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<MutationPostOneQuerySArgs, 'data'>>;
+  postOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<MutationPostOnePageArgs, 'data'>>;
+  postOneDevice?: Resolver<Maybe<ResolversTypes['Device']>, ParentType, ContextType, RequireFields<MutationPostOneDeviceArgs, 'data'>>;
+  postOneCountry?: Resolver<Maybe<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<MutationPostOneCountryArgs, 'data'>>;
   postOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<MutationPostOneClicksPositionArgs, 'data'>>;
   postOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<MutationPostOneAppearanceArgs, 'data'>>;
   postOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<MutationPostOneFilterArgs, 'data'>>;
@@ -937,7 +1334,17 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   updateOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<MutationUpdateOneExpandableArgs, 'where' | 'data'>>;
   updateOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<MutationUpdateOneTopAuthorArgs, 'where' | 'data'>>;
   updateOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationUpdateOneEditorArgs, 'where' | 'data'>>;
+  updateOneCountry?: Resolver<Maybe<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<MutationUpdateOneCountryArgs, 'where' | 'data'>>;
+  updateOneDevice?: Resolver<Maybe<ResolversTypes['Device']>, ParentType, ContextType, RequireFields<MutationUpdateOneDeviceArgs, 'where' | 'data'>>;
+  updateOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<MutationUpdateOnePageArgs, 'where' | 'data'>>;
+  updateOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<MutationUpdateOneQuerySArgs, 'where' | 'data'>>;
+  updateOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<MutationUpdateOneTagArgs, 'where' | 'data'>>;
   deleteOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationDeleteOneUserArgs, 'where'>>;
+  deleteOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<MutationDeleteOneTagArgs, 'where'>>;
+  deleteOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<MutationDeleteOneQuerySArgs, 'where'>>;
+  deleteOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<MutationDeleteOnePageArgs, 'where'>>;
+  deleteOneDevice?: Resolver<Maybe<ResolversTypes['Device']>, ParentType, ContextType, RequireFields<MutationDeleteOneDeviceArgs, 'where'>>;
+  deleteOneCountry?: Resolver<Maybe<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<MutationDeleteOneCountryArgs, 'where'>>;
   deleteOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<MutationDeleteOneClicksPositionArgs, 'where'>>;
   deleteOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<MutationDeleteOneAppearanceArgs, 'where'>>;
   deleteOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<MutationDeleteOneFilterArgs, 'where'>>;
@@ -962,6 +1369,11 @@ export type Resolvers<ContextType = any> = {
   Expandable?: ExpandableResolvers<ContextType>;
   Appearance?: AppearanceResolvers<ContextType>;
   ClicksPosition?: ClicksPositionResolvers<ContextType>;
+  Country?: CountryResolvers<ContextType>;
+  Device?: DeviceResolvers<ContextType>;
+  Page?: PageResolvers<ContextType>;
+  QueryS?: QuerySResolvers<ContextType>;
+  Tag?: TagResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Upload?: GraphQLScalarType;
