@@ -18,18 +18,16 @@ const postOneExpandable: T.Resolver<
     data: {
       name: data.name,
       key: data.key,
-      age: data.age,
       address: data.address,
-      description: data.description,
+      articles: data.articles.join(','),
     },
   });
   return {
     id: result.id,
     name: result.name,
     key: result.key,
-    age: result.age,
+    articles: result.articles.split(',') || [],
     address: result.address,
-    description: result.description,
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };

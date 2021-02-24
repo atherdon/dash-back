@@ -21,9 +21,8 @@ const deleteOneExpandable: T.Resolver<
     id: result.id,
     name: result.name,
     key: result.key,
-    age: result.age,
+    articles: result.articles.split(','),
     address: result.address,
-    description: result.description,
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };

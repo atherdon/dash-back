@@ -14,12 +14,12 @@
 - - - [Post one](#post-one-article)
 - - - [Update one](#update-one-article)
 - - - [Delete one](#delete-one-article)
-- - [Brand](#brand)
-- - - [Get one](#get-one-brand)
-- - - [Get many](#get-many-brands)
-- - - [Post one](#post-one-brand)
-- - - [Update one](#update-one-brand)
-- - - [Delete one](#delete-one-brand)
+- - [Evergreen](#evergreen)
+- - - [Get one](#get-one-evergreen)
+- - - [Get many](#get-many-evergreens)
+- - - [Post one](#post-one-evergreen)
+- - - [Update one](#update-one-evergreen)
+- - - [Delete one](#delete-one-evergreen)
 - - [Top author](#top-author)
 - - - [Get one](#get-one-top-author)
 - - - [Get many](#get-many-top-authors)
@@ -132,39 +132,39 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 
 @return - [GraphQL.Article]
 ```
-#### Brand
-##### Get many brands
+#### Evergreen
+##### Get many evergreens
 ```
 @param - [void]
 
-@return — [GraphQL.Brand[]]
+@return — [GraphQL.Evergreen[]]
 ```
-##### Get one brand
+##### Get one evergreen
 ```
-@param where — [GraphQL.GetOneBrandParams]
+@param where — [GraphQL.GetOneEvergreenParams]
 
-@return — [GraphQL.Brand]
+@return — [GraphQL.Evergreen]
 ```
-##### Post one brand
+##### Post one evergreen
 ```
-@param data — [GraphQL.PostOneBrandParams]
+@param data — [GraphQL.PostOneEvergreenParams]
 
-@return — [GraphQL.Brand]
+@return — [GraphQL.Evergreen]
 ```
 
-##### Update one brand
+##### Update one evergreen
 ```
-@param where — [GraphQL.GetOneBrandParams]
+@param where — [GraphQL.GetOneEvergreenParams]
 
-@param data — [GraphQL.UpdateOneBrandParams]
+@param data — [GraphQL.UpdateOneEvergreenParams]
 
-@return — [GraphQL.Brand]
+@return — [GraphQL.Evergreen]
 ```
-##### Delete one brand
+##### Delete one evergreen
 ```
-@param where — [GraphQL.GetOneBrandParams]
+@param where — [GraphQL.GetOneEvergreenParams]
 
-@return - [GraphQL.Brand]
+@return - [GraphQL.Evergreen]
 ```
 ### Author
 ##### Get many top authors

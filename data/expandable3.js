@@ -61,4 +61,4 @@ const expandable3 = [
   }
 ];
 
-export default expandable3;
+module.exports = { expandable3 };

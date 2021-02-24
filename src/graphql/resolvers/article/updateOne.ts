@@ -6,16 +6,16 @@ const prisma = new PrismaClient();
 
 /**
  * Update one article
- * @param where [GraphQL.GetOneBrandParams]
- * @param data [GraphQL.UpdateOneBrandParams]
- * @return [GraphQL.Brand]
+ * @param where [GraphQL.GetOneArticleParams]
+ * @param data [GraphQL.UpdateOneArticleParams]
+ * @return [GraphQL.Article]
  */
 const updateOneArticle: T.Resolver<
   GraphQL.MutationUpdateOneArticleArgs,
   GraphQL.Article | null
 > = async (_parent, params) => {
   const { where, data } = params;
-  const result = await prisma.brand.update({
+  const result = await prisma.article.update({
     where,
     data: {
       url: data.url || undefined,

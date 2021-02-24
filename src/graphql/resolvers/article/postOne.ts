@@ -14,7 +14,7 @@ const postOneArticle: T.Resolver<
   GraphQL.Article | null
 > = async (_, params) => {
   const { data } = params;
-  const result = await prisma.brand.create({
+  const result = await prisma.article.create({
     data: {
       url: data.url,
       email: data.email,

@@ -14,7 +14,7 @@ const getOneArticle: T.Resolver<GraphQL.QueryGetOneArticleArgs, GraphQL.Article 
   params
 ) => {
   const { where } = params;
-  const result = await prisma.brand.findFirst({
+  const result = await prisma.article.findFirst({
     where,
   });
   if (result === null) {
