@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
  * @return [GraphQL.Article[]]
  */
 const getManyArticle: T.Resolver<void, GraphQL.Article[]> = async () => {
-  const result = await prisma.brand.findMany();
+  const result = await prisma.article.findMany();
   return result.map((result) => {
     return {
       id: result.id,

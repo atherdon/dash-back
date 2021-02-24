@@ -5,16 +5,16 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Post one brand
- * @param data [GraphQL.PostOneBrandParams]
- * @return [GraphQL.Brand]
+ * Post one Evergreen
+ * @param data [GraphQL.PostOneEvergreenParams]
+ * @return [GraphQL.Evergreen]
  */
-const postOneBrand: T.Resolver<GraphQL.MutationPostOneBrandArgs, GraphQL.Brand | null> = async (
+const postOneEvergreen: T.Resolver<GraphQL.MutationPostOneEvergreenArgs, GraphQL.Evergreen | null> = async (
   _,
   params
 ) => {
   const { data } = params;
-  const result = await prisma.brand.create({
+  const result = await prisma.evergreen.create({
     data: {
       url: data.url,
       email: data.email,
@@ -43,4 +43,4 @@ const postOneBrand: T.Resolver<GraphQL.MutationPostOneBrandArgs, GraphQL.Brand |
   };
 };
 
-export default postOneBrand;
+export default postOneEvergreen;

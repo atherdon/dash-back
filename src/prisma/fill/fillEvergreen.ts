@@ -1,4 +1,4 @@
-import { PrismaClient, Brand } from '@prisma/client';
+import { PrismaClient, Evergreen } from '@prisma/client';
 // @ts-ignore // outside rootDir
 import { brands } from '../../../data/brands.js';
 import * as lib from '../../lib';
@@ -7,12 +7,12 @@ const prisma = new PrismaClient();
 /**
  * Fill data to database from data/brands.js
  */
-export default async function fillBrands(): Promise<void> {
+export default async function fillEvergreen(): Promise<void> {
   lib.Console.info('Script "fillBrands" is started ...');
   let skipped = 0;
   for (let i = 0; brands[i]; i++) {
     const brand = brands[i];
-    const saveRes: Brand = {
+    const saveRes: Evergreen = {
       // @ts-ignore
       id: undefined,
       url: brand['Draft url'],
@@ -35,14 +35,14 @@ export default async function fillBrands(): Promise<void> {
       created: new Date(),
       updated: new Date(),
     };
-    const oldBrand = await prisma.brand.findFirst({
+    const oldBrand = await prisma.evergreen.findFirst({
       where: {
         url: saveRes.url,
       },
     });
     if (oldBrand === null) {
       lib.Console.info(`Insert brand with url: ${saveRes.url}`);
-      await prisma.brand.create({
+      await prisma.evergreen.create({
         data: saveRes,
       });
     } else {

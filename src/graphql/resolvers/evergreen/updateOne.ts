@@ -5,17 +5,17 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Update one brand
- * @param where [GraphQL.GetOneBrandParams]
- * @param data [GraphQL.UpdateOneBrandParams]
- * @return [GraphQL.Brand]
+ * Update one Evergreen
+ * @param where [GraphQL.GetOneEvergreenParams]
+ * @param data [GraphQL.UpdateOneEvergreenParams]
+ * @return [GraphQL.Evergreen]
  */
-const updateOneBrand: T.Resolver<GraphQL.MutationUpdateOneBrandArgs, GraphQL.Brand | null> = async (
+const updateOneEvergreen: T.Resolver<GraphQL.MutationUpdateOneEvergreenArgs, GraphQL.Evergreen | null> = async (
   _parent,
   params
 ) => {
   const { where, data } = params;
-  const result = await prisma.brand.update({
+  const result = await prisma.evergreen.update({
     where,
     data: {
       url: data.url || undefined,
@@ -46,4 +46,4 @@ const updateOneBrand: T.Resolver<GraphQL.MutationUpdateOneBrandArgs, GraphQL.Bra
   };
 };
 
-export default updateOneBrand;
+export default updateOneEvergreen;

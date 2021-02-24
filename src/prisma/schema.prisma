@@ -38,7 +38,7 @@ model Article {
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }
-model Brand {
+model Evergreen {
   id  Int @id @default(autoincrement())
   url String
   v String
@@ -82,9 +82,8 @@ model Expandable {
   id  Int @id @default(autoincrement())
   key Int
   name String
-  age Int
   address String
-  description String
+  articles String
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }

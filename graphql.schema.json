@@ -503,7 +503,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "Brand",
+        "name": "Evergreen",
         "description": null,
         "fields": [
           {
@@ -1132,22 +1132,6 @@
             "deprecationReason": null
           },
           {
-            "name": "age",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "address",
             "description": null,
             "args": [],
@@ -1164,16 +1148,20 @@
             "deprecationReason": null
           },
           {
-            "name": "description",
+            "name": "articles",
             "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               }
             },
             "isDeprecated": false,
@@ -2671,7 +2659,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PostOneBrandParams",
+        "name": "PostOneEvergreenParams",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -2826,7 +2814,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "GetOneBrandParams",
+        "name": "GetOneEvergreenParams",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -2853,7 +2841,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "UpdateOneBrandParams",
+        "name": "UpdateOneEvergreenParams",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -3555,22 +3543,6 @@
             "deprecationReason": null
           },
           {
-            "name": "age",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "address",
             "description": null,
             "type": {
@@ -3587,15 +3559,19 @@
             "deprecationReason": null
           },
           {
-            "name": "description",
+            "name": "articles",
             "description": null,
             "type": {
               "kind": "NON_NULL",
               "name": null,
               "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               }
             },
             "defaultValue": null,
@@ -3665,18 +3641,6 @@
             "deprecationReason": null
           },
           {
-            "name": "age",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "address",
             "description": null,
             "type": {
@@ -3689,12 +3653,16 @@
             "deprecationReason": null
           },
           {
-            "name": "description",
+            "name": "articles",
             "description": null,
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -5263,7 +5231,7 @@
             "deprecationReason": null
           },
           {
-            "name": "getManyBrand",
+            "name": "getManyEvergreen",
             "description": null,
             "args": [],
             "type": {
@@ -5274,7 +5242,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "Brand",
+                  "name": "Evergreen",
                   "ofType": null
                 }
               }
@@ -5662,7 +5630,7 @@
             "deprecationReason": null
           },
           {
-            "name": "getOneBrand",
+            "name": "getOneEvergreen",
             "description": null,
             "args": [
               {
@@ -5673,7 +5641,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "GetOneBrandParams",
+                    "name": "GetOneEvergreenParams",
                     "ofType": null
                   }
                 },
@@ -5684,7 +5652,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "Brand",
+              "name": "Evergreen",
               "ofType": null
             },
             "isDeprecated": false,
@@ -5876,7 +5844,7 @@
             "deprecationReason": null
           },
           {
-            "name": "postOneBrand",
+            "name": "postOneEvergreen",
             "description": null,
             "args": [
               {
@@ -5887,7 +5855,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "PostOneBrandParams",
+                    "name": "PostOneEvergreenParams",
                     "ofType": null
                   }
                 },
@@ -5898,7 +5866,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "Brand",
+              "name": "Evergreen",
               "ofType": null
             },
             "isDeprecated": false,
@@ -6420,7 +6388,7 @@
             "deprecationReason": null
           },
           {
-            "name": "updateOneBrand",
+            "name": "updateOneEvergreen",
             "description": null,
             "args": [
               {
@@ -6431,7 +6399,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "GetOneBrandParams",
+                    "name": "GetOneEvergreenParams",
                     "ofType": null
                   }
                 },
@@ -6447,7 +6415,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "UpdateOneBrandParams",
+                    "name": "UpdateOneEvergreenParams",
                     "ofType": null
                   }
                 },
@@ -6458,7 +6426,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "Brand",
+              "name": "Evergreen",
               "ofType": null
             },
             "isDeprecated": false,
@@ -7144,7 +7112,7 @@
             "deprecationReason": null
           },
           {
-            "name": "deleteOneBrand",
+            "name": "deleteOneEvergreen",
             "description": null,
             "args": [
               {
@@ -7155,7 +7123,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "GetOneBrandParams",
+                    "name": "GetOneEvergreenParams",
                     "ofType": null
                   }
                 },
@@ -7166,7 +7134,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "Brand",
+              "name": "Evergreen",
               "ofType": null
             },
             "isDeprecated": false,

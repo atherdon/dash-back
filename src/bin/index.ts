@@ -2,7 +2,7 @@
  * Comand line executor `yarn script [command]`
  */
 import fillTopAuthors from '../prisma/fill/fillTopAuthors';
-import fillBrands from '../prisma/fill/fillBrands';
+import fillEvergreen from '../prisma/fill/fillEvergreen';
 import fillEditors from '../prisma/fill/fillEditors';
 import recreateRoles from '../prisma/fill/recreateRoles';
 import fillExpandable from '../prisma/fill/fillExpandable';
@@ -22,7 +22,7 @@ const command = process.argv[2];
  */
 async function fill() {
   await fillTopAuthors();
-  await fillBrands();
+  await fillEvergreen();
   await fillEditors();
   await fillExpandable();
   await fillFilters();

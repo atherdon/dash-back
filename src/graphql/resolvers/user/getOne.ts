@@ -10,7 +10,7 @@ const prisma = new PrismaClient();
  * @param where [GraphQL.GetOneUserParams]
  * @return [GraphQL.User]
  */
-const getOneUser: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.User | null> = async (
+const getOneUser: T.Resolver<GraphQL.QueryGetOneUserArgs, GraphQL.User | null> = async (
   _parent,
   params
 ) => {

@@ -14,7 +14,7 @@ const deleteOneArticle: T.Resolver<
   GraphQL.Article | null
 > = async (_parent, params) => {
   const { where } = params;
-  const result = await prisma.brand.delete({
+  const result = await prisma.article.delete({
     where,
   });
   return {
