@@ -5,21 +5,18 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Get one brand
- * @param where [GraphQL.GetOneBrandParams]
- * @return [GraphQL.Brand]
+ * Delete one Evergreen
+ * @param where [GraphQL.GetOneEvergreenParams]
+ * @return [GraphQL.Evergreen]
  */
-const getOneBrand: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.Brand | null> = async (
+const deleteOneEvergreen: T.Resolver<GraphQL.MutationDeleteOneEvergreenArgs, GraphQL.Evergreen | null> = async (
   _parent,
   params
 ) => {
   const { where } = params;
-  const result = await prisma.brand.findFirst({
+  const result = await prisma.evergreen.delete({
     where,
   });
-  if (result === null) {
-    return result;
-  }
   return {
     id: result.id,
     url: result.url,
@@ -36,4 +33,4 @@ const getOneBrand: T.Resolver<GraphQL.QueryGetOneBrandArgs, GraphQL.Brand | null
   };
 };
 
-export default getOneBrand;
+export default deleteOneEvergreen;

@@ -1,15 +1,15 @@
 import { PrismaClient, Expandable } from '@prisma/client';
-import { expandable1 } from '../../../data/expandable.js';
 import { expandable2 } from '../../../data/expandable2.js';
+import { expandable3 } from '../../../data/expandable3.js';
 import * as lib from '../../lib';
 const prisma = new PrismaClient();
 
 /**
  * Fill data to database from data/expandable.js and data/expandable2.js
  */
-export default async function fillBrands(): Promise<void> {
+export default async function fillExpandables(): Promise<void> {
   lib.Console.info('Script "fillExpandable" is started ...');
-  const expandables = expandable1.concat(expandable2);
+  const expandables = expandable2.concat(expandable3);
   let skipped = 0;
   for (let i = 0; expandables[i]; i++) {
     const expandable = expandables[i];
@@ -18,9 +18,8 @@ export default async function fillBrands(): Promise<void> {
       id: undefined,
       key: expandable.key,
       name: expandable.name,
-      age: expandable.age,
       address: expandable.address,
-      description: expandable.description,
+      articles: expandable.articles.join(','),
       created: new Date(),
       updated: new Date(),
     };

@@ -3,7 +3,7 @@
  * specified namespaces from ./resolvers
  */
 
-export * as brand from './brand';
+export * as evergreen from './evergreen';
 export * as topAuthor from './topAuthor';
 export * as editor from './editor';
 export * as user from './user';

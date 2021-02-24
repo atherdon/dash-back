@@ -40,7 +40,7 @@ const Schema = gql`
     created: String!
     updated: String!
   }
-  type Brand @cacheControl(maxAge: 1000) {
+  type Evergreen @cacheControl(maxAge: 1000) {
     id: Int!
     v: String!
     url: String!
@@ -84,9 +84,8 @@ const Schema = gql`
     id: Int!
     key: Int!
     name: String!
-    age: Int!
     address: String!
-    description: String!
+    articles: [String]!
     created: String!
     updated: String!
   }
@@ -205,8 +204,8 @@ const Schema = gql`
     avgTimeStory: String
     avgAllTimeStory: String
   }
-  ## Brand
-  input PostOneBrandParams {
+  ## Evergreen
+  input PostOneEvergreenParams {
     v: String!
     url: String!
     email: String!
@@ -217,10 +216,10 @@ const Schema = gql`
     avgTimeStory: String!
     avgAllTimeStory: String!
   }
-  input GetOneBrandParams {
+  input GetOneEvergreenParams {
     id: Int!
   }
-  input UpdateOneBrandParams {
+  input UpdateOneEvergreenParams {
     v: String
     url: String
     email: String
@@ -283,9 +282,8 @@ const Schema = gql`
   input PostOneExpandableParams {
     key: Int!
     name: String!
-    age: Int!
     address: String!
-    description: String!
+    articles: [String]!
   }
   input GetOneExpandableParams {
     id: Int!
@@ -293,9 +291,8 @@ const Schema = gql`
   input UpdateOneExpandableParams {
     key: Int
     name: String
-    age: Int
     address: String
-    description: String
+    articles: [String]
   }
   ## Filter
   input PostOneFilterParams {
@@ -442,7 +439,7 @@ const Schema = gql`
     getManyClicksPosition: [ClicksPosition]!
     getManyAppearance: [Appearance]!
     getManyFilter: [Filter]!
-    getManyBrand: [Brand]!
+    getManyEvergreen: [Evergreen]!
     getManyTopAuthor: [TopAuthor]!
     getManyEditor: [Editor]!
     getManyExpandable: [Expandable]!
@@ -458,7 +455,7 @@ const Schema = gql`
     getOneArticle(where: GetOneArticleParams!): Article
     getOneFilter(where: GetOneFilterParams!): Filter
     getOneExpandable(where: GetOneExpandableParams!): Expandable
-    getOneBrand(where: GetOneBrandParams!): Brand
+    getOneEvergreen(where: GetOneEvergreenParams!): Evergreen
     getOneTopAuthor(where: GetOneTopAuthorParams!): TopAuthor
     getOneEditor(where: GetOneEditorParams!): Editor
   }
@@ -469,7 +466,7 @@ const Schema = gql`
     # Post one
     postOneExpandable(data: PostOneExpandableParams!): Expandable
     postOneTag(data: PostOneTagParams!): Tag
-    postOneBrand(data: PostOneBrandParams!): Brand
+    postOneEvergreen(data: PostOneEvergreenParams!): Evergreen
     postOneQueryS(data: PostOneQuerySParams!): QueryS
     postOnePage(data: PostOnePageParams!): Page
     postOneDevice(data: PostOneDeviceParams!): Device
@@ -492,7 +489,7 @@ const Schema = gql`
       data: UpdateOneClicksPositionParams!
     ): ClicksPosition
     updateOneArticle(where: GetOneArticleParams!, data: UpdateOneArticleParams!): Article
-    updateOneBrand(where: GetOneBrandParams!, data: UpdateOneBrandParams!): Brand
+    updateOneEvergreen(where: GetOneEvergreenParams!, data: UpdateOneEvergreenParams!): Evergreen
     updateOneExpandable(
       where: GetOneExpandableParams!
       data: UpdateOneExpandableParams!
@@ -516,7 +513,7 @@ const Schema = gql`
     deleteOneFilter(where: GetOneFilterParams!): Filter
     deleteOneArticle(where: GetOneArticleParams!): Article
     deleteOneExpandable(where: GetOneExpandableParams!): Expandable
-    deleteOneBrand(where: GetOneBrandParams!): Brand
+    deleteOneEvergreen(where: GetOneEvergreenParams!): Evergreen
     deleteOneTopAuthor(where: GetOneTopAuthorParams!): TopAuthor
     deleteOneEditor(where: GetOneEditorParams!): Editor
   }

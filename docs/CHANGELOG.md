@@ -6,6 +6,9 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version 
+- ### version 4.0.4-24.02.2021
+1. Rename `Brand` to `Evergreen`
+2. Change `Expandable` schema  
 - ### version 4.0.3-17.02.2021
 1. Added CRUD `Country`
 2. Added CRUD `Device`

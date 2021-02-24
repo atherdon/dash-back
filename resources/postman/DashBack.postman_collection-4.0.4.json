@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "brand",
+			"name": "evergreen",
 			"item": [
 				{
 					"name": "Get many",
@@ -16,7 +16,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query {\n    getManyBrand {\n        id\n        created\n    }\n}",
+								"query": "query {\n    getManyEvergreen {\n        id\n        created\n    }\n}",
 								"variables": ""
 							}
 						},
@@ -42,7 +42,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($data: PostOneBrandParams!) {\n    postOneBrand(data: $data) {\n        id\n        created\n    }\n}",
+								"query": "mutation($data: PostOneEvergreenParams!) {\n    postOneEvergreen(data: $data) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": \"false\",\n        \"added\": \"23.23\",\n        \"edited\": \"23.23\",\n        \"published\": \"23.23\",\n        \"avgTimeStory\": \"23\",\n        \"avgAllTimeStory\": \"0\",\n        \"email\": \"dasd\"\n    }\n}"
 							}
 						},
@@ -68,7 +68,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query($where: GetOneBrandParams!) {\n    getOneBrand(where: $where) {\n        id\n        url\n        created\n    }\n}",
+								"query": "query($where: GetOneEvergreenParams!) {\n    getOneEvergreen(where: $where) {\n        id\n        url\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -94,7 +94,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneBrandParams!, $data: UpdateOneBrandParams!) {\n    updateOneBrand(where: $where, data: $data) {\n        id\n        created\n        url\n    }\n}",
+								"query": "mutation($where: GetOneEvergreenParams!, $data: UpdateOneEvergreenParams!) {\n    updateOneEvergreen(where: $where, data: $data) {\n        id\n        created\n        url\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    },\n    \"data\": {\n        \"url\": \"updatsed url\"\n    }\n}"
 							}
 						},
@@ -120,7 +120,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneBrandParams!) {\n    deleteOneBrand(where: $where) {\n        id\n    }\n}",
+								"query": "mutation deleteOneEvergreen($where: GetOneEvergreenParams!) {\n    deleteOneEvergreen(where: $where) {\n        id\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -255,7 +255,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneArticleParams!) {\n    deleteOneArticle(where: $where) {\n        id\n    }\n}",
+								"query": "mutation deleteOneArticle($where: GetOneArticleParams!) {\n    deleteOneArticle(where: $where) {\n        id\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -390,7 +390,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneTopAuthorParams!) {\n    deleteOneTopAuthor(where: $where) {\n        id\n    }\n}",
+								"query": "mutation deleteOneTopAuthor($where: GetOneTopAuthorParams!) {\n    deleteOneTopAuthor(where: $where) {\n        id\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -525,7 +525,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneEditorParams!) {\n    deleteOneEditor(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneEditor($where: GetOneEditorParams!) {\n    deleteOneEditor(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -583,7 +583,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation($data: PostOneExpandableParams!) {\n    postOneExpandable(data: $data) {\n        id\n    }\n}",
-								"variables": "{\n    \"data\": {\n        \"key\": 1,\n        \"name\": \"John Brown\",\n        \"age\": 32,\n        \"address\": \"New York No. 1 Lake Park\",\n        \"description\": \"My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.\"\n    }\n}"
+								"variables": "{\n    \"data\": {\n        \"key\": 1,\n        \"name\": \"John Brown\",\n        \"address\": \"New York No. 1 Lake Park\",\n        \"articles\": [\n            \"https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3\"\n        ]\n    }\n}"
 							}
 						},
 						"url": {
@@ -660,7 +660,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneExpandableParams!) {\n    deleteOneExpandable(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneExpandable($where: GetOneExpandableParams!) {\n    deleteOneExpandable(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -795,7 +795,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneAppearanceParams!) {\n    deleteOneAppearance(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneAppearance($where: GetOneAppearanceParams!) {\n    deleteOneAppearance(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -930,7 +930,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneClicksPositionParams!) {\n    deleteOneClicksPosition(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneClicksPosition($where: GetOneClicksPositionParams!) {\n    deleteOneClicksPosition(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -1065,7 +1065,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneFilterParams!) {\n    deleteOneFilter(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneFilter($where: GetOneFilterParams!) {\n    deleteOneFilter(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -1088,6 +1088,32 @@
 		{
 			"name": "country",
 			"item": [
+				{
+					"name": "Delete one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteOneCountry($where: GetOneCountryParams!) {\n    deleteOneCountry(where: $where) {\n        id\n        created\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Get many",
 					"request": {
@@ -1176,32 +1202,6 @@
 							"graphql": {
 								"query": "mutation($where: GetOneCountryParams!, $data: UpdateOneCountryParams!) {\n    updateOneCountry(where: $where, data: $data) {\n        id\n        created\n        clicks\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    },\n    \"data\": {\n        \"clicks\": 2323\n    }\n}"
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete one",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "mutation($where: GetOneCountryParams!) {\n    deleteOneCountry(where: $where) {\n        id\n        created\n    }\n}",
-								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
 						"url": {
@@ -1335,7 +1335,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneDeviceParams!) {\n    deleteOneDevice(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneDevice($where: GetOneDeviceParams!) {\n    deleteOneDevice(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -1470,7 +1470,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneTagParams!) {\n    deleteOneTag(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneTag($where: GetOneTagParams!) {\n    deleteOneTag(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -1605,7 +1605,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneQuerySParams!) {\n    deleteOneQueryS(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneQueryS($where: GetOneQuerySParams!) {\n    deleteOneQueryS(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -1740,7 +1740,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOnePageParams!) {\n    deleteOnePage(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOnePage($where: GetOnePageParams!) {\n    deleteOnePage(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
@@ -1829,7 +1829,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "mutation($where: GetOneUserParams!) {\n    deleteOneUser(where: $where) {\n        id\n        created\n    }\n}",
+								"query": "mutation deleteOneUser($where: GetOneUserParams!) {\n    deleteOneUser(where: $where) {\n        id\n        created\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 8\n    }\n}"
 							}
 						},

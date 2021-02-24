@@ -5,11 +5,11 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Get many brands
- * @return [GraphQL.Brand[]]
+ * Get many Evergreens
+ * @return [GraphQL.Evergreen[]]
  */
-const getManyBrand: T.Resolver<void, GraphQL.Brand[]> = async () => {
-  const result = await prisma.brand.findMany();
+const getManyEvergreen: T.Resolver<void, GraphQL.Evergreen[]> = async () => {
+  const result = await prisma.evergreen.findMany();
   return result.map((result) => {
     return {
       id: result.id,
@@ -28,4 +28,4 @@ const getManyBrand: T.Resolver<void, GraphQL.Brand[]> = async () => {
   });
 };
 
-export default getManyBrand;
+export default getManyEvergreen;
