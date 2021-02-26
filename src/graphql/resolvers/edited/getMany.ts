@@ -5,12 +5,12 @@ import type * as GraphQL from '../../../types/graphql';
 const prisma = new PrismaClient();
 
 /**
- * Get many articles
- * @return [GraphQL.ArticleMany]
+ * Get many editeds
+ * @return [GraphQL.EditedMany]
  */
-const getManyArticle: T.Resolver<void, GraphQL.ArticleMany> = async () => {
-  const count = await prisma.article.count();
-  const result = await prisma.article.findMany();
+const getManyEdited: T.Resolver<void, GraphQL.EditedMany> = async () => {
+  const count = await prisma.edited.count();
+  const result = await prisma.edited.findMany();
   return {
     count,
     items: result.map((result) => {
@@ -32,4 +32,4 @@ const getManyArticle: T.Resolver<void, GraphQL.ArticleMany> = async () => {
   };
 };
 
-export default getManyArticle;
+export default getManyEdited;

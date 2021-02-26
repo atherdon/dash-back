@@ -33,6 +33,28 @@ const Schema = gql`
     created: String!
     updated: String!
   }
+  type ArticleMany @cacheControl(maxAge: 1000) {
+    count: Int!
+    items: [Article]
+  }
+  type Edited @cacheControl(maxAge: 1000) {
+    id: Int!
+    v: String!
+    url: String!
+    email: String!
+    isPublished: String!
+    added: String!
+    edited: String!
+    published: String!
+    avgTimeStory: String!
+    avgAllTimeStory: String!
+    created: String!
+    updated: String!
+  }
+  type EditedMany @cacheControl(maxAge: 1000) {
+    count: Int!
+    items: [Edited]
+  }
   type Filter @cacheControl(maxAge: 1000) {
     id: Int!
     filter: String!
@@ -54,6 +76,10 @@ const Schema = gql`
     created: String!
     updated: String!
   }
+  type EvergreenMany @cacheControl(maxAge: 1000) {
+    count: Int!
+    items: [Evergreen]
+  }
   type TopAuthor @cacheControl(maxAge: 1000) {
     id: Int!
     v: String!
@@ -67,6 +93,10 @@ const Schema = gql`
     avgAllTimeStory: String!
     created: String!
     updated: String!
+  }
+  type TopAuthorMany @cacheControl(maxAge: 1000) {
+    count: Int!
+    items: [TopAuthor]
   }
   type Editor @cacheControl(maxAge: 1000) {
     id: Int!
@@ -194,6 +224,32 @@ const Schema = gql`
     id: Int!
   }
   input UpdateOneArticleParams {
+    v: String
+    url: String
+    email: String
+    isPublished: String
+    added: String
+    edited: String
+    published: String
+    avgTimeStory: String
+    avgAllTimeStory: String
+  }
+  ## Edited
+  input PostOneEditedParams {
+    v: String!
+    url: String!
+    email: String!
+    isPublished: String!
+    added: String!
+    edited: String!
+    published: String!
+    avgTimeStory: String!
+    avgAllTimeStory: String!
+  }
+  input GetOneEditedParams {
+    id: Int!
+  }
+  input UpdateOneEditedParams {
     v: String
     url: String
     email: String
@@ -430,7 +486,8 @@ const Schema = gql`
   }
   type Query {
     # Get many
-    getManyArticle: [Article]!
+    getManyArticle: ArticleMany!
+    getManyEdited: EditedMany!
     getManyTag: [Tag]!
     getManyQueryS: [QueryS]!
     getManyPage: [Page]!
@@ -439,12 +496,13 @@ const Schema = gql`
     getManyClicksPosition: [ClicksPosition]!
     getManyAppearance: [Appearance]!
     getManyFilter: [Filter]!
-    getManyEvergreen: [Evergreen]!
-    getManyTopAuthor: [TopAuthor]!
+    getManyEvergreen: EvergreenMany!
+    getManyTopAuthor: TopAuthorMany!
     getManyEditor: [Editor]!
     getManyExpandable: [Expandable]!
     # Get one
     getOneUser(where: GetOneUserParams!): User
+    getOneEdited(where: GetOneEditedParams!): Edited
     getOneTag(where: GetOneTagParams!): Tag
     getOneQueryS(where: GetOneQuerySParams!): QueryS
     getOnePage(where: GetOnePageParams!): Page
@@ -466,6 +524,7 @@ const Schema = gql`
     # Post one
     postOneExpandable(data: PostOneExpandableParams!): Expandable
     postOneTag(data: PostOneTagParams!): Tag
+    postOneEdited(data: PostOneEditedParams!): Edited
     postOneEvergreen(data: PostOneEvergreenParams!): Evergreen
     postOneQueryS(data: PostOneQuerySParams!): QueryS
     postOnePage(data: PostOnePageParams!): Page
@@ -479,6 +538,7 @@ const Schema = gql`
     postOneEditor(data: PostOneEditorParams!): Editor
     # Update one
     updateOneUser(where: GetOneUserParams!, data: UpdateOneUserParams!): User
+    updateOneEdited(where: GetOneEditedParams!, data: UpdateOneEditedParams!): Edited
     updateOneAppearance(
       where: GetOneAppearanceParams!
       data: UpdateOneAppearanceParams!
@@ -503,6 +563,7 @@ const Schema = gql`
     updateOneTag(where: GetOneTagParams!, data: UpdateOneTagParams!): Tag
     # Delete one
     deleteOneUser(where: GetOneUserParams!): User
+    deleteOneEdited(where: GetOneEditedParams!): Edited
     deleteOneTag(where: GetOneTagParams!): Tag
     deleteOneQueryS(where: GetOneQuerySParams!): QueryS
     deleteOnePage(where: GetOnePageParams!): Page
