@@ -72,7 +72,8 @@ yarn install
 ```
 Rename [.env.example](./.env.example) to `.env` and set up your environment variables:
 ```ini
-# Database url (need change ${absPathToPWD} to /abs/path/to/project)
+# 1 For Linux Database url (need change ${absPathToPWD} to /abs/path/to/project)
+# 2 For Windows (file:./database/sqlite/dash.db)
 DATABASE_URL=file://${absPathToPWD}/database/sqlite/dash.db
 # List of allowed origins, in NODE_ENV !== production that origin is '*' everytime
 CORS_ORIGIN=localhost,second.origin

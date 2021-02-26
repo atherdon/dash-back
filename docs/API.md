@@ -26,6 +26,12 @@
 - - - [Post one](#post-one-top-author)
 - - - [Update one](#update-one-top-author)
 - - - [Delete one](#delete-one-top-author)
+- - [Edited](#edited)
+- - - [Get one](#get-one-edited)
+- - - [Get many](#get-many-editeds)
+- - - [Post one](#post-one-edited)
+- - - [Update one](#update-one-edited)
+- - - [Delete one](#delete-one-edited)
 - - [Editor](#editor)
 - - - [Get one](#get-one-editor)
 - - - [Get many](#get-many-editors)
@@ -103,7 +109,7 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 ```
 @param - [void]
 
-@return — [GraphQL.Article[]]
+@return — [GraphQL.ArticleMany
 ```
 ##### Get one article
 ```
@@ -137,7 +143,7 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 ```
 @param - [void]
 
-@return — [GraphQL.Evergreen[]]
+@return — [GraphQL.EvergreenMany]
 ```
 ##### Get one evergreen
 ```
@@ -166,12 +172,46 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 
 @return - [GraphQL.Evergreen]
 ```
+#### Edited
+##### Get many editeds
+```
+@param - [void]
+
+@return — [GraphQL.EditedMany]
+```
+##### Get one edited
+```
+@param where — [GraphQL.GetOneEditedParams]
+
+@return — [GraphQL.Edited]
+```
+##### Post one edited
+```
+@param data — [GraphQL.PostOneEditedParams]
+
+@return — [GraphQL.Edited]
+```
+
+##### Update one edited
+```
+@param where — [GraphQL.GetOneEditedParams]
+
+@param data — [GraphQL.UpdateOneEditedParams]
+
+@return — [GraphQL.Edited]
+```
+##### Delete one edited
+```
+@param where — [GraphQL.GetOneEditedParams]
+
+@return - [GraphQL.Edited]
+```
 ### Author
 ##### Get many top authors
 ```
 @param - [void]
 
-@return — [GraphQL.TopAuthor[]]
+@return — [GraphQL.TopAuthorMany]
 ```
 ##### Get one top author
 ```

@@ -5,10 +5,10 @@ module.exports = {
         "es2021": true
     },
     "extends": [
+        "eslint-config-prettier",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "prettier/@typescript-eslint"
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -17,7 +17,8 @@ module.exports = {
     },
     "plugins": [
         "@typescript-eslint",
-        "prettier"
+        "prettier",
+        "eslint-plugin-prettier",
     ],
     "ignorePatterns": ["src/types/graphql/index.d.ts", "gulpfile.js", "data"],
     "rules": {

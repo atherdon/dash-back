@@ -4,6 +4,7 @@
  */
 
 export * as evergreen from './evergreen';
+export * as edited from './edited';
 export * as topAuthor from './topAuthor';
 export * as editor from './editor';
 export * as user from './user';
