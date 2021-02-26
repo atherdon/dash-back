@@ -66,6 +66,20 @@ model TopAuthor {
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }
+model Edited {
+  id  Int @id @default(autoincrement())
+  url String
+  v String
+  email String
+  isPublished String
+  added String
+  edited  String
+  published String
+  avgTimeStory  String
+  avgAllTimeStory String
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
 model Editor {
   id  Int @id @default(autoincrement())
   name String

@@ -6,6 +6,9 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version 
+- ### version 4.1.0-26.02.2021
+1. Changed returned types of `Article`, `Evergreen` and `TopAuthor` use `NameMany` instead `Name[]` see [API.md](./API.md)
+2. Added CRUD `Edited`
 - ### version 4.0.4-24.02.2021
 1. Rename `Brand` to `Evergreen`
 2. Change `Expandable` schema  
