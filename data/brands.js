@@ -7,7 +7,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-04T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-07T03:29:56.901Z',
+    Published__1: '2020-09-08T03:29:56.901Z',
     'Avg time story': 4,
     'Avg time ALL story': 6,
     __1: ''
@@ -33,7 +33,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-07T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-07T03:29:56.901Z',
+    Published__1: '2020-09-08T03:29:56.901Z',
     'Avg time story': 2,
     'Avg time ALL story': '',
     __1: ''
@@ -59,7 +59,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-08T03:29:56.901Z',
     Edited: '2020-09-09T03:29:56.901Z',
-    Published__1: '2020-09-10T03:29:56.901Z',
+    Published__1: '2020-09-11T03:29:56.901Z',
     'Avg time story': 3,
     'Avg time ALL story': '',
     __1: ''
@@ -85,7 +85,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-12T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -98,7 +98,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-13T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -111,7 +111,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-13T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -124,7 +124,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': 11,
     'Avg time ALL story': '',
     __1: ''
@@ -137,7 +137,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-18T03:29:56.901Z',
     'Avg time story': 12,
     'Avg time ALL story': '',
     __1: ''
@@ -150,7 +150,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-17T03:29:56.901Z',
     'Avg time story': 26,
     'Avg time ALL story': '',
     __1: ''
@@ -163,7 +163,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-17T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -176,7 +176,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-17T03:29:56.901Z',
     'Avg time story': 18,
     'Avg time ALL story': '',
     __1: ''
@@ -189,7 +189,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-18T03:29:56.901Z',
     'Avg time story': 4,
     'Avg time ALL story': '',
     __1: "interested to have a graph about how quickly we're dealing with brands right now"
@@ -202,7 +202,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -215,7 +215,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-16T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -228,7 +228,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': 17,
     'Avg time ALL story': '',
     __1: ''
@@ -241,7 +241,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': 3,
     'Avg time ALL story': '',
     __1: ''
@@ -254,7 +254,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -267,7 +267,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-16T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -280,7 +280,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-16T03:29:56.901Z',
     'Avg time story': 3,
     'Avg time ALL story': '',
     __1: ''
@@ -293,7 +293,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-16T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -306,7 +306,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-18T03:29:56.901Z',
     'Avg time story': 3,
     'Avg time ALL story': '',
     __1: ''
@@ -319,7 +319,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-18T03:29:56.901Z',
     'Avg time story': 3,
     'Avg time ALL story': '',
     __1: ''
@@ -332,7 +332,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-17T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -345,7 +345,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-17T03:29:56.901Z',
     'Avg time story': 2,
     'Avg time ALL story': '',
     __1: ''
@@ -358,7 +358,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': 2,
     'Avg time ALL story': '',
     __1: ''
@@ -371,7 +371,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-16T03:29:56.901Z',
     'Avg time story': 6,
     'Avg time ALL story': '',
     __1: ''
@@ -384,7 +384,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': 1,
     'Avg time ALL story': '',
     __1: ''
@@ -397,7 +397,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': 6,
     'Avg time ALL story': '',
     __1: ''
@@ -410,7 +410,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -423,7 +423,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-16T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -436,7 +436,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-11T03:29:56.901Z',
     'Avg time story': 4,
     'Avg time ALL story': '',
     __1: ''
@@ -449,7 +449,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-12T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -462,7 +462,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-11T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -475,7 +475,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-12T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -488,7 +488,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-13T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -501,7 +501,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-13T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -514,7 +514,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-13T03:29:56.901Z',
     'Avg time story': 4,
     'Avg time ALL story': '',
     __1: ''
@@ -527,7 +527,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-13T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -540,7 +540,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -553,7 +553,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -566,7 +566,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': 3,
     'Avg time ALL story': '',
     __1: ''
@@ -579,7 +579,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -592,7 +592,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': 1,
     'Avg time ALL story': '',
     __1: ''
@@ -605,7 +605,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -618,7 +618,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -631,7 +631,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -644,7 +644,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': 6,
     'Avg time ALL story': '',
     __1: ''
@@ -657,7 +657,7 @@ const brands = [
     Published: '',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -670,7 +670,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': 3,
     'Avg time ALL story': '',
     __1: ''
@@ -683,7 +683,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': 4,
     'Avg time ALL story': '',
     __1: ''
@@ -696,7 +696,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -709,7 +709,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -722,7 +722,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -735,7 +735,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -748,7 +748,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': 1,
     'Avg time ALL story': '',
     __1: ''
@@ -761,7 +761,7 @@ const brands = [
     Published: 'TRUE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': 2,
     'Avg time ALL story': '',
     __1: ''
@@ -774,7 +774,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-14T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -787,7 +787,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-15T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -800,7 +800,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-16T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -813,7 +813,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-16T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -826,7 +826,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-29T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -839,7 +839,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-17T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -852,7 +852,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-11T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
@@ -865,7 +865,7 @@ const brands = [
     Published: 'FALSE',
     Added: '2020-09-01T03:29:56.901Z',
     Edited: '2020-09-07T03:29:56.901Z',
-    Published__1: '2020-09-19T03:29:56.901Z',
+    Published__1: '2020-09-11T03:29:56.901Z',
     'Avg time story': '',
     'Avg time ALL story': '',
     __1: ''
