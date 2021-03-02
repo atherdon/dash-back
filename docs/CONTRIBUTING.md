@@ -171,3 +171,7 @@ No changed namespace in [graphql/Resolvers.ts](../src/graphql/Resolver.ts):
 ```
 Invalid `prisma.author.create()` invocation:\n\n{\n  data:
 ```
+Error in Schema.ts
+```
+GraphQLError [Object]: Syntax Error: Expected Name, found "|".
+```

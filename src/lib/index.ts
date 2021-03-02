@@ -63,3 +63,9 @@ export function parseToken(token: string): T.HandleResult<T.JWT> {
 
 export { default as Console } from './modules/Console';
 export { default as ErrorHandler } from './modules/ErrorHandler';
+
+export function parseISOString(s: string): Date {
+  const b = s.split(/\D+/);
+  // @ts-ignore
+  return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
+}

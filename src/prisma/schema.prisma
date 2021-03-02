@@ -29,54 +29,13 @@ model Article {
   url String
   v String
   email String
-  isPublished String
-  added String
-  edited  String
-  published String
-  avgTimeStory  String
-  avgAllTimeStory String
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
-}
-model Evergreen {
-  id  Int @id @default(autoincrement())
-  url String
-  v String
-  email String
-  isPublished String
-  added String
-  edited  String
-  published String
-  avgTimeStory  String
-  avgAllTimeStory String
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
-}
-model TopAuthor {
-  id  Int @id @default(autoincrement())
-  url String
-  v String
-  email String
-  isPublished String
-  added String
-  edited  String
-  published String
-  avgTimeStory  String
-  avgAllTimeStory String
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
-}
-model Edited {
-  id  Int @id @default(autoincrement())
-  url String
-  v String
-  email String
-  isPublished String
-  added String
-  edited  String
-  published String
-  avgTimeStory  String
-  avgAllTimeStory String
+  type  String // TODO change to enum when will use Mysql or Postgres 
+  isPublished Boolean
+  added DateTime
+  edited  DateTime?
+  published DateTime?
+  avgTimeStory  Int?
+  avgAllTimeStory Int?
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }

@@ -52,9 +52,11 @@ type SelfSchema = 'user';
 /**
  * Role policy
  */
-type RBAC = {
+export type RBAC = {
   minRole?: number; // Minimal accepted role. It is main rule if it is defined and resolved false then 'roles' will be ignored
   roles?: number[]; // List of custom accepted roles
   selfSchema?: SelfSchema; // Accept for access to self data, if true then other locks are ignored
   nonRenewable?: string[]; // A list that prohibits changing some fields yourself
 };
+
+export type ArticleType = 'evergreen' | 'top-author' | 'edited' | 'article';

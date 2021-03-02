@@ -11,8 +11,6 @@ const Resolvers = {
   Query: {
     // Get many
     getManyTag: resolvers.tag.getMany,
-    getManyEdited: resolvers.edited.getMany,
-    getManyEvergreen: resolvers.evergreen.getMany,
     getManyQueryS: resolvers.queryS.getMany,
     getManyPage: resolvers.page.getMany,
     getManyDevice: resolvers.device.getMany,
@@ -21,12 +19,10 @@ const Resolvers = {
     getManyAppearance: resolvers.appearance.getMany,
     getManyExpandable: resolvers.expandable.getMany,
     getManyArticle: resolvers.article.getMany,
-    getManyTopAuthor: resolvers.topAuthor.getMany,
     getManyEditor: resolvers.editor.getMany,
     getManyFilter: resolvers.filter.getMany,
     // Get one
     getOneFilter: resolvers.filter.getOne,
-    getOneEdited: resolvers.edited.getOne,
     getOneTag: resolvers.tag.getOne,
     getOneQueryS: resolvers.queryS.getOne,
     getOnePage: resolvers.page.getOne,
@@ -44,8 +40,6 @@ const Resolvers = {
     getOneExpandable: resolvers.expandable.getOne,
     getOneArticle: resolvers.article.getOne,
     getOneCountry: resolvers.country.getOne,
-    getOneEvergreen: resolvers.evergreen.getOne,
-    getOneTopAuthor: resolvers.topAuthor.getOne,
     getOneEditor: resolvers.editor.getOne,
   },
   Mutation: {
@@ -54,7 +48,6 @@ const Resolvers = {
     login: resolvers.user.login,
     // Post one
     postOneArticle: resolvers.article.postOne,
-    postOneEdited: resolvers.edited.postOne,
     postOneTag: resolvers.tag.postOne,
     postOneQueryS: resolvers.queryS.postOne,
     postOnePage: resolvers.page.postOne,
@@ -64,13 +57,10 @@ const Resolvers = {
     postOneAppearance: resolvers.appearance.postOne,
     postOneFilter: resolvers.filter.postOne,
     postOneExpandable: resolvers.expandable.postOne,
-    postOneEvergreen: resolvers.evergreen.postOne,
-    postOneTopAuthor: resolvers.topAuthor.postOne,
     postOneEditor: resolvers.editor.postOne,
     // Update one
     updateOneFilter: resolvers.filter.updateOne,
     updateOneTag: resolvers.tag.updateOne,
-    updateOneEdited: resolvers.edited.updateOne,
     updateOneQueryS: resolvers.queryS.updateOne,
     updateOnePage: resolvers.page.updateOne,
     updateOneDevice: resolvers.device.updateOne,
@@ -79,8 +69,6 @@ const Resolvers = {
     updateOneAppearance: resolvers.appearance.updateOne,
     updateOneArticle: resolvers.article.updateOne,
     updateOneExpandable: resolvers.expandable.updateOne,
-    updateOneEvergreen: resolvers.evergreen.updateOne,
-    updateOneTopAuthor: resolvers.topAuthor.updateOne,
     updateOneEditor: resolvers.editor.updateOne,
     updateOneUser: withAuth(
       {
@@ -99,7 +87,6 @@ const Resolvers = {
     ),
     deleteOnePage: resolvers.page.deleteOne,
     deleteOneTag: resolvers.tag.deleteOne,
-    deleteOneEdited: resolvers.edited.deleteOne,
     deleteOneQueryS: resolvers.queryS.deleteOne,
     deleteOneCountry: resolvers.country.deleteOne,
     deleteOneDevice: resolvers.device.deleteOne,
@@ -108,8 +95,6 @@ const Resolvers = {
     deleteOneFilter: resolvers.filter.deleteOne,
     deleteOneExpandable: resolvers.expandable.deleteOne,
     deleteOneArticle: resolvers.article.deleteOne,
-    deleteOneEvergreen: resolvers.evergreen.deleteOne,
-    deleteOneTopAuthor: resolvers.topAuthor.deleteOne,
     deleteOneEditor: resolvers.editor.deleteOne,
   },
 };
