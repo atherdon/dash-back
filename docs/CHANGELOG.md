@@ -5,7 +5,14 @@
 - [API documentation](./API.md)
 - [Contributing information](./CONTRIBUTING.md)
 
-## Changes by version 
+## Changes by version   
+- ### version 5.0.0-2.03.2021
+1. Deleted `article` clons
+2. Added type column to `article`
+3. Changed `article` types: avgTimeStory, avgAllTimesStory, isPublished, edited, added, published, to normalized types.
+4. Added article filters: `type`, `isPublished`
+5. Added `article` getMany pagination
+6. Sync fill script with new `article` schema from `data/brands.json`
 - ### version 4.1.0-26.02.2021
 1. Changed returned types of `Article`, `Evergreen` and `TopAuthor` use `NameMany` instead `Name[]` see [API.md](./API.md)
 2. Added CRUD `Edited`

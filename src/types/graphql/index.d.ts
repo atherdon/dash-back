@@ -38,12 +38,13 @@ export type Article = {
   v: Scalars['String'];
   url: Scalars['String'];
   email: Scalars['String'];
-  isPublished: Scalars['String'];
+  type: Scalars['String'];
+  isPublished: Scalars['Boolean'];
   added: Scalars['String'];
   edited: Scalars['String'];
   published: Scalars['String'];
-  avgTimeStory: Scalars['String'];
-  avgAllTimeStory: Scalars['String'];
+  avgTimeStory?: Maybe<Scalars['Int']>;
+  avgAllTimeStory?: Maybe<Scalars['Int']>;
   created: Scalars['String'];
   updated: Scalars['String'];
 };
@@ -54,28 +55,6 @@ export type ArticleMany = {
   items?: Maybe<Array<Maybe<Article>>>;
 };
 
-export type Edited = {
-  __typename?: 'Edited';
-  id: Scalars['Int'];
-  v: Scalars['String'];
-  url: Scalars['String'];
-  email: Scalars['String'];
-  isPublished: Scalars['String'];
-  added: Scalars['String'];
-  edited: Scalars['String'];
-  published: Scalars['String'];
-  avgTimeStory: Scalars['String'];
-  avgAllTimeStory: Scalars['String'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
-};
-
-export type EditedMany = {
-  __typename?: 'EditedMany';
-  count: Scalars['Int'];
-  items?: Maybe<Array<Maybe<Edited>>>;
-};
-
 export type Filter = {
   __typename?: 'Filter';
   id: Scalars['Int'];
@@ -83,50 +62,6 @@ export type Filter = {
   value: Scalars['String'];
   created: Scalars['String'];
   updated: Scalars['String'];
-};
-
-export type Evergreen = {
-  __typename?: 'Evergreen';
-  id: Scalars['Int'];
-  v: Scalars['String'];
-  url: Scalars['String'];
-  email: Scalars['String'];
-  isPublished: Scalars['String'];
-  added: Scalars['String'];
-  edited: Scalars['String'];
-  published: Scalars['String'];
-  avgTimeStory: Scalars['String'];
-  avgAllTimeStory: Scalars['String'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
-};
-
-export type EvergreenMany = {
-  __typename?: 'EvergreenMany';
-  count: Scalars['Int'];
-  items?: Maybe<Array<Maybe<Evergreen>>>;
-};
-
-export type TopAuthor = {
-  __typename?: 'TopAuthor';
-  id: Scalars['Int'];
-  v: Scalars['String'];
-  url: Scalars['String'];
-  email: Scalars['String'];
-  isPublished: Scalars['String'];
-  added: Scalars['String'];
-  edited: Scalars['String'];
-  published: Scalars['String'];
-  avgTimeStory: Scalars['String'];
-  avgAllTimeStory: Scalars['String'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
-};
-
-export type TopAuthorMany = {
-  __typename?: 'TopAuthorMany';
-  count: Scalars['Int'];
-  items?: Maybe<Array<Maybe<TopAuthor>>>;
 };
 
 export type Editor = {
@@ -259,16 +194,28 @@ export type UpdateOneUserParams = {
   password?: Maybe<Scalars['String']>;
 };
 
+export type ArticlePaginationParams = {
+  current: Scalars['Int'];
+  limit: Scalars['Int'];
+};
+
+export type GetManyArticleParams = {
+  type: Scalars['String'];
+  isPublished?: Maybe<Scalars['Boolean']>;
+  pagination?: Maybe<ArticlePaginationParams>;
+};
+
 export type PostOneArticleParams = {
   v: Scalars['String'];
   url: Scalars['String'];
   email: Scalars['String'];
-  isPublished: Scalars['String'];
+  type: Scalars['String'];
+  isPublished: Scalars['Boolean'];
   added: Scalars['String'];
   edited: Scalars['String'];
   published: Scalars['String'];
-  avgTimeStory: Scalars['String'];
-  avgAllTimeStory: Scalars['String'];
+  avgTimeStory?: Maybe<Scalars['Int']>;
+  avgAllTimeStory?: Maybe<Scalars['Int']>;
 };
 
 export type GetOneArticleParams = {
@@ -279,96 +226,13 @@ export type UpdateOneArticleParams = {
   v?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   email?: Maybe<Scalars['String']>;
-  isPublished?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  isPublished?: Maybe<Scalars['Boolean']>;
   added?: Maybe<Scalars['String']>;
   edited?: Maybe<Scalars['String']>;
   published?: Maybe<Scalars['String']>;
-  avgTimeStory?: Maybe<Scalars['String']>;
-  avgAllTimeStory?: Maybe<Scalars['String']>;
-};
-
-export type PostOneEditedParams = {
-  v: Scalars['String'];
-  url: Scalars['String'];
-  email: Scalars['String'];
-  isPublished: Scalars['String'];
-  added: Scalars['String'];
-  edited: Scalars['String'];
-  published: Scalars['String'];
-  avgTimeStory: Scalars['String'];
-  avgAllTimeStory: Scalars['String'];
-};
-
-export type GetOneEditedParams = {
-  id: Scalars['Int'];
-};
-
-export type UpdateOneEditedParams = {
-  v?: Maybe<Scalars['String']>;
-  url?: Maybe<Scalars['String']>;
-  email?: Maybe<Scalars['String']>;
-  isPublished?: Maybe<Scalars['String']>;
-  added?: Maybe<Scalars['String']>;
-  edited?: Maybe<Scalars['String']>;
-  published?: Maybe<Scalars['String']>;
-  avgTimeStory?: Maybe<Scalars['String']>;
-  avgAllTimeStory?: Maybe<Scalars['String']>;
-};
-
-export type PostOneEvergreenParams = {
-  v: Scalars['String'];
-  url: Scalars['String'];
-  email: Scalars['String'];
-  isPublished: Scalars['String'];
-  added: Scalars['String'];
-  edited: Scalars['String'];
-  published: Scalars['String'];
-  avgTimeStory: Scalars['String'];
-  avgAllTimeStory: Scalars['String'];
-};
-
-export type GetOneEvergreenParams = {
-  id: Scalars['Int'];
-};
-
-export type UpdateOneEvergreenParams = {
-  v?: Maybe<Scalars['String']>;
-  url?: Maybe<Scalars['String']>;
-  email?: Maybe<Scalars['String']>;
-  isPublished?: Maybe<Scalars['String']>;
-  added?: Maybe<Scalars['String']>;
-  edited?: Maybe<Scalars['String']>;
-  published?: Maybe<Scalars['String']>;
-  avgTimeStory?: Maybe<Scalars['String']>;
-  avgAllTimeStory?: Maybe<Scalars['String']>;
-};
-
-export type PostOneTopAuthorParams = {
-  v: Scalars['String'];
-  url: Scalars['String'];
-  email: Scalars['String'];
-  isPublished: Scalars['String'];
-  added: Scalars['String'];
-  edited: Scalars['String'];
-  published: Scalars['String'];
-  avgTimeStory: Scalars['String'];
-  avgAllTimeStory: Scalars['String'];
-};
-
-export type GetOneTopAuthorParams = {
-  id: Scalars['Int'];
-};
-
-export type UpdateOneTopAuthorParams = {
-  v?: Maybe<Scalars['String']>;
-  url?: Maybe<Scalars['String']>;
-  email?: Maybe<Scalars['String']>;
-  isPublished?: Maybe<Scalars['String']>;
-  added?: Maybe<Scalars['String']>;
-  edited?: Maybe<Scalars['String']>;
-  published?: Maybe<Scalars['String']>;
-  avgTimeStory?: Maybe<Scalars['String']>;
-  avgAllTimeStory?: Maybe<Scalars['String']>;
+  avgTimeStory?: Maybe<Scalars['Int']>;
+  avgAllTimeStory?: Maybe<Scalars['Int']>;
 };
 
 export type PostOneEditorParams = {
@@ -566,7 +430,6 @@ export type UpdateOneTagParams = {
 export type Query = {
   __typename?: 'Query';
   getManyArticle: ArticleMany;
-  getManyEdited: EditedMany;
   getManyTag: Array<Maybe<Tag>>;
   getManyQueryS: Array<Maybe<QueryS>>;
   getManyPage: Array<Maybe<Page>>;
@@ -575,12 +438,9 @@ export type Query = {
   getManyClicksPosition: Array<Maybe<ClicksPosition>>;
   getManyAppearance: Array<Maybe<Appearance>>;
   getManyFilter: Array<Maybe<Filter>>;
-  getManyEvergreen: EvergreenMany;
-  getManyTopAuthor: TopAuthorMany;
   getManyEditor: Array<Maybe<Editor>>;
   getManyExpandable: Array<Maybe<Expandable>>;
   getOneUser?: Maybe<User>;
-  getOneEdited?: Maybe<Edited>;
   getOneTag?: Maybe<Tag>;
   getOneQueryS?: Maybe<QueryS>;
   getOnePage?: Maybe<Page>;
@@ -591,19 +451,17 @@ export type Query = {
   getOneArticle?: Maybe<Article>;
   getOneFilter?: Maybe<Filter>;
   getOneExpandable?: Maybe<Expandable>;
-  getOneEvergreen?: Maybe<Evergreen>;
-  getOneTopAuthor?: Maybe<TopAuthor>;
   getOneEditor?: Maybe<Editor>;
+};
+
+
+export type QueryGetManyArticleArgs = {
+  where: GetManyArticleParams;
 };
 
 
 export type QueryGetOneUserArgs = {
   where: GetOneUserParams;
-};
-
-
-export type QueryGetOneEditedArgs = {
-  where: GetOneEditedParams;
 };
 
 
@@ -657,16 +515,6 @@ export type QueryGetOneExpandableArgs = {
 };
 
 
-export type QueryGetOneEvergreenArgs = {
-  where: GetOneEvergreenParams;
-};
-
-
-export type QueryGetOneTopAuthorArgs = {
-  where: GetOneTopAuthorParams;
-};
-
-
 export type QueryGetOneEditorArgs = {
   where: GetOneEditorParams;
 };
@@ -677,8 +525,6 @@ export type Mutation = {
   login?: Maybe<User>;
   postOneExpandable?: Maybe<Expandable>;
   postOneTag?: Maybe<Tag>;
-  postOneEdited?: Maybe<Edited>;
-  postOneEvergreen?: Maybe<Evergreen>;
   postOneQueryS?: Maybe<QueryS>;
   postOnePage?: Maybe<Page>;
   postOneDevice?: Maybe<Device>;
@@ -687,17 +533,13 @@ export type Mutation = {
   postOneAppearance?: Maybe<Appearance>;
   postOneFilter?: Maybe<Filter>;
   postOneArticle?: Maybe<Article>;
-  postOneTopAuthor?: Maybe<TopAuthor>;
   postOneEditor?: Maybe<Editor>;
   updateOneUser?: Maybe<User>;
-  updateOneEdited?: Maybe<Edited>;
   updateOneAppearance?: Maybe<Appearance>;
   updateOneFilter?: Maybe<Filter>;
   updateOneClicksPosition?: Maybe<ClicksPosition>;
   updateOneArticle?: Maybe<Article>;
-  updateOneEvergreen?: Maybe<Evergreen>;
   updateOneExpandable?: Maybe<Expandable>;
-  updateOneTopAuthor?: Maybe<TopAuthor>;
   updateOneEditor?: Maybe<Editor>;
   updateOneCountry?: Maybe<Country>;
   updateOneDevice?: Maybe<Device>;
@@ -705,7 +547,6 @@ export type Mutation = {
   updateOneQueryS?: Maybe<QueryS>;
   updateOneTag?: Maybe<Tag>;
   deleteOneUser?: Maybe<User>;
-  deleteOneEdited?: Maybe<Edited>;
   deleteOneTag?: Maybe<Tag>;
   deleteOneQueryS?: Maybe<QueryS>;
   deleteOnePage?: Maybe<Page>;
@@ -716,8 +557,6 @@ export type Mutation = {
   deleteOneFilter?: Maybe<Filter>;
   deleteOneArticle?: Maybe<Article>;
   deleteOneExpandable?: Maybe<Expandable>;
-  deleteOneEvergreen?: Maybe<Evergreen>;
-  deleteOneTopAuthor?: Maybe<TopAuthor>;
   deleteOneEditor?: Maybe<Editor>;
 };
 
@@ -739,16 +578,6 @@ export type MutationPostOneExpandableArgs = {
 
 export type MutationPostOneTagArgs = {
   data: PostOneTagParams;
-};
-
-
-export type MutationPostOneEditedArgs = {
-  data: PostOneEditedParams;
-};
-
-
-export type MutationPostOneEvergreenArgs = {
-  data: PostOneEvergreenParams;
 };
 
 
@@ -792,11 +621,6 @@ export type MutationPostOneArticleArgs = {
 };
 
 
-export type MutationPostOneTopAuthorArgs = {
-  data: PostOneTopAuthorParams;
-};
-
-
 export type MutationPostOneEditorArgs = {
   data: PostOneEditorParams;
 };
@@ -805,12 +629,6 @@ export type MutationPostOneEditorArgs = {
 export type MutationUpdateOneUserArgs = {
   where: GetOneUserParams;
   data: UpdateOneUserParams;
-};
-
-
-export type MutationUpdateOneEditedArgs = {
-  where: GetOneEditedParams;
-  data: UpdateOneEditedParams;
 };
 
 
@@ -838,21 +656,9 @@ export type MutationUpdateOneArticleArgs = {
 };
 
 
-export type MutationUpdateOneEvergreenArgs = {
-  where: GetOneEvergreenParams;
-  data: UpdateOneEvergreenParams;
-};
-
-
 export type MutationUpdateOneExpandableArgs = {
   where: GetOneExpandableParams;
   data: UpdateOneExpandableParams;
-};
-
-
-export type MutationUpdateOneTopAuthorArgs = {
-  where: GetOneTopAuthorParams;
-  data: UpdateOneTopAuthorParams;
 };
 
 
@@ -894,11 +700,6 @@ export type MutationUpdateOneTagArgs = {
 
 export type MutationDeleteOneUserArgs = {
   where: GetOneUserParams;
-};
-
-
-export type MutationDeleteOneEditedArgs = {
-  where: GetOneEditedParams;
 };
 
 
@@ -949,16 +750,6 @@ export type MutationDeleteOneArticleArgs = {
 
 export type MutationDeleteOneExpandableArgs = {
   where: GetOneExpandableParams;
-};
-
-
-export type MutationDeleteOneEvergreenArgs = {
-  where: GetOneEvergreenParams;
-};
-
-
-export type MutationDeleteOneTopAuthorArgs = {
-  where: GetOneTopAuthorParams;
 };
 
 
@@ -1054,14 +845,9 @@ export type ResolversTypes = {
   Int: ResolverTypeWrapper<Scalars['Int']>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Article: ResolverTypeWrapper<Article>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   ArticleMany: ResolverTypeWrapper<ArticleMany>;
-  Edited: ResolverTypeWrapper<Edited>;
-  EditedMany: ResolverTypeWrapper<EditedMany>;
   Filter: ResolverTypeWrapper<Filter>;
-  Evergreen: ResolverTypeWrapper<Evergreen>;
-  EvergreenMany: ResolverTypeWrapper<EvergreenMany>;
-  TopAuthor: ResolverTypeWrapper<TopAuthor>;
-  TopAuthorMany: ResolverTypeWrapper<TopAuthorMany>;
   Editor: ResolverTypeWrapper<Editor>;
   Expandable: ResolverTypeWrapper<Expandable>;
   Appearance: ResolverTypeWrapper<Appearance>;
@@ -1076,18 +862,11 @@ export type ResolversTypes = {
   LoginParams: LoginParams;
   GetOneUserParams: GetOneUserParams;
   UpdateOneUserParams: UpdateOneUserParams;
+  ArticlePaginationParams: ArticlePaginationParams;
+  GetManyArticleParams: GetManyArticleParams;
   PostOneArticleParams: PostOneArticleParams;
   GetOneArticleParams: GetOneArticleParams;
   UpdateOneArticleParams: UpdateOneArticleParams;
-  PostOneEditedParams: PostOneEditedParams;
-  GetOneEditedParams: GetOneEditedParams;
-  UpdateOneEditedParams: UpdateOneEditedParams;
-  PostOneEvergreenParams: PostOneEvergreenParams;
-  GetOneEvergreenParams: GetOneEvergreenParams;
-  UpdateOneEvergreenParams: UpdateOneEvergreenParams;
-  PostOneTopAuthorParams: PostOneTopAuthorParams;
-  GetOneTopAuthorParams: GetOneTopAuthorParams;
-  UpdateOneTopAuthorParams: UpdateOneTopAuthorParams;
   PostOneEditorParams: PostOneEditorParams;
   GetOneEditorParams: GetOneEditorParams;
   UpdateOneEditorParams: UpdateOneEditorParams;
@@ -1122,7 +901,6 @@ export type ResolversTypes = {
   Mutation: ResolverTypeWrapper<{}>;
   CacheControlScope: CacheControlScope;
   Upload: ResolverTypeWrapper<Scalars['Upload']>;
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -1131,14 +909,9 @@ export type ResolversParentTypes = {
   Int: Scalars['Int'];
   String: Scalars['String'];
   Article: Article;
+  Boolean: Scalars['Boolean'];
   ArticleMany: ArticleMany;
-  Edited: Edited;
-  EditedMany: EditedMany;
   Filter: Filter;
-  Evergreen: Evergreen;
-  EvergreenMany: EvergreenMany;
-  TopAuthor: TopAuthor;
-  TopAuthorMany: TopAuthorMany;
   Editor: Editor;
   Expandable: Expandable;
   Appearance: Appearance;
@@ -1153,18 +926,11 @@ export type ResolversParentTypes = {
   LoginParams: LoginParams;
   GetOneUserParams: GetOneUserParams;
   UpdateOneUserParams: UpdateOneUserParams;
+  ArticlePaginationParams: ArticlePaginationParams;
+  GetManyArticleParams: GetManyArticleParams;
   PostOneArticleParams: PostOneArticleParams;
   GetOneArticleParams: GetOneArticleParams;
   UpdateOneArticleParams: UpdateOneArticleParams;
-  PostOneEditedParams: PostOneEditedParams;
-  GetOneEditedParams: GetOneEditedParams;
-  UpdateOneEditedParams: UpdateOneEditedParams;
-  PostOneEvergreenParams: PostOneEvergreenParams;
-  GetOneEvergreenParams: GetOneEvergreenParams;
-  UpdateOneEvergreenParams: UpdateOneEvergreenParams;
-  PostOneTopAuthorParams: PostOneTopAuthorParams;
-  GetOneTopAuthorParams: GetOneTopAuthorParams;
-  UpdateOneTopAuthorParams: UpdateOneTopAuthorParams;
   PostOneEditorParams: PostOneEditorParams;
   GetOneEditorParams: GetOneEditorParams;
   UpdateOneEditorParams: UpdateOneEditorParams;
@@ -1198,7 +964,6 @@ export type ResolversParentTypes = {
   Query: {};
   Mutation: {};
   Upload: Scalars['Upload'];
-  Boolean: Scalars['Boolean'];
 };
 
 export type CacheControlDirectiveArgs = {   maxAge?: Maybe<Scalars['Int']>;
@@ -1226,12 +991,13 @@ export type ArticleResolvers<ContextType = any, ParentType extends ResolversPare
   v?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  isPublished?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  isPublished?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   added?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgAllTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  avgTimeStory?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  avgAllTimeStory?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
@@ -1243,78 +1009,12 @@ export type ArticleManyResolvers<ContextType = any, ParentType extends Resolvers
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type EditedResolvers<ContextType = any, ParentType extends ResolversParentTypes['Edited'] = ResolversParentTypes['Edited']> = {
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  v?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  isPublished?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  added?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgAllTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type EditedManyResolvers<ContextType = any, ParentType extends ResolversParentTypes['EditedMany'] = ResolversParentTypes['EditedMany']> = {
-  count?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  items?: Resolver<Maybe<Array<Maybe<ResolversTypes['Edited']>>>, ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
 export type FilterResolvers<ContextType = any, ParentType extends ResolversParentTypes['Filter'] = ResolversParentTypes['Filter']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   filter?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   value?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type EvergreenResolvers<ContextType = any, ParentType extends ResolversParentTypes['Evergreen'] = ResolversParentTypes['Evergreen']> = {
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  v?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  isPublished?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  added?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgAllTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type EvergreenManyResolvers<ContextType = any, ParentType extends ResolversParentTypes['EvergreenMany'] = ResolversParentTypes['EvergreenMany']> = {
-  count?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  items?: Resolver<Maybe<Array<Maybe<ResolversTypes['Evergreen']>>>, ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type TopAuthorResolvers<ContextType = any, ParentType extends ResolversParentTypes['TopAuthor'] = ResolversParentTypes['TopAuthor']> = {
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  v?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  isPublished?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  added?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  avgAllTimeStory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type TopAuthorManyResolvers<ContextType = any, ParentType extends ResolversParentTypes['TopAuthorMany'] = ResolversParentTypes['TopAuthorMany']> = {
-  count?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  items?: Resolver<Maybe<Array<Maybe<ResolversTypes['TopAuthor']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1426,8 +1126,7 @@ export type TagResolvers<ContextType = any, ParentType extends ResolversParentTy
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  getManyArticle?: Resolver<ResolversTypes['ArticleMany'], ParentType, ContextType>;
-  getManyEdited?: Resolver<ResolversTypes['EditedMany'], ParentType, ContextType>;
+  getManyArticle?: Resolver<ResolversTypes['ArticleMany'], ParentType, ContextType, RequireFields<QueryGetManyArticleArgs, 'where'>>;
   getManyTag?: Resolver<Array<Maybe<ResolversTypes['Tag']>>, ParentType, ContextType>;
   getManyQueryS?: Resolver<Array<Maybe<ResolversTypes['QueryS']>>, ParentType, ContextType>;
   getManyPage?: Resolver<Array<Maybe<ResolversTypes['Page']>>, ParentType, ContextType>;
@@ -1436,12 +1135,9 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   getManyClicksPosition?: Resolver<Array<Maybe<ResolversTypes['ClicksPosition']>>, ParentType, ContextType>;
   getManyAppearance?: Resolver<Array<Maybe<ResolversTypes['Appearance']>>, ParentType, ContextType>;
   getManyFilter?: Resolver<Array<Maybe<ResolversTypes['Filter']>>, ParentType, ContextType>;
-  getManyEvergreen?: Resolver<ResolversTypes['EvergreenMany'], ParentType, ContextType>;
-  getManyTopAuthor?: Resolver<ResolversTypes['TopAuthorMany'], ParentType, ContextType>;
   getManyEditor?: Resolver<Array<Maybe<ResolversTypes['Editor']>>, ParentType, ContextType>;
   getManyExpandable?: Resolver<Array<Maybe<ResolversTypes['Expandable']>>, ParentType, ContextType>;
   getOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryGetOneUserArgs, 'where'>>;
-  getOneEdited?: Resolver<Maybe<ResolversTypes['Edited']>, ParentType, ContextType, RequireFields<QueryGetOneEditedArgs, 'where'>>;
   getOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<QueryGetOneTagArgs, 'where'>>;
   getOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<QueryGetOneQuerySArgs, 'where'>>;
   getOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<QueryGetOnePageArgs, 'where'>>;
@@ -1452,8 +1148,6 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   getOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<QueryGetOneArticleArgs, 'where'>>;
   getOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<QueryGetOneFilterArgs, 'where'>>;
   getOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<QueryGetOneExpandableArgs, 'where'>>;
-  getOneEvergreen?: Resolver<Maybe<ResolversTypes['Evergreen']>, ParentType, ContextType, RequireFields<QueryGetOneEvergreenArgs, 'where'>>;
-  getOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<QueryGetOneTopAuthorArgs, 'where'>>;
   getOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<QueryGetOneEditorArgs, 'where'>>;
 };
 
@@ -1462,8 +1156,6 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   login?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'data'>>;
   postOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<MutationPostOneExpandableArgs, 'data'>>;
   postOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<MutationPostOneTagArgs, 'data'>>;
-  postOneEdited?: Resolver<Maybe<ResolversTypes['Edited']>, ParentType, ContextType, RequireFields<MutationPostOneEditedArgs, 'data'>>;
-  postOneEvergreen?: Resolver<Maybe<ResolversTypes['Evergreen']>, ParentType, ContextType, RequireFields<MutationPostOneEvergreenArgs, 'data'>>;
   postOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<MutationPostOneQuerySArgs, 'data'>>;
   postOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<MutationPostOnePageArgs, 'data'>>;
   postOneDevice?: Resolver<Maybe<ResolversTypes['Device']>, ParentType, ContextType, RequireFields<MutationPostOneDeviceArgs, 'data'>>;
@@ -1472,17 +1164,13 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   postOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<MutationPostOneAppearanceArgs, 'data'>>;
   postOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<MutationPostOneFilterArgs, 'data'>>;
   postOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<MutationPostOneArticleArgs, 'data'>>;
-  postOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<MutationPostOneTopAuthorArgs, 'data'>>;
   postOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationPostOneEditorArgs, 'data'>>;
   updateOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationUpdateOneUserArgs, 'where' | 'data'>>;
-  updateOneEdited?: Resolver<Maybe<ResolversTypes['Edited']>, ParentType, ContextType, RequireFields<MutationUpdateOneEditedArgs, 'where' | 'data'>>;
   updateOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<MutationUpdateOneAppearanceArgs, 'where' | 'data'>>;
   updateOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<MutationUpdateOneFilterArgs, 'where' | 'data'>>;
   updateOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<MutationUpdateOneClicksPositionArgs, 'where' | 'data'>>;
   updateOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<MutationUpdateOneArticleArgs, 'where' | 'data'>>;
-  updateOneEvergreen?: Resolver<Maybe<ResolversTypes['Evergreen']>, ParentType, ContextType, RequireFields<MutationUpdateOneEvergreenArgs, 'where' | 'data'>>;
   updateOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<MutationUpdateOneExpandableArgs, 'where' | 'data'>>;
-  updateOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<MutationUpdateOneTopAuthorArgs, 'where' | 'data'>>;
   updateOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationUpdateOneEditorArgs, 'where' | 'data'>>;
   updateOneCountry?: Resolver<Maybe<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<MutationUpdateOneCountryArgs, 'where' | 'data'>>;
   updateOneDevice?: Resolver<Maybe<ResolversTypes['Device']>, ParentType, ContextType, RequireFields<MutationUpdateOneDeviceArgs, 'where' | 'data'>>;
@@ -1490,7 +1178,6 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   updateOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<MutationUpdateOneQuerySArgs, 'where' | 'data'>>;
   updateOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<MutationUpdateOneTagArgs, 'where' | 'data'>>;
   deleteOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationDeleteOneUserArgs, 'where'>>;
-  deleteOneEdited?: Resolver<Maybe<ResolversTypes['Edited']>, ParentType, ContextType, RequireFields<MutationDeleteOneEditedArgs, 'where'>>;
   deleteOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<MutationDeleteOneTagArgs, 'where'>>;
   deleteOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<MutationDeleteOneQuerySArgs, 'where'>>;
   deleteOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<MutationDeleteOnePageArgs, 'where'>>;
@@ -1501,8 +1188,6 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   deleteOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<MutationDeleteOneFilterArgs, 'where'>>;
   deleteOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<MutationDeleteOneArticleArgs, 'where'>>;
   deleteOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<MutationDeleteOneExpandableArgs, 'where'>>;
-  deleteOneEvergreen?: Resolver<Maybe<ResolversTypes['Evergreen']>, ParentType, ContextType, RequireFields<MutationDeleteOneEvergreenArgs, 'where'>>;
-  deleteOneTopAuthor?: Resolver<Maybe<ResolversTypes['TopAuthor']>, ParentType, ContextType, RequireFields<MutationDeleteOneTopAuthorArgs, 'where'>>;
   deleteOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationDeleteOneEditorArgs, 'where'>>;
 };
 
@@ -1514,13 +1199,7 @@ export type Resolvers<ContextType = any> = {
   User?: UserResolvers<ContextType>;
   Article?: ArticleResolvers<ContextType>;
   ArticleMany?: ArticleManyResolvers<ContextType>;
-  Edited?: EditedResolvers<ContextType>;
-  EditedMany?: EditedManyResolvers<ContextType>;
   Filter?: FilterResolvers<ContextType>;
-  Evergreen?: EvergreenResolvers<ContextType>;
-  EvergreenMany?: EvergreenManyResolvers<ContextType>;
-  TopAuthor?: TopAuthorResolvers<ContextType>;
-  TopAuthorMany?: TopAuthorManyResolvers<ContextType>;
   Editor?: EditorResolvers<ContextType>;
   Expandable?: ExpandableResolvers<ContextType>;
   Appearance?: AppearanceResolvers<ContextType>;
