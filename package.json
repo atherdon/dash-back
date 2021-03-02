@@ -1,6 +1,6 @@
 {
   "name": "dash-back",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Dashboard backend",
   "main": "dist/src/index.js",
   "repository": "https://github.com/atherdon/dash-back",

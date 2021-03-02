@@ -14,24 +14,6 @@
 - - - [Post one](#post-one-article)
 - - - [Update one](#update-one-article)
 - - - [Delete one](#delete-one-article)
-- - [Evergreen](#evergreen)
-- - - [Get one](#get-one-evergreen)
-- - - [Get many](#get-many-evergreens)
-- - - [Post one](#post-one-evergreen)
-- - - [Update one](#update-one-evergreen)
-- - - [Delete one](#delete-one-evergreen)
-- - [Top author](#top-author)
-- - - [Get one](#get-one-top-author)
-- - - [Get many](#get-many-top-authors)
-- - - [Post one](#post-one-top-author)
-- - - [Update one](#update-one-top-author)
-- - - [Delete one](#delete-one-top-author)
-- - [Edited](#edited)
-- - - [Get one](#get-one-edited)
-- - - [Get many](#get-many-editeds)
-- - - [Post one](#post-one-edited)
-- - - [Update one](#update-one-edited)
-- - - [Delete one](#delete-one-edited)
 - - [Editor](#editor)
 - - - [Get one](#get-one-editor)
 - - - [Get many](#get-many-editors)
@@ -107,9 +89,9 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 #### Article
 ##### Get many articles
 ```
-@param - [void]
+@param - [GraphQL.GetManyArticleParams]
 
-@return — [GraphQL.ArticleMany
+@return — [GraphQL.ArticleMany]
 ```
 ##### Get one article
 ```
@@ -137,108 +119,6 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 @param where — [GraphQL.GetOneArticleParams]
 
 @return - [GraphQL.Article]
-```
-#### Evergreen
-##### Get many evergreens
-```
-@param - [void]
-
-@return — [GraphQL.EvergreenMany]
-```
-##### Get one evergreen
-```
-@param where — [GraphQL.GetOneEvergreenParams]
-
-@return — [GraphQL.Evergreen]
-```
-##### Post one evergreen
-```
-@param data — [GraphQL.PostOneEvergreenParams]
-
-@return — [GraphQL.Evergreen]
-```
-
-##### Update one evergreen
-```
-@param where — [GraphQL.GetOneEvergreenParams]
-
-@param data — [GraphQL.UpdateOneEvergreenParams]
-
-@return — [GraphQL.Evergreen]
-```
-##### Delete one evergreen
-```
-@param where — [GraphQL.GetOneEvergreenParams]
-
-@return - [GraphQL.Evergreen]
-```
-#### Edited
-##### Get many editeds
-```
-@param - [void]
-
-@return — [GraphQL.EditedMany]
-```
-##### Get one edited
-```
-@param where — [GraphQL.GetOneEditedParams]
-
-@return — [GraphQL.Edited]
-```
-##### Post one edited
-```
-@param data — [GraphQL.PostOneEditedParams]
-
-@return — [GraphQL.Edited]
-```
-
-##### Update one edited
-```
-@param where — [GraphQL.GetOneEditedParams]
-
-@param data — [GraphQL.UpdateOneEditedParams]
-
-@return — [GraphQL.Edited]
-```
-##### Delete one edited
-```
-@param where — [GraphQL.GetOneEditedParams]
-
-@return - [GraphQL.Edited]
-```
-### Author
-##### Get many top authors
-```
-@param - [void]
-
-@return — [GraphQL.TopAuthorMany]
-```
-##### Get one top author
-```
-@param where — [GraphQL.GetOneTopAuthorParams]
-
-@return — [GraphQL.TopAuthor]
-```
-##### Post one top author
-```
-@param data — [GraphQL.PostOneTopAuthorParams]
-
-@return — [GraphQL.TopAuthor]
-```
-
-##### Update one top author
-```
-@param where — [GraphQL.GetOneTopAuthorParams]
-
-@param data — [GraphQL.UpdateOneTopAuthorParams]
-
-@return — [GraphQL.TopAuthor]
-```
-##### Delete one top author
-```
-@param where — [GraphQL.GetOneTopAuthorParams]
-
-@return — [GraphQL.TopAuthor]
 ```
 ### Editor
 ##### Get many editors

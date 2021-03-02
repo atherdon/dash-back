@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import Schema from './graphql/Schema';
 dotenv.config();
-import recreateRoles from './prisma/fill/recreateRoles';
 import Resolvers from './graphql/Resolver';
 import * as lib from './lib';
 import * as T from './types';
@@ -71,8 +70,5 @@ server.applyMiddleware({
 });
 
 app.listen({ port: PORT }, async () => {
-  // Fill database
-  //// Recreate roles from 'prisma/config/roles.json'
-  await recreateRoles();
-  lib.Console.info(`Server ready at http://localhost:${PORT}${server.graphqlPath}`)
+  lib.Console.info(`Server ready at http://localhost:${PORT}${server.graphqlPath}`);
 });
