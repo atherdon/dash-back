@@ -43,7 +43,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation($data: PostOneArticleParams!) {\n    postOneArticle(data: $data) {\n        id\n        created\n    }\n}",
-								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": false,\n        \"type\": \"evergreen\",\n        \"added\": \"2020-09-04T03:29:56.901Z\",\n        \"edited\": \"2020-09-04T03:29:56.901Z\",\n        \"published\": \"2020-09-04T03:29:56.901Z\",\n        \"avgTimeStory\": 3,\n        \"avgAllTimeStory\": 2\n    }\n}"
+								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"isPublished\": false,\n        \"type\": \"evergreen\",\n        \"added\": \"2020-09-04T03:29:56.901Z\",\n        \"edited\": \"2020-09-04T03:29:56.901Z\",\n        \"published\": \"2020-09-04T03:29:56.901Z\",\n        \"avgTimeStory\": 3,\n        \"avgAllTimeStory\": 2\n    }\n}"
 							}
 						},
 						"url": {
