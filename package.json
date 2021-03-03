@@ -1,6 +1,6 @@
 {
   "name": "dash-back",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "Dashboard backend",
   "main": "dist/src/index.js",
   "repository": "https://github.com/atherdon/dash-back",
@@ -33,6 +33,7 @@
     "migrate:status": "prisma migrate status --preview-feature",
     "studio": "prisma studio",
     "generate": "prisma generate",
+    "format": "prisma format",
     "script": "node dist/src/bin/index.js"
   },
   "dependencies": {

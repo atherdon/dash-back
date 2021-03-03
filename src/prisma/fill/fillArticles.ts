@@ -1,13 +1,10 @@
 import { PrismaClient, Article } from '@prisma/client';
 // @ts-ignore // outside rootDir
 import { brands } from '../../../data/brands.js';
+import { topAuthors } from '../../../data/top-authors.js';
 import * as lib from '../../lib';
 const prisma = new PrismaClient();
-let type = 'evergreen'; // TODO other types (top-author etc) after changing dates in .json files
-/**
- * Fill data to database from data/brands.js
- */
-export default async function fillArticles(): Promise<void> {
+async function operations(brands: any, type: string) {
   lib.Console.info('Script "fillArticles" is started ...');
   let skipped = 0;
   for (let i = 0; brands[i]; i++) {
@@ -54,4 +51,11 @@ export default async function fillArticles(): Promise<void> {
   prisma.$disconnect();
   if (skipped !== 0) lib.Console.warn(`Skipped "${skipped}" "${type}" models.`);
   lib.Console.info('Script "fillArticles" is done!');
+}
+/**
+ * Fill data to database from data/brands.js
+ */
+export default async function fillArticles(): Promise<void> {
+  await operations(brands, 'evergreen');
+  await operations(topAuthors, 'top-author');
 }
