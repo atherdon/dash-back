@@ -14,6 +14,12 @@
 - - - [Post one](#post-one-article)
 - - - [Update one](#update-one-article)
 - - - [Delete one](#delete-one-article)
+- - [Article tag](#article-tag)
+- - - [Get one](#get-one-article-tag)
+- - - [Get many](#get-many-article-by-tags)
+- - - [Post one](#post-one-article-tag)
+- - - [Update one](#update-one-article-tag)
+- - - [Delete one](#delete-one-article-tag)
 - - [Editor](#editor)
 - - - [Get one](#get-one-editor)
 - - - [Get many](#get-many-editors)
@@ -119,6 +125,40 @@ Types of schema: [../src/types/graphql/index.d.ts](../src/types/graphql/index.d.
 @param where — [GraphQL.GetOneArticleParams]
 
 @return - [GraphQL.Article]
+```
+#### Article tag
+##### Get many article by tags
+```
+@param - [GraphQL.GetManyArticleTagParams]
+
+@return — [GraphQL.ArticleTagMany]
+```
+##### Get one article tag
+```
+@param where — [GraphQL.GetOneArticleTagParams]
+
+@return — [GraphQL.ArticleTag]
+```
+##### Post one article tag
+```
+@param data — [GraphQL.PostOneArticleTagParams]
+
+@return — [GraphQL.ArticleTag]
+```
+
+##### Update one article tag
+```
+@param where — [GraphQL.GetOneArticleTagParams]
+
+@param data — [GraphQL.UpdateOneArticleTagParams]
+
+@return — [GraphQL.ArticleTag]
+```
+##### Delete one article tag
+```
+@param where — [GraphQL.GetOneArticleTagParams]
+
+@return - [GraphQL.ArticleTag]
 ```
 ### Editor
 ##### Get many editors

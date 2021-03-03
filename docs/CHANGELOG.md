@@ -6,6 +6,13 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version   
+- ### version 5.1.0-3.03.2021
+1. Fixed pagination bug in `Article`
+2. Added CRUD for relation scheme `ArticleTab`
+3. Changed field `v:string` to `ready:boolean` in `Article`
+4. Make `ready` and `isPublish` are optional while create `Article` (default `false`)
+5. Added `tags` to all article results `Article` and `ArticleTag` 
+6. Added `type` filter to `ArticleTag` 'getMany' 
 - ### version 5.0.0-2.03.2021
 1. Deleted `article` clons
 2. Added type column to `article`
