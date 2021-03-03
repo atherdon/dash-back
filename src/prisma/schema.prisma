@@ -1,152 +1,162 @@
 datasource db {
   provider = "sqlite"
-  url = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
 }
+
 // Internal tables
 model Role {
-  id  Int @id
-  name  String
-  created DateTime? @default(now()) 
+  id      Int       @id
+  name    String
+  created DateTime? @default(now())
+  User    User[]
 }
+
 // Have no direct dependendencies 'graphql/Schema.ts'{SameName}
 model User {
-  id  Int @id @default(autoincrement())
-  email String
-  password String
-  name String?
-  role Int
-  Role Role @relation(fields: [role], references: [id])
-  lastLogin  DateTime?
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  id        Int       @id @default(autoincrement())
+  email     String
+  password  String
+  name      String?
+  role      Int
+  Role      Role      @relation(fields: [role], references: [id])
+  lastLogin DateTime?
+  created   DateTime? @default(now())
+  updated   DateTime? @default(now())
 }
+
 model Article {
-  id  Int @id @default(autoincrement())
-  url String
-  ready Boolean? @default(false)
-  type  String // TODO change to enum when will use Mysql or Postgres 
-  isPublished Boolean? @default(false)
-  added DateTime
-  edited  DateTime?
-  published DateTime?
-  avgTimeStory  Int?
+  id              Int          @id @default(autoincrement())
+  url             String
+  ready           Boolean?     @default(false)
+  type            String // TODO change to enum when will use Mysql or Postgres 
+  isPublished     Boolean?     @default(false)
+  added           DateTime
+  edited          DateTime?
+  published       DateTime?
+  avgTimeStory    Int?
   avgAllTimeStory Int?
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  created         DateTime?    @default(now())
+  updated         DateTime?    @default(now())
+  ArticleTag      ArticleTag[]
 }
+
 model Editor {
-  id  Int @id @default(autoincrement())
-  name String
-  edited  String
-  editedPercent String
-  published String
+  id               Int       @id @default(autoincrement())
+  name             String
+  edited           String
+  editedPercent    String
+  published        String
   publishedPercent String
-  rejected String
-  rejectedPercent String
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  rejected         String
+  rejectedPercent  String
+  created          DateTime? @default(now())
+  updated          DateTime? @default(now())
 }
+
 model Expandable {
-  id  Int @id @default(autoincrement())
-  key Int
-  name String
-  address String
+  id       Int       @id @default(autoincrement())
+  key      Int
+  name     String
+  address  String
   articles String
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }
+
 model Filter {
-  id  Int @id @default(autoincrement())
-  filter String
-  value String
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  id      Int       @id @default(autoincrement())
+  filter  String
+  value   String
+  created DateTime? @default(now())
+  updated DateTime? @default(now())
 }
+
 model Appearance {
-  id  Int @id @default(autoincrement())
-  search  String
-  clicks  Int
+  id          Int       @id @default(autoincrement())
+  search      String
+  clicks      Int
   impressions Int
-  ctr String
-  position  Float 
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  ctr         String
+  position    Float
+  created     DateTime? @default(now())
+  updated     DateTime? @default(now())
 }
 
 model ClicksPosition {
-  id  Int @id @default(autoincrement())
-  date  String
-  clicks  Int
+  id          Int       @id @default(autoincrement())
+  date        String
+  clicks      Int
   impressions Int
-  ctr String
-  position  Float
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  ctr         String
+  position    Float
+  created     DateTime? @default(now())
+  updated     DateTime? @default(now())
 }
 
 model Country {
-  id  Int @id @default(autoincrement())
-  name  String
-  clicks  Int
+  id          Int       @id @default(autoincrement())
+  name        String
+  clicks      Int
   impressions Int
-  ctr String
-  position  Float
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  ctr         String
+  position    Float
+  created     DateTime? @default(now())
+  updated     DateTime? @default(now())
 }
 
 model Device {
-  id  Int @id @default(autoincrement())
-  name  String
-  clicks  Int
+  id          Int       @id @default(autoincrement())
+  name        String
+  clicks      Int
   impressions Int
-  ctr String
-  position  Float
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  ctr         String
+  position    Float
+  created     DateTime? @default(now())
+  updated     DateTime? @default(now())
 }
 
 model Page {
-  id  Int @id @default(autoincrement())
-  url  String
-  clicks  Int
+  id          Int       @id @default(autoincrement())
+  url         String
+  clicks      Int
   impressions Int
-  ctr String
-  position  Float
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  ctr         String
+  position    Float
+  created     DateTime? @default(now())
+  updated     DateTime? @default(now())
 }
 
 model QueryS {
-  id  Int @id @default(autoincrement())
-  name  String
-  clicks  Int
+  id          Int       @id @default(autoincrement())
+  name        String
+  clicks      Int
   impressions Int
-  ctr String
-  position  Float
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  ctr         String
+  position    Float
+  created     DateTime? @default(now())
+  updated     DateTime? @default(now())
 }
 
 model Tag {
-  id  Int @id @default(autoincrement())
-  word  String
-  count Int
-  char  String 
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  id         Int          @id @default(autoincrement())
+  word       String
+  count      Int
+  char       String
+  created    DateTime?    @default(now())
+  updated    DateTime?    @default(now())
+  ArticleTag ArticleTag[]
 }
 
 model ArticleTag {
-  id  Int @id @default(autoincrement())
-  tagId Int
+  id        Int       @id @default(autoincrement())
+  tagId     Int
   articleId Int
-  Tag  Tag @relation(fields: [tagId], references: [id])
-  Article  Article @relation(fields: [articleId], references: [id])
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  Tag       Tag       @relation(fields: [tagId], references: [id])
+  Article   Article   @relation(fields: [articleId], references: [id])
+  created   DateTime? @default(now())
+  updated   DateTime? @default(now())
 }

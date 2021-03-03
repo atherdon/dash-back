@@ -6,6 +6,11 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version   
+- ### version 5.1.2-3.03.2021
+1. Added `GraphQLDateTime` type from `graphql-iso-date` library
+- ### version 5.1.1-3.03.2021
+1. Fixed Prisma format bug
+2. Added `top-authors.json` to `yarn srcipt fill`
 - ### version 5.1.0-3.03.2021
 1. Fixed pagination bug in `Article`
 2. Added CRUD for relation scheme `ArticleTab`

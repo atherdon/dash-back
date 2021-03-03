@@ -6,8 +6,13 @@
 
 import * as resolvers from './resolvers';
 import withAuth from '../middlewares/hooks/withAuth';
+import { GraphQLDateTime } from 'graphql-iso-date';
 
-const Resolvers = {
+const customScalarResolver = {
+  GraphQLDateTime,
+};
+
+const Resolver = {
   Query: {
     // Get many
     getManyTag: resolvers.tag.getMany,
@@ -104,4 +109,5 @@ const Resolvers = {
   },
 };
 
+const Resolvers = [Resolver, customScalarResolver];
 export default Resolvers;

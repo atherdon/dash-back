@@ -1,6 +1,7 @@
 import { gql } from 'apollo-server-express';
 
 const Schema = gql`
+  scalar GraphQLDateTime
   # Global types
   input PaginationParams {
     current: Int!
@@ -24,19 +25,20 @@ const Schema = gql`
     token: String
     refreshToken: String
   }
+
   type Article @cacheControl(maxAge: 1000) {
     id: Int!
     ready: Boolean!
     url: String!
     type: String!
     isPublished: Boolean!
-    added: String!
+    added: GraphQLDateTime!
     edited: String!
     published: String!
     avgTimeStory: Int
     avgAllTimeStory: Int
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
     ### Relation types
     tags: [String]!
   }
@@ -50,8 +52,8 @@ const Schema = gql`
     articleId: Int!
     Tag: Tag!
     Article: Article!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type ArticleTagMany @cacheControl(maxAge: 1000) {
     count: Int!
@@ -61,8 +63,8 @@ const Schema = gql`
     id: Int!
     filter: String!
     value: String!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type Editor @cacheControl(maxAge: 1000) {
     id: Int!
@@ -73,8 +75,8 @@ const Schema = gql`
     publishedPercent: String!
     rejected: String!
     rejectedPercent: String!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type Expandable @cacheControl(maxAge: 1000) {
     id: Int!
@@ -82,8 +84,8 @@ const Schema = gql`
     name: String!
     address: String!
     articles: [String]!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type Appearance @cacheControl(maxAge: 1000) {
     id: Int!
@@ -92,8 +94,8 @@ const Schema = gql`
     impressions: Int!
     ctr: String!
     position: Float!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type ClicksPosition @cacheControl(maxAge: 1000) {
     id: Int!
@@ -102,8 +104,8 @@ const Schema = gql`
     impressions: Int!
     ctr: String!
     position: Float!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type Country @cacheControl(maxAge: 1000) {
     id: Int!
@@ -112,8 +114,8 @@ const Schema = gql`
     impressions: Int!
     ctr: String!
     position: Float!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type Device @cacheControl(maxAge: 1000) {
     id: Int!
@@ -122,8 +124,8 @@ const Schema = gql`
     impressions: Int!
     ctr: String!
     position: Float!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type Page @cacheControl(maxAge: 1000) {
     id: Int!
@@ -132,8 +134,8 @@ const Schema = gql`
     impressions: Int!
     ctr: String!
     position: Float!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type QueryS @cacheControl(maxAge: 1000) {
     id: Int!
@@ -142,16 +144,16 @@ const Schema = gql`
     impressions: Int!
     ctr: String!
     position: Float!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   type Tag @cacheControl(maxAge: 1000) {
     id: Int!
     word: String!
     count: Int!
     char: String!
-    created: String!
-    updated: String!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime!
   }
   # Inputs as requests parameters
   ## User
@@ -185,9 +187,9 @@ const Schema = gql`
     url: String!
     type: String!
     isPublished: Boolean
-    added: String!
-    edited: String!
-    published: String!
+    added: GraphQLDateTime!
+    edited: GraphQLDateTime!
+    published: GraphQLDateTime!
     avgTimeStory: Int
     avgAllTimeStory: Int
   }
@@ -199,9 +201,9 @@ const Schema = gql`
     url: String
     type: String
     isPublished: Boolean
-    added: String
-    edited: String
-    published: String
+    added: GraphQLDateTime
+    edited: GraphQLDateTime
+    published: GraphQLDateTime
     avgTimeStory: Int
     avgAllTimeStory: Int
   }

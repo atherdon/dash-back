@@ -1,6 +1,6 @@
 {
   "name": "dash-back",
-  "version": "5.1.0",
+  "version": "5.1.2",
   "description": "Dashboard backend",
   "main": "dist/src/index.js",
   "repository": "https://github.com/atherdon/dash-back",
@@ -33,6 +33,7 @@
     "migrate:status": "prisma migrate status --preview-feature",
     "studio": "prisma studio",
     "generate": "prisma generate",
+    "format": "prisma format",
     "script": "node dist/src/bin/index.js"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
+    "graphql-iso-date": "^3.6.1",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
@@ -50,6 +52,7 @@
     "@graphql-codegen/typescript-document-nodes": "1.17.9",
     "@graphql-codegen/typescript-resolvers": "1.18.2",
     "@types/bcrypt": "3.0.0",
+    "@types/graphql-iso-date": "^3.4.0",
     "@types/node": "14.14.31",
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",

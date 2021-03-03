@@ -12,9 +12,12 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
+  DateTime: any;
   /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
+
 
 
 export type PaginationParams = {
@@ -44,13 +47,13 @@ export type Article = {
   url: Scalars['String'];
   type: Scalars['String'];
   isPublished: Scalars['Boolean'];
-  added: Scalars['String'];
+  added: Scalars['DateTime'];
   edited: Scalars['String'];
   published: Scalars['String'];
   avgTimeStory?: Maybe<Scalars['Int']>;
   avgAllTimeStory?: Maybe<Scalars['Int']>;
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
   tags: Array<Maybe<Scalars['String']>>;
 };
 
@@ -67,8 +70,8 @@ export type ArticleTag = {
   articleId: Scalars['Int'];
   Tag: Tag;
   Article: Article;
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type ArticleTagMany = {
@@ -82,8 +85,8 @@ export type Filter = {
   id: Scalars['Int'];
   filter: Scalars['String'];
   value: Scalars['String'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type Editor = {
@@ -96,8 +99,8 @@ export type Editor = {
   publishedPercent: Scalars['String'];
   rejected: Scalars['String'];
   rejectedPercent: Scalars['String'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type Expandable = {
@@ -107,8 +110,8 @@ export type Expandable = {
   name: Scalars['String'];
   address: Scalars['String'];
   articles: Array<Maybe<Scalars['String']>>;
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type Appearance = {
@@ -119,8 +122,8 @@ export type Appearance = {
   impressions: Scalars['Int'];
   ctr: Scalars['String'];
   position: Scalars['Float'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type ClicksPosition = {
@@ -131,8 +134,8 @@ export type ClicksPosition = {
   impressions: Scalars['Int'];
   ctr: Scalars['String'];
   position: Scalars['Float'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type Country = {
@@ -143,8 +146,8 @@ export type Country = {
   impressions: Scalars['Int'];
   ctr: Scalars['String'];
   position: Scalars['Float'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type Device = {
@@ -155,8 +158,8 @@ export type Device = {
   impressions: Scalars['Int'];
   ctr: Scalars['String'];
   position: Scalars['Float'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type Page = {
@@ -167,8 +170,8 @@ export type Page = {
   impressions: Scalars['Int'];
   ctr: Scalars['String'];
   position: Scalars['Float'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type QueryS = {
@@ -179,8 +182,8 @@ export type QueryS = {
   impressions: Scalars['Int'];
   ctr: Scalars['String'];
   position: Scalars['Float'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type Tag = {
@@ -189,8 +192,8 @@ export type Tag = {
   word: Scalars['String'];
   count: Scalars['Int'];
   char: Scalars['String'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type RegistrationParams = {
@@ -227,9 +230,9 @@ export type PostOneArticleParams = {
   url: Scalars['String'];
   type: Scalars['String'];
   isPublished?: Maybe<Scalars['Boolean']>;
-  added: Scalars['String'];
-  edited: Scalars['String'];
-  published: Scalars['String'];
+  added: Scalars['DateTime'];
+  edited: Scalars['DateTime'];
+  published: Scalars['DateTime'];
   avgTimeStory?: Maybe<Scalars['Int']>;
   avgAllTimeStory?: Maybe<Scalars['Int']>;
 };
@@ -243,9 +246,9 @@ export type UpdateOneArticleParams = {
   url?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
   isPublished?: Maybe<Scalars['Boolean']>;
-  added?: Maybe<Scalars['String']>;
-  edited?: Maybe<Scalars['String']>;
-  published?: Maybe<Scalars['String']>;
+  added?: Maybe<Scalars['DateTime']>;
+  edited?: Maybe<Scalars['DateTime']>;
+  published?: Maybe<Scalars['DateTime']>;
   avgTimeStory?: Maybe<Scalars['Int']>;
   avgAllTimeStory?: Maybe<Scalars['Int']>;
 };
@@ -909,6 +912,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
+  DateTime: ResolverTypeWrapper<Scalars['DateTime']>;
   PaginationParams: PaginationParams;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   User: ResolverTypeWrapper<User>;
@@ -979,6 +983,7 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
+  DateTime: Scalars['DateTime'];
   PaginationParams: PaginationParams;
   Int: Scalars['Int'];
   User: User;
@@ -1051,6 +1056,10 @@ export type CacheControlDirectiveArgs = {   maxAge?: Maybe<Scalars['Int']>;
 
 export type CacheControlDirectiveResolver<Result, Parent, ContextType = any, Args = CacheControlDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
+export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
+  name: 'DateTime';
+}
+
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -1072,13 +1081,13 @@ export type ArticleResolvers<ContextType = any, ParentType extends ResolversPare
   url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   isPublished?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
-  added?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  added?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   avgTimeStory?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   avgAllTimeStory?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   tags?: Resolver<Array<Maybe<ResolversTypes['String']>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -1095,8 +1104,8 @@ export type ArticleTagResolvers<ContextType = any, ParentType extends ResolversP
   articleId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   Tag?: Resolver<ResolversTypes['Tag'], ParentType, ContextType>;
   Article?: Resolver<ResolversTypes['Article'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1110,8 +1119,8 @@ export type FilterResolvers<ContextType = any, ParentType extends ResolversParen
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   filter?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   value?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1124,8 +1133,8 @@ export type EditorResolvers<ContextType = any, ParentType extends ResolversParen
   publishedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   rejected?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   rejectedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1135,8 +1144,8 @@ export type ExpandableResolvers<ContextType = any, ParentType extends ResolversP
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   address?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   articles?: Resolver<Array<Maybe<ResolversTypes['String']>>, ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1147,8 +1156,8 @@ export type AppearanceResolvers<ContextType = any, ParentType extends ResolversP
   impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1159,8 +1168,8 @@ export type ClicksPositionResolvers<ContextType = any, ParentType extends Resolv
   impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1171,8 +1180,8 @@ export type CountryResolvers<ContextType = any, ParentType extends ResolversPare
   impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1183,8 +1192,8 @@ export type DeviceResolvers<ContextType = any, ParentType extends ResolversParen
   impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1195,8 +1204,8 @@ export type PageResolvers<ContextType = any, ParentType extends ResolversParentT
   impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1207,8 +1216,8 @@ export type QuerySResolvers<ContextType = any, ParentType extends ResolversParen
   impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1217,8 +1226,8 @@ export type TagResolvers<ContextType = any, ParentType extends ResolversParentTy
   word?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   count?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   char?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1298,6 +1307,7 @@ export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTyp
 }
 
 export type Resolvers<ContextType = any> = {
+  DateTime?: GraphQLScalarType;
   User?: UserResolvers<ContextType>;
   Article?: ArticleResolvers<ContextType>;
   ArticleMany?: ArticleManyResolvers<ContextType>;
