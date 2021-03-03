@@ -11,6 +11,7 @@ const Resolvers = {
   Query: {
     // Get many
     getManyTag: resolvers.tag.getMany,
+    getManyArticleTag: resolvers.articleTag.getMany,
     getManyQueryS: resolvers.queryS.getMany,
     getManyPage: resolvers.page.getMany,
     getManyDevice: resolvers.device.getMany,
@@ -23,6 +24,7 @@ const Resolvers = {
     getManyFilter: resolvers.filter.getMany,
     // Get one
     getOneFilter: resolvers.filter.getOne,
+    getOneArticleTag: resolvers.articleTag.getOne,
     getOneTag: resolvers.tag.getOne,
     getOneQueryS: resolvers.queryS.getOne,
     getOnePage: resolvers.page.getOne,
@@ -48,6 +50,7 @@ const Resolvers = {
     login: resolvers.user.login,
     // Post one
     postOneArticle: resolvers.article.postOne,
+    postOneArticleTag: resolvers.articleTag.postOne,
     postOneTag: resolvers.tag.postOne,
     postOneQueryS: resolvers.queryS.postOne,
     postOnePage: resolvers.page.postOne,
@@ -61,6 +64,7 @@ const Resolvers = {
     // Update one
     updateOneFilter: resolvers.filter.updateOne,
     updateOneTag: resolvers.tag.updateOne,
+    updateOneArticleTag: resolvers.articleTag.updateOne,
     updateOneQueryS: resolvers.queryS.updateOne,
     updateOnePage: resolvers.page.updateOne,
     updateOneDevice: resolvers.device.updateOne,
@@ -86,6 +90,7 @@ const Resolvers = {
       resolvers.user.deleteOne
     ),
     deleteOnePage: resolvers.page.deleteOne,
+    deleteOneArticleTag: resolvers.articleTag.deleteOne,
     deleteOneTag: resolvers.tag.deleteOne,
     deleteOneQueryS: resolvers.queryS.deleteOne,
     deleteOneCountry: resolvers.country.deleteOne,

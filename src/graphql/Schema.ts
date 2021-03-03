@@ -1,6 +1,11 @@
 import { gql } from 'apollo-server-express';
 
 const Schema = gql`
+  # Global types
+  input PaginationParams {
+    current: Int!
+    limit: Int!
+  }
   #
   # Schemas
   # Have no direct dependendencies with 'orm/schema.prisma' [SameName]
@@ -21,9 +26,8 @@ const Schema = gql`
   }
   type Article @cacheControl(maxAge: 1000) {
     id: Int!
-    v: String!
+    ready: Boolean!
     url: String!
-    email: String!
     type: String!
     isPublished: Boolean!
     added: String!
@@ -33,10 +37,25 @@ const Schema = gql`
     avgAllTimeStory: Int
     created: String!
     updated: String!
+    ### Relation types
+    tags: [String]!
   }
   type ArticleMany @cacheControl(maxAge: 1000) {
     count: Int!
     items: [Article]
+  }
+  type ArticleTag @cacheControl(maxAge: 1000) {
+    id: Int!
+    tagId: Int!
+    articleId: Int!
+    Tag: Tag!
+    Article: Article!
+    created: String!
+    updated: String!
+  }
+  type ArticleTagMany @cacheControl(maxAge: 1000) {
+    count: Int!
+    items: [ArticleTag]
   }
   type Filter @cacheControl(maxAge: 1000) {
     id: Int!
@@ -156,21 +175,16 @@ const Schema = gql`
     password: String
   }
   ## Article
-  input ArticlePaginationParams {
-    current: Int!
-    limit: Int!
-  }
   input GetManyArticleParams {
     type: String!
     isPublished: Boolean
-    pagination: ArticlePaginationParams
+    pagination: PaginationParams
   }
   input PostOneArticleParams {
-    v: String!
+    ready: Boolean
     url: String!
-    email: String!
     type: String!
-    isPublished: Boolean!
+    isPublished: Boolean
     added: String!
     edited: String!
     published: String!
@@ -181,9 +195,8 @@ const Schema = gql`
     id: Int!
   }
   input UpdateOneArticleParams {
-    v: String
+    ready: Boolean
     url: String
-    email: String
     type: String
     isPublished: Boolean
     added: String
@@ -191,6 +204,25 @@ const Schema = gql`
     published: String
     avgTimeStory: Int
     avgAllTimeStory: Int
+  }
+  ## ArticleTag
+  input PostOneArticleTagParams {
+    tagId: Int!
+    articleId: Int!
+  }
+  input GetOneArticleTagParams {
+    id: Int!
+  }
+  input GetManyArticleTagParams {
+    type: String!
+    articleId: Int
+    tagId: Int
+    word: String
+    pagination: PaginationParams
+  }
+  input UpdateOneArticleTagParams {
+    tagId: Int
+    articleId: Int
   }
   ## Editor
   input PostOneEditorParams {
@@ -364,9 +396,11 @@ const Schema = gql`
     count: Int
     char: String
   }
+  ### Query and Mutation
   type Query {
     # Get many
     getManyArticle(where: GetManyArticleParams!): ArticleMany!
+    getManyArticleTag(where: GetManyArticleTagParams!): ArticleTagMany!
     getManyTag: [Tag]!
     getManyQueryS: [QueryS]!
     getManyPage: [Page]!
@@ -387,6 +421,7 @@ const Schema = gql`
     getOneClicksPosition(where: GetOneClicksPositionParams!): ClicksPosition
     getOneAppearance(where: GetOneAppearanceParams!): Appearance
     getOneArticle(where: GetOneArticleParams!): Article
+    getOneArticleTag(where: GetOneArticleTagParams!): ArticleTag
     getOneFilter(where: GetOneFilterParams!): Filter
     getOneExpandable(where: GetOneExpandableParams!): Expandable
     getOneEditor(where: GetOneEditorParams!): Editor
@@ -406,6 +441,7 @@ const Schema = gql`
     postOneAppearance(data: PostOneAppearanceParams!): Appearance
     postOneFilter(data: PostOneFilterParams!): Filter
     postOneArticle(data: PostOneArticleParams!): Article
+    postOneArticleTag(data: PostOneArticleTagParams!): ArticleTag
     postOneEditor(data: PostOneEditorParams!): Editor
     # Update one
     updateOneUser(where: GetOneUserParams!, data: UpdateOneUserParams!): User
@@ -429,6 +465,10 @@ const Schema = gql`
     updateOnePage(where: GetOnePageParams!, data: UpdateOnePageParams!): Page
     updateOneQueryS(where: GetOneQuerySParams!, data: UpdateOneQuerySParams!): QueryS
     updateOneTag(where: GetOneTagParams!, data: UpdateOneTagParams!): Tag
+    updateOneArticleTag(
+      where: GetOneArticleTagParams!
+      data: UpdateOneArticleTagParams!
+    ): ArticleTag
     # Delete one
     deleteOneUser(where: GetOneUserParams!): User
     deleteOneTag(where: GetOneTagParams!): Tag
@@ -440,6 +480,7 @@ const Schema = gql`
     deleteOneAppearance(where: GetOneAppearanceParams!): Appearance
     deleteOneFilter(where: GetOneFilterParams!): Filter
     deleteOneArticle(where: GetOneArticleParams!): Article
+    deleteOneArticleTag(where: GetOneArticleTagParams!): ArticleTag
     deleteOneExpandable(where: GetOneExpandableParams!): Expandable
     deleteOneEditor(where: GetOneEditorParams!): Editor
   }
