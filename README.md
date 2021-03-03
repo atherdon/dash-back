@@ -206,6 +206,10 @@ Start `fill` scripts
 ```
 yarn script fill
 ```
+Format Prisma scheme
+```
+yarn format
+```
 
 # TODOS
 
