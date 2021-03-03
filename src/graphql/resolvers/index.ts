@@ -6,6 +6,7 @@
 export * as editor from './editor';
 export * as user from './user';
 export * as article from './article';
+export * as articleTag from './articleTag';
 export * as expandable from './expandable';
 export * as filter from './filter';
 export * as appearance from './appearance';

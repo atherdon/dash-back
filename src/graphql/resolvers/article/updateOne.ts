@@ -26,8 +26,7 @@ const updateOneArticle: T.Resolver<
     where,
     data: {
       url: data.url || undefined,
-      email: data.email || undefined,
-      v: data.v || undefined,
+      ready: data.ready || undefined,
       isPublished: typeof data.isPublished === 'boolean' ? data.isPublished : undefined,
       type: data.type || undefined,
       added,
@@ -37,14 +36,38 @@ const updateOneArticle: T.Resolver<
       avgAllTimeStory: data.avgAllTimeStory || undefined,
       updated: new Date(),
     },
+    select: {
+      id: true,
+      url: true,
+      ready: true,
+      type: true,
+      isPublished: true,
+      added: true,
+      edited: true,
+      published: true,
+      avgTimeStory: true,
+      avgAllTimeStory: true,
+      created: true,
+      updated: true,
+      ArticleTag: true,
+    },
+  });
+  // Get article tag list
+  const tags = await prisma.articleTag.findMany({
+    where: {
+      articleId: result.id,
+    },
+    select: {
+      Tag: true,
+    },
   });
   return {
     id: result.id,
     url: result.url,
-    v: result.v,
-    email: result.email,
+    ready: result.ready || false,
     type: result.type,
-    isPublished: result.isPublished,
+    tags: tags.map((item) => item.Tag.word),
+    isPublished: result.isPublished || false,
     added: result.added.toISOString(),
     edited: result.edited?.toISOString() || '',
     published: result.published?.toISOString() || '',

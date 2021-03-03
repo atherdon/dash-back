@@ -26,32 +26,59 @@ const getManyArticle: T.Resolver<GraphQL.QueryGetManyArticleArgs, GraphQL.Articl
   let take = undefined;
   if (where.pagination) {
     take = where.pagination.limit;
-    skip = take * where.pagination.current - take + 1;
+    skip = take * where.pagination.current - take;
   }
   const result = await prisma.article.findMany({
     where: newWhere,
     take,
     skip,
+    select: {
+      id: true,
+      url: true,
+      ready: true,
+      type: true,
+      isPublished: true,
+      added: true,
+      edited: true,
+      published: true,
+      avgTimeStory: true,
+      avgAllTimeStory: true,
+      created: true,
+      updated: true,
+      ArticleTag: true,
+    },
+  });
+  // Parse articles to get tags
+  const items = result.map(async (result) => {
+    // Get article tag list
+    const tags = await prisma.articleTag.findMany({
+      where: {
+        articleId: result.id,
+      },
+      select: {
+        Tag: true,
+      },
+    });
+    const article = {
+      id: result.id,
+      url: result.url,
+      ready: result.ready || false,
+      type: result.type,
+      tags: tags.map((item) => item.Tag.word),
+      isPublished: result.isPublished || false,
+      added: result.added.toISOString(),
+      edited: result.edited?.toISOString() || '',
+      published: result.published?.toISOString() || '',
+      avgTimeStory: result.avgAllTimeStory || null,
+      avgAllTimeStory: result.avgAllTimeStory || null,
+      created: result.created?.toISOString() || '',
+      updated: result.updated?.toISOString() || '',
+    };
+    return article;
   });
   return {
     count,
-    items: result.map((result) => {
-      return {
-        id: result.id,
-        url: result.url,
-        v: result.v,
-        type: result.type,
-        email: result.email,
-        isPublished: result.isPublished,
-        added: result.added.toISOString(),
-        edited: result.edited?.toISOString() || '',
-        published: result.published?.toISOString() || '',
-        avgTimeStory: result.avgAllTimeStory || null,
-        avgAllTimeStory: result.avgAllTimeStory || null,
-        created: result.created?.toISOString() || '',
-        updated: result.updated?.toISOString() || '',
-      };
-    }),
+    items: await Promise.all(items),
   };
 };
 

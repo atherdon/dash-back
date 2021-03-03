@@ -27,10 +27,9 @@ model User {
 model Article {
   id  Int @id @default(autoincrement())
   url String
-  v String
-  email String
+  ready Boolean? @default(false)
   type  String // TODO change to enum when will use Mysql or Postgres 
-  isPublished Boolean
+  isPublished Boolean? @default(false)
   added DateTime
   edited  DateTime?
   published DateTime?
@@ -138,6 +137,16 @@ model Tag {
   word  String
   count Int
   char  String 
+  created  DateTime? @default(now())
+  updated  DateTime? @default(now())
+}
+
+model ArticleTag {
+  id  Int @id @default(autoincrement())
+  tagId Int
+  articleId Int
+  Tag  Tag @relation(fields: [tagId], references: [id])
+  Article  Article @relation(fields: [articleId], references: [id])
   created  DateTime? @default(now())
   updated  DateTime? @default(now())
 }

@@ -16,8 +16,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query getManyArticle($where: GetManyArticleParams!) {\n    getManyArticle(where: $where) {\n        count\n        items {\n            id\n            isPublished\n            type\n        }\n    }\n}",
-								"variables": "{\n    \"where\": {\n        \"type\": \"evergreen\",\n        \"isPublished\": false,\n        \"pagination\": {\n            \"limit\": 2,\n            \"current\": 1\n        }\n    }\n}"
+								"query": "query getManyArticle($where: GetManyArticleParams!) {\n    getManyArticle(where: $where) {\n        count\n        items {\n            id\n            isPublished\n            type\n            tags\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"type\": \"evergreen\",\n        \"isPublished\": true,\n        \"pagination\": {\n            \"limit\": 2,\n            \"current\": 2\n        }\n    }\n}"
 							}
 						},
 						"url": {
@@ -43,7 +43,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation($data: PostOneArticleParams!) {\n    postOneArticle(data: $data) {\n        id\n        created\n    }\n}",
-								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": false,\n        \"type\": \"evergreen\",\n        \"added\": \"2020-09-04T03:29:56.901Z\",\n        \"edited\": \"2020-09-04T03:29:56.901Z\",\n        \"published\": \"2020-09-04T03:29:56.901Z\",\n        \"avgTimeStory\": 3,\n        \"avgAllTimeStory\": 2,\n        \"email\": \"dasd\"\n    }\n}"
+								"variables": "{\n    \"data\": {\n        \"url\": \"dasd\",\n        \"v\": \"test\",\n        \"isPublished\": false,\n        \"type\": \"evergreen\",\n        \"added\": \"2020-09-04T03:29:56.901Z\",\n        \"edited\": \"2020-09-04T03:29:56.901Z\",\n        \"published\": \"2020-09-04T03:29:56.901Z\",\n        \"avgTimeStory\": 3,\n        \"avgAllTimeStory\": 2\n    }\n}"
 							}
 						},
 						"url": {
@@ -121,6 +121,141 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "mutation deleteOneArticle($where: GetOneArticleParams!) {\n    deleteOneArticle(where: $where) {\n        id\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 133\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "article tag",
+			"item": [
+				{
+					"name": "Get many",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query getManyArticleTag($where: GetManyArticleTagParams!) {\n    getManyArticleTag(where: $where) {\n        count\n        items {\n            id\n            Article {\n                url\n                tags\n            }\n            Tag {\n                word\n            }\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"word\": \"staking\",\n        \"type\": \"evergreen\",\n        \"pagination\": {\n            \"limit\": 5,\n            \"current\": 1\n        }\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($data: PostOneArticleTagParams!) {\n    postOneArticleTag(data: $data) {\n        id\n        created\n        Article {\n            url\n            tags\n        }\n    }\n}",
+								"variables": "{\n    \"data\": {\n        \"articleId\": 138,\n        \"tagId\": 37\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query($where: GetOneArticleTagParams!) {\n    getOneArticleTag(where: $where) {\n        id\n        Article {\n            url\n        }\n        Tag {\n            word\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation($where: GetOneArticleTagParams!, $data: UpdateOneArticleTagParams!) {\n    updateOneArticleTag(where: $where, data: $data) {\n        articleId\n        tagId\n        Article {\n            id\n        }\n        Tag {\n            id\n        }\n    }\n}",
+								"variables": "{\n    \"where\": {\n        \"id\": 1\n    },\n    \"data\": {\n        \"articleId\": 77,\n        \"tagId\": 22\n    }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteOneArticleTag($where: GetOneArticleTagParams!) {\n    deleteOneArticleTag(where: $where) {\n        id\n    }\n}",
 								"variables": "{\n    \"where\": {\n        \"id\": 1\n    }\n}"
 							}
 						},
