@@ -66,6 +66,7 @@ app.use(
   })
 );
 server.applyMiddleware({
+  path: '/',
   app,
 });
 
