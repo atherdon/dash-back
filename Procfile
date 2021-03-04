@@ -1,2 +1,2 @@
-worker: prisma studio
-web: npm run start
+web: yarn start
+web: yarn studio
