@@ -188,8 +188,8 @@ const Schema = gql`
     type: String!
     isPublished: Boolean
     added: GraphQLDateTime!
-    edited: GraphQLDateTime!
-    published: GraphQLDateTime!
+    edited: GraphQLDateTime
+    published: GraphQLDateTime
     avgTimeStory: Int
     avgAllTimeStory: Int
   }

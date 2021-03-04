@@ -26,7 +26,7 @@ const updateOneArticle: T.Resolver<
     where,
     data: {
       url: data.url || undefined,
-      ready: data.ready || undefined,
+      ready: typeof data.ready === 'boolean' ? data.ready : undefined,
       isPublished: typeof data.isPublished === 'boolean' ? data.isPublished : undefined,
       type: data.type || undefined,
       added,
