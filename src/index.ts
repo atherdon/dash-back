@@ -68,20 +68,24 @@ app.use(
   })
 );
 const yarn = spawn('yarn', ['studio', '--browser', 'none']);
-yarn.on('error', (e) => {
-  console.log(1, e);
+app.get('/start-studio', (req, res) => {
+  yarn.on('error', (e) => {
+    console.log(1, e);
+  });
+  yarn.on('message', (e) => {
+    console.log(2, e);
+  });
+  yarn.on('close', (e) => {
+    console.log(3, e);
+  });
+  res.send('');
 });
-yarn.on('message', (e) => {
-  console.log(2, e);
-});
-yarn.on('close', (e) => {
-  console.log(3, e);
-});
-app.use('/studio', proxy('http://localhost:5555'));
-app.post('/api', (req, res) => res.redirect('http://localhost:5555/api'));
-app.get('/*.js.?*', (req, res) => res.redirect(`http://localhost:5555${req.path}`));
-app.get('/*.css.?', (req, res) => res.redirect(`http://localhost:5555${req.path}`));
-app.get('/fonts/*', (req, res) => res.redirect(`http://localhost:5555${req.path}`));
+const studioUrl = 'http://localhost:5555';
+app.use('/studio', proxy(studioUrl));
+app.post('/api', (req, res) => res.redirect(`${studioUrl}/api`));
+app.get('/*.js.?*', (req, res) => res.redirect(`${studioUrl}${req.path}`));
+app.get('/*.css.?', (req, res) => res.redirect(`${studioUrl}${req.path}`));
+app.get('/fonts/*', (req, res) => res.redirect(`${studioUrl}${req.path}`));
 
 server.applyMiddleware({
   path: '/',
