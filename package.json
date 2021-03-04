@@ -57,6 +57,7 @@
     "@graphql-codegen/typescript": "1.21.0",
     "@graphql-codegen/typescript-document-nodes": "1.17.9",
     "@graphql-codegen/typescript-resolvers": "1.18.2",
+    "@prisma/studio-server": "^0.357.0",
     "@types/bcrypt": "3.0.0",
     "@types/express-http-proxy": "^1.6.1",
     "@types/graphql-iso-date": "3.4.0",

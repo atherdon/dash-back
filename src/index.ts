@@ -67,7 +67,7 @@ app.use(
     origin: lib.isDev() ? '*' : CORS_ORIGIN,
   })
 );
-const yarn = spawn('yarn', ['studio']);
+const yarn = spawn('yarn', ['studio', '--browser', 'none']);
 yarn.on('error', (e) => {
   console.log(1, e);
 });
@@ -78,8 +78,10 @@ yarn.on('close', (e) => {
   console.log(3, e);
 });
 app.use('/studio', proxy('http://localhost:5555'));
-app.use('/*.js', proxy('http://localhost:5555'));
-app.use('/*.css', proxy('http://localhost:5555'));
+app.post('/api', (req, res) => res.redirect('http://localhost:5555/api'));
+app.get('/*.js.?*', (req, res) => res.redirect(`http://localhost:5555${req.path}`));
+app.get('/*.css.?', (req, res) => res.redirect(`http://localhost:5555${req.path}`));
+app.get('/fonts/*', (req, res) => res.redirect(`http://localhost:5555${req.path}`));
 
 server.applyMiddleware({
   path: '/',
