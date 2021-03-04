@@ -16,8 +16,7 @@
   "scripts": {
     "ts": "prisma generate && tsc -p . -w",
     "ts:clean": "tsc --build --clean",
-    "build": "prisma generate && tsc -p .",
-    "buildHeroku": "yarn build && npx run prisma migrate deploy --preview-feature",
+    "build": "prisma generate && tsc -p . && npx run prisma migrate deploy --preview-feature",
     "dev": "NODE_ENV=development nodemon ${npm_package_main}",
     "start": "NODE_ENV=development node ${npm_package_main}",
     "start:test": "NODE_ENV=test node ${npm_package_main}",
