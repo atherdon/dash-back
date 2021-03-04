@@ -44,4 +44,6 @@ A:  Percentages came from a document that Marina operating. The main idea relate
 Для таких ситуаций мы и покрываем нашу работу статистикой.
 
 
+------------
+
 
