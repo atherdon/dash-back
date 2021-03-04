@@ -1,3 +1,2 @@
-worker: npx run prisma db push --preview-feature
-worker: npm run build
+worker: npm run buildHeroku
 web: npm run start
