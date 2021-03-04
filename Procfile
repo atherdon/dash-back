@@ -1,3 +1,3 @@
-worker: npx run prisma migrate deploy --preview-feature
+worker: npx run prisma db push --preview-feature
 worker: npm run build
 web: npm run start
