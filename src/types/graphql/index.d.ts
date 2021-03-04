@@ -48,8 +48,8 @@ export type Article = {
   type: Scalars['String'];
   isPublished: Scalars['Boolean'];
   added: Scalars['DateTime'];
-  edited: Scalars['String'];
-  published: Scalars['String'];
+  edited: Scalars['DateTime'];
+  published: Scalars['DateTime'];
   avgTimeStory?: Maybe<Scalars['Int']>;
   avgAllTimeStory?: Maybe<Scalars['Int']>;
   created: Scalars['DateTime'];
@@ -231,8 +231,8 @@ export type PostOneArticleParams = {
   type: Scalars['String'];
   isPublished?: Maybe<Scalars['Boolean']>;
   added: Scalars['DateTime'];
-  edited: Scalars['DateTime'];
-  published: Scalars['DateTime'];
+  edited?: Maybe<Scalars['DateTime']>;
+  published?: Maybe<Scalars['DateTime']>;
   avgTimeStory?: Maybe<Scalars['Int']>;
   avgAllTimeStory?: Maybe<Scalars['Int']>;
 };
@@ -1082,8 +1082,8 @@ export type ArticleResolvers<ContextType = any, ParentType extends ResolversPare
   type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   isPublished?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   added?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  edited?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  published?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   avgTimeStory?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   avgAllTimeStory?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;

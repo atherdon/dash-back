@@ -6,6 +6,8 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version   
+- ### version 5.1.4-4.03.2021
+1. Correct type for `edited` and `published` in `Article`
 - ### version 5.1.3-4.03.2021
 1. Make `edited` and `published` as optional in `postOneArticle`
 2. Fixed chenge `ready` bug in `updateUneArticle`
