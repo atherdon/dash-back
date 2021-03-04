@@ -1,4 +1,4 @@
-### editors statistics/calculations
+### editors performance numbers, statistics & calculations 
 
 Я не успеваю собрать всю информацию, которую я бы хотел вам передать по статистике/stages/statuses.
 Это большие темы и мне многое еще неизвестно.
