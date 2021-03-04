@@ -3,11 +3,13 @@ import { ApolloServer } from 'apollo-server-express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { spawn } from 'child_process';
 import Schema from './graphql/Schema';
 dotenv.config();
 import Resolvers from './graphql/Resolver';
 import * as lib from './lib';
 import * as T from './types';
+import { on } from 'ws';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const env: any = process.env;
@@ -56,6 +58,18 @@ const server = new ApolloServer({
   },
 });
 const app = express();
+app.get('/studio', () => {
+  const yarn = spawn('yarn', ['studio']);
+  yarn.on('error', (e) => {
+    console.log(1, e);
+  });
+  yarn.on('message', (e) => {
+    console.log(2, e);
+  });
+  yarn.on('close', (e) => {
+    console.log(3, e);
+  });
+});
 // Enable body parser
 app.use(server.graphqlPath, bodyParser.json({ limit: '1mb' }));
 // Enable cors
