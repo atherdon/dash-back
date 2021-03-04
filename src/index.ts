@@ -16,7 +16,7 @@ const { CORS_ORIGIN }: T.Env = env;
  * GraphQL server port
  * Dependency: schema [codegen.yml]
  */
-const PORT = 4000;
+const PORT = 5000;
 
 const server = new ApolloServer({
   typeDefs: Schema,

@@ -1,4 +1,3 @@
 worker: npx run prisma migrate
-worker: npx run prisma generate
-worker: npm run build:heroku
+worker: npm run build
 web: npm run start
