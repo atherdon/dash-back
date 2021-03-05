@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { spawn } from 'child_process';
 import proxy from 'express-http-proxy';
+import axios from 'axios';
 import Schema from './graphql/Schema';
 dotenv.config();
 import Resolvers from './graphql/Resolver';
@@ -70,12 +71,17 @@ app.use(
 const studioHost = 'localhost:5555';
 const studioUrl = `http://${studioHost}`;
 app.use('/studio', proxy(studioUrl));
-app.post('/api', (req, res) => {
-  res.set('Host', studioHost);
-  res.set('Content-Type', 'text/plain; charset=utf-8');
-  res.set('Origin', studioUrl);
-  res.set('Referer', studioUrl + '/');
-  res.redirect(`${studioUrl}${req.path}`);
+app.post('/api', async (req, res) => {
+  const data = await new Promise((resolve) => {
+    axios.post(`${studioUrl}${req.path}`)
+      .then(d => {
+        resolve(d.data)
+      })
+      .catch(e => {
+        console.error(12, e)
+      });
+  });
+  res.send(data);
 });
 app.get('/*.js.?*', (req, res) => res.redirect(`${studioUrl}${req.path}`));
 app.get('/*.css.?', (req, res) => {
