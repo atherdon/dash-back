@@ -67,25 +67,23 @@ app.use(
     origin: lib.isDev() ? '*' : CORS_ORIGIN,
   })
 );
-const yarn = spawn('yarn', ['studio', '--browser', 'none']);
-app.get('/start-studio', (req, res) => {
-  yarn.on('error', (e) => {
-    console.log(1, e);
-  });
-  yarn.on('message', (e) => {
-    console.log(2, e);
-  });
-  yarn.on('close', (e) => {
-    console.log(3, e);
-  });
-  res.send('');
-});
-const studioUrl = 'http://localhost:5555';
+const studioHost = 'localhost:5555';
+const studioUrl = `http://${studioHost}`;
 app.use('/studio', proxy(studioUrl));
-app.post('/api', (req, res) => res.redirect(`${studioUrl}/api`));
+app.post('/api', (req, res) => {
+  res.set('Host', studioHost);
+  res.set('Origin', studioUrl);
+  res.set('Referer', studioUrl + '/');
+  res.redirect(`${studioUrl}/api`);
+});
 app.get('/*.js.?*', (req, res) => res.redirect(`${studioUrl}${req.path}`));
 app.get('/*.css.?', (req, res) => res.redirect(`${studioUrl}${req.path}`));
-app.get('/fonts/*', (req, res) => res.redirect(`${studioUrl}${req.path}`));
+app.get('/fonts/*.ttf', (req, res) => {
+  res.set('Host', studioHost);
+  res.set('Origin', studioUrl);
+  res.set('Referer', studioUrl + '/');
+  res.redirect(`${studioUrl}${req.path}`);
+});
 
 server.applyMiddleware({
   path: '/',
@@ -93,5 +91,15 @@ server.applyMiddleware({
 });
 
 app.listen(process.env.PORT || PORT, async () => {
+  const yarn = spawn('yarn', ['studio', '--browser', 'none']);
+  yarn.on('error', (e) => {
+    console.log(1, e);
+  });
+  yarn.on('message', (e) => {
+    console.log(2, e);
+  });
+  yarn.on('close', (e, m) => {
+    console.log(3, e);
+  });
   lib.Console.info(`Server ready at http://localhost:${PORT}${server.graphqlPath}`);
 });
