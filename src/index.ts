@@ -72,14 +72,15 @@ const studioUrl = `http://${studioHost}`;
 app.use('/studio', proxy(studioUrl));
 app.post('/api', (req, res) => {
   res.set('Host', studioHost);
+  res.set('Content-Type', 'text/plain; charset=utf-8');
   res.set('Origin', studioUrl);
   res.set('Referer', studioUrl + '/');
-  res.redirect(`${studioUrl}/api`);
+  res.redirect(`${studioUrl}${req.path}`);
 });
 app.get('/*.js.?*', (req, res) => res.redirect(`${studioUrl}${req.path}`));
-app.get('/*.css.?', (req, res) => res.redirect(`${studioUrl}${req.path}`));
-app.get('/fonts/*.ttf', (req, res) => {
+app.get('/*.css.?', (req, res) => {
   res.set('Host', studioHost);
+  res.set('Content-Type', 'text/plain; charset=utf-8');
   res.set('Origin', studioUrl);
   res.set('Referer', studioUrl + '/');
   res.redirect(`${studioUrl}${req.path}`);
