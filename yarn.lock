@@ -1023,7 +1023,7 @@
   dependencies:
     rimraf "3.0.2"
 
-"@prisma/studio-server@^0.357.0":
+"@prisma/studio-server@0.357.0":
   version "0.357.0"
   resolved "https://registry.yarnpkg.com/@prisma/studio-server/-/studio-server-0.357.0.tgz#3126ffecf81ba54ce3d89ace5f13e9fa47b8b752"
   integrity sha512-5qW4zbtHwypQaJaI7tsqfiP2yIh8E3leILYvNCt1ybCtb45ZB8/9m4klTk3YEiPJ0GnXVU3HEMgIvS9d6WcskA==
@@ -1280,7 +1280,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/express-http-proxy@^1.6.1":
+"@types/express-http-proxy@1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@types/express-http-proxy/-/express-http-proxy-1.6.1.tgz#b505ecdf51bf6d5b361fd8bfa777baabe4427a44"
   integrity sha512-FjuKVtGaT3ccHD7uFr7vKDsn3shEEc/Upo2YnVsTfoDPuUbCV/GIsinG7gbrkzcIYELqh+8hYmn/rEfqMQA/9g==
