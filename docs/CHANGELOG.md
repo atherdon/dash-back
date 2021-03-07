@@ -6,6 +6,8 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version   
+- ### version 5.2.0-8.03.2021
+1. Added `docker-compose.yml` see [README.md#production-via-docker](../README.md#production-via-docker)
 - ### version 5.1.5-7.03.2021
 1. Change port to 5000
 2. Added Heroku config

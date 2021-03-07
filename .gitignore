@@ -17,3 +17,5 @@ database/sqlite/*
 !database/sqlite/SQLITE.md
 
 package-lock.json
+
+.certs/

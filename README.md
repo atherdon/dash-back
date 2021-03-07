@@ -19,10 +19,11 @@ Backed server for Dashboard with `GraphQL` language query and `SQLite` database.
 - - - [IDE settings](#ide-settings)
 - - - [Debug](#debug)
 - - [Production](#production)
+- - [Production via Docker](#production-via-docker)
 - - - [Build and start](#build-and-start)
 - - - [Migration](#migration-on-production)
 - - - [Test](#test)
-- - - [Additions](#additions)
+- - [Additions](#additions)
 - [Todos](#todos)  
 
 # Package instruction
@@ -79,6 +80,8 @@ DATABASE_URL=file://${absPathToPWD}/database/sqlite/dash.db
 CORS_ORIGIN=localhost,second.origin
 # JWT token secret key
 TOKEN_KEY=QpLwz7AqqUg0GU6VHLO31aR8zqoeMiJiYXIiLCJpY
+# Public server url for app host via docker 
+DOCKER_SERVER_URL=http://my.domain
 ```
 
 ## Usage
@@ -186,8 +189,63 @@ yarn prod:test
 ```
 _Before this command do not forgot_ `yarn build`
 
-#### Additions
+### Production via Docker
+Firewall settings:  
+```
+Open port 80 (and 443 for ssl)
+```
+#### SSL certificate 
+[Skip SSL settings](#end-ssl-certificate-section)  
+If needed SSL certificate do change file `dockerfiles/web/Dockerfile`:
+```ini
+## Set "nginx-ssl.conf" instead "nginx.conf" if needed SSL 
+ARG USED_NGINX_CONF=./resources/nginx.conf
+## If needed SSL do uncoment next lines and set paths to private and public parts of certificate 
+# COPY .certs certs
+# RUN chown nginx:nginx -R certs
+```
+Copy your SSL certificate parts in `.certs` directory, and change owner if needed:
+```
+chown user:user -R .certs
+``` 
+Check `resources/nginx*.conf` certificate part names:
+```ini
+# Set ssl paths
+ssl_certificate /home/web/certs/nginx-selfsigned.crt; // Certs without "." is a path of ".certs" copy into container
+ssl_certificate_key /home/web/certs/private/nginx-selfsigned.key;
+```
+Change protocol in .env:
+```ini
+# Public url for your server 
+DOCKER_SERVER_URL=http://my.domain ## https if used SSL
+```
+#### End SSL certificate section
+Then...  
+Build docker containers:
+```
+docker-compose build
+```
+Start containers for test:
+```
+docker-compose up
+```
+Start containers detach:
+```
+docker-compose up -d
+```
 
+### Additions
+#### For `docker`
+Show logs:
+```
+docker logs
+```
+Connect to container:
+```
+docker exec -it name sh
+```
+
+#### For `screen`
 Open database explorer
 ```
 yarn studio
