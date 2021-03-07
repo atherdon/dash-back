@@ -1,0 +1,62 @@
+version: "3.5"
+services:
+  back:
+    build:
+      context: ./
+      dockerfile: dockerfiles/api/Dockerfile
+    restart: always
+    volumes:
+      - ./database/sqlite/:/home/back/database/sqlite/
+    ports:
+      - "5000:5000"
+    logging:
+      options:
+        max-size: '12m'
+        max-file: '5'
+      driver: json-file
+    container_name: back
+  studio:
+    build:
+      context: ./
+      dockerfile: dockerfiles/studio/Dockerfile
+    restart: always
+    volumes:
+      - ./database/sqlite/:/home/studio/database/sqlite/
+    ports:
+      - "5555:5555"
+    logging:
+      options:
+        max-size: '12m'
+        max-file: '5'
+      driver: json-file
+    container_name: studio
+  forms:
+    build:
+      context: ./
+      dockerfile: dockerfiles/forms/Dockerfile
+    restart: always
+    ports:
+      - "8080:5000"
+    logging:
+      options:
+        max-size: '12m'
+        max-file: '5'
+      driver: json-file
+    container_name: forms
+  web:
+    build:
+      context: ./
+      dockerfile: dockerfiles/web/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    logging:
+      options:
+        max-size: '12m'
+        max-file: '5'
+      driver: json-file
+    depends_on:
+      - back
+      - studio
+      - forms
+    container_name: web

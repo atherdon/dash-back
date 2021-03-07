@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7326479e-7b75-4f19-8b45-be2279a3ebca",
+		"_postman_id": "a3291dca-334f-4dec-a668-b3ba20955446",
 		"name": "DashBack",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -17,18 +17,18 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "query getManyArticle($where: GetManyArticleParams!) {\n    getManyArticle(where: $where) {\n        count\n        items {\n            id\n            isPublished\n            type\n            tags\n        }\n    }\n}",
-								"variables": "{\n    \"where\": {\n        \"type\": \"evergreen\",\n        \"isPublished\": true,\n        \"pagination\": {\n            \"limit\": 2,\n            \"current\": 2\n        }\n    }\n}"
+								"variables": "{\n    \"where\": {\n        \"type\": \"evergreen\",\n        \"isPublished\": false,\n        \"pagination\": {\n            \"limit\": 2,\n            \"current\": 1\n        }\n    }\n}"
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -47,14 +47,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -73,14 +73,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -99,14 +99,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -125,14 +125,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -156,14 +156,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -182,14 +182,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -208,14 +208,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -234,14 +234,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -260,14 +260,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -291,14 +291,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -317,14 +317,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -343,14 +343,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -369,14 +369,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -395,14 +395,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -426,14 +426,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -452,14 +452,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -478,14 +478,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -504,14 +504,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -530,14 +530,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -561,14 +561,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -587,14 +587,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -613,14 +613,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -639,14 +639,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -665,14 +665,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -696,14 +696,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -722,14 +722,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -748,14 +748,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -774,14 +774,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -800,14 +800,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -831,14 +831,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -857,14 +857,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -883,14 +883,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -909,14 +909,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -935,14 +935,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -966,14 +966,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -992,14 +992,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1018,14 +1018,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1044,14 +1044,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1070,14 +1070,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1101,14 +1101,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1127,14 +1127,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1153,14 +1153,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1179,14 +1179,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1205,14 +1205,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1236,14 +1236,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1262,14 +1262,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1288,14 +1288,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1314,14 +1314,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1340,14 +1340,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1371,14 +1371,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1397,14 +1397,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1423,14 +1423,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1449,14 +1449,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1475,14 +1475,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1506,14 +1506,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1532,14 +1532,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1558,14 +1558,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1584,14 +1584,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1610,14 +1610,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1641,14 +1641,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1667,14 +1667,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1699,14 +1699,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1731,14 +1731,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
@@ -1763,14 +1763,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/graphql",
+							"raw": "http://localhost:5000/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"graphql"
+								""
 							]
 						}
 					},
