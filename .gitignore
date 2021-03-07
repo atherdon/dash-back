@@ -10,7 +10,7 @@ yarn-error.log
 node_modules
 
 # Environment
-.env
+#.env
 
 # Local database file
 database/sqlite/*

@@ -1,6 +1,6 @@
 {
   "name": "dash-back",
-  "version": "5.1.4",
+  "version": "5.1.5",
   "description": "Dashboard backend",
   "main": "dist/src/index.js",
   "repository": "https://github.com/atherdon/dash-back",
@@ -10,10 +10,14 @@
   "prisma": {
     "schema": "src/prisma/schema.prisma"
   },
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.x"
+  },
   "scripts": {
     "ts": "prisma generate && tsc -p . -w",
     "ts:clean": "tsc --build --clean",
-    "build": "prisma generate && tsc -p .",
+    "build": "prisma generate && tsc -p . && prisma db push --preview-feature",
     "dev": "NODE_ENV=development nodemon ${npm_package_main}",
     "start": "NODE_ENV=development node ${npm_package_main}",
     "start:test": "NODE_ENV=test node ${npm_package_main}",
@@ -39,11 +43,14 @@
   "dependencies": {
     "@prisma/client": "^2.16.0",
     "apollo-server-express": "^2.19.2",
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
+    "express-http-proxy": "^1.6.2",
     "graphql-iso-date": "^3.6.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "prisma": "2.18.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.21.1",
@@ -51,7 +58,9 @@
     "@graphql-codegen/typescript": "1.21.0",
     "@graphql-codegen/typescript-document-nodes": "1.17.9",
     "@graphql-codegen/typescript-resolvers": "1.18.2",
+    "@prisma/studio-server": "^0.357.0",
     "@types/bcrypt": "3.0.0",
+    "@types/express-http-proxy": "^1.6.1",
     "@types/graphql-iso-date": "3.4.0",
     "@types/node": "14.14.31",
     "@typescript-eslint/eslint-plugin": "4.16.1",

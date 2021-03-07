@@ -6,6 +6,9 @@
 - [Contributing information](./CONTRIBUTING.md)
 
 ## Changes by version   
+- ### version 5.1.5-7.03.2021
+1. Change port to 5000
+2. Added Heroku config
 - ### version 5.1.4-4.03.2021
 1. Correct type for `edited` and `published` in `Article`
 - ### version 5.1.3-4.03.2021
