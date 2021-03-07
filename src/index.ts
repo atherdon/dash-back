@@ -66,9 +66,10 @@ app.use(
   })
 );
 server.applyMiddleware({
+  path: '/',
   app,
 });
 
-app.listen({ port: PORT }, async () => {
+app.listen(process.env.PORT || PORT, async () => {
   lib.Console.info(`Server ready at http://localhost:${PORT}${server.graphqlPath}`);
 });
