@@ -1,8 +1,7 @@
-const expandable3 = [ 
-{
+const expandable2 = [ 
+  {
     key: 1,
-    name: 'Programming',
-    address: 'New York No. 1 Lake Park',
+    name: 'Amy Tom',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -13,8 +12,7 @@ const expandable3 = [
   },
   {
     key: 2,
-    name: 'Business',
-    address: 'London No. 1 Lake Park',
+    name: 'Hackerhodl',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -25,8 +23,7 @@ const expandable3 = [
   },
   {
     key: 3,
-    name: 'Repost',
-    address: 'Jiangsu No. 1 Lake Park',
+    name: 'Natasha',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -37,8 +34,7 @@ const expandable3 = [
   },
   {
     key: 4,
-    name: 'Blockchain',
-    address: 'Sidney No. 1 Lake Park',
+    name: 'Marina',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -48,9 +44,41 @@ const expandable3 = [
     ]
   },
     {
-    key: 4,
-    name: 'Bad Keywords',
-    address: 'Sidney No. 1 Lake Park',
+    key: 5,
+    name: 'David',
+    articles: [
+      'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
+      'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
+      'https://app.hackernoon.com/drafts/Uenv0s9AZjeWwqNS3FHF',
+      'https://app.hackernoon.com/drafts/smj92gpyekO2ANX0h2Qm',
+      'https://app.hackernoon.com/drafts/smj92gpyekO2ANX0h2Qm'
+    ]
+  },
+    {
+    key: 6,
+    name: 'Linh',
+    articles: [
+      'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
+      'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
+      'https://app.hackernoon.com/drafts/Uenv0s9AZjeWwqNS3FHF',
+      'https://app.hackernoon.com/drafts/smj92gpyekO2ANX0h2Qm',
+      'https://app.hackernoon.com/drafts/smj92gpyekO2ANX0h2Qm'
+    ]
+  },
+    {
+    key: 7,
+    name: 'Arthur',
+    articles: [
+      'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
+      'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
+      'https://app.hackernoon.com/drafts/Uenv0s9AZjeWwqNS3FHF',
+      'https://app.hackernoon.com/drafts/smj92gpyekO2ANX0h2Qm',
+      'https://app.hackernoon.com/drafts/smj92gpyekO2ANX0h2Qm'
+    ]
+  },
+    {
+    key: 8,
+    name: 'Rianke',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -59,6 +87,6 @@ const expandable3 = [
       'https://app.hackernoon.com/drafts/smj92gpyekO2ANX0h2Qm'
     ]
   }
-];
-
-module.exports = { expandable3 };
+  ];
+  
+module.exports = { expandable2 };
