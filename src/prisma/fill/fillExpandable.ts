@@ -1,6 +1,6 @@
 import { PrismaClient, Expandable } from '@prisma/client';
-import { expandable2 } from '../../../data/expandable2.js';
-import { expandable3 } from '../../../data/expandable3.js';
+import { expandable2 } from '../../../data/expandable/expandable2.js';
+import { expandable3 } from '../../../data/expandable/expandable3.js';
 import * as lib from '../../lib';
 const prisma = new PrismaClient();
 
@@ -18,7 +18,8 @@ export default async function fillExpandables(): Promise<void> {
       id: undefined,
       key: expandable.key,
       name: expandable.name,
-      address: expandable.address,
+      address: undefined,
+      parentCategory: expandable.parentCategory,
       articles: expandable.articles.join(','),
       created: new Date(),
       updated: new Date(),
