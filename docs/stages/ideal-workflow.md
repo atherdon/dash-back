@@ -16,3 +16,8 @@ Cases:
 
 - можно ли сделать разделение с помощью heroku и подключать в отдельный app одну БД и другую.
 
+
+
+Красивая схема для AWS версии сетапа
+
+![gv93oOBCpSQa2kRIURhv0A8fVP33-glae338e](https://user-images.githubusercontent.com/1469198/113356482-f4de3b80-934a-11eb-8235-f1e425be28da.png)
