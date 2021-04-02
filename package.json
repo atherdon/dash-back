@@ -3,7 +3,10 @@
   "version": "5.2.0",
   "description": "Dashboard backend",
   "main": "dist/src/index.js",
-  "repository": "https://github.com/atherdon/dash-back",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atherdon/dash-back.git"
+  },
   "author": "kolserdav <serega12101983@gmail.com>",
   "license": "MIT",
   "private": false,
@@ -16,7 +19,7 @@
   },
   "scripts": {
     "ts": "prisma generate && tsc -p . -w",
-    "ts:clean": "tsc --build --clean", 
+    "ts:clean": "tsc --build --clean",
     "build": "prisma generate && tsc -p . && yarn migrate",
     "dev": "NODE_ENV=development nodemon ${npm_package_main}",
     "start": "NODE_ENV=development node ${npm_package_main}",
@@ -68,7 +71,15 @@
     "eslint-plugin-prettier": "3.3.1",
     "gulp": "4.0.2",
     "prettier": "2.2.1",
-    "prisma": "2.19.0",
+    "prisma": "^2.19.0",
     "typescript": "4.2.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/atherdon/dash-back/issues"
+  },
+  "homepage": "https://github.com/atherdon/dash-back#readme",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": []
 }
