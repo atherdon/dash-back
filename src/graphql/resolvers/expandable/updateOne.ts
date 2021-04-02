@@ -20,7 +20,7 @@ const updateOneExpandable: T.Resolver<
     data: {
       name: data.name || undefined,
       key: data.key || undefined,
-      address: data.address || undefined,
+      parentCategory: data.parentCategory || undefined,
       articles: data.articles ? data.articles.join(',') : undefined,
       updated: new Date(),
     },
@@ -30,7 +30,7 @@ const updateOneExpandable: T.Resolver<
     name: result.name,
     key: result.key,
     articles: result.articles.split(',') || [],
-    address: result.address,
+    parentCategory: result.parentCategory,
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };

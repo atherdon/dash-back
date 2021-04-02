@@ -22,7 +22,7 @@ const deleteOneExpandable: T.Resolver<
     name: result.name,
     key: result.key,
     articles: result.articles.split(','),
-    address: result.address,
+    parentCategory: result.parentCategory,
     created: result.created?.toISOString() || '',
     updated: result.updated?.toISOString() || '',
   };

@@ -18,7 +18,6 @@ export default async function fillExpandables(): Promise<void> {
       id: undefined,
       key: expandable.key,
       name: expandable.name,
-      address: undefined,
       parentCategory: expandable.parentCategory,
       articles: expandable.articles.join(','),
       created: new Date(),
