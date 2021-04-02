@@ -32,7 +32,7 @@ model Article {
   id              Int          @id @default(autoincrement())
   url             String
   ready           Boolean?     @default(false)
-  type            String // TODO change to enum when will use Mysql or Postgres 
+  type            String // TODO change to enum when will use Mysql or Postgres
   isPublished     Boolean?     @default(false)
   added           DateTime
   edited          DateTime?
@@ -58,13 +58,13 @@ model Editor {
 }
 
 model Expandable {
-  id       Int       @id @default(autoincrement())
-  key      Int
-  name     String
-  address  String
-  articles String
-  created  DateTime? @default(now())
-  updated  DateTime? @default(now())
+  id              Int       @id @default(autoincrement())
+  key             Int
+  name            String    
+  parentCategory  String
+  articles        String
+  created         DateTime? @default(now())
+  updated         DateTime? @default(now())
 }
 
 model Filter {
