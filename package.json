@@ -44,14 +44,14 @@
     "script": "node dist/src/bin/index.js"
   },
   "dependencies": {
-    "@prisma/client": "^2.20.1",
+    "@prisma/client": "^2.16.0",
     "apollo-server-express": "^2.19.2",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "graphql-iso-date": "^3.6.1",
     "jsonwebtoken": "^8.5.1",
-    "yarn": "^1.22.10"
+    "prisma": "2.19.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.21.3",
@@ -71,7 +71,7 @@
     "eslint-plugin-prettier": "3.3.1",
     "gulp": "4.0.2",
     "prettier": "2.2.1",
-    "prisma": "^2.20.1",
+    "prisma": "^2.19.0",
     "typescript": "4.2.3"
   },
   "bugs": {
