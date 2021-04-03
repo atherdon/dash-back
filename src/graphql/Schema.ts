@@ -82,7 +82,7 @@ const Schema = gql`
     id: Int!
     key: Int!
     name: String!
-    address: String!
+    parentCategory: String!
     articles: [String]!
     created: GraphQLDateTime!
     updated: GraphQLDateTime!
