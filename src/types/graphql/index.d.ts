@@ -19,25 +19,16 @@ export type Scalars = {
 };
 
 
-
-export type PaginationParams = {
-  current: Scalars['Int'];
-  limit: Scalars['Int'];
-};
-
-export type User = {
-  __typename?: 'User';
+export type Appearance = {
+  __typename?: 'Appearance';
   id: Scalars['Int'];
-  email: Scalars['String'];
-  name: Scalars['String'];
-  password: Scalars['String'];
-  role: Scalars['Int'];
-  lastLogin: Scalars['String'];
-  created: Scalars['String'];
-  updated: Scalars['String'];
-  roleName: Scalars['String'];
-  token?: Maybe<Scalars['String']>;
-  refreshToken?: Maybe<Scalars['String']>;
+  search: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type Article = {
@@ -80,51 +71,10 @@ export type ArticleTagMany = {
   items?: Maybe<Array<Maybe<ArticleTag>>>;
 };
 
-export type Filter = {
-  __typename?: 'Filter';
-  id: Scalars['Int'];
-  filter: Scalars['String'];
-  value: Scalars['String'];
-  created: Scalars['DateTime'];
-  updated: Scalars['DateTime'];
-};
-
-export type Editor = {
-  __typename?: 'Editor';
-  id: Scalars['Int'];
-  name: Scalars['String'];
-  edited: Scalars['String'];
-  editedPercent: Scalars['String'];
-  published: Scalars['String'];
-  publishedPercent: Scalars['String'];
-  rejected: Scalars['String'];
-  rejectedPercent: Scalars['String'];
-  created: Scalars['DateTime'];
-  updated: Scalars['DateTime'];
-};
-
-export type Expandable = {
-  __typename?: 'Expandable';
-  id: Scalars['Int'];
-  key: Scalars['Int'];
-  name: Scalars['String'];
-  address: Scalars['String'];
-  articles: Array<Maybe<Scalars['String']>>;
-  created: Scalars['DateTime'];
-  updated: Scalars['DateTime'];
-};
-
-export type Appearance = {
-  __typename?: 'Appearance';
-  id: Scalars['Int'];
-  search: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
-  created: Scalars['DateTime'];
-  updated: Scalars['DateTime'];
-};
+export enum CacheControlScope {
+  Public = 'PUBLIC',
+  Private = 'PRIVATE'
+}
 
 export type ClicksPosition = {
   __typename?: 'ClicksPosition';
@@ -150,6 +100,7 @@ export type Country = {
   updated: Scalars['DateTime'];
 };
 
+
 export type Device = {
   __typename?: 'Device';
   id: Scalars['Int'];
@@ -162,104 +113,44 @@ export type Device = {
   updated: Scalars['DateTime'];
 };
 
-export type Page = {
-  __typename?: 'Page';
-  id: Scalars['Int'];
-  url: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
-  created: Scalars['DateTime'];
-  updated: Scalars['DateTime'];
-};
-
-export type QueryS = {
-  __typename?: 'QueryS';
+export type Editor = {
+  __typename?: 'Editor';
   id: Scalars['Int'];
   name: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
+  edited: Scalars['String'];
+  editedPercent: Scalars['String'];
+  published: Scalars['String'];
+  publishedPercent: Scalars['String'];
+  rejected: Scalars['String'];
+  rejectedPercent: Scalars['String'];
   created: Scalars['DateTime'];
   updated: Scalars['DateTime'];
 };
 
-export type Tag = {
-  __typename?: 'Tag';
+export type Expandable = {
+  __typename?: 'Expandable';
   id: Scalars['Int'];
-  word: Scalars['String'];
-  count: Scalars['Int'];
-  char: Scalars['String'];
+  key: Scalars['Int'];
+  name: Scalars['String'];
+  parentCategory: Scalars['String'];
+  articles: Array<Maybe<Scalars['String']>>;
   created: Scalars['DateTime'];
   updated: Scalars['DateTime'];
 };
 
-export type RegistrationParams = {
-  name?: Maybe<Scalars['String']>;
-  password: Scalars['String'];
-  passwordRepeat: Scalars['String'];
-  email: Scalars['String'];
-};
-
-export type LoginParams = {
-  email: Scalars['String'];
-  password: Scalars['String'];
-};
-
-export type GetOneUserParams = {
+export type Filter = {
+  __typename?: 'Filter';
   id: Scalars['Int'];
-};
-
-export type UpdateOneUserParams = {
-  name?: Maybe<Scalars['String']>;
-  email?: Maybe<Scalars['String']>;
-  role?: Maybe<Scalars['Int']>;
-  password?: Maybe<Scalars['String']>;
+  filter: Scalars['String'];
+  value: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
 };
 
 export type GetManyArticleParams = {
   type: Scalars['String'];
   isPublished?: Maybe<Scalars['Boolean']>;
   pagination?: Maybe<PaginationParams>;
-};
-
-export type PostOneArticleParams = {
-  ready?: Maybe<Scalars['Boolean']>;
-  url: Scalars['String'];
-  type: Scalars['String'];
-  isPublished?: Maybe<Scalars['Boolean']>;
-  added: Scalars['DateTime'];
-  edited?: Maybe<Scalars['DateTime']>;
-  published?: Maybe<Scalars['DateTime']>;
-  avgTimeStory?: Maybe<Scalars['Int']>;
-  avgAllTimeStory?: Maybe<Scalars['Int']>;
-};
-
-export type GetOneArticleParams = {
-  id: Scalars['Int'];
-};
-
-export type UpdateOneArticleParams = {
-  ready?: Maybe<Scalars['Boolean']>;
-  url?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-  isPublished?: Maybe<Scalars['Boolean']>;
-  added?: Maybe<Scalars['DateTime']>;
-  edited?: Maybe<Scalars['DateTime']>;
-  published?: Maybe<Scalars['DateTime']>;
-  avgTimeStory?: Maybe<Scalars['Int']>;
-  avgAllTimeStory?: Maybe<Scalars['Int']>;
-};
-
-export type PostOneArticleTagParams = {
-  tagId: Scalars['Int'];
-  articleId: Scalars['Int'];
-};
-
-export type GetOneArticleTagParams = {
-  id: Scalars['Int'];
 };
 
 export type GetManyArticleTagParams = {
@@ -270,305 +161,61 @@ export type GetManyArticleTagParams = {
   pagination?: Maybe<PaginationParams>;
 };
 
-export type UpdateOneArticleTagParams = {
-  tagId?: Maybe<Scalars['Int']>;
-  articleId?: Maybe<Scalars['Int']>;
-};
-
-export type PostOneEditorParams = {
-  name: Scalars['String'];
-  edited: Scalars['String'];
-  editedPercent: Scalars['String'];
-  published: Scalars['String'];
-  publishedPercent: Scalars['String'];
-  rejected: Scalars['String'];
-  rejectedPercent: Scalars['String'];
-};
-
-export type GetOneEditorParams = {
-  id: Scalars['Int'];
-};
-
-export type UpdateOneEditorParams = {
-  name?: Maybe<Scalars['String']>;
-  edited?: Maybe<Scalars['String']>;
-  editedPercent?: Maybe<Scalars['String']>;
-  published?: Maybe<Scalars['String']>;
-  publishedPercent?: Maybe<Scalars['String']>;
-  rejected?: Maybe<Scalars['String']>;
-  rejectedPercent?: Maybe<Scalars['String']>;
-};
-
-export type PostOneExpandableParams = {
-  key: Scalars['Int'];
-  name: Scalars['String'];
-  address: Scalars['String'];
-  articles: Array<Maybe<Scalars['String']>>;
-};
-
-export type GetOneExpandableParams = {
-  id: Scalars['Int'];
-};
-
-export type UpdateOneExpandableParams = {
-  key?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
-  address?: Maybe<Scalars['String']>;
-  articles?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type PostOneFilterParams = {
-  filter: Scalars['String'];
-  value: Scalars['String'];
-};
-
-export type GetOneFilterParams = {
-  id: Scalars['Int'];
-};
-
-export type UpdateOneFilterParams = {
-  filter?: Maybe<Scalars['String']>;
-  value?: Maybe<Scalars['String']>;
-};
-
-export type PostOneAppearanceParams = {
-  search: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
-};
-
 export type GetOneAppearanceParams = {
   id: Scalars['Int'];
 };
 
-export type UpdateOneAppearanceParams = {
-  search?: Maybe<Scalars['String']>;
-  clicks?: Maybe<Scalars['Int']>;
-  impressions?: Maybe<Scalars['Int']>;
-  ctr?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['Float']>;
+export type GetOneArticleParams = {
+  id: Scalars['Int'];
 };
 
-export type PostOneClicksPositionParams = {
-  date: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
+export type GetOneArticleTagParams = {
+  id: Scalars['Int'];
 };
 
 export type GetOneClicksPositionParams = {
   id: Scalars['Int'];
 };
 
-export type UpdateOneClicksPositionParams = {
-  date?: Maybe<Scalars['String']>;
-  clicks?: Maybe<Scalars['Int']>;
-  impressions?: Maybe<Scalars['Int']>;
-  ctr?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['Float']>;
-};
-
-export type PostOneCountryParams = {
-  name: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
-};
-
 export type GetOneCountryParams = {
   id: Scalars['Int'];
-};
-
-export type UpdateOneCountryParams = {
-  name?: Maybe<Scalars['String']>;
-  clicks?: Maybe<Scalars['Int']>;
-  impressions?: Maybe<Scalars['Int']>;
-  ctr?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['Float']>;
-};
-
-export type PostOneDeviceParams = {
-  name: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
 };
 
 export type GetOneDeviceParams = {
   id: Scalars['Int'];
 };
 
-export type UpdateOneDeviceParams = {
-  name?: Maybe<Scalars['String']>;
-  clicks?: Maybe<Scalars['Int']>;
-  impressions?: Maybe<Scalars['Int']>;
-  ctr?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['Float']>;
+export type GetOneEditorParams = {
+  id: Scalars['Int'];
 };
 
-export type PostOnePageParams = {
-  url: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
+export type GetOneExpandableParams = {
+  id: Scalars['Int'];
+};
+
+export type GetOneFilterParams = {
+  id: Scalars['Int'];
 };
 
 export type GetOnePageParams = {
   id: Scalars['Int'];
 };
 
-export type UpdateOnePageParams = {
-  url?: Maybe<Scalars['String']>;
-  clicks?: Maybe<Scalars['Int']>;
-  impressions?: Maybe<Scalars['Int']>;
-  ctr?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['Float']>;
-};
-
-export type PostOneQuerySParams = {
-  name: Scalars['String'];
-  clicks: Scalars['Int'];
-  impressions: Scalars['Int'];
-  ctr: Scalars['String'];
-  position: Scalars['Float'];
-};
-
 export type GetOneQuerySParams = {
   id: Scalars['Int'];
-};
-
-export type UpdateOneQuerySParams = {
-  name?: Maybe<Scalars['String']>;
-  clicks?: Maybe<Scalars['Int']>;
-  impressions?: Maybe<Scalars['Int']>;
-  ctr?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['Float']>;
-};
-
-export type PostOneTagParams = {
-  word: Scalars['String'];
-  count: Scalars['Int'];
-  char: Scalars['String'];
 };
 
 export type GetOneTagParams = {
   id: Scalars['Int'];
 };
 
-export type UpdateOneTagParams = {
-  word?: Maybe<Scalars['String']>;
-  count?: Maybe<Scalars['Int']>;
-  char?: Maybe<Scalars['String']>;
+export type GetOneUserParams = {
+  id: Scalars['Int'];
 };
 
-export type Query = {
-  __typename?: 'Query';
-  getManyArticle: ArticleMany;
-  getManyArticleTag: ArticleTagMany;
-  getManyTag: Array<Maybe<Tag>>;
-  getManyQueryS: Array<Maybe<QueryS>>;
-  getManyPage: Array<Maybe<Page>>;
-  getManyDevice: Array<Maybe<Device>>;
-  getManyCountry: Array<Maybe<Country>>;
-  getManyClicksPosition: Array<Maybe<ClicksPosition>>;
-  getManyAppearance: Array<Maybe<Appearance>>;
-  getManyFilter: Array<Maybe<Filter>>;
-  getManyEditor: Array<Maybe<Editor>>;
-  getManyExpandable: Array<Maybe<Expandable>>;
-  getOneUser?: Maybe<User>;
-  getOneTag?: Maybe<Tag>;
-  getOneQueryS?: Maybe<QueryS>;
-  getOnePage?: Maybe<Page>;
-  getOneDevice?: Maybe<Device>;
-  getOneCountry?: Maybe<Country>;
-  getOneClicksPosition?: Maybe<ClicksPosition>;
-  getOneAppearance?: Maybe<Appearance>;
-  getOneArticle?: Maybe<Article>;
-  getOneArticleTag?: Maybe<ArticleTag>;
-  getOneFilter?: Maybe<Filter>;
-  getOneExpandable?: Maybe<Expandable>;
-  getOneEditor?: Maybe<Editor>;
-};
-
-
-export type QueryGetManyArticleArgs = {
-  where: GetManyArticleParams;
-};
-
-
-export type QueryGetManyArticleTagArgs = {
-  where: GetManyArticleTagParams;
-};
-
-
-export type QueryGetOneUserArgs = {
-  where: GetOneUserParams;
-};
-
-
-export type QueryGetOneTagArgs = {
-  where: GetOneTagParams;
-};
-
-
-export type QueryGetOneQuerySArgs = {
-  where: GetOneQuerySParams;
-};
-
-
-export type QueryGetOnePageArgs = {
-  where: GetOnePageParams;
-};
-
-
-export type QueryGetOneDeviceArgs = {
-  where: GetOneDeviceParams;
-};
-
-
-export type QueryGetOneCountryArgs = {
-  where: GetOneCountryParams;
-};
-
-
-export type QueryGetOneClicksPositionArgs = {
-  where: GetOneClicksPositionParams;
-};
-
-
-export type QueryGetOneAppearanceArgs = {
-  where: GetOneAppearanceParams;
-};
-
-
-export type QueryGetOneArticleArgs = {
-  where: GetOneArticleParams;
-};
-
-
-export type QueryGetOneArticleTagArgs = {
-  where: GetOneArticleTagParams;
-};
-
-
-export type QueryGetOneFilterArgs = {
-  where: GetOneFilterParams;
-};
-
-
-export type QueryGetOneExpandableArgs = {
-  where: GetOneExpandableParams;
-};
-
-
-export type QueryGetOneEditorArgs = {
-  where: GetOneEditorParams;
+export type LoginParams = {
+  email: Scalars['String'];
+  password: Scalars['String'];
 };
 
 export type Mutation = {
@@ -828,11 +475,364 @@ export type MutationDeleteOneEditorArgs = {
   where: GetOneEditorParams;
 };
 
-export enum CacheControlScope {
-  Public = 'PUBLIC',
-  Private = 'PRIVATE'
-}
+export type Page = {
+  __typename?: 'Page';
+  id: Scalars['Int'];
+  url: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
+};
 
+export type PaginationParams = {
+  current: Scalars['Int'];
+  limit: Scalars['Int'];
+};
+
+export type PostOneAppearanceParams = {
+  search: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type PostOneArticleParams = {
+  ready?: Maybe<Scalars['Boolean']>;
+  url: Scalars['String'];
+  type: Scalars['String'];
+  isPublished?: Maybe<Scalars['Boolean']>;
+  added: Scalars['DateTime'];
+  edited?: Maybe<Scalars['DateTime']>;
+  published?: Maybe<Scalars['DateTime']>;
+  avgTimeStory?: Maybe<Scalars['Int']>;
+  avgAllTimeStory?: Maybe<Scalars['Int']>;
+};
+
+export type PostOneArticleTagParams = {
+  tagId: Scalars['Int'];
+  articleId: Scalars['Int'];
+};
+
+export type PostOneClicksPositionParams = {
+  date: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type PostOneCountryParams = {
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type PostOneDeviceParams = {
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type PostOneEditorParams = {
+  name: Scalars['String'];
+  edited: Scalars['String'];
+  editedPercent: Scalars['String'];
+  published: Scalars['String'];
+  publishedPercent: Scalars['String'];
+  rejected: Scalars['String'];
+  rejectedPercent: Scalars['String'];
+};
+
+export type PostOneExpandableParams = {
+  key: Scalars['Int'];
+  name: Scalars['String'];
+  parentCategory: Scalars['String'];
+  articles: Array<Maybe<Scalars['String']>>;
+};
+
+export type PostOneFilterParams = {
+  filter: Scalars['String'];
+  value: Scalars['String'];
+};
+
+export type PostOnePageParams = {
+  url: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type PostOneQuerySParams = {
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+};
+
+export type PostOneTagParams = {
+  word: Scalars['String'];
+  count: Scalars['Int'];
+  char: Scalars['String'];
+};
+
+export type Query = {
+  __typename?: 'Query';
+  getManyArticle: ArticleMany;
+  getManyArticleTag: ArticleTagMany;
+  getManyTag: Array<Maybe<Tag>>;
+  getManyQueryS: Array<Maybe<QueryS>>;
+  getManyPage: Array<Maybe<Page>>;
+  getManyDevice: Array<Maybe<Device>>;
+  getManyCountry: Array<Maybe<Country>>;
+  getManyClicksPosition: Array<Maybe<ClicksPosition>>;
+  getManyAppearance: Array<Maybe<Appearance>>;
+  getManyFilter: Array<Maybe<Filter>>;
+  getManyEditor: Array<Maybe<Editor>>;
+  getManyExpandable: Array<Maybe<Expandable>>;
+  getOneUser?: Maybe<User>;
+  getOneTag?: Maybe<Tag>;
+  getOneQueryS?: Maybe<QueryS>;
+  getOnePage?: Maybe<Page>;
+  getOneDevice?: Maybe<Device>;
+  getOneCountry?: Maybe<Country>;
+  getOneClicksPosition?: Maybe<ClicksPosition>;
+  getOneAppearance?: Maybe<Appearance>;
+  getOneArticle?: Maybe<Article>;
+  getOneArticleTag?: Maybe<ArticleTag>;
+  getOneFilter?: Maybe<Filter>;
+  getOneExpandable?: Maybe<Expandable>;
+  getOneEditor?: Maybe<Editor>;
+};
+
+
+export type QueryGetManyArticleArgs = {
+  where: GetManyArticleParams;
+};
+
+
+export type QueryGetManyArticleTagArgs = {
+  where: GetManyArticleTagParams;
+};
+
+
+export type QueryGetOneUserArgs = {
+  where: GetOneUserParams;
+};
+
+
+export type QueryGetOneTagArgs = {
+  where: GetOneTagParams;
+};
+
+
+export type QueryGetOneQuerySArgs = {
+  where: GetOneQuerySParams;
+};
+
+
+export type QueryGetOnePageArgs = {
+  where: GetOnePageParams;
+};
+
+
+export type QueryGetOneDeviceArgs = {
+  where: GetOneDeviceParams;
+};
+
+
+export type QueryGetOneCountryArgs = {
+  where: GetOneCountryParams;
+};
+
+
+export type QueryGetOneClicksPositionArgs = {
+  where: GetOneClicksPositionParams;
+};
+
+
+export type QueryGetOneAppearanceArgs = {
+  where: GetOneAppearanceParams;
+};
+
+
+export type QueryGetOneArticleArgs = {
+  where: GetOneArticleParams;
+};
+
+
+export type QueryGetOneArticleTagArgs = {
+  where: GetOneArticleTagParams;
+};
+
+
+export type QueryGetOneFilterArgs = {
+  where: GetOneFilterParams;
+};
+
+
+export type QueryGetOneExpandableArgs = {
+  where: GetOneExpandableParams;
+};
+
+
+export type QueryGetOneEditorArgs = {
+  where: GetOneEditorParams;
+};
+
+export type QueryS = {
+  __typename?: 'QueryS';
+  id: Scalars['Int'];
+  name: Scalars['String'];
+  clicks: Scalars['Int'];
+  impressions: Scalars['Int'];
+  ctr: Scalars['String'];
+  position: Scalars['Float'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
+};
+
+export type RegistrationParams = {
+  name?: Maybe<Scalars['String']>;
+  password: Scalars['String'];
+  passwordRepeat: Scalars['String'];
+  email: Scalars['String'];
+};
+
+export type Tag = {
+  __typename?: 'Tag';
+  id: Scalars['Int'];
+  word: Scalars['String'];
+  count: Scalars['Int'];
+  char: Scalars['String'];
+  created: Scalars['DateTime'];
+  updated: Scalars['DateTime'];
+};
+
+export type UpdateOneAppearanceParams = {
+  search?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type UpdateOneArticleParams = {
+  ready?: Maybe<Scalars['Boolean']>;
+  url?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  isPublished?: Maybe<Scalars['Boolean']>;
+  added?: Maybe<Scalars['DateTime']>;
+  edited?: Maybe<Scalars['DateTime']>;
+  published?: Maybe<Scalars['DateTime']>;
+  avgTimeStory?: Maybe<Scalars['Int']>;
+  avgAllTimeStory?: Maybe<Scalars['Int']>;
+};
+
+export type UpdateOneArticleTagParams = {
+  tagId?: Maybe<Scalars['Int']>;
+  articleId?: Maybe<Scalars['Int']>;
+};
+
+export type UpdateOneClicksPositionParams = {
+  date?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type UpdateOneCountryParams = {
+  name?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type UpdateOneDeviceParams = {
+  name?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type UpdateOneEditorParams = {
+  name?: Maybe<Scalars['String']>;
+  edited?: Maybe<Scalars['String']>;
+  editedPercent?: Maybe<Scalars['String']>;
+  published?: Maybe<Scalars['String']>;
+  publishedPercent?: Maybe<Scalars['String']>;
+  rejected?: Maybe<Scalars['String']>;
+  rejectedPercent?: Maybe<Scalars['String']>;
+};
+
+export type UpdateOneExpandableParams = {
+  key?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  parentCategory?: Maybe<Scalars['String']>;
+  articles?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type UpdateOneFilterParams = {
+  filter?: Maybe<Scalars['String']>;
+  value?: Maybe<Scalars['String']>;
+};
+
+export type UpdateOnePageParams = {
+  url?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type UpdateOneQuerySParams = {
+  name?: Maybe<Scalars['String']>;
+  clicks?: Maybe<Scalars['Int']>;
+  impressions?: Maybe<Scalars['Int']>;
+  ctr?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['Float']>;
+};
+
+export type UpdateOneTagParams = {
+  word?: Maybe<Scalars['String']>;
+  count?: Maybe<Scalars['Int']>;
+  char?: Maybe<Scalars['String']>;
+};
+
+export type UpdateOneUserParams = {
+  name?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  role?: Maybe<Scalars['Int']>;
+  password?: Maybe<Scalars['String']>;
+};
+
+
+export type User = {
+  __typename?: 'User';
+  id: Scalars['Int'];
+  email: Scalars['String'];
+  name: Scalars['String'];
+  password: Scalars['String'];
+  role: Scalars['Int'];
+  lastLogin: Scalars['String'];
+  created: Scalars['String'];
+  updated: Scalars['String'];
+  roleName: Scalars['String'];
+  token?: Maybe<Scalars['String']>;
+  refreshToken?: Maybe<Scalars['String']>;
+};
 
 
 
@@ -912,143 +912,143 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  DateTime: ResolverTypeWrapper<Scalars['DateTime']>;
-  PaginationParams: PaginationParams;
+  Appearance: ResolverTypeWrapper<Appearance>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
-  User: ResolverTypeWrapper<User>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Float: ResolverTypeWrapper<Scalars['Float']>;
   Article: ResolverTypeWrapper<Article>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   ArticleMany: ResolverTypeWrapper<ArticleMany>;
   ArticleTag: ResolverTypeWrapper<ArticleTag>;
   ArticleTagMany: ResolverTypeWrapper<ArticleTagMany>;
-  Filter: ResolverTypeWrapper<Filter>;
-  Editor: ResolverTypeWrapper<Editor>;
-  Expandable: ResolverTypeWrapper<Expandable>;
-  Appearance: ResolverTypeWrapper<Appearance>;
-  Float: ResolverTypeWrapper<Scalars['Float']>;
+  CacheControlScope: CacheControlScope;
   ClicksPosition: ResolverTypeWrapper<ClicksPosition>;
   Country: ResolverTypeWrapper<Country>;
+  DateTime: ResolverTypeWrapper<Scalars['DateTime']>;
   Device: ResolverTypeWrapper<Device>;
-  Page: ResolverTypeWrapper<Page>;
-  QueryS: ResolverTypeWrapper<QueryS>;
-  Tag: ResolverTypeWrapper<Tag>;
-  RegistrationParams: RegistrationParams;
-  LoginParams: LoginParams;
-  GetOneUserParams: GetOneUserParams;
-  UpdateOneUserParams: UpdateOneUserParams;
+  Editor: ResolverTypeWrapper<Editor>;
+  Expandable: ResolverTypeWrapper<Expandable>;
+  Filter: ResolverTypeWrapper<Filter>;
   GetManyArticleParams: GetManyArticleParams;
-  PostOneArticleParams: PostOneArticleParams;
-  GetOneArticleParams: GetOneArticleParams;
-  UpdateOneArticleParams: UpdateOneArticleParams;
-  PostOneArticleTagParams: PostOneArticleTagParams;
-  GetOneArticleTagParams: GetOneArticleTagParams;
   GetManyArticleTagParams: GetManyArticleTagParams;
-  UpdateOneArticleTagParams: UpdateOneArticleTagParams;
-  PostOneEditorParams: PostOneEditorParams;
-  GetOneEditorParams: GetOneEditorParams;
-  UpdateOneEditorParams: UpdateOneEditorParams;
-  PostOneExpandableParams: PostOneExpandableParams;
-  GetOneExpandableParams: GetOneExpandableParams;
-  UpdateOneExpandableParams: UpdateOneExpandableParams;
-  PostOneFilterParams: PostOneFilterParams;
-  GetOneFilterParams: GetOneFilterParams;
-  UpdateOneFilterParams: UpdateOneFilterParams;
-  PostOneAppearanceParams: PostOneAppearanceParams;
   GetOneAppearanceParams: GetOneAppearanceParams;
-  UpdateOneAppearanceParams: UpdateOneAppearanceParams;
-  PostOneClicksPositionParams: PostOneClicksPositionParams;
+  GetOneArticleParams: GetOneArticleParams;
+  GetOneArticleTagParams: GetOneArticleTagParams;
   GetOneClicksPositionParams: GetOneClicksPositionParams;
-  UpdateOneClicksPositionParams: UpdateOneClicksPositionParams;
-  PostOneCountryParams: PostOneCountryParams;
   GetOneCountryParams: GetOneCountryParams;
-  UpdateOneCountryParams: UpdateOneCountryParams;
-  PostOneDeviceParams: PostOneDeviceParams;
   GetOneDeviceParams: GetOneDeviceParams;
-  UpdateOneDeviceParams: UpdateOneDeviceParams;
-  PostOnePageParams: PostOnePageParams;
+  GetOneEditorParams: GetOneEditorParams;
+  GetOneExpandableParams: GetOneExpandableParams;
+  GetOneFilterParams: GetOneFilterParams;
   GetOnePageParams: GetOnePageParams;
-  UpdateOnePageParams: UpdateOnePageParams;
-  PostOneQuerySParams: PostOneQuerySParams;
   GetOneQuerySParams: GetOneQuerySParams;
-  UpdateOneQuerySParams: UpdateOneQuerySParams;
-  PostOneTagParams: PostOneTagParams;
   GetOneTagParams: GetOneTagParams;
-  UpdateOneTagParams: UpdateOneTagParams;
-  Query: ResolverTypeWrapper<{}>;
+  GetOneUserParams: GetOneUserParams;
+  LoginParams: LoginParams;
   Mutation: ResolverTypeWrapper<{}>;
-  CacheControlScope: CacheControlScope;
+  Page: ResolverTypeWrapper<Page>;
+  PaginationParams: PaginationParams;
+  PostOneAppearanceParams: PostOneAppearanceParams;
+  PostOneArticleParams: PostOneArticleParams;
+  PostOneArticleTagParams: PostOneArticleTagParams;
+  PostOneClicksPositionParams: PostOneClicksPositionParams;
+  PostOneCountryParams: PostOneCountryParams;
+  PostOneDeviceParams: PostOneDeviceParams;
+  PostOneEditorParams: PostOneEditorParams;
+  PostOneExpandableParams: PostOneExpandableParams;
+  PostOneFilterParams: PostOneFilterParams;
+  PostOnePageParams: PostOnePageParams;
+  PostOneQuerySParams: PostOneQuerySParams;
+  PostOneTagParams: PostOneTagParams;
+  Query: ResolverTypeWrapper<{}>;
+  QueryS: ResolverTypeWrapper<QueryS>;
+  RegistrationParams: RegistrationParams;
+  Tag: ResolverTypeWrapper<Tag>;
+  UpdateOneAppearanceParams: UpdateOneAppearanceParams;
+  UpdateOneArticleParams: UpdateOneArticleParams;
+  UpdateOneArticleTagParams: UpdateOneArticleTagParams;
+  UpdateOneClicksPositionParams: UpdateOneClicksPositionParams;
+  UpdateOneCountryParams: UpdateOneCountryParams;
+  UpdateOneDeviceParams: UpdateOneDeviceParams;
+  UpdateOneEditorParams: UpdateOneEditorParams;
+  UpdateOneExpandableParams: UpdateOneExpandableParams;
+  UpdateOneFilterParams: UpdateOneFilterParams;
+  UpdateOnePageParams: UpdateOnePageParams;
+  UpdateOneQuerySParams: UpdateOneQuerySParams;
+  UpdateOneTagParams: UpdateOneTagParams;
+  UpdateOneUserParams: UpdateOneUserParams;
   Upload: ResolverTypeWrapper<Scalars['Upload']>;
+  User: ResolverTypeWrapper<User>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  DateTime: Scalars['DateTime'];
-  PaginationParams: PaginationParams;
+  Appearance: Appearance;
   Int: Scalars['Int'];
-  User: User;
   String: Scalars['String'];
+  Float: Scalars['Float'];
   Article: Article;
   Boolean: Scalars['Boolean'];
   ArticleMany: ArticleMany;
   ArticleTag: ArticleTag;
   ArticleTagMany: ArticleTagMany;
-  Filter: Filter;
-  Editor: Editor;
-  Expandable: Expandable;
-  Appearance: Appearance;
-  Float: Scalars['Float'];
   ClicksPosition: ClicksPosition;
   Country: Country;
+  DateTime: Scalars['DateTime'];
   Device: Device;
-  Page: Page;
-  QueryS: QueryS;
-  Tag: Tag;
-  RegistrationParams: RegistrationParams;
-  LoginParams: LoginParams;
-  GetOneUserParams: GetOneUserParams;
-  UpdateOneUserParams: UpdateOneUserParams;
+  Editor: Editor;
+  Expandable: Expandable;
+  Filter: Filter;
   GetManyArticleParams: GetManyArticleParams;
-  PostOneArticleParams: PostOneArticleParams;
-  GetOneArticleParams: GetOneArticleParams;
-  UpdateOneArticleParams: UpdateOneArticleParams;
-  PostOneArticleTagParams: PostOneArticleTagParams;
-  GetOneArticleTagParams: GetOneArticleTagParams;
   GetManyArticleTagParams: GetManyArticleTagParams;
-  UpdateOneArticleTagParams: UpdateOneArticleTagParams;
-  PostOneEditorParams: PostOneEditorParams;
-  GetOneEditorParams: GetOneEditorParams;
-  UpdateOneEditorParams: UpdateOneEditorParams;
-  PostOneExpandableParams: PostOneExpandableParams;
-  GetOneExpandableParams: GetOneExpandableParams;
-  UpdateOneExpandableParams: UpdateOneExpandableParams;
-  PostOneFilterParams: PostOneFilterParams;
-  GetOneFilterParams: GetOneFilterParams;
-  UpdateOneFilterParams: UpdateOneFilterParams;
-  PostOneAppearanceParams: PostOneAppearanceParams;
   GetOneAppearanceParams: GetOneAppearanceParams;
-  UpdateOneAppearanceParams: UpdateOneAppearanceParams;
-  PostOneClicksPositionParams: PostOneClicksPositionParams;
+  GetOneArticleParams: GetOneArticleParams;
+  GetOneArticleTagParams: GetOneArticleTagParams;
   GetOneClicksPositionParams: GetOneClicksPositionParams;
-  UpdateOneClicksPositionParams: UpdateOneClicksPositionParams;
-  PostOneCountryParams: PostOneCountryParams;
   GetOneCountryParams: GetOneCountryParams;
-  UpdateOneCountryParams: UpdateOneCountryParams;
-  PostOneDeviceParams: PostOneDeviceParams;
   GetOneDeviceParams: GetOneDeviceParams;
-  UpdateOneDeviceParams: UpdateOneDeviceParams;
-  PostOnePageParams: PostOnePageParams;
+  GetOneEditorParams: GetOneEditorParams;
+  GetOneExpandableParams: GetOneExpandableParams;
+  GetOneFilterParams: GetOneFilterParams;
   GetOnePageParams: GetOnePageParams;
-  UpdateOnePageParams: UpdateOnePageParams;
-  PostOneQuerySParams: PostOneQuerySParams;
   GetOneQuerySParams: GetOneQuerySParams;
-  UpdateOneQuerySParams: UpdateOneQuerySParams;
-  PostOneTagParams: PostOneTagParams;
   GetOneTagParams: GetOneTagParams;
-  UpdateOneTagParams: UpdateOneTagParams;
-  Query: {};
+  GetOneUserParams: GetOneUserParams;
+  LoginParams: LoginParams;
   Mutation: {};
+  Page: Page;
+  PaginationParams: PaginationParams;
+  PostOneAppearanceParams: PostOneAppearanceParams;
+  PostOneArticleParams: PostOneArticleParams;
+  PostOneArticleTagParams: PostOneArticleTagParams;
+  PostOneClicksPositionParams: PostOneClicksPositionParams;
+  PostOneCountryParams: PostOneCountryParams;
+  PostOneDeviceParams: PostOneDeviceParams;
+  PostOneEditorParams: PostOneEditorParams;
+  PostOneExpandableParams: PostOneExpandableParams;
+  PostOneFilterParams: PostOneFilterParams;
+  PostOnePageParams: PostOnePageParams;
+  PostOneQuerySParams: PostOneQuerySParams;
+  PostOneTagParams: PostOneTagParams;
+  Query: {};
+  QueryS: QueryS;
+  RegistrationParams: RegistrationParams;
+  Tag: Tag;
+  UpdateOneAppearanceParams: UpdateOneAppearanceParams;
+  UpdateOneArticleParams: UpdateOneArticleParams;
+  UpdateOneArticleTagParams: UpdateOneArticleTagParams;
+  UpdateOneClicksPositionParams: UpdateOneClicksPositionParams;
+  UpdateOneCountryParams: UpdateOneCountryParams;
+  UpdateOneDeviceParams: UpdateOneDeviceParams;
+  UpdateOneEditorParams: UpdateOneEditorParams;
+  UpdateOneExpandableParams: UpdateOneExpandableParams;
+  UpdateOneFilterParams: UpdateOneFilterParams;
+  UpdateOnePageParams: UpdateOnePageParams;
+  UpdateOneQuerySParams: UpdateOneQuerySParams;
+  UpdateOneTagParams: UpdateOneTagParams;
+  UpdateOneUserParams: UpdateOneUserParams;
   Upload: Scalars['Upload'];
+  User: User;
 };
 
 export type CacheControlDirectiveArgs = {   maxAge?: Maybe<Scalars['Int']>;
@@ -1056,22 +1056,15 @@ export type CacheControlDirectiveArgs = {   maxAge?: Maybe<Scalars['Int']>;
 
 export type CacheControlDirectiveResolver<Result, Parent, ContextType = any, Args = CacheControlDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
-  name: 'DateTime';
-}
-
-export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+export type AppearanceResolvers<ContextType = any, ParentType extends ResolversParentTypes['Appearance'] = ResolversParentTypes['Appearance']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  password?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  role?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  lastLogin?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  roleName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  refreshToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  search?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1115,52 +1108,6 @@ export type ArticleTagManyResolvers<ContextType = any, ParentType extends Resolv
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FilterResolvers<ContextType = any, ParentType extends ResolversParentTypes['Filter'] = ResolversParentTypes['Filter']> = {
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  filter?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  value?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type EditorResolvers<ContextType = any, ParentType extends ResolversParentTypes['Editor'] = ResolversParentTypes['Editor']> = {
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  editedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  publishedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  rejected?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  rejectedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type ExpandableResolvers<ContextType = any, ParentType extends ResolversParentTypes['Expandable'] = ResolversParentTypes['Expandable']> = {
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  key?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  address?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  articles?: Resolver<Array<Maybe<ResolversTypes['String']>>, ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type AppearanceResolvers<ContextType = any, ParentType extends ResolversParentTypes['Appearance'] = ResolversParentTypes['Appearance']> = {
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  search?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
 export type ClicksPositionResolvers<ContextType = any, ParentType extends ResolversParentTypes['ClicksPosition'] = ResolversParentTypes['ClicksPosition']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   date?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -1185,6 +1132,10 @@ export type CountryResolvers<ContextType = any, ParentType extends ResolversPare
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
+  name: 'DateTime';
+}
+
 export type DeviceResolvers<ContextType = any, ParentType extends ResolversParentTypes['Device'] = ResolversParentTypes['Device']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -1197,66 +1148,38 @@ export type DeviceResolvers<ContextType = any, ParentType extends ResolversParen
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PageResolvers<ContextType = any, ParentType extends ResolversParentTypes['Page'] = ResolversParentTypes['Page']> = {
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type QuerySResolvers<ContextType = any, ParentType extends ResolversParentTypes['QueryS'] = ResolversParentTypes['QueryS']> = {
+export type EditorResolvers<ContextType = any, ParentType extends ResolversParentTypes['Editor'] = ResolversParentTypes['Editor']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  edited?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  editedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  published?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  publishedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  rejected?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  rejectedPercent?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type TagResolvers<ContextType = any, ParentType extends ResolversParentTypes['Tag'] = ResolversParentTypes['Tag']> = {
+export type ExpandableResolvers<ContextType = any, ParentType extends ResolversParentTypes['Expandable'] = ResolversParentTypes['Expandable']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  word?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  count?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  char?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  key?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  parentCategory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  articles?: Resolver<Array<Maybe<ResolversTypes['String']>>, ParentType, ContextType>;
   created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  getManyArticle?: Resolver<ResolversTypes['ArticleMany'], ParentType, ContextType, RequireFields<QueryGetManyArticleArgs, 'where'>>;
-  getManyArticleTag?: Resolver<ResolversTypes['ArticleTagMany'], ParentType, ContextType, RequireFields<QueryGetManyArticleTagArgs, 'where'>>;
-  getManyTag?: Resolver<Array<Maybe<ResolversTypes['Tag']>>, ParentType, ContextType>;
-  getManyQueryS?: Resolver<Array<Maybe<ResolversTypes['QueryS']>>, ParentType, ContextType>;
-  getManyPage?: Resolver<Array<Maybe<ResolversTypes['Page']>>, ParentType, ContextType>;
-  getManyDevice?: Resolver<Array<Maybe<ResolversTypes['Device']>>, ParentType, ContextType>;
-  getManyCountry?: Resolver<Array<Maybe<ResolversTypes['Country']>>, ParentType, ContextType>;
-  getManyClicksPosition?: Resolver<Array<Maybe<ResolversTypes['ClicksPosition']>>, ParentType, ContextType>;
-  getManyAppearance?: Resolver<Array<Maybe<ResolversTypes['Appearance']>>, ParentType, ContextType>;
-  getManyFilter?: Resolver<Array<Maybe<ResolversTypes['Filter']>>, ParentType, ContextType>;
-  getManyEditor?: Resolver<Array<Maybe<ResolversTypes['Editor']>>, ParentType, ContextType>;
-  getManyExpandable?: Resolver<Array<Maybe<ResolversTypes['Expandable']>>, ParentType, ContextType>;
-  getOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryGetOneUserArgs, 'where'>>;
-  getOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<QueryGetOneTagArgs, 'where'>>;
-  getOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<QueryGetOneQuerySArgs, 'where'>>;
-  getOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<QueryGetOnePageArgs, 'where'>>;
-  getOneDevice?: Resolver<Maybe<ResolversTypes['Device']>, ParentType, ContextType, RequireFields<QueryGetOneDeviceArgs, 'where'>>;
-  getOneCountry?: Resolver<Maybe<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<QueryGetOneCountryArgs, 'where'>>;
-  getOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<QueryGetOneClicksPositionArgs, 'where'>>;
-  getOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<QueryGetOneAppearanceArgs, 'where'>>;
-  getOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<QueryGetOneArticleArgs, 'where'>>;
-  getOneArticleTag?: Resolver<Maybe<ResolversTypes['ArticleTag']>, ParentType, ContextType, RequireFields<QueryGetOneArticleTagArgs, 'where'>>;
-  getOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<QueryGetOneFilterArgs, 'where'>>;
-  getOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<QueryGetOneExpandableArgs, 'where'>>;
-  getOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<QueryGetOneEditorArgs, 'where'>>;
+export type FilterResolvers<ContextType = any, ParentType extends ResolversParentTypes['Filter'] = ResolversParentTypes['Filter']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  filter?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  value?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
@@ -1302,30 +1225,107 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   deleteOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<MutationDeleteOneEditorArgs, 'where'>>;
 };
 
+export type PageResolvers<ContextType = any, ParentType extends ResolversParentTypes['Page'] = ResolversParentTypes['Page']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  getManyArticle?: Resolver<ResolversTypes['ArticleMany'], ParentType, ContextType, RequireFields<QueryGetManyArticleArgs, 'where'>>;
+  getManyArticleTag?: Resolver<ResolversTypes['ArticleTagMany'], ParentType, ContextType, RequireFields<QueryGetManyArticleTagArgs, 'where'>>;
+  getManyTag?: Resolver<Array<Maybe<ResolversTypes['Tag']>>, ParentType, ContextType>;
+  getManyQueryS?: Resolver<Array<Maybe<ResolversTypes['QueryS']>>, ParentType, ContextType>;
+  getManyPage?: Resolver<Array<Maybe<ResolversTypes['Page']>>, ParentType, ContextType>;
+  getManyDevice?: Resolver<Array<Maybe<ResolversTypes['Device']>>, ParentType, ContextType>;
+  getManyCountry?: Resolver<Array<Maybe<ResolversTypes['Country']>>, ParentType, ContextType>;
+  getManyClicksPosition?: Resolver<Array<Maybe<ResolversTypes['ClicksPosition']>>, ParentType, ContextType>;
+  getManyAppearance?: Resolver<Array<Maybe<ResolversTypes['Appearance']>>, ParentType, ContextType>;
+  getManyFilter?: Resolver<Array<Maybe<ResolversTypes['Filter']>>, ParentType, ContextType>;
+  getManyEditor?: Resolver<Array<Maybe<ResolversTypes['Editor']>>, ParentType, ContextType>;
+  getManyExpandable?: Resolver<Array<Maybe<ResolversTypes['Expandable']>>, ParentType, ContextType>;
+  getOneUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryGetOneUserArgs, 'where'>>;
+  getOneTag?: Resolver<Maybe<ResolversTypes['Tag']>, ParentType, ContextType, RequireFields<QueryGetOneTagArgs, 'where'>>;
+  getOneQueryS?: Resolver<Maybe<ResolversTypes['QueryS']>, ParentType, ContextType, RequireFields<QueryGetOneQuerySArgs, 'where'>>;
+  getOnePage?: Resolver<Maybe<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<QueryGetOnePageArgs, 'where'>>;
+  getOneDevice?: Resolver<Maybe<ResolversTypes['Device']>, ParentType, ContextType, RequireFields<QueryGetOneDeviceArgs, 'where'>>;
+  getOneCountry?: Resolver<Maybe<ResolversTypes['Country']>, ParentType, ContextType, RequireFields<QueryGetOneCountryArgs, 'where'>>;
+  getOneClicksPosition?: Resolver<Maybe<ResolversTypes['ClicksPosition']>, ParentType, ContextType, RequireFields<QueryGetOneClicksPositionArgs, 'where'>>;
+  getOneAppearance?: Resolver<Maybe<ResolversTypes['Appearance']>, ParentType, ContextType, RequireFields<QueryGetOneAppearanceArgs, 'where'>>;
+  getOneArticle?: Resolver<Maybe<ResolversTypes['Article']>, ParentType, ContextType, RequireFields<QueryGetOneArticleArgs, 'where'>>;
+  getOneArticleTag?: Resolver<Maybe<ResolversTypes['ArticleTag']>, ParentType, ContextType, RequireFields<QueryGetOneArticleTagArgs, 'where'>>;
+  getOneFilter?: Resolver<Maybe<ResolversTypes['Filter']>, ParentType, ContextType, RequireFields<QueryGetOneFilterArgs, 'where'>>;
+  getOneExpandable?: Resolver<Maybe<ResolversTypes['Expandable']>, ParentType, ContextType, RequireFields<QueryGetOneExpandableArgs, 'where'>>;
+  getOneEditor?: Resolver<Maybe<ResolversTypes['Editor']>, ParentType, ContextType, RequireFields<QueryGetOneEditorArgs, 'where'>>;
+};
+
+export type QuerySResolvers<ContextType = any, ParentType extends ResolversParentTypes['QueryS'] = ResolversParentTypes['QueryS']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  clicks?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  impressions?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  ctr?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  position?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type TagResolvers<ContextType = any, ParentType extends ResolversParentTypes['Tag'] = ResolversParentTypes['Tag']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  word?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  count?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  char?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {
   name: 'Upload';
 }
 
+export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  password?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  role?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  lastLogin?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  created?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updated?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  roleName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  refreshToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type Resolvers<ContextType = any> = {
-  DateTime?: GraphQLScalarType;
-  User?: UserResolvers<ContextType>;
+  Appearance?: AppearanceResolvers<ContextType>;
   Article?: ArticleResolvers<ContextType>;
   ArticleMany?: ArticleManyResolvers<ContextType>;
   ArticleTag?: ArticleTagResolvers<ContextType>;
   ArticleTagMany?: ArticleTagManyResolvers<ContextType>;
-  Filter?: FilterResolvers<ContextType>;
-  Editor?: EditorResolvers<ContextType>;
-  Expandable?: ExpandableResolvers<ContextType>;
-  Appearance?: AppearanceResolvers<ContextType>;
   ClicksPosition?: ClicksPositionResolvers<ContextType>;
   Country?: CountryResolvers<ContextType>;
+  DateTime?: GraphQLScalarType;
   Device?: DeviceResolvers<ContextType>;
+  Editor?: EditorResolvers<ContextType>;
+  Expandable?: ExpandableResolvers<ContextType>;
+  Filter?: FilterResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   Page?: PageResolvers<ContextType>;
+  Query?: QueryResolvers<ContextType>;
   QueryS?: QuerySResolvers<ContextType>;
   Tag?: TagResolvers<ContextType>;
-  Query?: QueryResolvers<ContextType>;
-  Mutation?: MutationResolvers<ContextType>;
   Upload?: GraphQLScalarType;
+  User?: UserResolvers<ContextType>;
 };
 
 

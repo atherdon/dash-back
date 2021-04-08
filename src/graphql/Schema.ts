@@ -252,7 +252,7 @@ const Schema = gql`
   input PostOneExpandableParams {
     key: Int!
     name: String!
-    address: String!
+    parentCategory: String!
     articles: [String]!
   }
   input GetOneExpandableParams {
@@ -261,7 +261,7 @@ const Schema = gql`
   input UpdateOneExpandableParams {
     key: Int
     name: String
-    address: String
+    parentCategory: String
     articles: [String]
   }
   ## Filter

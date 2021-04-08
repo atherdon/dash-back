@@ -2,6 +2,7 @@ const expandable2 = [
   {
     key: 1,
     name: 'Amy Tom',
+    parentCategory: 'Programming',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -13,6 +14,7 @@ const expandable2 = [
   {
     key: 2,
     name: 'Hackerhodl',
+    parentCategory: 'Programming',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -24,6 +26,7 @@ const expandable2 = [
   {
     key: 3,
     name: 'Natasha',
+    parentCategory: 'Programming',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -35,6 +38,7 @@ const expandable2 = [
   {
     key: 4,
     name: 'Marina',
+    parentCategory: 'Programming',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -46,6 +50,7 @@ const expandable2 = [
     {
     key: 5,
     name: 'David',
+    parentCategory: 'Programming',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -57,6 +62,7 @@ const expandable2 = [
     {
     key: 6,
     name: 'Linh',
+    parentCategory: 'Programming',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -68,6 +74,7 @@ const expandable2 = [
     {
     key: 7,
     name: 'Arthur',
+    parentCategory: 'Programming',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
@@ -79,6 +86,7 @@ const expandable2 = [
     {
     key: 8,
     name: 'Rianke',
+    parentCategory: 'Programming',
     articles: [
       'https://app.hackernoon.com/drafts/RTLukSZOLY4dA8i54yu3',
       'https://app.hackernoon.com/drafts/g8yO5OeEVCP76NWxF9PM',
