@@ -108,7 +108,7 @@ export type Expandable = {
   id: Scalars['Int'];
   key: Scalars['Int'];
   name: Scalars['String'];
-  address: Scalars['String'];
+  : Scalars['String'];
   articles: Array<Maybe<Scalars['String']>>;
   created: Scalars['DateTime'];
   updated: Scalars['DateTime'];
@@ -302,7 +302,7 @@ export type UpdateOneEditorParams = {
 export type PostOneExpandableParams = {
   key: Scalars['Int'];
   name: Scalars['String'];
-  address: Scalars['String'];
+  parentCategory: Scalars['String'];
   articles: Array<Maybe<Scalars['String']>>;
 };
 
@@ -313,7 +313,7 @@ export type GetOneExpandableParams = {
 export type UpdateOneExpandableParams = {
   key?: Maybe<Scalars['Int']>;
   name?: Maybe<Scalars['String']>;
-  address?: Maybe<Scalars['String']>;
+  parentCategory?: Maybe<Scalars['String']>;
   articles?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
@@ -1142,7 +1142,7 @@ export type ExpandableResolvers<ContextType = any, ParentType extends ResolversP
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   key?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  address?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  parentCategory?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   articles?: Resolver<Array<Maybe<ResolversTypes['String']>>, ParentType, ContextType>;
   created?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   updated?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
