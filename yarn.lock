@@ -1025,31 +1025,31 @@
     terminal-link "^2.1.1"
     tmp "0.2.1"
 
-"@prisma/studio-pcw@0.391.0":
-  version "0.391.0"
-  resolved "https://registry.yarnpkg.com/@prisma/studio-pcw/-/studio-pcw-0.391.0.tgz#d1f4a8b0d210e84413721d3b566e63ddc38fd17b"
-  integrity sha512-+wd15U6xCyqnBU5919mkGYJegsURB7DOEZzb5+jgeE+FMaxnO9ZJ1ruaElfyiawrRmO3XUkgReKJ1QWS1sYwUg==
+"@prisma/studio-pcw@0.393.0":
+  version "0.393.0"
+  resolved "https://registry.yarnpkg.com/@prisma/studio-pcw/-/studio-pcw-0.393.0.tgz#dfa5fbb4d3a93cef52b956daf5a44bd1d05595ba"
+  integrity sha512-WYLqvmJd+G7lXGIzSwu1i4m/mnxYBfyKx1e3AiNjy+QUha2MyQLEAmwnUeAdfx97j2l7THtVmOy97/5QVvwEAw==
   dependencies:
     lodash "4.17.21"
 
-"@prisma/studio-server@0.391.0":
-  version "0.391.0"
-  resolved "https://registry.yarnpkg.com/@prisma/studio-server/-/studio-server-0.391.0.tgz#7ef4ff4de2281361ca0bf9c071a4c347c73c1b1d"
-  integrity sha512-9Bh3vj+AscdKGa4MW6OlCCrD1+6HLrskvoLdR7EXiUGyFrotlptGQ4vFnFvdVETFyD3OdoT65OfwJ4N9O5kybQ==
+"@prisma/studio-server@0.393.0":
+  version "0.393.0"
+  resolved "https://registry.yarnpkg.com/@prisma/studio-server/-/studio-server-0.393.0.tgz#fcdefd121fc0d1c10437e2ed54ed240fbfdcff47"
+  integrity sha512-TCSMqZNyQOmz8/gCptZItusQFCNkyQtDIplz9P42BfS/17FMsPOkwaZ9Bt+L79uPTWwLcaLhoXEjnnNpaclNxw==
   dependencies:
     "@prisma/sdk" "2.22.1"
-    "@prisma/studio-pcw" "0.391.0"
-    "@prisma/studio-transports" "0.391.0"
+    "@prisma/studio-pcw" "0.393.0"
+    "@prisma/studio-transports" "0.393.0"
     "@sentry/node" "6.2.5"
     checkpoint-client "1.1.20"
     cors "2.8.5"
     express "4.17.1"
     untildify "4.0.0"
 
-"@prisma/studio-transports@0.391.0":
-  version "0.391.0"
-  resolved "https://registry.yarnpkg.com/@prisma/studio-transports/-/studio-transports-0.391.0.tgz#1f1c29339db087e3613e02b6f69bc063ff365d48"
-  integrity sha512-4wrURnaNv4CH4aK14fKyZd111Ek8CkPyNooKClJlh6bc5ajfTi3Uw7Ptw/2+HQmOeuHpKyqPyeksokX7lG59cg==
+"@prisma/studio-transports@0.393.0":
+  version "0.393.0"
+  resolved "https://registry.yarnpkg.com/@prisma/studio-transports/-/studio-transports-0.393.0.tgz#27b785ad302fa71ef5930721d412ce58245bdd4b"
+  integrity sha512-jKiFAwJGFrwyzVwF1HGV/L46SBkRkyZoyZA20i4/ziWQeCJWX8wcpoafKX36TBYDjuN6zLXHQxweP+LY2A8c1g==
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
