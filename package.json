@@ -54,11 +54,11 @@
     "prisma": "2.22.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.21.4",
+    "@graphql-codegen/cli": "1.21.8",
     "@graphql-codegen/introspection": "1.18.2",
-    "@graphql-codegen/typescript": "1.22.0",
-    "@graphql-codegen/typescript-document-nodes": "1.17.11",
-    "@graphql-codegen/typescript-resolvers": "1.19.1",
+    "@graphql-codegen/typescript": "1.23.0",
+    "@graphql-codegen/typescript-document-nodes": "1.17.16",
+    "@graphql-codegen/typescript-resolvers": "1.20.0",
     "@prisma/studio-server": "0.393.0",
     "@types/bcrypt": "5.0.0",
     "@types/express-http-proxy": "1.6.1",
