@@ -72,7 +72,7 @@
     "gulp": "4.0.2",
     "prettier": "2.2.1",
     "prisma": "2.22.1",
-    "typescript": "4.2.3"
+    "typescript": "4.6.3"
   },
   "bugs": {
     "url": "https://github.com/atherdon/dash-back/issues"
